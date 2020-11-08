@@ -1,9 +1,6 @@
-# jekyll-rtd-theme
+# Advanced VLSI Laboratory, Silicon Institute of Technology, Bhubaneswar 
 
-![CI](https://github.com/rundocs/jekyll-rtd-theme/workflows/CI/badge.svg?branch=develop)
-![jsDelivr](https://data.jsdelivr.com/v1/package/gh/rundocs/jekyll-rtd-theme/badge)
-
-Just another documentation theme compatible with GitHub Pages
+Advanced VLSI Lab at Silicon Instute of Technology Bhubaneswar, Odisha, India is Center of Excellence for training and research in the area of CMOS Integrated Circuit Design.
 
 ## What it does?
 
