@@ -6,6 +6,11 @@ description: Advanced VLSI Lab at Silicon Instute of Technology
 
 theme: null
 
+url: silicon-vlsi.github.io
+baseurl: /silicon-vlsi.github.io
+lang: en
+direction: auto
+
 # debug:
 #   compress: true
 #   dist: false
