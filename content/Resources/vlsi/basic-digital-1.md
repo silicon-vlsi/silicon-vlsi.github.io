@@ -68,7 +68,7 @@
 
 - **Clock Gating circuit**
   - Basically, use of AND / OR/ MUX at this place.
-  - Sequential circuit-based Clock Gating circuit (Latch based | Flipflop Based)
+  - Sequential circuit-based Clock Gating circuit (Latch based, Flipflop Based)
   - Waveform of Clock and input and output
 
 - **Different Timing waveform-based concepts**
