@@ -37,11 +37,11 @@
   - Setup and Hold Concepts of Flipflop
   - Propagation delay of Flip-flop
   - Frequency at which circuit can work. Flipflop conversion can be asked here. Like what’s the minimum frequency of a circuit where output of D Flipflip is feedback to input of D flipflop.
-  - Frequency divider circuit | frequency multiplier circuit – can be termed as clock generators.
+  - Frequency divider circuit, frequency multiplier circuit – can be termed as clock generators.
   - Timing cpnepts related to Static Time Analysis (STA)
 
 - **Flip-flop (Part 2)**
-  - 1-bit register | 2-bit register
+  - 1-bit register, 2-bit register
   - Different type of registers (shift registers)
   - Concepts of FIFO, Pipeline, Parallel In-Serial out and others
   - Application of these in design.
@@ -51,19 +51,19 @@
       - Using 1, 4 bits adder and Register configuration
       - Interviewer need to see your approaches and concepts of Clock and cycle time saving concepts 
 
-- **Propagation Delay | Transition delay**
+- **Propagation Delay, Transition delay**
   - Logic Gates
-  - Flipflop | Latches
+  - Flipflop, Latches
   - Rise time – Fall time – Capacitance concepts – current concepts
   - Interviewer can shift to Transistor level from here.
 
 - **Noise Margin concepts**
-  - Input-Output Voltages / Current levels (VOL,VOH, VIL, VIL and similarly for current)
+  - Input-Output Voltages, Current levels (VOL,VOH, VIL, VIL and similarly for current)
   - Based on these – Noise margin concepts
   - Compatibility of gates based on their input and output specifications. 
 
-- **Tristate buffers | Tristate Inverters**
-  - Use model | Transistor level circuit
+- **Tristate buffers, Tristate Inverters**
+  - Use model, Transistor level circuit
   - Truth Table
 
 - **Clock Gating circuit**
@@ -73,11 +73,11 @@
 
 - **Different Timing waveform-based concepts**
   - Input and Output waveform of Logic gates
-  - Input and Output waveform of Flipflops | Shift registers | counters | Mod-counters
+  - Input and Output waveform of Flipflops, Shift registers, counters, Mod-counters
   - Propagation delay concepts in those waveforms
   - Through these they need to understand Glitches and Hazard concepts
 
-- **High-tie / Low-Tie concepts**
+- **High-tie, Low-Tie concepts**
   - How it effects circuits?
   - Transistor level implementations
   - Sometime they can link this till power
