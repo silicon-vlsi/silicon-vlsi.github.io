@@ -40,51 +40,44 @@
   - Frequency divider circuit | frequency multiplier circuit – can be termed as clock generators.
   - Timing cpnepts related to Static Time Analysis (STA)
 
-Flip-flop (Part 2)
+- **Flip-flop (Part 2)**
+  - 1-bit register | 2-bit register
+  - Different type of registers (shift registers)
+  - Concepts of FIFO, Pipeline, Parallel In-Serial out and others
+  - Application of these in design.
+  - This can be asked as design of 16-bit adder using 4-bit adder
+    - 2 approaches
+      - Using 4, 4-bits adder and some connection and other logic gates
+      - Using 1, 4 bits adder and Register configuration
+      - Interviewer need to see your approaches and concepts of Clock and cycle time saving concepts 
 
-    1-bit register | 2-bit register
-    Different type of registers (shift registers)
-    Concepts of FIFO, Pipeline, Parallel In-Serial out and others
-        Application of these in design.
-    This can be asked as design of 16-bit adder using 4-bit adder
-        2 approaches
-            Using 4, 4-bits adder and some connection and other logic gates
-            Using 1, 4 bits adder and Register configuration
-        Interviewer need to see your approaches and concepts of Clock and cycle time saving concepts 
+- **Propagation Delay | Transition delay**
+  - Logic Gates
+  - Flipflop | Latches
+  - Rise time – Fall time – Capacitance concepts – current concepts
+  - Interviewer can shift to Transistor level from here.
 
-Propagation Delay | Transition delay
+- **Noise Margin concepts**
+  - Input-Output Voltages / Current levels (VOL,VOH, VIL, VIL and similarly for current)
+  - Based on these – Noise margin concepts
+  - Compatibility of gates based on their input and output specifications. 
 
-    Logic Gates
-    Flipflop | Latches
-    Rise time – Fall time – Capacitance concepts – current concepts
-    Interviewer can shift to Transistor level from here.
+- **Tristate buffers | Tristate Inverters**
+  - Use model | Transistor level circuit
+  - Truth Table
 
-Noise Margin concepts
+- **Clock Gating circuit**
+  - Basically, use of AND / OR/ MUX at this place.
+  - Sequential circuit-based Clock Gating circuit (Latch based | Flipflop Based)
+  - Waveform of Clock and input and output
 
-    Input-Output Voltages / Current levels (VOL,VOH, VIL, VIL and similarly for current)
-    Based on these – Noise margin concepts
-    Compatibility of gates based on their input and output specifications. 
+- **Different Timing waveform-based concepts**
+  - Input and Output waveform of Logic gates
+  - Input and Output waveform of Flipflops | Shift registers | counters | Mod-counters
+  - Propagation delay concepts in those waveforms
+  - Through these they need to understand Glitches and Hazard concepts
 
-Tristate buffers | Tristate Inverters
-
-    Use model | Transistor level circuit
-    Truth Table
-
-Clock Gating circuit
-
-    Basically, use of AND / OR/ MUX at this place.
-    Sequential circuit-based Clock Gating circuit (Latch based | Flipflop Based)
-    Waveform of Clock and input and output
-
-Different Timing waveform-based concepts
-
-    Input and Output waveform of Logic gates
-    Input and Output waveform of Flipflops | Shift registers | counters | Mod-counters
-    Propagation delay concepts in those waveforms
-    Through these they need to understand Glitches and Hazard concepts
-
-High-tie / Low-Tie concepts
-
-    How it effects circuits?
-    Transistor level implementations
-    Sometime they can link this till power
+- **High-tie / Low-Tie concepts**
+  - How it effects circuits?
+  - Transistor level implementations
+  - Sometime they can link this till power
