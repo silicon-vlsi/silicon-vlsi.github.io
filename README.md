@@ -16,3 +16,4 @@ The Advanced VLSI Laboratory is Center of Excellence for training and research i
 - Enterprise-grade 40-Core Compute server with an attached NAS server to provide a world-class IT infrastructure.
 - 30-seater training room for running hands on courses workshops.
 - 12-seater office-cum-conference room for conducting our industry projects and training.
+- Full equiped test laboratory to conduct training and consulting for integrated circuit characterization.
