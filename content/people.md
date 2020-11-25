@@ -3,7 +3,7 @@ sort: 3
 ---
 # People
 
-# Faculty
+## Faculty
 - **Dr. Saroj Rout**, *Adjunct Professor and Mentor*  • Ph.D., [Tufts University](https://www.tufts.edu) • B.E. & M.E., [BITS-Pilani](https://www.bits-pilani.ac.in) • 22 years of industry experience with more than 14 SoC projects • 10 years of research experience • 6 years of teaching • 7 patents • Author of [“Active Metamaterials”](http://www.ece.tufts.edu/~srout01/active-mm-book.html) a Springer-Nature publication • *Research interest*: Mixed-signal CMOS IC design: Data converters, Power management, low-power and low-noise audio-band front-ends. :link: [LinkedIn](https://www.linkedin.com/in/sroutk)
 
 - **Dr. Prakash Rout**, *Professor* • Ph.D from NIT, Rourkela • M.Tech. From KIIT University. • 16+ years of teaching experience • 10 years of research experience • 20 publication • *Research interest*: Mixed Signal VLSI Design. Design, simulation of semiconductor devices.
@@ -18,7 +18,10 @@ sort: 3
 
 - **Ms. Ayesha Swain**, *Technical Asst.* • B.Tech, BPUT-Rourkela • 10 years of Academic experience • 1 years of Industry experience • Area of Interest: Digital VLSI Design. Embedded Systems Design
 
+## Current Students
+- **Ajit Patro**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
+## Past Students
 
 
 
