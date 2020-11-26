@@ -1,3 +1,3 @@
-# I'm folder2
+# sub-folder 
 
 source: `{{ page.path }}`
