@@ -21,23 +21,23 @@ sort: 3
 ## Current Students
 - **Ajit Kumar Patro**, *ECE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
-- **Vikash Kumar**, *ECE, 2021* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Vikash Kumar**, *ECE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
-- **Satabdi Pand**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]()
+- **Satabdi Panda**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]()
 
-- **Pracheta Mohapatra**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]()
+- **Pracheeta Mohapatra**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]()
 
 - **Punyadeep Pattnaik**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]()
 
-- **Snruti Rekha Prusty**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]()
+- **Smruti Rekha Prusty**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]()
 
 - **Chirag Mohanty**, *EIE, 2021* • Project: • Characterization of Novel 9T SRAM Cell • [gitHub-page]()
 
-- **Gautam Kumar**, *EIE, 2021* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Gautam Kumar**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
 - **Rajkumar Laldev**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]()
 
-- **Shubham Kumar**, *ECE, 2021* • Project: • AMBA APB protocolr • [gitHub-page]()
+- **Shubham Kumar**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]()
 
 - **Sachin Modi**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]()
 
@@ -45,13 +45,13 @@ sort: 3
 
 - **Sushree Priyadarshini**, *EIE, 2021* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
 
-- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
 - **Subham Rath**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
-- **Abhinab Das**, *EIE, 2022* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Abhinab Das**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
-- **Chandan Singh**, *EIE, 2022* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Chandan Singh**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
 
 ## Past Students

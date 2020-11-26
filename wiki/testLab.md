@@ -21,4 +21,4 @@ sort: 1
 - Press `SET` again for `rtme` (Ramp time) in *minutes*
 - Press `SET` again for Hold time in *minutes*
 - Repeat this process for the next 9 set points, if you need them or you can just press enter to end the settings.
-- And now you to press **RESET** to start the new settings else it will still be executing the old settings. And depending on the settings, the internal microcontroller may take a long time to calculate the control routine before starting. So have patience! 
+- And now you to press **RESET** to start the new settings else it will still be executing the old settings. And depending on the settings, the internal micro-controller may take a long time to calculate the control routine before starting. So have patience! 
