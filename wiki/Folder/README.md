@@ -1,3 +1,3 @@
-# doc1 
+# Folder 
 
 source: `{{ page.path }}`
