@@ -9,8 +9,8 @@ sort: 1
 ### HIMA Temperature Chamber 
 **SOURCE**
 - HIMA Products, Dooravaningar, Bangalore
-  - www.himaproduct.com / Email: himaproduct@gmail.com
-  - +91-80-28513471/40968796/9845770531
+  - :link: www.himaproduct.com  :email: himaproduct@gmail.com
+  - :phone: +91-80-28513471/40968796 :iphone: 9845770531
   
 **QUICK REFERENCE**
 - **Note** Heating and Cooling cycles have to be done differently.
