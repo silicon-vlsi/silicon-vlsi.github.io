@@ -19,7 +19,7 @@ sort: 3
 - **Ms. Ayesha Swain**, *Technical Asst.* • B.Tech, BPUT-Rourkela • 10 years of Academic experience • 1 years of Industry experience • Area of Interest: Digital VLSI Design. Embedded Systems Design
 
 ## Current Students
-- **Ajit Kumar Patro**, *ECE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Ajit Kumar Patro**, *ECE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
 - **Vikash Kumar**, *ECE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
 
