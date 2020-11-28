@@ -56,53 +56,56 @@ sort: 3
 
 ## Past Students: 2020 batch
 
-- **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
+- **Aditya Singh**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing • [gitHub-page]
 
-- **Binit Patwari**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Ashutosh Jena**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • [gitHub-page]
 
-- **Swarna Prabha Nanda**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Binit Patwari**, *ECE, 2020* • Project: • Evolution of ASIC Design starting from "Verilog to UVM" • [gitHub-page]
 
-- **Aditya Singh**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Hritik**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology • [gitHub-page]
 
-- **Tapan Karan**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Manoj Nayak**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • [gitHub-page]
 
-- **Smita Panda**, *ECE, 2020* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
+- **Smita Panda**, *ECE, 2020* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing • [gitHub-page]
 
-- **Ashutosh Jena**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Soumya Prakash Behura**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology • [gitHub-page]
 
-- **Manoj Nayak**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: • Modelling of Sigma-Delta Analog-to-Digital converters • [gitHub-page]
 
-- **Soumya Ranjan**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Swarna Prabha Nanda**, *ECE, 2022* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • [gitHub-page]
 
-- **Hritik**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Tapan Karan**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing • [gitHub-page]
+
 
 ## Past Students: 2019 batch
 
-- **Abhishek Kumar**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
+- **Abhishek Kumar**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Deepika Kumari**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
+- **Anshuman Mishara**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Gautam Kumar**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
+- **Deepika Kumari**, *ECE, 20219* • Project: • Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
+
+- **Gautam Kumar**, *ECE, 2019* • Project: • Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
 - **Jagyaseni Panda**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Manamohan Nath**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Manamohan Nath**, *ECE, 2019* • Project: • Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Prachi Mrudula**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Prachi Mrudula**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Pragya Tiwari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Pragya Tiwari**, *ECE, 2019* • Project: • Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Sameer Nameo**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Sameer Nameo**, *ECE, 2019* • Project: • Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Sneha kumari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Sneha kumari**, *ECE, 2019* • Project: • Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Shiva Prasad Das**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Shiva Prasad Das**, *ECE, 2019* • Project: • Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
 - **Samiksha Agrawal**, *ECE, 2019* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Suruchi kumari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Suruchi kumari**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Unnati kumari Gupta**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Unnati kumari Gupta**, *ECE, 2019* • Project: • Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Vishal Sao**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Vishal Sao**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
