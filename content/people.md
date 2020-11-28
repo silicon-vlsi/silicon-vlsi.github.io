@@ -21,88 +21,88 @@ sort: 3
 ## Current Students
 - **Ajit Kumar Patro**, *ECE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Vikash Kumar**, *ECE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Vikash Kumar**, *ECE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Satabdi Panda**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]()
+- **Satabdi Panda**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]
 
-- **Pracheeta Mohapatra**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]()
+- **Pracheeta Mohapatra**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]
 
-- **Punyadeep Pattnaik**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]()
+- **Punyadeep Pattnaik**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]
 
-- **Smruti Rekha Prusty**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]()
+- **Smruti Rekha Prusty**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]
 
-- **Chirag Mohanty**, *EIE, 2021* • Project: • Characterization of Novel 9T SRAM Cell • [gitHub-page]()
+- **Chirag Mohanty**, *EIE, 2021* • Project: • Characterization of Novel 9T SRAM Cell • [gitHub-page]
 
-- **Gautam Kumar**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Gautam Kumar**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Rajkumar Laldev**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]()
+- **Rajkumar Laldev**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
 
-- **Shubham Kumar**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]()
+- **Shubham Kumar**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
 
-- **Sachin Modi**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]()
+- **Sachin Modi**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
 
-- **Waqar Ahemad**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Waqar Ahemad**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Sushree Priyadarshini**, *EIE, 2021* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Sushree Priyadarshini**, *EIE, 2021* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Subham Rath**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Subham Rath**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Abhinab Das**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Abhinab Das**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Chandan Singh**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Chandan Singh**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
 
 ## Past Students: 2020 batch
 
-- **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Binit Patwari**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Binit Patwari**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Swarna Prabha Nanda**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Swarna Prabha Nanda**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Aditya Singh**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Aditya Singh**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Tapan Karan**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Tapan Karan**, *ECE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Smita Panda**, *ECE, 2020* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Smita Panda**, *ECE, 2020* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Ashutosh Jena**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Ashutosh Jena**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Manoj Nayak**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Manoj Nayak**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Soumya Ranjan**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Soumya Ranjan**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Hritik**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Hritik**, *ECE, 2020* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
 ## Past Students: 2019 batch
 
-- **Abhishek Kumar**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Abhishek Kumar**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Deepika Kumari**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Deepika Kumari**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Gautam Kumar**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Gautam Kumar**, *ECE, 20219* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Jagyaseni Panda**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Jagyaseni Panda**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Manamohan Nath**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Manamohan Nath**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Prachi Mrudula**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Prachi Mrudula**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Pragya Tiwari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Pragya Tiwari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Sameer Nameo**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Sameer Nameo**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Sneha kumari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Sneha kumari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Shiva Prasad Das**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Shiva Prasad Das**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Samiksha Agrawal**, *ECE, 2019* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]()
+- **Samiksha Agrawal**, *ECE, 2019* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Suruchi kumari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Suruchi kumari**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Unnati kumari Gupta**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Unnati kumari Gupta**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Vishal Sao**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]()
+- **Vishal Sao**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
