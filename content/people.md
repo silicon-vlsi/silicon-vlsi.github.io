@@ -79,7 +79,7 @@ sort: 3
 
 ## Past Students: 2019 batch
 
-- **Abhishek Kumar**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
+- **Abhishek Kumar**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) [gitHub-page]
 
 - **Anshuman Mishara**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
@@ -87,21 +87,21 @@ sort: 3
 
 - **Gautam Kumar**, *ECE, 2019* • Project: • Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Jagyaseni Panda**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Jagyaseni Panda**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) [gitHub-page]
 
-- **Manamohan Nath**, *ECE, 2019* • Project: • Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
+- **Manamohan Nath**, *ECE, 2019* • Project: • Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) [gitHub-page]
 
-- **Prachi Mrudula**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
+- **Prachi Mrudula**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) [gitHub-page]
 
 - **Pragya Tiwari**, *ECE, 2019* • Project: • Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
 - **Sameer Nameo**, *ECE, 2019* • Project: • Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Sneha kumari**, *ECE, 2019* • Project: • Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
+- **Sneha kumari**, *ECE, 2019* • Project: • Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) [gitHub-page]
 
 - **Shiva Prasad Das**, *ECE, 2019* • Project: • Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Samiksha Agrawal**, *ECE, 2019* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
+- **Samiksha Agrawal**, *ECE, 2019* • Project: • SRAM Copmpilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) [gitHub-page]
 
 - **Suruchi kumari**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
