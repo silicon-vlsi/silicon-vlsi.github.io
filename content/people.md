@@ -107,5 +107,5 @@ sort: 3
 
 - **Unnati kumari Gupta**, *ECE, 2019* • Project: • Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
 
-- **Vishal Sao**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page]
+- **Vishal Sao**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) [gitHub-page]
 
