@@ -29,6 +29,8 @@ sort: 3
 
 - **Punyadeep Pattnaik**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]
 
+- **Rajeev Kumar**, *ECE, 2021* • Project: • Callibration of PT100 temperature sensor • [gitHub-page]
+
 - **Rajkumar Laldev**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
 
 - **Sachin Modi**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
