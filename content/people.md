@@ -62,7 +62,7 @@ sort: 3
 
 - **Ashutosh Jena**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • [gitHub-page]
 
-- **Binit Patwari**, *ECE, 2020* • Project: • Evolution of ASIC Design starting from "Verilog to UVM" • [gitHub-page]
+- **Binit Patwari**, *ECE, 2020* • Project: • Evolution of ASIC Design starting from "Verilog to UVM" • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
 - **Hritik**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology • [gitHub-page]
 
@@ -72,9 +72,9 @@ sort: 3
 
 - **Soumya Prakash Behura**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology • [gitHub-page]
 
-- **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: • Modelling of Sigma-Delta Analog-to-Digital converters • [gitHub-page]
+- **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: • Modelling of Sigma-Delta Analog-to-Digital converters • Current company: • [Synopsys](https://www.synopsys.com/company.html)
 
-- **Swarna Prabha Nanda**, *ECE, 2022* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • [gitHub-page]
+- **Swarna Prabha Nanda**, *ECE, 2022* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • Current Company: [Marquee Semiconductor](https://marqueesemi.com/)
 
 - **Tapan Karan**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing • [gitHub-page]
 
