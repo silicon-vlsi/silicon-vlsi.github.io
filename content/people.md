@@ -47,36 +47,36 @@ sort: 3
 
 - **Vikash Kumar**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page]
 
-- **Waqar Ahemad**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Waqar Ahemad**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler 
 
-- **Abhinab Das**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Abhinab Das**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler 
 
-- **Chandan Singh**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Chandan Singh**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler 
 
-- **Subham Rath**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Subham Rath**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler
 
 
 ## Past Students: 2020 batch
 
-- **Aditya Singh**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing • [gitHub-page]
+- **Aditya Singh**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
-- **Ashutosh Jena**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • [gitHub-page]
+- **Ashutosh Jena**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology 
 
 - **Binit Patwari**, *ECE, 2020* • Project: • Evolution of ASIC Design starting from "Verilog to UVM" • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
-- **Hritik**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology • [gitHub-page]
+- **Hritik**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology 
 
-- **Manoj Nayak**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • [gitHub-page]
+- **Manoj Nayak**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology 
 
-- **Smita Panda**, *ECE, 2020* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing • [gitHub-page]
+- **Smita Panda**, *ECE, 2020* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
-- **Soumya Prakash Behura**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology • [gitHub-page]
+- **Soumya Prakash Behura**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology 
 
 - **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: • Modelling of Sigma-Delta Analog-to-Digital converters • Current company: • [Synopsys](https://www.synopsys.com/company.html)
 
 - **Swarna Prabha Nanda**, *ECE, 2022* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • Current Company: [Marquee Semiconductor](https://marqueesemi.com/)
 
-- **Tapan Karan**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing • [gitHub-page]
+- **Tapan Karan**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
 
 ## Past Students: 2019 batch
