@@ -35,7 +35,7 @@ sort: 3
 
 - **Sachin Modi**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
 
-- **Satabdi Panda**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]
+- **Satabdi Panda**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page](https://github.com/satabdi25-2000)
 
 - **Shubham Kumar**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
 
