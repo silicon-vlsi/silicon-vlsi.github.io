@@ -39,7 +39,7 @@ sort: 3
 
 - **Shubham Kumar**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
 
-- **Smruti Rekha Prusty**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]
+- **Smruti Rekha Prusty**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page](https://github.com/sprusty23)
 
 - **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: • Inverter chain design 
 
