@@ -19,7 +19,7 @@ sort: 3
 - **Ms. Ayesha Swain**, *Technical Asst.* • B.Tech, BPUT-Rourkela • 10 years of Academic experience • 1 years of Industry experience • Area of Interest: Digital VLSI Design. Embedded Systems Design
 
 ## Current Students
-- **Ajit Kumar Patro**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page]
+- **Ajit Kumar Patro**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github)
 
 - **Chirag Mohanty**, *EIE, 2021* • Project: • Characterization of Novel 9T SRAM Cell • [gitHub-page]
 
