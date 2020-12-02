@@ -31,7 +31,7 @@ sort: 3
 
 - **Rajeev Kumar**, *ECE, 2021* • Project: • Callibration of PT100 temperature sensor • [gitHub-page]
 
-- **Rajkumar Laldev**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
+- **Rajkumar Laldev**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page](https://github.com/kumarraj5364)
 
 - **Sachin Modi**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
 
@@ -45,7 +45,7 @@ sort: 3
 
 - **Sushree Priyadarshini**, *EIE, 2021* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
 
-- **Vikash Kumar**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page]
+- **Vikash Kumar**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/iamkrvikash)
 
 - **Waqar Ahemad**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler 
 
