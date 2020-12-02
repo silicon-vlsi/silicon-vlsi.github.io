@@ -21,7 +21,7 @@ sort: 3
 ## Current Students
 - **Ajit Kumar Patro**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github)
 
-- **Chirag Mohanty**, *EIE, 2021* • Project: • Characterization of Novel 9T SRAM Cell • [gitHub-page]
+- **Chirag Mohanty**, *EIE, 2021* • Project: • Characterization of Novel 9T SRAM Cell • [gitHub-page](https://github.com/Chirag-Mohanty)
 
 - **Gautam Kumar**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
