@@ -41,13 +41,13 @@ sort: 3
 
 - **Smruti Rekha Prusty**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]
 
-- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: • Inverter chain design 
 
-- **Sushree Priyadarshini**, *EIE, 2021* • Project: • SRAM Copmpilation using OpenRAM Compiler • [gitHub-page]
+- **Sushree Priyadarshini**, *EIE, 2021* • Project: • Inverter chain design 
 
 - **Vikash Kumar**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/iamkrvikash)
 
-- **Waqar Ahemad**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler 
+- **Waqar Ahemad**, *EIE, 2021* • Project: • Inverter chain design 
 
 - **Abhinab Das**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler 
 
