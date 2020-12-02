@@ -19,95 +19,95 @@ sort: 3
 - **Ms. Ayesha Swain**, *Technical Asst.* • B.Tech, BPUT-Rourkela • 10 years of Academic experience • 1 years of Industry experience • Area of Interest: Digital VLSI Design. Embedded Systems Design
 
 ## Current Students
-- **Ajit Kumar Patro**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github)
+- **Ajit Kumar Patro**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github)
 
-- **Chirag Mohanty**, *EIE, 2021* • Project: • Characterization of Novel 9T SRAM Cell • [gitHub-page](https://github.com/Chirag-Mohanty)
+- **Chirag Mohanty**, *EIE, 2021* • Project: Characterization of Novel 9T SRAM Cell • [gitHub-page](https://github.com/Chirag-Mohanty)
 
-- **Gautam Kumar**, *EIE, 2021* • Project: • SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Gautam Kumar**, *EIE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • [gitHub-page]
 
-- **Pracheeta Mohapatra**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]
+- **Pracheeta Mohapatra**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]
 
-- **Punyadeep Pattnaik**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]
+- **Punyadeep Pattnaik**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]
 
-- **Rajeev Kumar**, *ECE, 2021* • Project: • Callibration of PT100 temperature sensor • [gitHub-page]
+- **Rajeev Kumar**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • [gitHub-page]
 
-- **Rajkumar Laldev**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page](https://github.com/kumarraj5364)
+- **Rajkumar Laldev**, *ECE, 2021* • Project: AMBA APB protocol • [gitHub-page](https://github.com/kumarraj5364)
 
-- **Sachin Modi**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
+- **Sachin Modi**, *ECE, 2021* • Project: AMBA APB protocol • [gitHub-page]
 
-- **Satabdi Panda**, *EIE, 2021* • Project: • A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page](https://github.com/satabdi25-2000)
+- **Satabdi Panda**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page](https://github.com/satabdi25-2000)
 
-- **Shubham Kumar**, *ECE, 2021* • Project: • AMBA APB protocol • [gitHub-page]
+- **Shubham Kumar**, *ECE, 2021* • Project: AMBA APB protocol • [gitHub-page]
 
-- **Smruti Rekha Prusty**, *ECE, 2021* • Project: • A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page](https://github.com/sprusty23)
+- **Smruti Rekha Prusty**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page](https://github.com/sprusty23)
 
-- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: • Inverter chain design 
+- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: Inverter chain design 
 
-- **Sushree Priyadarshini**, *EIE, 2021* • Project: • Inverter chain design 
+- **Sushree Priyadarshini**, *EIE, 2021* • Project: Inverter chain design 
 
-- **Vikash Kumar**, *ECE, 2021* • Project: • A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/iamkrvikash)
+- **Vikash Kumar**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/iamkrvikash)
 
-- **Waqar Ahemad**, *EIE, 2021* • Project: • Inverter chain design 
+- **Waqar Ahemad**, *EIE, 2021* • Project: Inverter chain design 
 
-- **Abhinab Das**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler 
+- **Abhinab Das**, *EIE, 2022* • Project: SRAM Compilation using OpenRAM Compiler 
 
-- **Chandan Singh**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler 
+- **Chandan Singh**, *EIE, 2022* • Project: SRAM Compilation using OpenRAM Compiler 
 
-- **Subham Rath**, *EIE, 2022* • Project: • SRAM Compilation using OpenRAM Compiler
+- **Subham Rath**, *EIE, 2022* • Project: SRAM Compilation using OpenRAM Compiler
 
 
 ## Past Students: 2020 batch
 
-- **Aditya Singh**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
+- **Aditya Singh**, *ECE, 2022* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
-- **Ashutosh Jena**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology 
+- **Ashutosh Jena**, *ECE, 2020* • Project: Design & Implementation of SRAM controller in 180nm CMOS technology 
 
-- **Binit Patwari**, *ECE, 2020* • Project: • Evolution of ASIC Design starting from "Verilog to UVM" • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Binit Patwari**, *ECE, 2020* • Project: Evolution of ASIC Design starting from "Verilog to UVM" • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
-- **Hritik**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology 
+- **Hritik**, *ECE, 2020* • Project: Design & Implementation of I2C Protocol in 180nm CMOS Technology 
 
-- **Manoj Nayak**, *ECE, 2020* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology 
+- **Manoj Nayak**, *ECE, 2020* • Project: Design & Implementation of SRAM controller in 180nm CMOS technology 
 
-- **Smita Panda**, *ECE, 2020* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
+- **Smita Panda**, *ECE, 2020* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
-- **Soumya Prakash Behura**, *ECE, 2020* • Project: • Design & Implementation of I2C Protocol in 180nm CMOS Technology 
+- **Soumya Prakash Behura**, *ECE, 2020* • Project: Design & Implementation of I2C Protocol in 180nm CMOS Technology 
 
-- **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: • Modelling of Sigma-Delta Analog-to-Digital converters • Current company: • [Synopsys](https://www.synopsys.com/company.html)
+- **Subhra Sutapa Mahapatra**, *ECE, 2020* • Project: Modelling of Sigma-Delta Analog-to-Digital converters • Current company: • [Synopsys](https://www.synopsys.com/company.html)
 
-- **Swarna Prabha Nanda**, *ECE, 2022* • Project: • Design & Implementation of SRAM controller in 180nm CMOS technology • Current Company: [Marquee Semiconductor](https://marqueesemi.com/)
+- **Swarna Prabha Nanda**, *ECE, 2022* • Project: Design & Implementation of SRAM controller in 180nm CMOS technology • Current Company: [Marquee Semiconductor](https://marqueesemi.com/)
 
-- **Tapan Karan**, *ECE, 2022* • Project: • Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
+- **Tapan Karan**, *ECE, 2022* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
 
 ## Past Students: 2019 batch
 
-- **Abhishek Kumar**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Abhishek Kumar**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
-- **Anshuman Mishara**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
+- **Anshuman Mishara**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Deepika Kumari**, *ECE, 20219* • Project: • Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
+- **Deepika Kumari**, *ECE, 20219* • Project: Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Gautam Kumar**, *ECE, 2019* • Project: • Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
+- **Gautam Kumar**, *ECE, 2019* • Project: Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Jagyaseni Panda**, *ECE, 2019* • Project: • SRAM Compilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) 
+- **Jagyaseni Panda**, *ECE, 2019* • Project: SRAM Compilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) 
 
-- **Manamohan Nath**, *ECE, 2019* • Project: • Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Manamohan Nath**, *ECE, 2019* • Project: Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
-- **Prachi Mrudula**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page](https://github.com/prachi-mrudula) Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) 
+- **Prachi Mrudula**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page](https://github.com/prachi-mrudula) Current Company: [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) 
 
-- **Pragya Tiwari**, *ECE, 2019* • Project: • Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • 
+- **Pragya Tiwari**, *ECE, 2019* • Project: Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • 
 
-- **Sameer Nameo**, *ECE, 2019* • Project: • Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • 
+- **Sameer Nameo**, *ECE, 2019* • Project: Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • 
 
-- **Sneha kumari**, *ECE, 2019* • Project: • Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Sneha kumari**, *ECE, 2019* • Project: Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
-- **Shiva Prasad Das**, *ECE, 2019* • Project: • Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
+- **Shiva Prasad Das**, *ECE, 2019* • Project: Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Samiksha Agrawal**, *ECE, 2019* • Project: • SRAM Copmpilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Samiksha Agrawal**, *ECE, 2019* • Project: SRAM Copmpilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
-- **Suruchi kumari**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
+- **Suruchi kumari**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Unnati kumari Gupta**, *ECE, 2019* • Project: • Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
+- **Unnati kumari Gupta**, *ECE, 2019* • Project: Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Vishal Sao**, *ECE, 2019* • Project: • Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page](https://github.com/vsao/) • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Vishal Sao**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page](https://github.com/vsao/) • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
