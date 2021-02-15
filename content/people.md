@@ -56,7 +56,10 @@ sort: 3
 - **Subham Rath**, *ECE, 2022* • Project: SRAM Compilation using OpenRAM Compiler
 
 
-## Past Students: 2020 batch
+## Past Students
+
+**2020 BATCH:**
+
 
 - **Aditya Singh**, *ECE, 2022* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
@@ -79,7 +82,8 @@ sort: 3
 - **Tapan Karan**, *ECE, 2022* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
 
-## Past Students: 2019 batch
+**2019 BATCH**
+
 
 - **Abhishek Kumar**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
