@@ -17,6 +17,7 @@ sort: 4
 ## Journals
 
 -	U. Nanda, D.P. Acharya, D. Nayak, P.K. Rout, “Modelling and Optimization of Phase Locked Loop under Constrained Channel Length and Width of MOSFETs”, Silicon (**Springer**), (Accepted author version posted online: 28 Jan 2021) (**SCI Impact Factor 1.499**)
+-	I. Som, S. Sarangi and T. K. Bhattacharyya, "A 7.1-GHz 0.7-mW Programmable Counter With Fast EOC Generation in 65-nm CMOS," in IEEE Transactions on Circuits and Systems II: Express Briefs, vol. 67, no. 11, pp. 2397-2401, Nov. 2020, doi: 10.1109/TCSII.2020.2966373.
 -	U. Nanda, D.P. Acharya, D. Nayak, “Process Variation Tolerant Wide-band Fast PLL with Reduced Phase Noise using Adaptive Duty Cycle Control Strategy”, International Journal of Electronics(**Taylor & Francis**), (Accepted author version posted online: 07 Jul 2020), (**SCI Impact Factor 1.004**)
 -	D. Nayak, P. K. Rout, S. Sahu, D.P. Acharya, U. Nanda, D. Tripathy, “A novel indirect read technique based SRAM with ability to charge recycle and differential read for low power consumption, high stability and performance”, Microelectronics Journal (**Elsevier**), vol. 97, pp. 01-11, Mar 2020. (**SCI Impact Factor 1.405**)
 -	D. Nayak, D.P. Acharya, P. K. Rout, U. Nanda, “A Novel Charge Recycle Read Write Assist Technique for Energy Efficient and Fast 20nm 8T-SRAM Array”, Solid-State Electronics (**Elsevier**), vol. 148, pp. 43-50, Oct 2018. (**SCI Impact Factor 1.437**)
@@ -33,7 +34,7 @@ sort: 4
 -	P.K.Rout, D.P. Acharya and G. Panda, “Design of a Novel Current Starved VCO via Constrained Geometric Programming" International Journal of Computer Applications (IJCA), vol-3, pp.37-40, 2011.
 
 ## Conferences
-
+-	S. Sarangi, I Som, and T.K. Bhattacharyya "A Compact and Low-power Transmitter Driver Design for High-Speed SerDes System" International Conference on VLSI Design and Embeded Systems (VLSID-2021), February 20-24, 2021 (virtual event) (**Accepted**)
 -	S. Sarangi, D. Tripathy, S.S. Mahapatra, and S.Rout“ A Power and Area Efficient CMOS Bandgap Reference Circuiwith an integrated Voltage Reference Branch”, in Proc. of Springer Modelling,Simulation, Intelligent Computing(MoSICom-2020), BITS-Pilani Dubai Campus.
 -	D. Nayak, U. Nanda, P. K. Rout, S. M. Biswal, D. Tripathy, S. K. Swain, B. Baral, S. K. Das, “A Novel Driver less SRAM with Indirect Read for Low Energy Consumption and Read Noise Elimination”, in Proc. of IEEE International Conference on Devices for Integrated Circuit (DevIC), March. 2019, pp. 314-317 (2019), Kalyani, India
 -	D. Tripathy, D. Nayak, S. M. Biswal, S. K. Swain, B. Baral, S. K. Das, “A Low Power LNA using Current Reused Technique for UWB Application”, in Proc. of IEEE International Conference on Devices for Integrated Circuit (DevIC), March. 2019, pp. 310-313 (2019), Kalyani, India
