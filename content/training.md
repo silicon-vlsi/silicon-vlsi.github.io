@@ -25,7 +25,7 @@ From the VLSI industry point of view major part of the the VLSI work (more than 
 - Design and timing characterization (setup time, hold time, recover time, removal time) of sequential circuiys (Latch, D-FF)
 - understanding and design of high performance dynamic logic circuits (DOMINO, NORA, ZIPPER, TSPC etc)
 - Understanding and design of static random access memory (SRAM) circuits
--
+
 ## A Summer Course on Foundation of VLSI for UG, PG and Industry Freshers (Feb-Jul, 2020)
 
 The growing VLSI industry always demands people with good fundamentals as well as good engineering knowledge on VLSI domain. For this requirement this summere course "Foundation of VLSI" was started to improove their understanding as well as strengthen there VLSI fundamentals. This course covers from a very starting point of MOSFET operation to the highly complex Static Timing Analysis (STA), Logic Synthesis (LS) and Physical Design (PD). The first part of this course covers an intensive discussions on MOSFET operations, combinational circuit designs and sequential logic design and its different timing characteristics. Second part of this course gives a detail view of standard cell library and its importance in digital vlsi dsign. Additionally basic static timing analysis (STA) is introduced in this part to understand the timing constraints for both combinational and sequential cells in digital VLSI design. The third part of this course deals with the advanced static timing analysis and logic synthesis. The Final part of this course ends with a hands-on session using OpenSTA. The couse outcomes are;
@@ -36,6 +36,15 @@ The growing VLSI industry always demands people with good fundamentals as well a
 - patricepants gets a hands-on training facility through OpenSTA to check different timing characteristics of a complex design
 
 ## A summer course on Analog and Digital VLSI Design for UG Students (June-July, 2019)
+
+This one-month course was designed for UG student with a specific aim to design, simulate, layout and test of a Serial Periferal Interface (SPI) for a 32-byte Static Random Access Memory (SRAM) using an 0.6um CMOS Technology. This course covers all the theoritical background and the domain knowledge required to complete the project. First part of this course covers a brief of basic circuit and system theory. Second part of this course covers the basic circuit design using the 0.6um CMOS technology. Third part of this course focouses on circuit simulation, layout design and parasitic extraction using Tanner and Mentor graphics. The final part covers the silicon chip testing. The outcomes of this course are;
+
+- understanding of SPI and SRAM  and its interfacing
+- design and layout of shift register, SPI controller, 5-bit counter, comparator using commercial EDA tool (Tannar) 
+- design of 5-bit address latch and read-write latch using commercial EDA tool (Tannar)
+- design of synchronous circuit for signal generation using commercial EDA tool (Tannar)
+- verification (DRC, LVS) and parasitic extraction (PEX) of SPI using commercial verification tool (Mentor Graphics)
+- understanding the test setup and Silicon testing
 
 ## An Advanced VLSI Design Training for Sevya Multimedia Private Limited Employee (April-May, 2019)
 
