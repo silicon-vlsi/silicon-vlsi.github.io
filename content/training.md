@@ -6,6 +6,8 @@ sort: 2
 
 ## A Training on Analog and Mixed-mode VLSI Design, Characterization and Layout for Industry Freshers
 
+
+
 ## A Training on SKILL Scripting for the development of Process Design Kit (PDK) in 180nm Technology
 
 ## A complete Long Term Digital VLSI Design Course and Laboratary for Under Graduate Students
