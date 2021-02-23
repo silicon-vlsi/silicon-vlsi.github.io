@@ -4,7 +4,7 @@ sort: 2
 
 # Trainings 
 
-## Analog and Mixed-signal VLSI Design, Characterization and Layout for Industry Freshers (4 January - Present, 2021)
+## Analog and Mixed-signal VLSI Design, Characterization and Layout (4 January - Present, 2021)
 
 Analog and Mixed signal (AMS) VLSI design is one of the rare and highly important domain in VLSI industry. AMS design is comparatively difficult and time consuming because of its design complexity, competitive specifications, technology dependency and full custom design. So the AMS VLSI domain always wants people who have solid understanding on analog devices and circuits, good amount of circuit design knowledge and experienced with circuit characterization and layot design. Due to the above requirement this "Analog and Mixed-signal VLSI" has been started. All the laboratary and projects will be done in commercial EDA tools (Cadence). 0.18um HV SOI process technology is used to design and layout purpose for this course. The first part of the course focused on essential active and passive components important for analog desisgn. In second part it covers simple circutis like current mirrors, single stage amplifiers and differential amplifiers and its design methedology. In third part we are going to cover advanced and complex circuits using the simple circuits. In the final part of this course students will design more application specifice systems like BGR, LDO, Oscillator, ADC and DAC. Apart from this circuit design, more focous is giving on circuit characterization and full custom layout design. After completion of this course the participants will able to;
 
@@ -15,7 +15,7 @@ Analog and Mixed signal (AMS) VLSI design is one of the rare and highly importan
 
 ## Pcell development using SKILL Scripting (12 October-19 December, 2020)
 
-Scripting is a necessity for CAD engineers but can also enable circuit designers to do complex activities efficiently. SKILL programming language is based on artificial intelligence language Lisp. SKILL lets designers quickly and easily customize existing CAD applications and helps them to develop new applications.  SKILL scripting language can be used to develop Pcells. A parameterized cell, or PCell, is a programmable cell that lets designers create a customized instance each time they place it.This course was aim to develop Pcells and doing the LVS using SKILL scipting. From this training the participants;
+Scripting is a necessity for CAD engineers but can also enable circuit designers to do complex activities efficiently. SKILL programming language is based on artificial intelligence language Lisp. SKILL lets designers quickly and easily customize existing CAD applications and helps them to develop new applications. SKILL scripting language can be used to develop Pcells. A parameterized cell, or PCell, is a programmable cell that lets designers create a customized instance each time they place it. This course was aim to develop Pcells using SKILL scipting in 0.18um CMOS technolgy. From this training the participants;
 
 - able to create Pcells using SKIIL scripting
 - able to add lables to pins ia a layout
