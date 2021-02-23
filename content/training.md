@@ -46,7 +46,14 @@ This one-month course was designed for UG student with a specific aim to design,
 - verification (DRC, LVS) and parasitic extraction (PEX) of SPI using commercial verification tool (Mentor Graphics)
 - understanding the test setup and Silicon testing
 
-## An Advanced VLSI Design Training for Sevya Multimedia Private Limited Employee (April-May, 2019)
+## Analog Integrated Circuits: Analysis, Design and Layout (22 April - 18 May, 2019)
+
+This course provides a strong analytic foundations in circuits, systems and CMOS design allowing the participants to tackle complex industry challenges in various Deep Sub-micron Technology process. Laboratary exercise and projecrs are based on industry IP blocks using commercial full-custom EDA tool chain from cadence design systems, providing the participant entire backend experience (design abstraction to chip fabrication). Two commercial sub-micron CMOS semiconductor technologies, 0.18um SOI HV and 0.6um CMOS, are used for the design and layout of the circuit. The theory covered in this course are, Linux and Python basics, circuit and system basics, Integrated circuit devices, CMOS process, basics of analog circuit design, full custom design etc. In laboratary, current mirrors, differential amplifier, source follower and other essential components required for project are designed. Finally, in project a supply and temperature independent low-power and low-noise bandgap voltage reference is designed. From this training the participants able to;
+
+- understand the analog integrated circuit desigh flow
+- understand and design the basic analog IC components like, current mirrors, signle stage amplifiers and differential amplifiers
+- design and layou of a standard low-power and low-noise bandgap reference (BGR) circuit
+- fully characterize the BGR circuits (DC analysis, AC analysis, Transient analysis, Stability analysis, Noise analysis etc)
 
 ## A Basic VLSI Design Training for Sevya Multimedia Private Limited Employee (Jan-March, 2019)
 .
