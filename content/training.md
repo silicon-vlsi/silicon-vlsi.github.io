@@ -23,6 +23,7 @@ Scripting is a necessity for CAD engineers but can also enable circuit designers
 - able to create rectangular and polygon shape with sertain Width and Length
 - able to create CDF information for the Pcell
 
+
 ## A Long Term Digital VLSI Design Course and Laboratary for Under Graduate Students (20 July- 15 December, 2020)
 
 From the VLSI industry point of view major part of the the VLSI work (more than 80%) is under digital VLSI design. From RTL degin to GDS formation several micro divisions are there to complete the flow. To work in any micro-division a basic understanding of digital VLSI design is very important. This course is specifically designed for UG students to understand, design and characterize cominational and sequential circuits, dynamic logic circuits and different type of memory circuits. Module-1 covers on MOS Structure and MOSFET operations in more details. Module-2 covers the static and dymnamic characteristics of an Inverter design, which is most important because the the principle uses in the simple inverter can be applicable on any type of circuit. Module-3 covers the design and characterization of both combinational circuits and sequential circuits. Module-4 of this course deals with the dynamic circuits (DOMINO, NORA, ZIPPER, TSPC) design and memory design (SRAM, DRAM). To check theoritical concept of cominational and sequential designs few laboratary eperiments also included in this course. The major outcomes of this course are;
