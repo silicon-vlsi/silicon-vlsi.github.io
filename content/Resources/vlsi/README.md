@@ -1,3 +1,0 @@
-# vlsi 
-
-source: `{{ page.path }}`
