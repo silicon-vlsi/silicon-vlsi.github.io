@@ -9,7 +9,7 @@ The Advanced VLSI Laboratory is a Center of Excellence for training and research
 - Train fresh hires from the industry in the area of VLSI design.
 
 ## Industry Collaboration
-Our primary goal is to collaborate with the industry and through various R\&D and training activities, make our students industry-ready. We collaborate with various industry partners for R\&D, training and fabrication activities. Our partners include:
+Our primary goal is to collaborate with the industry and through various R&D and training activities, make our students industry-ready. We collaborate with various industry partners for R&D, training and fabrication activities. Our partners include:
 - STMicroelectronics, Noida, India
 - Boston Microtechnology, Greater Boston, USA
 - Innatera Nanosystems B.V., Delft, The Netherlands
