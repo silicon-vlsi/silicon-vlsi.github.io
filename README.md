@@ -14,6 +14,7 @@ Our primary goal is to collaborate with the industry and through various R&D and
 - Boston Microtechnology, Greater Boston, USA
 - Innatera Nanosystems B.V., Delft, The Netherlands
 - XFAB, Erfurt, Germany
+- Muse Semiconductor, Colorado, USA
 - IMEC, Belgium
 - Sevya Multimedia, Noida, India
 - VLSI Experts, Noida, India
