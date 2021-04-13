@@ -42,6 +42,6 @@ This was a turn-key project completely developed in-house with the help of 12 un
 - Differential-Amplifier-based sense amplifier for readout.
 - Compact decoder design for the memory selection.
 - FSM design of the controller to generate all relevant control signals using the SPI clock.
-- Design and implementation of the SPI and I2C interface circuitry.
+- Design and layout of the SPI and I2C interface circuitry.
 
 
