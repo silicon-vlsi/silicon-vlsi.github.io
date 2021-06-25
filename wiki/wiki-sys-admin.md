@@ -400,11 +400,9 @@ $set path (/CAD/IC616/tools.lnx86/bin:$path)
 ## SETTING UP PROJECT AREA
 
 FIXME: This section needs to be updated.
-   
-** SETTING UP siproj FOR A NEW PROJECT**
 
 - Create the new project entry in ``/CAD/apps/bin/proj.list``
-- create directory ``/home/NIS/projects/<PROJNAME>/<REV>/work`` and change ``owner`` and ``group} to ``srout`` and ``users``.
+- create directory ``/home/NIS/projects/<PROJNAME>/<REV>/work`` and change ``owner`` and ``group`` to ``srout`` and ``users``.
   - **NOTE**: ``PROJNAME`` and ``REV`` should be in uppercase even though the entry in ``proj.list`` is lowercase.
 - Create the ``module`` file and the ``alias`` to match the entry in ``proj.list``
 - For Cadence, create ``cds-PROJNAME-REV.lib`` and ``cds-PROJNAME-REV.il`` in ``/CAD/apps/etc``
@@ -440,7 +438,7 @@ $cadstart
 ## SETTING UP A NEW LINUX WORKSTATIONS
    
 After loading a OS [Redhat/CentOS] on a new workstation, we need to setup the following:
--*NOTE**: For CentOS, choose **desktop** installation when given various options eg. (server, LAMP, desktop, etc.)
+- **NOTE**: For CentOS, choose **desktop** installation when given various options eg. (server, LAMP, desktop, etc.)
 - Setup the Network
 - Configure it as a NIS client and
 - Mount the NFS mounts (``/CAD, /PDK, /home/NIS, /HOME``)
@@ -450,7 +448,7 @@ After loading a OS [Redhat/CentOS] on a new workstation, we need to setup the fo
 
 Follow these steps for the above configuration:
 
-**NETWORK SETUP:**
+**NETWORK SETUP**
 
 - ``#system-config-network`` (You can use GUI from the main drop down menu):
   - First select **``Device Configuration``** and select the appropriate device eg. ``eth1``
@@ -494,12 +492,12 @@ Follow these steps for the above configuration:
 - Common environments are in ``/CAD/apps/etc/silicon.csh``
 - Create the following link to load for all users:
   - ``#ln -s /CAD/apps/etc/silicon.csh /etc/profile.d/.``
-- **CREATE ``/local``** Local directory to store all temp data (eg. simulation)
+- Create ``/local`` : Local directory to store all temp data (eg. simulation)
   - ``#mkdir /local``
   - ``#chmod 775 /local``
   - ``#chgrp users /local``
    
-** CentOS 6.7/6.10 Specific **
+**CentOS 6.7/6.10 Specific**
    
 - **Hostname not in /etc/hosts**
 - Some installations don't seem to have the ``hostname`` in ``/etc/hosts``. One of the problem created by it is: ``spectre`` stops with a ``gethostbyname failed`` error.
@@ -540,9 +538,9 @@ Follow these steps for the above configuration:
 - **YUM UPDATE**:
 - Once the system is ready with all the packages, we need to do a system update:
 - ``#yum update``
-- **NOTE**: If one or more packages are not installing (eg. firefox..., java...), you can exclude them: ``#yum update --exclude=firefox* --exclude=java*``
+- **NOTE**: If one or more packages are not installing (eg. firefox..., java...), you can exclude them: ``#yum update --exclude=firefox<start> --exclude=java<star>``
 
-** Checking and Completing CentOS 6.10 Installation Automatically **
+**Checking and Completing CentOS 6.10 Installation Automatically**
    
 - All the above steps (after NFS mount) has been automated by a shell script.
 - **AFTER** creating the ``/CAD, /PDK, /home/NIS`` mounts and successfully mounting it, you can run the following scripts to complete the rest of the installation:
