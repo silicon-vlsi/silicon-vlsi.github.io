@@ -38,7 +38,7 @@ This wiki contains all the details (except the private and propreitary info) for
 
 **NOTE** ``/CAD/apps`` is ``git`` repository maintained in `github.com/silicon-vlsi/cad-apps` 
 
-### NFS SHARE
+***NFS SHARE***
 
 **Important Files for NFS Configuration**
 - ``/etc/exports``: Its a main configuration file of NFS, all exported files and directories are defined in this file at the NFS Server end.
@@ -94,9 +94,11 @@ You can use the script ``/CAD/apps/bin/tar2nas`` for the above function.
 #scp <src-file> vlsi-admin@192.168.5.11:/srv/dev-disk-by-label-sg2tb/<dir>/<file>
 ```
 
+**Logical Volume Management**
+   
 ## SUBVERSION
 
-** Setting up a Subversion Server **
+**Setting up a Subversion Server**
    
 - Decided to setup the server on ``VLSI-SRV-002`` so we can install any needed tools.(CentOS 6 is now deprecated so not true anymore)
 - Install ``subversion``: ``# yum install subversion``
@@ -123,7 +125,7 @@ password-db = passwd
 - To list a repo:``$svn list svn://192.168.6.35/sevya2019``
 - To create another repo in future, ``$svnadmin create <repo>`` in ``/HOME/svn/repos`` and restart the svnserver.
 
-** Checking-out and Using a Repository **
+**Checking-out and Using a Repository**
    
 - Checkout a repo:``$svn checkout svn://192.168.6.35/<repo-name>``
 
@@ -132,7 +134,7 @@ password-db = passwd
 - Commit: ``$svn commit -m "Comments"``  **NOTE** If you don't put comments, make sure env var ``SVN_EDITOR`` is set to a valid editor.
 - Cancel a commit: ``$ svn revert <file>``
 
-** Checking out the the feynman_svn/feynman_ext_repo **
+**Checking out the the feynman_svn/feynman_ext_repo**
 
 For **Linux**: 
 - Before checking out the SVN repo, the private key (SSH) of the client needs to match the public key on the SVN server. Easiest way is to take the private key from PuTTy (eg. ``id_rsa.pem`` or ``.openssh``) and copy it to ``.ssh/id_rsa`` and the public key can be copied to ``.ssh/id_rsa.pub``
@@ -155,7 +157,7 @@ svn checkout svn+ssh://svn@54.254.226.43/home/svn/repos/feynman_svn
 $sudo <command>
 ```
 
-** Making an existing user a *sudoer* **
+**Making an existing user a sudoer**
    
 - Login in as root and uncomment the wheel group from /etc/sudoer: ``#visudo``
 - ``%wheel  ALL=(ALL)  ALL `` 
@@ -468,7 +470,7 @@ Follow these steps for the above configuration:
 **NIS SETUP**
    
 - ``#authconfig-tui``
-- Select ``NIS`` and click //Next// and set the following:
+- Select ``NIS`` and click ``Next`` and set the following:
 - Domain: ``NIS_Silicon``
 - Server: ``192.168.6.50``
    
