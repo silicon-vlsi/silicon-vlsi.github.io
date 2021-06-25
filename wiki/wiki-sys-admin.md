@@ -5,29 +5,28 @@ sort: 1
 # SYSTEM ADMIN
 This wiki contains all the details (except the private and propreitary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
 
-[[toc]]
+## COMPUTING INFRASTRUCTURE
+![Computing Infra](Computing-infrastructure.png) FIXME: Put image here
 
-# COMPUTING INFRASTRUCTURE
-![Computing Infra](Computing-infrastructure.png)
-
-| Name | IP Address | Hardware | OS | Location | Purpose |
-| VLSI-SERV1 | 192.168.6.50 | Xeon/4C/2.5GHz/16Gb | Redhat 6 | Server Room | File Server |
-| VLSI-SERV2 | 192.168.6.35 | Xeon/20C/40T/2+GHz/64G | CentOS-6.7 | Server Room | Computing Server |
+| **Name** | **IP Address** | **Hardware** | **OS** | **Location** | **Purpose** |
+| VLSI-SERV-001 | 192.168.6.50 | Xeon/4C/2.5GHz/16Gb | Redhat 6 | Server Room | File Server |
+| VLSI-SERV-002 | 192.168.6.35 | Xeon/20C/40T/2+GHz/64G | CentOS-6.7 | Server Room | Computing Server |
 | VLSI-NAS1 | 192.168.5.11 | RaspberryPi-3-B+ 1Gb | OpenMediaVault | Server Room | Archive/Backup Server |
 | DT-001->030 | 192.168.51->80 | <FIXME> | Redhat 6 / CentOS 6.10 | Adv VLSI Lab | 30 Workstations |
 
-# STORAGE
+## STORAGE
 
 **VLSI-SERV-001**
 
-| Mount | Size | Purpose |
+| **Mount** | **Size** | **Purpose** |
 | ``/PDK`` | 200G | PDK installations |
 | ``/home`` | 256G | Faculty home, project directories |
 | ``/HOME`` | 60G | student/trainee/etc home |
 | ``/CAD`` | 200G | CAD Software Installations |
 
 **Special Sub-directories**
-| Subdirectory | Purpose |
+   
+| **Subdirectory** | **Purpose** |
 | ``/CAD/apps/bin`` | Homegrown scripts |
 | ``/CAD/apps/modulefiles`` | Files for the env management tool ``module`` |
 | ``/CAD/apps/etc`` | Misc /etc files |
@@ -37,9 +36,9 @@ This wiki contains all the details (except the private and propreitary info) for
 | ``/home/NIS/administrator`` | admin user directories |
 | ``/home/NIS/projects`` | All project directories |
 
-**NOTE** ``/CAD/apps`` is ``git`` repository maintained in `github.com/silicon-vlsi` 
+**NOTE** ``/CAD/apps`` is ``git`` repository maintained in `github.com/silicon-vlsi/cad-apps` 
 
-## NFS SHARE
+### NFS SHARE
 
 **Important Files for NFS Configuration**
 - ``/etc/exports``: Its a main configuration file of NFS, all exported files and directories are defined in this file at the NFS Server end.
@@ -57,6 +56,7 @@ All the shared directories are configured in ``/etc/exports``. Our three main sh
 ```
 
 **NFS Options**:
+   
 - ``rw``: Allows client R/W access.
 - ``async``: default option that should always be used.
 - ``no_subtree_check``: This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security.
@@ -94,10 +94,11 @@ You can use the script ``/CAD/apps/bin/tar2nas`` for the above function.
 #scp <src-file> vlsi-admin@192.168.5.11:/srv/dev-disk-by-label-sg2tb/<dir>/<file>
 ```
 
-# SUBVERSION
+## SUBVERSION
 
-## Setting up a Subversion Server
-- Decided to setup the server on ``VLSI-SRV-002`` so we can install any needed tools.
+** Setting up a Subversion Server **
+   
+- Decided to setup the server on ``VLSI-SRV-002`` so we can install any needed tools.(CentOS 6 is now deprecated so not true anymore)
 - Install ``subversion``: ``# yum install subversion``
 - Create a user ``svn`` and login as that user.
 - Make a directory for all repos: ``$ mkdir repos``
@@ -122,15 +123,17 @@ password-db = passwd
 - To list a repo:``$svn list svn://192.168.6.35/sevya2019``
 - To create another repo in future, ``$svnadmin create <repo>`` in ``/HOME/svn/repos`` and restart the svnserver.
 
-## Checking-out and Using a Repository
-- Checkout a repo:``$svn checkout svn://192.168.6.35/sevya2019``
+** Checking-out and Using a Repository **
+   
+- Checkout a repo:``$svn checkout svn://192.168.6.35/<repo-name>``
 
 **FREQUENTLY USED SVN COMMANDS**
 - Add a file to repo after creating it: ``$svn add <file>``
 - Commit: ``$svn commit -m "Comments"``  **NOTE** If you don't put comments, make sure env var ``SVN_EDITOR`` is set to a valid editor.
 - Cancel a commit: ``$ svn revert <file>``
 
-## Checking out the the feynman_svn/feynman_ext_repo
+** Checking out the the feynman_svn/feynman_ext_repo **
+
 For **Linux**: 
 - Before checking out the SVN repo, the private key (SSH) of the client needs to match the public key on the SVN server. Easiest way is to take the private key from PuTTy (eg. ``id_rsa.pem`` or ``.openssh``) and copy it to ``.ssh/id_rsa`` and the public key can be copied to ``.ssh/id_rsa.pub``
 
@@ -142,24 +145,25 @@ svn list svn+ssh://svn@54.254.226.43/home/svn/repos/feynman_svn
 svn checkout svn+ssh://svn@54.254.226.43/home/svn/repos/feynman_svn
 ```
 
-# ROOT ACCESS
-- **##Root login is COMPLETELY PROHIBITED##** unless absolutely necessary in very few cases, since it is a security threat.
+## ROOT ACCESS
+   
+- **Root login is COMPLETELY PROHIBITED** unless absolutely necessary in very few cases, since it is a security threat.
 - Please do not start any VNC Servers as root, which is a security threat as well.
 - Instead, all root actions are done using ``sudo`` accounts.
-- There are currently two ``sudoer``'s : ``admin`` and ``admin2``
-- After login in as ``admin/admin2``, if you need to run any command as root, simply precede the command with ``sudo``, eg:
+- After login in with the sudoer account, if you need to run any command as root, simply precede the command with ``sudo``, eg:
 ```bash
 $sudo <command>
 ```
 
-## Making an existing user a 'sudoer'
+** Making an existing user a *sudoer* **
+   
 - Login in as root and uncomment the wheel group from /etc/sudoer: ``#visudo``
 - ``%wheel  ALL=(ALL)  ALL `` 
  - NOTE The % sign is NOT a comment. 
 - Add the user (say ``admlocal``) to the group wheel: 
  - ``#usermod -aG wheel admlocal``
 
-# USER ACCOUNTS
+## USER ACCOUNTS
 
 User accounts are broadly divided into three types:
 - ``admin``: Administrator accounts with ``sudo`` capacity. Home directories reside in ``/home/NIS/administrator``.
@@ -206,9 +210,10 @@ The CSV file can be exported directly from a Excel file that is currently in the
 
 You can create single user using the above file as well.
 
-**NOTE**: Currently, ``buseradd`` script does not have any command line arguments so the script needs to be modified for different options. This will be fixed in future.
+**FIXME**: The above description of buseradd needds to be updated to match the changes in the script.
 
-## Limiting Hardisk Usage with 'quota' (Not yet immplemented)
+** Limiting Hardisk Usage with *quota* ** (Not yet immplemented)
+   
 - First the mount point (eg. ``/HOME``) needs to be enabled for quote. See the following [link](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/6/html/storage_administration_guide/ch-disk-quotas) for instructions to create a "quotad" mount point. Basic steps are:
  - Enable quotas in the main server's (VLSI-SRV-001) ``/etc/fstab``:
   - ``/dev/mapper/VolGroup03-LogVol00_home            /HOME           ext4    defaults,usrquota,grpquota      1 2``
@@ -219,17 +224,9 @@ You can create single user using the above file as well.
   - Generate the diskusage table: ``#quotacheck -vug /HOME``
  - Assign quotas per user:``edquota <username>``
 
-# VNC SERVER
+## VNC SERVER
 
-Currently, the following vncservers are automatically started for the following user (Config file: ``/etc/sysconfig/vncservers``:
-
-```bash
-:10	SR
-:11     PR	
-:12	SS
-:14	DN
-:15	DT
-```
+Currently, vncservers are automatically started for some users ( Check Config file: ``/etc/sysconfig/vncservers`` in VLSI-SRV-002
 
 - To start a VNC server manually, first set a ONE-TIME-ONLY password:
  - ``vncpasswd``
@@ -242,19 +239,24 @@ Currently, the following vncservers are automatically started for the following 
  - ``vncserver -kill :10``
 - To list the current servers you are running: ``vncserver -list``
 
-# /CAD/apps
+## /CAD/apps
+   
 Local scripts, modulefiles, config, etc are maintained in ``/CAD/apps`` which is also maintained on github at ``https://github.com/silicon-vlsi/cad-apps``.
 
 In order to clone it at a different place:
 - ``git clone https://github.com/silicon-vlsi/cad-apps``
 - Ask sysadmin for email/passwd to clone it.
 
-# ENVIRONMENT VARIABLES
-- Common environment variables are set in ``/CAD/apps/etc/silicon.csh`` which is soft linked to ``/etc/profile.d/silicon.csh``. **NOTE** This script gets executed twice so you have to make sure you do a conditional statement when //appending// environment variables.
+## ENVIRONMENT VARIABLES
+
+FIXME: This section needs to be updated.
+   
+- Common environment variables are set in ``/CAD/apps/etc/silicon.csh`` which is soft linked to ``/etc/profile.d/silicon.csh``. **NOTE** This script gets executed twice so you have to make sure you do a conditional statement when *appending* environment variables.
 - All tool and project based environment are loaded using the opensource linux software ``module``.
 - The the setup files for all the tools and the projects are in ``/CAD/apps/modulefiles``
 - For help type ``module``
 - To see all the available modules available:
+   
 ```bash
 $module avail
 
@@ -269,11 +271,13 @@ tools/EXT/15-14                   tools/RC/142
 ```
 
 - To load a particular module eg. ``tools/IC/616``
+   
 ```bash
 $module load tools/IC/616
 ```
 
 - To list loaded modules:
+   
 ```bash
 $module list
 ```
@@ -288,7 +292,7 @@ $module show project/cad-analog/1.0
 $module unload project/cad-analog/1.0
 ```
 
-# BACKUP/Archives
+## BACKUP/Archives
 
 - Currently backups are run weekly (Sunday 4am) and Monthly (Month 1st) from ``VLSI-SERV-001`` to ``VLSI-NAS-001``
 - Backup script ``/CAD/apps/bin/rsync2nas`` is run with the weekly and monthly option using ``crontab`` from the ``root`` account. In order to list all the commands in ``root``'s ``crontab``:
@@ -301,7 +305,8 @@ $module unload project/cad-analog/1.0
 - And ``tar2nas`` is run by a ``crontab`` in the NAS server's ``root`` account. **FIXME** Backup ``~/scripts``.
 - Temporary data can be archived in ``VLSI-SRV-002:/home/local/archive``
 
-# FLEXNET LICENSE SERVER (CADENCE/MENTOR)
+## FLEXNET LICENSE SERVER (CADENCE/MENTOR)
+   
 - **Cadence License Documentation** at ``$CDSDOC/license`` or ``/CAD/IC616/doc/license`` [Link-to-PDF](https://www.dropbox.com/s/ou3vda9vpjtnsys/license.pdf)
 - **Mentor License Manual** [PDF](https://www.dropbox.com/s/7fii27aj97gow26/mgc_licen.pdf)
 - Mentor AppNote MG576233 : Scripts for starting license server [PDF](https://www.dropbox.com/s/x5cnh4ubot5ahpz/AppNote-LicAutoStart.pdf PDF)
@@ -356,65 +361,6 @@ DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin
  - ``restart``: restarts the server
  - ``lmver``: Version of flexnet
 
-**THE SCRIPT (eg. cdslic)**
-
-```bash
-#! /bin/sh
-#
-# DON'T REMOVE the #  below.
-# chkconfig: 345 99 30
-#
-# description: Starts and stops the Cadence License Server
-
-PATH=/sbin:/usr/sbin:/usr/bin:/bin
-export PATH
-LM_LICENSE_FILE_CDS=/CAD/licenseServers/cadence/license-current.dat
-export LM_LICENSE_FILE_CDS
-LIC_SW_HOME=/CAD/licenseServers/cadence/lmtools-v11-7-0-0
-export LIC_SW_HOME
-LIC_LOGFILE=/var/tmp/lmgrd.log
-export LIC_LOGFILE
-
-# Source networking configuration.
-. /etc/sysconfig/network
-
-# Check that networking is up.
-[ ${NETWORKING} = "no" ] && exit 0
-
-# Check that license file  exists.
-[ -f $LM_LICENSE_FILE_CDS ] || exit 0
-
-# See how we were called.
-
-case "$1" in
-  start)
-
-        # Note: The su line must not be divided by line continuation (\)
-        # in this example, the line is word wrapped, but it is one line
-
-        echo -n "Starting Cadence License Server: "
-        su -c "$LIC_SW_HOME/bin/lmgrd -c $LM_LICENSE_FILE_CDS -L +$LIC_LOGFILE" cdslic
-        echo ""
-        ;;
-  stop)
-        echo "Shutting down Cadence License Server: "
-        $LIC_SW_HOME/bin/lmdown -q -force -c $LM_LICENSE_FILE_CDS
-        echo ""
-        ;;
-  status)
-        $LIC_SW_HOME/bin/lmstat -a -c $LM_LICENSE_FILE_CDS
-        echo ""
-        ;;
-  restart)
-        echo "Restarting the Cadence License Server: "
-        $0 stop
-        $0 start
-        ;;
-  -)
-        echo "Usage: cdslic {start|stop|restart|status}"
-        
-```
-
 **RELEASING UNUSED LICENSES**
 
 - In order to check-in licenses that are sitting idle for a period of time, a file named in the format ``<vendor-daemon>.opt``, ``cdslmd.opt`` and ``mgcld.opt`` are placed in ``/CAD/licenseServers/cadence`` and ``/CAD/licenseServers/mentor`` for Cadence and Menotr repectively, with the following option:
@@ -451,8 +397,10 @@ $setenv CDS_LIC_LICENSE 5280@VLSI-SRV-001
 $set path (/CAD/IC616/tools.lnx86/bin:$path)
 ```
 
-# SETTING UP PROJECT AREA
+## SETTING UP PROJECT AREA
 
+FIXME: This section needs to be updated.
+   
 ** SETTING UP siproj FOR A NEW PROJECT**
 
 - Create the new project entry in ``/CAD/apps/bin/proj.list``
@@ -487,9 +435,10 @@ FIXME
 $cadstart
 ```
 - To simply ``cd`` or ``pushd`` to a project area, type ``cdproj`` or ``pdproj`` respectively.
-- More information on creating the XFab project can be found in this [[[:cad:xfab600nm|wiki page]]]
 
-# SETTING UP A NEW LINUX WORKSTATIONS
+
+## SETTING UP A NEW LINUX WORKSTATIONS
+   
 After loading a OS [Redhat/CentOS] on a new workstation, we need to setup the following:
 -*NOTE**: For CentOS, choose **desktop** installation when given various options eg. (server, LAMP, desktop, etc.)
 - Setup the Network
@@ -500,33 +449,35 @@ After loading a OS [Redhat/CentOS] on a new workstation, we need to setup the fo
 - For CentOS: install additional libraries for functional Cadence.
 
 Follow these steps for the above configuration:
-- **NETWORK SETUP:**
- - Type the command: 
-  - ``#system-config-network`` (You can use GUI from the main drop down menu):
+
+**NETWORK SETUP:**
+
+- ``#system-config-network`` (You can use GUI from the main drop down menu):
   - First select **``Device Configuration``** and select the appropriate device eg. ``eth1``
-   - Static IP address: eg. ``192.168.6.50``
-   - Netmask: ``255.255.255.0``
-   - Gateway: ``192.168.6.126``
-   - Primary DNS: ``8.8.8.8``
-   - Secondary DNS: ``8.8.4.4``
-   - DNS search path: vlsi.silicon
+  - Static IP address: eg. ``192.168.6.50``
+  - Netmask: ``255.255.255.0``
+  - Gateway: ``192.168.6.126``
+  - Primary DNS: ``8.8.8.8``
+  - Secondary DNS: ``8.8.4.4``
+  - DNS search path: vlsi.silicon
   - Then select **``DNS Configuration``**:
-   - Hostname: example ``dt-026``  
+  - Hostname: example ``dt-026``  
     - **NOTE** In some case the ``hostname`` does not get added to ``/etc/hosts`` resulting in a non-working. Add the ``hostname`` manually to ``/etc/hosts``.
-   - Primary DNS: ``8.8.8.8``
-   - Secondary DNS: ``8.8.4.4``
-   - DNS search path: vlsi.silicon
-- **NIS SETUP**:
- - Type the command:
- -  ``#authconfig-tui``
- - Select ``NIS`` and click //Next// and set the following:
- - Domain: ``NIS_Silicon``
- - Server: ``192.168.6.50``
-- **NFS MOUNT SETUP**:
- - First make a copy of the ``/etc/fstab``:
-  - ``#cp /etc/fstab /etc/fstab.orig``
- - Add the following to ``/etc/fstab``: You can use the editor ``nano`` eg
-  - ``#nano /etc/fstab``
+  - Primary DNS: ``8.8.8.8``
+  - Secondary DNS: ``8.8.4.4``
+  - DNS search path: vlsi.silicon
+   
+**NIS SETUP**
+   
+- ``#authconfig-tui``
+- Select ``NIS`` and click //Next// and set the following:
+- Domain: ``NIS_Silicon``
+- Server: ``192.168.6.50``
+   
+**NFS MOUNT SETUP**
+   
+- First make a copy of the ``/etc/fstab``:``#cp /etc/fstab /etc/fstab.orig``
+- Add the following to ``/etc/fstab``:
 
 ```bash
 192.168.6.50:/home/NIS  /home/NIS    nfs    noatime,rsize=32768,wsize=32768
@@ -536,43 +487,44 @@ Follow these steps for the above configuration:
 ```
 
 - Create the following directories: ``/CAD, /PDK, /home/NIS``
- - ``#mkdir /CAD``
- - ``#mkdir /PDK``
- - ``#mkdir /home/NIS``
- - Type ``#mount -a`` or ``reboot``
-- **ENVIRONMENT SETUP**
- - Common environments are in ``/CAD/apps/etc/silicon.csh``
- - Create the following link to load for all users:
+- Type ``#mount -a`` or ``reboot``
+
+**ENVIRONMENT SETUP**
+   
+- Common environments are in ``/CAD/apps/etc/silicon.csh``
+- Create the following link to load for all users:
   - ``#ln -s /CAD/apps/etc/silicon.csh /etc/profile.d/.``
 - **CREATE ``/local``** Local directory to store all temp data (eg. simulation)
- - ``#mkdir /local``
- - ``#chmod 775 /local``
- - ``#chgrp users /local``
- 
-## CentOS 6.7/6.10 Specific
+  - ``#mkdir /local``
+  - ``#chmod 775 /local``
+  - ``#chgrp users /local``
+   
+** CentOS 6.7/6.10 Specific **
+   
 - **Hostname not in /etc/hosts**
- - Some installations don't seem to have the ``hostname`` in ``/etc/hosts``. One of the problem created by it is: ``spectre`` stops with a ``gethostbyname failed`` error.
- - Another problem happens, when the IP Address and ``hostname`` not matches with the IP Adress and ``hostname`` in ``/etc/hosts``. For this the error comes as: ERROR (ADE-3036): "Error encountered during simulation"
- - The only way to fix it, it seems, is to manually add the hostname to ``/etc/hosts`` eg. ``192.168.6.57  DT-007``. You can also add the hostname to other entries eg. ``localhost``, etc
+- Some installations don't seem to have the ``hostname`` in ``/etc/hosts``. One of the problem created by it is: ``spectre`` stops with a ``gethostbyname failed`` error.
+- Another problem happens, when the IP Address and ``hostname`` not matches with the IP Adress and ``hostname`` in ``/etc/hosts``. For this the error comes as: ERROR (ADE-3036): "Error encountered during simulation"
+- The only way to fix it, it seems, is to manually add the hostname to ``/etc/hosts`` eg. ``192.168.6.57  DT-007``. You can also add the hostname to other entries eg. ``localhost``, etc
 - **CYBEROAM LOGIN**
- - The following steps require internet connection so make sure syberroam is up and you have logged in with your credential.
+- The following steps require internet connection so make sure syberroam is up and you have logged in with your credential.
 
 - **Environment management tool ``module``** is not installed by default. Install it:
- - ``#yum install environment-modules``
+  - ``#yum install environment-modules``
 - **Korn shell** is required for Cadence Virtuoso which is not installed.
- - ``#yum install ksh``
+  - ``#yum install ksh``
 - **MISSING LIBS**: 
- - While invoking ``virtuoso``, got an error regarding no ``/lib/ld-linux.so.2``. 
- - Using the command ``$yum provides ld-linux.so.2`` indicated, the package ``glibc-2.12-1.212.el6.i686`` so installed it:
+  - While invoking ``virtuoso``, got an error regarding no ``/lib/ld-linux.so.2``. 
+  - Using the command ``$yum provides ld-linux.so.2`` indicated, the package ``glibc-2.12-1.212.el6.i686`` so installed it:
   - ``#yum install glibc.i686`` (Maybe installed in 6.10)
- - ``virtuoso`` also needed ``libXp.so.6`` so installed:
+  - ``virtuoso`` also needed ``libXp.so.6`` so installed:
   - ``#yum install libXp.x86_64``
   - **NOTE**: ``$yum provides libXp.so.6`` indicated package ``libXp-1.0.2-2.1.el6.i686`` but ``virtuoso`` returned an error as ``Wrong Classs: ECLASS32``. So installed 
-   - ``#yum install libXp.x86_64`` and it worked!!
- - Currently Assura-QRC works only in IC617 setup (see the module file ``project/cad-xfab/xc06m3-qrc``). RCX wasn't running in CentOS because of a missing 32-bit library ``libelf.so.1`` (See this [https://support.cadence.com/apex/ArticleAttachmentPortal?id=a1Od0000000nVSNEA2&pageName=ArticleContent Cadence-Support Link]). Tried to find the library and include it in ``LD_LIBRARY_PATH`` but could not, so re-installed the package:
+  - ``#yum install libXp.x86_64`` and it worked!!
+  - Currently Assura-QRC works only in IC617 setup (see the module file ``project/cad-xfab/xc06m3-qrc``). RCX wasn't running in CentOS because of a missing 32-bit library ``libelf.so.1`` (See [Cadence-Support Link](https://support.cadence.com/apex/ArticleAttachmentPortal?id=a1Od0000000nVSNEA2&pageName=ArticleContent ) ). Tried to find the library and include it in ``LD_LIBRARY_PATH`` but could not, so re-installed the package:
   - ``#yum install elfutils-libelf.i686``
 
 - **MISSIGN FONTS**: On starting ``virtuoso``, following warning about missing fonts
+   
 ```bash
 *WARNING* Unable to find font name: "-*-courier-medium-r-*-*-12-*".
 *WARNING* Cannot find textFont.  Trying font "fixed".
@@ -583,14 +535,15 @@ Follow these steps for the above configuration:
 ```
 - Load the following font package ``xorg-x11-fonts-ISO8859-1-75dpi``:
  - ``#yum install xorg-x11-fonts-ISO8859-1-75dpi``
- - For detailed troubleshooting of fonts issues, check this [*https://support.cadence.com/apex/ArticleAttachmentPortal?id=a1Od0000000nYq6EAE&pageName=ArticleContent&sq=0050V000006mDk8QAE_2018725791911 link] on support.cadence.com **NOTE** Credentials required.
+ - For detailed troubleshooting of fonts issues, check this [ [link](https://support.cadence.com/apex/ArticleAttachmentPortal?id=a1Od0000000nYq6EAE&pageName=ArticleContent&sq=0050V000006mDk8QAE_2018725791911) ] on support.cadence.com **NOTE** Credentials required.
 
 - **YUM UPDATE**:
- - Once the system is ready with all the packages, we need to do a system update:
-  - ``#yum update``
-  - **NOTE**: If one or more packages are not installing (eg. firefox..., java...), you can exclude them: ``#yum update --exclude=firefox* --exclude=java*``
+- Once the system is ready with all the packages, we need to do a system update:
+- ``#yum update``
+- **NOTE**: If one or more packages are not installing (eg. firefox..., java...), you can exclude them: ``#yum update --exclude=firefox* --exclude=java*``
 
-### Checking and Completing CentOS 6.10 Installation Automatically.
+** Checking and Completing CentOS 6.10 Installation Automatically **
+   
 - All the above steps (after NFS mount) has been automated by a shell script.
 - **AFTER** creating the ``/CAD, /PDK, /home/NIS`` mounts and successfully mounting it, you can run the following scripts to complete the rest of the installation:
- - ``/CAD/apps/bin/finish-centos610-inst``
+- ``/CAD/apps/bin/finish-centos610-inst``
