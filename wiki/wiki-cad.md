@@ -15,4 +15,4 @@ This section contains the instruction to setup open-source CAD tools (ngspice, S
 - Here are some of the essential steps:
   - Download and install Virtual Box (with default settings) from http://virtualbox.org
   - Download the 64-bit Linux LXLE Iso Image from http://www.lxle.net/download (eg. lxle-18043-64.iso). **NOTE** The CAD tools are all compiled for 64-bit OS.
-  - Start Virtual Box and click **New** and follow the steps to complete the installation. Check the above [doc]((https://www.dropbox.com/s/2lovix0ntsw8yfw/2020-0917-Open%20Source%20EDA%20Setup.pdf)
+  - Start Virtual Box and click **New** and follow the steps to complete the installation. Check the above [doc](https://www.dropbox.com/s/2lovix0ntsw8yfw/2020-0917-Open%20Source%20EDA%20Setup.pdf)
