@@ -348,8 +348,8 @@ DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin
  - ``useradd -u 65535 -g 65534 -d / -s /bin/sh -c "License Server" cdslic`` The account has same group ID as user 'nobody', which limits the acess to system and network resources. Strongly advised not make this a NIS user account.
  - As root change the password to a strong one.
  - Since this is a non-priviledged user, make sure it can access the license file in read mode and the log file in read-write mode.
- - Therefore, change the group of the log file ``/var/tmp/lmgrd.log`` to ``cdslic`` ie.:
- - ``#chgrp cdslic /var/tmp/lmgrd.log``
+ - Therefore, change the group of the log file ``/var/tmp/lmgrd.log`` to ``65534`` ie.:
+ - ``#chgrp 65534 /var/tmp/lmgrd.log``
 - Add the scripts ``cdslic/mgclic`` (Cadence/Mentor) in ``/etc/init.d`` and
 - change the permissions to ``rwxr-xr-x``: ``#chmod 755 /etc/init.d/[cdslic/mgclic]``
 - ``cd /etc/init.d`` and add the run level info to the system services ``#/sbin/chkconfig --add [cdslic/mgclic]``
