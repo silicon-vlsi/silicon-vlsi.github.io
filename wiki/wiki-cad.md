@@ -19,7 +19,7 @@ This section contains the instruction to setup open-source CAD tools (ngspice, S
 
 **DOWNLOAD AND SETUP THE CAD TOOLS**
 
-[YouTube Link](https://www.youtube.com/watch?v=GUHCrM-v24w) demonstrating the download and install of the following tools:
+[**YouTube Link**](https://www.youtube.com/watch?v=GUHCrM-v24w) demonstrating the download and install of the following tools:
 
 - [**NGSPICE**](https://github.com/silicon-vlsi-org/eda-ngspice): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-ngspice#downloading-&-setting-up-ngspice).
 - [**SUE2**](https://github.com/silicon-vlsi-org/eda-sue2Plus): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-sue2Plus)
