@@ -18,6 +18,9 @@ This section contains the instruction to setup open-source CAD tools (ngspice, S
   - Start Virtual Box and click **New** and follow the steps to complete the installation. Check the above [doc](https://www.dropbox.com/s/2lovix0ntsw8yfw/2020-0917-Open%20Source%20EDA%20Setup.pdf)
 
 **DOWNLOAD AND SETUP THE CAD TOOLS**
+
+[YouTube Link](https://www.youtube.com/watch?v=GUHCrM-v24w) demonstrating the download and install of the following tools:
+
 - [**NGSPICE**](https://github.com/silicon-vlsi-org/eda-ngspice): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-ngspice#downloading-&-setting-up-ngspice).
 - [**SUE2**](https://github.com/silicon-vlsi-org/eda-sue2Plus): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-sue2Plus)
 - [**XSCHEME**](https://github.com/silicon-vlsi-org/eda-xschem): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-xschem#downloading-&-setting-up-xschem)
