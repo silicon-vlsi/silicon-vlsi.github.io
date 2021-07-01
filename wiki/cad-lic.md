@@ -1,3 +1,142 @@
+### CADENCE
+
+**UG Bundle/40-Users**
+
+**IC PRODUCTS**
+
+```bash
+########################## LICENSE KEYS END HERE ######################
+##     PRODUCT TO FEATURE MAPPING
+########################################################################
+########################### for  [REGULAR] products #################
+#
+# Product Id  : 29651,  [Version: 15.2]
+# Product Name: Incisive Enterprise Simulator - XL
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: Affirma_sim_analysis_env       [Version: 15.2] [Feature Qty Per Product: 1]
+#   Feature: Incisive_Desktop_Manager       [Version: 15.2] [Feature Qty Per Product: 1]
+#   Feature: Incisive_Enterprise_Simulator  [Version: 15.2] [Feature Qty Per Product: 1]
+#   Feature: Incisive_P2C_Methodology       [Version: 15.2] [Feature Qty Per Product: 1]
+#   Feature: Incisive_Specman_interactive   [Version: 15.2] [Feature Qty Per Product: 1]
+#   Feature: Incisive_Verif_Environ         [Version: 15.2] [Feature Qty Per Product: 1]
+#   Feature: VERILOG-XL                     [Version: 15.2] [Feature Qty Per Product: 1]
+#
+# Product Id  : 3003,  [Version: 20.1]
+# Product Name: Virtuoso Digital Implementation XL
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: Encounter_C                    [Version: 20.1] [Feature Qty Per Product: 1]
+#   Feature: Virtuoso_Digital_Implem_XL     [Version: 20.1] [Feature Qty Per Product: 1]
+#
+# Product Id  : 70020,  [Version: 15.2]
+# Product Name: AMS Designer with Flexible Analog Simulation
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: AMS_Designer_Link              [Version: 15.2] [Feature Qty Per Product: 1]
+#   Feature: Affirma_sim_analysis_env       [Version: 15.2] [Feature Qty Per Product: 1]
+#
+# Product Id  : 90004,  [Version: 19.1]
+# Product Name: Spectre Multi-mode Simulation
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: Affirma_sim_analysis_env       [Version: 19.1] [Feature Qty Per Product: 3]
+#   Feature: Virtuoso_APS_MMSIM_Lk          [Version: 19.1] [Feature Qty Per Product: 6]
+#   Feature: Virtuoso_Multi_mode_Simulation [Version: 19.1] [Feature Qty Per Product: 6]
+#   Feature: Virtuoso_Spectre_GXL_MMSIM_Lk  [Version: 19.1] [Feature Qty Per Product: 6]
+#   Feature: Virtuoso_XPS_MMSIM_Lk          [Version: 19.1] [Feature Qty Per Product: 6]
+#
+# Product Id  : 95115,  [Version: 6.1.8]
+# Product Name: Virtuoso(R) Schematic Editor XL
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: 111                            [Version: 6.18] [Feature Qty Per Product: 1]
+#   Feature: 940                            [Version: 6.18] [Feature Qty Per Product: 1]
+#   Feature: 945                            [Version: 6.18] [Feature Qty Per Product: 1]
+#   Feature: Virtuoso_Schematic_Editor_XL   [Version: 6.18] [Feature Qty Per Product: 1]
+#
+# Product Id  : 95210,  [Version: 6.1.8]
+# Product Name: Virtuoso(R) Analog Design Environment XL
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: 111                            [Version: 6.18] [Feature Qty Per Product: 1]
+#   Feature: Analog_Design_Environment_XL   [Version: 6.18] [Feature Qty Per Product: 1]
+#
+# Product Id  : 95310,  [Version: 6.1.8]
+# Product Name: Virtuoso(R) Layout Suite XL
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: 111                            [Version: 6.18] [Feature Qty Per Product: 1]
+#   Feature: Virtuoso_Layout_Suite_XL       [Version: 6.18] [Feature Qty Per Product: 1]
+#
+# Product Id  : 96210,  [Version: 19.1]
+# Product Name: Cadence(R) Physical Verification System Design Rule Checker 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: 111                            [Version: 6.18] [Feature Qty Per Product: 1]
+#   Feature: Phys_Ver_Sys_DRC_XL            [Version: 19.1] [Feature Qty Per Product: 1]
+#   Feature: Phys_Ver_Sys_Results_Mgr       [Version: 19.1] [Feature Qty Per Product: 1]
+#
+# Product Id  : 96220,  [Version: 19.1]
+# Product Name: Cadence(R) Physical Verification System Layout vs. Schematic
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: 111                            [Version: 6.18] [Feature Qty Per Product: 1]
+#   Feature: 206                            [Version: 19.1] [Feature Qty Per Product: 1]
+#   Feature: Phys_Ver_Sys_LVS_XL            [Version: 19.1] [Feature Qty Per Product: 1]
+#   Feature: Phys_Ver_Sys_Results_Mgr       [Version: 19.1] [Feature Qty Per Product: 1]
+#   Feature: plotVersa                      [Version: 19.1] [Feature Qty Per Product: 1]
+#
+# Product Id  : QRCX300,  [Version: 20.1]
+# Product Name: Cadence Quantus QRC Extraction - XL
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+# Licensed Rights:
+#   Start Date: 26-may-2020 Exp Date: 10-jul-2020   Product Qty: 40 Type: Floating
+#   Product Comments: 
+#   Feature: DFM_Core_Technology            [Version: 20.1] [Feature Qty Per Product: 1]
+#   Feature: Virtuoso_QRC_Extraction_XL     [Version: 20.1] [Feature Qty Per Product: 1]
+```
+
+
+
 
 ### MENTOR
 
