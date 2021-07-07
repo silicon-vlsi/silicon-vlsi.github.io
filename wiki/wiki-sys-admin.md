@@ -6,7 +6,7 @@ sort: 1
 This wiki contains all the details (except the private and propreitary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
 
 ## COMPUTING INFRASTRUCTURE
-![Computing Infra](Computing-infrastructure.png) FIXME: Put image here
+![Computing Infra](IT-infra.png) 
 
 | **Name** | **IP Address** | **Hardware** | **OS** | **Location** | **Purpose** |
 | VLSI-SERV-001 | 192.168.6.50 | Xeon/4C/2.5GHz/16Gb | Redhat 6 | Server Room | File Server |
