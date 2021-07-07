@@ -220,12 +220,18 @@ You can create single user using the above file as well.
  - Enable quotas in the main server's (VLSI-SRV-001) ``/etc/fstab``:
   - ``/dev/mapper/VolGroup03-LogVol00_home            /HOME           ext4    defaults,usrquota,grpquota      1 2``
  - Remount the file system: unmount and mount
- - Make sure the /etc/fstabs of the NFS clients are updated with the mount point. **NOTE** You don't need to assign the usrquota and grpquota options in the NFS clients.
+ - Make sure the ``/etc/fstabs`` of the NFS clients are updated with the mount point. **NOTE** You don't need to assign the usrquota and grpquota options in the NFS clients.
  - Create the quota database files and generate the disk usage table:
   - Create the quota files: ``#quotacheck -cug /HOME``
   - Generate the diskusage table: ``#quotacheck -vug /HOME``
  - Assign quotas per user:``edquota <username>``
 
+### NIS SERVER
+**MIGRATING NIS SERVER**
+- [Check this serverfault.com post](https://serverfault.com/questions/503363/how-do-i-replace-an-nis-master-server)
+- [Copying passwords, etc](https://serverfault.com/questions/583332/copying-linux-users-and-passwords-to-a-new-server)
+
+   
 ## VNC SERVER
 
 Currently, vncservers are automatically started for some users ( Check Config file: ``/etc/sysconfig/vncservers`` in VLSI-SRV-002
