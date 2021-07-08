@@ -233,14 +233,27 @@ You can create single user using the above file as well.
    The description below is for migrating our local NIS server (RHEL 6) to am AWS Lightsail instance (CentOS 7). But most of it is applicaple to other systems as well.
   
 - First started with this [post](https://serverfault.com/questions/503363/how-do-i-replace-an-nis-master-server).
-- Migrating ``passwd/groups/shadow/gshadow`` (Mostly manual but some automation can be followed from this [post](https://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/) ).
+- **Migrating** ``passwd/groups/shadow/gshadow`` (Mostly manual but some automation can be followed from this [post](https://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/) ).
 - Tranferred all the ``/etc`` stuff to the AWS instance and created temp files ``passwd.mig`` etc.
    - ```awk -v LIMIT=500 -F: '($3>=LIMIT) && ($3!=65534)' passwd > passwd.mig``` This ensures no system accounts are duplicated. Double check manually.
    - ```sudo cat shadow > shadow.mig``` and edit to make sure the same users as in ``passwd``
    - ```awk -v LIMIT=500 -F: '($3>=LIMIT) && ($3!=65534)' group > group.mig``` **NOTE** the ``users`` group got skipped so had to add manually.
    - ```sudo cat gshadow > gshadow.mig``` and edit to make sure the same users as in ``gpasswd``
-   - ```cd / ; sudo tar -czvf ~/baks/etcpasswd.tgz
-- [Copying passwords, etc](https://serverfault.com/questions/583332/copying-linux-users-and-passwords-to-a-new-server)
+   - ```cd /etc ; sudo tar -czvf ~/baks/etcpasswd.tgz passwd groups shadow gshadow yp.conf ypserv.conf``` : Backup before adding the new data.
+   - ```sudo vim /etc/passwd``` and append ``passwd.mig``
+   - ```sudo vim /etc/group``` and append ``group.mig``
+   -```sudo chmod 600 /etc/shadow; sudo vim /etc/shadow```, append ``shadow.mig`` and ``chmod 000 /etc/shadow``
+   -```sudo chmod 600 /etc/gshadow; sudo vim /etc/shadow```, append ``gshadow.mig`` and ``chmod 000 /etc/gshadow``
+   - Check the migration by trying to login as one of the migrated user eg. ``su <user>``
+- **SETTING UP NIS SERVER**
+   - If not installed, install ``ypserv, ypbind`` : ```sudo yum install ypserv ypbind```
+   - Set ``chkconfig`` to start at boot: ```sudo chkconfig ypserv/ypbind on```
+   - Backup up ```/var/yp```
+   - Copy all the contents of old ``/var/yp`` to the new server.
+     - Had to change ``YPBINDIR = /usr/lib/yp`` TO ``YPBINDIR = /usr/lib64/yp``
+     - Updated ``/var/yp/ypservers`` with the IP address of the current server.
+   - Setup the local ``ypbind``: ```sudo authconfig-tui``` with 
+-[Copying passwords, etc](https://serverfault.com/questions/583332/copying-linux-users-and-passwords-to-a-new-server)
 
    
 ## VNC SERVER
