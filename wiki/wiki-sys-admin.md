@@ -252,10 +252,24 @@ You can create single user using the above file as well.
    - Copy all the contents of old ``/var/yp`` to the new server.
      - Had to change ``YPBINDIR = /usr/lib/yp`` TO ``YPBINDIR = /usr/lib64/yp``
      - Updated ``/var/yp/ypservers`` with the IP address of the current server.
-   - Setup the local ``ypbind``: ```sudo authconfig-tui``` with 
--[Copying passwords, etc](https://serverfault.com/questions/583332/copying-linux-users-and-passwords-to-a-new-server)
-
+   - Setup the local ``ypbind``: ```sudo authconfig-tui``` with ``NIS_Silicon`` as the domain and the IP address should be the local IP and **NOT** the public IP of the instance.
+     - Alternatively you can add the config line ```domain NIS_Silicon server 172.26.5.80``` in the ``/etc/yp.conf``
+   - Run the makefile : ```sido make -C /var/yp```
+   - check the domain name ```domainname``` and it should output ```NIS_Silicon```
+   - Check the NIS server ```ypwhich``` and it should output the hostname eg. ``ip-172-26-5-80.ap-southeast-1.compute.internal``
+   - Check if you can query the passwd and group : ```ypcat passwd``` and ```ypcat group```
+   - **IMPORTANT** Login to the AWS Lightsail dashboard and from the Networking tab of the instance, open the following ports:
+     - ```TCP:111,834,998``` and ```UDP:111,834,995```
+     - TCP:998 and UDP:995 found it from the ypserv port by typing ```rpcinfo -p``` on the new server. The client still could not connect. This [post](https://docs.oracle.com/cd/E37670_01/E41138/html/ch22s05s02.html) suggested the other two and that worked!!
    
+- **SETTING UP THE CLIENT**
+   - ```sudo authconfig-tui``` and set domain to ``NIS_Silicon`` and server to the public IP address of the instance.
+   - You can manually configure it as:
+     - add ``NISDOMAIN=NIS_Silicon`` in ``/etc/sysconfig/network``
+     - add ``domain NIS_Silicon server <public IP od AWS>`` to ``/etc/yp.conf``
+     - Make sure the following lines contain ``nis`` as an option in the file ``/etc/nsswitch.conf`` file: ``passwd: files nis`` ``shadow: files nis`` ``group: files nis`` ``hosts: files nis``  ``dns networks: files nis``  ``protocols: files nis``  ``publickey: nisplus``  ``automount: files nis``  ``netgroup: files nis``  ``aliases: files nisplus``
+   - To start and stop the ``ypbind`` service: ``sudo service ypbind start/stop/status``
+
 ## VNC SERVER
 
 Currently, vncservers are automatically started for some users ( Check Config file: ``/etc/sysconfig/vncservers`` in VLSI-SRV-002
