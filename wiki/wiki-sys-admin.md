@@ -227,8 +227,19 @@ You can create single user using the above file as well.
  - Assign quotas per user:``edquota <username>``
 
 ### NIS SERVER
+   
 **MIGRATING NIS SERVER**
-- [Check this serverfault.com post](https://serverfault.com/questions/503363/how-do-i-replace-an-nis-master-server)
+   
+   The description below is for migrating our local NIS server (RHEL 6) to am AWS Lightsail instance (CentOS 7). But most of it is applicaple to other systems as well.
+  
+- First started with this [post](https://serverfault.com/questions/503363/how-do-i-replace-an-nis-master-server).
+- Migrating ``passwd/groups/shadow/gshadow`` (Mostly manual but some automation can be followed from this [post](https://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/) ).
+- Tranferred all the ``/etc`` stuff to the AWS instance and created temp files ``passwd.mig`` etc.
+   - ```awk -v LIMIT=500 -F: '($3>=LIMIT) && ($3!=65534)' passwd > passwd.mig``` This ensures no system accounts are duplicated. Double check manually.
+   - ```sudo cat shadow > shadow.mig``` and edit to make sure the same users as in ``passwd``
+   - ```awk -v LIMIT=500 -F: '($3>=LIMIT) && ($3!=65534)' group > group.mig``` **NOTE** the ``users`` group got skipped so had to add manually.
+   - ```sudo cat gshadow > gshadow.mig``` and edit to make sure the same users as in ``gpasswd``
+   - ```cd / ; sudo tar -czvf ~/baks/etcpasswd.tgz
 - [Copying passwords, etc](https://serverfault.com/questions/583332/copying-linux-users-and-passwords-to-a-new-server)
 
    
