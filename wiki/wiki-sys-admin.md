@@ -94,8 +94,20 @@ You can use the script ``/CAD/apps/bin/tar2nas`` for the above function.
 #scp <src-file> vlsi-admin@192.168.5.11:/srv/dev-disk-by-label-sg2tb/<dir>/<file>
 ```
 
-**Logical Volume Management**
+**LOGICAL VOLUME MANAGEMENT (LVM)**
    
+**FREQUENTLY USED COMMANDS**
+
+- ``lsblk`` : Lists the tree structure of all storage
+- ``vgdisplay <LVGROUP>`` : Displays all details of the LV GROUP
+- ``sudo lvcreate -L 1T -n lv_home <LVGROUP>`` : Creates a Logical Volume of 1 TB named ``lv_home``.
+- ``sudo mkfs /dev/LVGROUP/lv_name`` : Creates an ``ext4`` filesystem.
+- To resize a LVM: (**NOTE** When downsizing the volume, all data was LOST. So BACKUP!. FIXME: Check the same for upsizing.)
+  - ``sudo umount <mount dir>
+  - ``sudo lvchange -an LVGROUP/lv_name``
+  - ``sudo lvresize -L +100G LVGROUP/lv_name``
+  - ``sudo lvchange -ay LVGROUP/lv_name``
+
 ## SUBVERSION
 
 **Setting up a Subversion Server**
