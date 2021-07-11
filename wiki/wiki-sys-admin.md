@@ -293,6 +293,12 @@ In order to clone it at a different place:
 - ``git clone https://github.com/silicon-vlsi/cad-apps``
 - Ask sysadmin for email/passwd to clone it.
 
+**NOTE** On a new server when running git for the first time, you need to set:
+- ``git config --global user.name "Name" ``
+- ``git config --global user.email john@si.com``
+- If you get a **Error 403 while accessing URL....** when doing a ``git push``, try:
+   - ``git remote set-url origin "https://<github-username/>@github.com/github-username/github-repository-name.git``
+   
 ## ENVIRONMENT VARIABLES
 
 FIXME: This section needs to be updated.
