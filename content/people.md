@@ -16,7 +16,6 @@ sort: 3
 
 - **Mr. Prasant Swain**, *Technical Asst.* • M.Tech (graduating), B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
-- **Ms. Ayesha Swain**, *Technical Asst.* • B.Tech, BPUT-Rourkela • 10 years of Academic experience • 1 years of Industry experience • Area of Interest: Digital VLSI Design. Embedded Systems Design
 
 ## Current Students
 - **Ajit Kumar Patro**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github)
