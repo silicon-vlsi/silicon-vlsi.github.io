@@ -610,14 +610,14 @@ Follow these steps for the above configuration:
 - **AFTER** creating the ``/CAD, /PDK, /home/NIS`` mounts and successfully mounting it, you can run the following scripts to complete the rest of the installation:
 - ``/CAD/apps/bin/finish-centos610-inst``
 
- ## TROUBLESHOOTING
+## TROUBLESHOOTING
+
  **SSH KEY ACCESS NOT WORKING**
+
  - After doing the migration, SSH acces using public key is not working.
  - This [article](https://stackoverflow.com/questions/20688844/sshd-gives-error-could-not-open-authorized-keys-although-permissions-seem-corre) has some detail sabout SELinux problems
  - Enabled the log in ``/etc/ssh/sshd_config`` to ``DEBUG3``
  - Wasn't able to read ``~/.ssh/authorized_keys`` even though all permissions was ok 
  - Disabled SELinux in ``/etc/selinux/config`` and still didn't work
- - Checked the local account admlocal and that worked!!
- - Changed permission of ``/home/srout`` to ``700`` and it worked !!
- - Now ``admlocal`` doesn't work!!
+ - removing ``.ssh`` and starting fresh seems to work.
  - Deleted ``/var/log/secure`` and now the log won't get updated. Noticed that the previous log file had dot in the end of the permission. So now copied a old secure file which had the dot and stilll won't update. Found from the web that I need to restart ``rsyslog``, ``sudo service rsyslog restart``
