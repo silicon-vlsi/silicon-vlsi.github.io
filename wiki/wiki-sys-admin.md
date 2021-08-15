@@ -621,3 +621,4 @@ Follow these steps for the above configuration:
  - Disabled SELinux in ``/etc/selinux/config`` and still didn't work
  - removing ``.ssh`` and starting fresh seems to work.
  - Deleted ``/var/log/secure`` and now the log won't get updated. Noticed that the previous log file had dot in the end of the permission. So now copied a old secure file which had the dot and stilll won't update. Found from the web that I need to restart ``rsyslog``, ``sudo service rsyslog restart``
+ - **SELINUX NOTE** When `tar`-ing a SELinux filesystem, try the `tar --selinux` option. Do some research on it.
