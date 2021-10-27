@@ -27,3 +27,29 @@ This section contains the instruction to setup open-source CAD tools (ngspice, S
 - [**MAGIC**](https://github.com/silicon-vlsi-org/eda-magic): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-magic#downloading-&-setting-up-magic)
 - [**NETGEN**](https://github.com/silicon-vlsi-org/eda-netgen): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-netgen#downloading-&-setting-up-netgen)
 - [**TECHNOLOGY**](https://github.com/silicon-vlsi-org/eda-technology): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-technology)
+
+## SETTING UP OPEN-SOURCE LAB on CLOUD (COSLab)
+
+The following instuction illustrates the steps to setup open-source EDA tools (ngspice, sue2, magic, netgen, etc.) on a Linux Virtual Machine in cloud. The steps illustrate **Ubuntu 18.04** with **LXDE display manager** on a [**Digital Ocean**](https://digitalocean.com) Droplet (VM).
+
+- Create a Virtual Machine (VM) or Droplet in Digital Ocean with password option for `root`.
+- Login to the instance as root using PuTTy (or anything equivalent).
+- Update the distro: `#apt update; apt upgrade`
+- create a user for admin purpose: `#adduser <user>`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
