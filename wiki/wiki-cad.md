@@ -36,6 +36,16 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
 - Login to the instance as root using PuTTy (or anything equivalent).
 - Update the distro: `#apt update; apt upgrade`
 - create a user for admin purpose: `#adduser <user>`
+- Give the user `sudo` power: `#usermod -a -G sudo <user>`
+- Install the **LXDE** Display Manager and it's depndencies+goodies: `#apt install lxde`
+  - This will create all the necessary configs and session in `/etc/X11` eg. `Xsession` etc.
+- Install the **tightvncserver**: `#apt install tightvncserver`
+- Install `wish` for `Sue2`:`apt install wish`
+- Test vncserver by loging in as the user and set the vnc password: `$vncpasswd`
+  - This will create `$HOME/.vnc` with a `xstartup` file with the LXDE Xsession.
+- Start the vncserver: `$vncserver -geometry 1280x720 :1`
+  - This will start the vncserver on port `5901` (5900+1)
+- ad
 
 
 
