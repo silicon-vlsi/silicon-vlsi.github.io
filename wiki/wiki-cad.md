@@ -45,7 +45,16 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
   - This will create `$HOME/.vnc` with a `xstartup` file with the LXDE Xsession.
 - Start the vncserver: `$vncserver -geometry 1280x720 :1`
   - This will start the vncserver on port `5901` (5900+1)
-- ad
+- Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
+- [noVNC](https://novnc.com) is a client that connect through a webbrowser without having to download a client app.
+  - git clone the [repo](https://github.com/novnc/noVNC)
+  - Use the `novnc_proxy` script to automatically download and start websockify: `./utils/novnc_proxy --vnc localhost:5901`
+  - Make sure the vncserver is running and the above script should output an URL that you can navigate to connect to the instance. Use the vnc password to authenticate. Rememeber to substitute the hostname with the Public IP.
+- Now clone all the EDA tools from github in the root location eg. `/cad`
+  
+- **RESOURCES**
+  - [Tutorial: Installing and configure VNC on Ubuntu 18-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
+  
 
 
 
