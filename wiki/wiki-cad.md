@@ -50,7 +50,9 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
   - git clone the [repo](https://github.com/novnc/noVNC)
   - Use the `novnc_proxy` script to automatically download and start websockify: `./utils/novnc_proxy --vnc localhost:5901`
   - Make sure the vncserver is running and the above script should output an URL that you can navigate to connect to the instance. Use the vnc password to authenticate. Rememeber to substitute the hostname with the Public IP.
-- Now clone all the EDA tools from github in the root location eg. `/cad`
+- Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
+- Add all the env variables in `/etc/skel/.bashrc`
+- **CREATE SNAPSHOT**
   
 - **RESOURCES**
   - [Tutorial: Installing and configure VNC on Ubuntu 18-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
