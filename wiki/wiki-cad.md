@@ -46,7 +46,13 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
 - Start the vncserver: `$vncserver -geometry 1280x720 :1`
   - This will start the vncserver on port `5901` (5900+1)
 - In order to automate the server launch on startup, followed the instruction from [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
-  - Create a service file for each user: ```bash sudo vim /etc/systemd/system/vncserver-user1@.service```
+  - Create a service file for each user (see above doc): ```$ sudo vim /etc/systemd/system/vncserver-user1@.service```
+  - Make system aware of the file: ```$ sudo systemctl daemon-reload```
+  - Enable the unit file (@1 is the display number): ```$ sudo systemctl enable vncserver@1.service```
+  - Start the service: ```$ sudo systemctl start vncserver@1```
+  - You can see the status: ```$ sudo systemctl status vncserver@1```
+  - Now it should start automatically on reboot.
+  - Follow above steps for wach user
 - Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
 - Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
 - Add all the env variables in `/etc/skel/.bashrc`
