@@ -28,7 +28,7 @@ This section contains the instruction to setup open-source CAD tools (ngspice, S
 - [**NETGEN**](https://github.com/silicon-vlsi-org/eda-netgen): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-netgen#downloading-&-setting-up-netgen)
 - [**TECHNOLOGY**](https://github.com/silicon-vlsi-org/eda-technology): See Download and Setup instruction in the [gitHub page](https://github.com/silicon-vlsi-org/eda-technology)
 
-## SETTING UP OPEN-SOURCE LAB on CLOUD (COSLab)
+## CLOUD-BASED MULTI-USER OPEN-SOURCE LAB (CMOSLab)
 
 The following instuction illustrates the steps to setup open-source EDA tools (ngspice, sue2, magic, netgen, etc.) on a Linux Virtual Machine in cloud. The steps illustrate **Ubuntu 18.04** with **LXDE display manager** on a [**Digital Ocean**](https://digitalocean.com) Droplet (VM).
 
