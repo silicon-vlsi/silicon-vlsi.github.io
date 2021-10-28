@@ -46,13 +46,28 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
 - Start the vncserver: `$vncserver -geometry 1280x720 :1`
   - This will start the vncserver on port `5901` (5900+1)
 - Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
-- [noVNC](https://novnc.com) is a client that connect through a webbrowser without having to download a client app.
-  - git clone the [repo](https://github.com/novnc/noVNC)
-  - Use the `novnc_proxy` script to automatically download and start websockify: `./utils/novnc_proxy --vnc localhost:5901`
-  - Make sure the vncserver is running and the above script should output an URL that you can navigate to connect to the instance. Use the vnc password to authenticate. Rememeber to substitute the hostname with the Public IP.
+ 
 - Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
 - Add all the env variables in `/etc/skel/.bashrc`
 - **CREATE SNAPSHOT**
+
+**ALTERNATIVES**
+- **Xfce4** is another alternative to **LXDE** but sue2 schematics are blank in xfce4 so we decided on LXDE.
+  - Install packages `xfce4 xfce4-goodies` and some optional packages depending on your need eg. `xorg dbus-x11 x11-xserver-utils`
+- [noVNC](https://novnc.com) is an alternative VNC client that connect through a webbrowser without having to download a client app.
+  - git clone the [repo](https://github.com/novnc/noVNC)
+  - Use the `novnc_proxy` script to automatically download and start websockify: `./utils/novnc_proxy --vnc localhost:5901`
+  - Make sure the vncserver is running and the above script should output an URL that you can navigate to connect to the instance. Use the vnc password to authenticate. Rememeber to substitute the hostname with the Public IP.
+- If you want to connect using the Windows RDP protocol (For some reason was very slow for us):
+```bash
+sudo apt install xrdp;
+sudo systemctl status xrdp;
+sudo adduser xrdp ssl-cert;
+sudo systemctl restart xrdp;
+
+sudo ufw allow from 192.168.1.0/24 to any port 3389;
+sudo ufw allow 3389
+```
   
 - **RESOURCES**
   - [Tutorial: Installing and configure VNC on Ubuntu 18-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
