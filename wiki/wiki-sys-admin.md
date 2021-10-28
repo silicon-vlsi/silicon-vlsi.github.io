@@ -622,3 +622,12 @@ Follow these steps for the above configuration:
  - removing ``.ssh`` and starting fresh seems to work.
  - Deleted ``/var/log/secure`` and now the log won't get updated. Noticed that the previous log file had dot in the end of the permission. So now copied a old secure file which had the dot and stilll won't update. Found from the web that I need to restart ``rsyslog``, ``sudo service rsyslog restart``
  - **SELINUX NOTE** When `tar`-ing a SELinux filesystem, try the `tar --selinux` option. Do some research on it.
+
+## LINUX BASICS
+   
+**X WINDOW SYSTEM**
+   - XFree86 was the de fcto X Server till 2004 after which a fork of it is maintained by non-profit X.Org foundation which is the predomination implementation now.
+   - Key components of a X Window System:
+     - _Display Manager (DM)_: Job is to authenticate users, log them in and startup initial environment using startup scripts. The DM also start the X Server.
+     - _X Server_: defines an abstract interface to the system's bitmapped displays and input devices.
+     - _Window Manager_: which allows users to move, resize, minimize and maximize windows and allows use virtual desktops as well.
