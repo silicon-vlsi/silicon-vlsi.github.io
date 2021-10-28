@@ -629,5 +629,7 @@ Follow these steps for the above configuration:
    - XFree86 was the de fcto X Server till 2004 after which a fork of it is maintained by non-profit X.Org foundation which is the predomination implementation now.
    - Key components of a X Window System:
      - _Display Manager (DM)_: Job is to authenticate users, log them in and startup initial environment using startup scripts. The DM also start the X Server.
-     - _X Server_: defines an abstract interface to the system's bitmapped displays and input devices.
+     - _X Server_: defines an abstract interface to the system's bitmapped displays and input devices. It understands only basic drawing primitives over a network API which allows it to run on computers which are seprate from the client and, support variety of window managers and widgets.
      - _Window Manager_: which allows users to move, resize, minimize and maximize windows and allows use virtual desktops as well.
+   - **Display Manger** presents the user with a graphical login screen which is not necessary and some users prefer to start X from the console or from their **.login** script by running **startx** which is a wrapper for **xinit** that starts the X server. **xdm** (X display manager) is the original DM but **gmd** (GNOME) and **kdm** (KDE) are the most popular ones now. Configuration files for **xdm, gdm** or **kdm** are in **/etc/X11**. The display manager's final duty is to execute **Xsession**, a shell script to setup desktop environment which is often found in **/etc/X11/{xdm,gdm,kdm}**
+   
