@@ -56,7 +56,7 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
 - Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
 - Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
 - Add all the env variables in `/etc/skel/.bashrc`
-- **CREATE SNAPSHOT**
+- **CREATE SNAPSHOT** to use it to replicate VMs
 
 **ALTERNATIVES**
 - **Xfce4** is another alternative to **LXDE** but sue2 schematics are blank in xfce4 so we decided on LXDE.
@@ -66,6 +66,7 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
   - Use the `novnc_proxy` script to automatically download and start websockify: `./utils/novnc_proxy --vnc localhost:5901`
   - Make sure the vncserver is running and the above script should output an URL that you can navigate to connect to the instance. Use the vnc password to authenticate. Rememeber to substitute the hostname with the Public IP.
 - If you want to connect using the Windows RDP protocol (For some reason was very slow for us):
+  
 ```bash
 sudo apt install xrdp;
 sudo systemctl status xrdp;
@@ -75,9 +76,20 @@ sudo systemctl restart xrdp;
 sudo ufw allow from 192.168.1.0/24 to any port 3389;
 sudo ufw allow 3389
 ```
+
+**DEVELOPER READY**
+  
+- Following packages were required to compile source codes for all the EDA tools:
+  - ```sudo apt install build-essential linux-headers-‘uname -r‘```
+  - ```sudo apt install bison flex libx11-dev libxaw7-dev libtool tcl-dev tk-dev tcsh tclsh tcllib wish libreadline-dev libncurces-dev```
+  - ```sudo apt install automake autoconf texinfo``` (required for ngspice git repo )
+- Additional packages needed for various other tools:
+  - ```libffi-dev git graphviz xdot pkg-config python3 libglu1-mesa-dev freeglut3-dev```
+  - ```clang-6.0 gsl-bin libgsl0-dev m4 swig tcllib```
   
 - **RESOURCES**
   - [Tutorial: Installing and configure VNC on Ubuntu 18-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
+  - [Headless X Session with x11vnc](https://jasonmurray.org/posts/2021/x11vnc/)
   
 
 
