@@ -45,8 +45,9 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
   - This will create `$HOME/.vnc` with a `xstartup` file with the LXDE Xsession.
 - Start the vncserver: `$vncserver -geometry 1280x720 :1`
   - This will start the vncserver on port `5901` (5900+1)
+- In order to automate the server launch on startup, followed the instruction from [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
+  - Create a service file for each user: ```bash sudo vim /etc/systemd/system/vncserver-user1@.service```
 - Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
- 
 - Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
 - Add all the env variables in `/etc/skel/.bashrc`
 - **CREATE SNAPSHOT**
