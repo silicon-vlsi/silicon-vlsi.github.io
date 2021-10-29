@@ -3,20 +3,20 @@ sort: 1
 ---
 
 # SYSTEM ADMIN
-This wiki contains all the details (except the private and propreitary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
+This wiki contains all the details (except the private and proprietary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
 
 ## COMPUTING INFRASTRUCTURE
 ![Computing Infra](IT-infra.png) 
 
 | **Name** | **IP Address** | **Hardware** | **OS** | **Location** | **Purpose** |
-| VLSI-SERV-001 | 192.168.6.50 | Xeon/4C/2.5GHz/16Gb | Redhat 6 | Server Room | File Server |
-| VLSI-SERV-002 | 192.168.6.35 | Xeon/20C/40T/2+GHz/64G | CentOS-6.7 | Server Room | Computing Server |
+| VLSI-SRV-001 | 192.168.6.50 | Xeon/4C/2.5GHz/16Gb | Redhat 6 | Server Room | File Server |
+| VLSI-SRV-002 | 192.168.6.35 | Xeon/20C/40T/2+GHz/64G | CentOS-6.7 | Server Room | Computing Server |
 | VLSI-NAS1 | 192.168.5.11 | RaspberryPi-3-B+ 1Gb | OpenMediaVault | Server Room | Archive/Backup Server |
 | DT-001->030 | 192.168.51->80 | <FIXME> | Redhat 6 / CentOS 6.10 | Adv VLSI Lab | 30 Workstations |
 
 ## STORAGE
 
-**VLSI-SERV-001**
+**VLSI-SRV-001**
 
 | **Mount** | **Size** | **Purpose** |
 | ``/PDK`` | 200G | PDK installations |
@@ -80,7 +80,7 @@ All the shared directories are configured in ``/etc/exports``. Our three main sh
 
 **Transferring Files (to/From NAS)**
 
-**NOTE**: SSH keys are already setup between ``root`` in ``VLSI-SERV1`` and ``admin-vlsi`` in ``VLSI-NAS1``. So, when using the following commands using ``sudo`` or ``root`` account will not require password authentication.
+**NOTE**: SSH keys are already setup between ``root`` in ``VLSI-SRV1`` and ``admin-vlsi`` in ``VLSI-NAS1``. So, when using the following commands using ``sudo`` or ``root`` account will not require password authentication.
 
 - To tar a directory over a SSH tunnel
 ```bash
@@ -224,7 +224,7 @@ The CSV file can be exported directly from a Excel file that is currently in the
 
 You can create single user using the above file as well.
 
-**FIXME**: The above description of buseradd needds to be updated to match the changes in the script.
+**FIXME**: The above description of buseradd needs to be updated to match the changes in the script.
 
 ** Limiting Hardisk Usage with *quota* ** (Not yet immplemented)
    
@@ -242,11 +242,11 @@ You can create single user using the above file as well.
    
 **MIGRATING NIS SERVER**
    
-   The description below is for migrating our local NIS server (RHEL 6) to am AWS Lightsail instance (CentOS 7). But most of it is applicaple to other systems as well.
+   The description below is for migrating our local NIS server (RHEL 6) to am AWS Lightsail instance (CentOS 7). But most of it is applicable to other systems as well.
   
 - First started with this [post](https://serverfault.com/questions/503363/how-do-i-replace-an-nis-master-server).
 - **Migrating** ``passwd/groups/shadow/gshadow`` (Mostly manual but some automation can be followed from this [post](https://www.cyberciti.biz/faq/howto-move-migrate-user-accounts-old-to-new-server/) ).
-- Tranferred all the ``/etc`` stuff to the AWS instance and created temp files ``passwd.mig`` etc.
+- Transferred all the ``/etc`` stuff to the AWS instance and created temp files ``passwd.mig`` etc.
    - ```awk -v LIMIT=500 -F: '($3>=LIMIT) && ($3!=65534)' passwd > passwd.mig``` This ensures no system accounts are duplicated. Double check manually.
    - ```sudo cat shadow > shadow.mig``` and edit to make sure the same users as in ``passwd``
    - ```awk -v LIMIT=500 -F: '($3>=LIMIT) && ($3!=65534)' group > group.mig``` **NOTE** the ``users`` group got skipped so had to add manually.
@@ -632,5 +632,12 @@ Follow these steps for the above configuration:
      - _X Server_: defines an abstract interface to the system's bitmapped displays and input devices. It understands only basic drawing primitives over a network API which allows it to run on computers which are seprate from the client and, support variety of window managers and widgets.
      - _Window Manager_: which allows users to move, resize, minimize and maximize windows and allows use virtual desktops as well.
    - **Display Manger** presents the user with a graphical login screen which is not necessary and some users prefer to start X from the console or from their **.login** script by running **startx** which is a wrapper for **xinit** that starts the X server. **xdm** (X display manager) is the original DM but **gmd** (GNOME) and **kdm** (KDE) are the most popular ones now. Configuration files for **xdm, gdm** or **kdm** are in **/etc/X11**. The display manager's final duty is to execute **Xsession**, a shell script to setup desktop environment which is often found in **/etc/X11/{xdm,gdm,kdm}**. The **Xsession** also executes the user's personal **~/.xession**. All the commands are run in the background except the _last one_ which is the _Window Manager_. Once you exit the WM the DM logs the user out and the session ends.
-   
+  
+   - To **run an X application**, clients must be told what display to connect to and what screen to inhabit on that display. Once connected, the clients must **authenticate** themselves to the X server. Note the X's intrinsic security is weak so most of the time it's tunneled securely eg. use SSH for X connection.
+
+   - The X applications consults **DISPLAY** environment variable to find out where to display themselves. For example: ```export DISPLAY=servername.domain.com:10.2``` points X application at the machine `servername.domain.com`, display `10 and, screen `2`. 
+
+   - For **client authentication**, the X display manager generates a large random number, called a _cookie_, early in the login process. The cookie for the server is written to the **~/.Xuthority**. Users can run the `xauth` command to view existing cookies and new ones. For example, if you get an error to open display on the client side ```client$ xprogram -display server:0```, probably the client doesn't have the _auth cookie_. On the server, you can run ```server$ xauth list``` to list all the cookies for each interface (ethernet, local, unix domain). The easiest way to add the cookie to the client is adding the cookie using **xauth** (when not using SSH, which negotiates the cookie autmatically for you): ````client$ xuath add server:0 MIT-MAGIC-COOKIE-1 <cookieFromServer>```.
+
+
    
