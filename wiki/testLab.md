@@ -2,7 +2,7 @@
 sort: 3
 ---
 
-# Test Lab
+# TEST LAB
 
 ## Equipment
 
