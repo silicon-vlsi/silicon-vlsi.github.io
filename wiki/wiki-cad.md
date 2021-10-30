@@ -40,12 +40,26 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
 - Install the **LXDE** Display Manager and it's depndencies+goodies: `#apt install lxde`
   - This will create all the necessary configs and session in `/etc/X11` eg. `Xsession` etc.
 - Install the **tightvncserver**: `#apt install tightvncserver`
-- Install `wish` for `Sue2`:`apt install wish`
 - Test vncserver by loging in as the user and set the vnc password: `$vncpasswd`
   - This will create `$HOME/.vnc` with a `xstartup` file with the LXDE Xsession.
-- Start the vncserver: `$vncserver -geometry 1280x720 :1`
+- Start the vncserver: `$vncserver -depth 24 -geometry 1280x720 :1`
   - This will start the vncserver on port `5901` (5900+1)
-- In order to automate the server launch on startup, followed the instruction from [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
+- Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
+- Install `wish` for `Sue2`:`apt install wish`
+- Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
+- Add all the env variables in `/etc/skel/.bashrc`
+- Create all users and setup each users. For creating batch users, use ```newuser``` command, see [this article](https://www.tecmint.com/create-multiple-user-accounts-in-linux/)
+- **CREATE SNAPSHOT** to use it to replicate VMs
+
+**ALTERNATIVES/ETC**
+- **Xfce4** is another alternative to **LXDE** but sue2 schematics are blank in xfce4 so we decided on LXDE.
+  - Install packages `xfce4 xfce4-goodies` and some optional packages depending on your need eg. `xorg dbus-x11 x11-xserver-utils`
+- [**noVNC**](https://novnc.com) is an alternative VNC client that connect through a webbrowser without having to download a client app.
+  - git clone the [repo](https://github.com/novnc/noVNC)
+  - Use the `novnc_proxy` script to automatically download and start websockify: `./utils/novnc_proxy --vnc localhost:5901`
+  - Make sure the vncserver is running and the above script should output an URL that you can navigate to connect to the instance. Use the vnc password to authenticate. Rememeber to substitute the hostname with the Public IP.
+
+- To **start vncserver at boot**, followed the instruction from [here](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
   - Create a service file for each user (see above doc): ```$ sudo vim /etc/systemd/system/vncserver-user1@.service```
   - Make system aware of the file: ```$ sudo systemctl daemon-reload```
   - Enable the unit file (@1 is the display number): ```$ sudo systemctl enable vncserver@1.service```
@@ -53,20 +67,7 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
   - You can see the status: ```$ sudo systemctl status vncserver@1```
   - Now it should start automatically on reboot.
   - Follow above steps for wach user
-- Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
-- Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
-- Add all the env variables in `/etc/skel/.bashrc`
-- Create all users and setup each users. For creating batch users, use ```newuser``` command, see [this article](https://www.tecmint.com/create-multiple-user-accounts-in-linux/)
-- **CREATE SNAPSHOT** to use it to replicate VMs
-
-**ALTERNATIVES**
-- **Xfce4** is another alternative to **LXDE** but sue2 schematics are blank in xfce4 so we decided on LXDE.
-  - Install packages `xfce4 xfce4-goodies` and some optional packages depending on your need eg. `xorg dbus-x11 x11-xserver-utils`
-- [noVNC](https://novnc.com) is an alternative VNC client that connect through a webbrowser without having to download a client app.
-  - git clone the [repo](https://github.com/novnc/noVNC)
-  - Use the `novnc_proxy` script to automatically download and start websockify: `./utils/novnc_proxy --vnc localhost:5901`
-  - Make sure the vncserver is running and the above script should output an URL that you can navigate to connect to the instance. Use the vnc password to authenticate. Rememeber to substitute the hostname with the Public IP.
-- If you want to connect using the Windows RDP protocol (For some reason was very slow for us):
+- If you want to connect using the **Windows RDP protocol** (For some reason was very slow for us):
   
 ```bash
 sudo apt install xrdp;
