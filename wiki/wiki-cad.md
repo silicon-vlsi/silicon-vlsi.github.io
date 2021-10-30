@@ -56,6 +56,7 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
 - Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
 - Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
 - Add all the env variables in `/etc/skel/.bashrc`
+- Create all users and setup each users. For creating batch users, see [this article](https://www.tecmint.com/create-multiple-user-accounts-in-linux/)
 - **CREATE SNAPSHOT** to use it to replicate VMs
 
 **ALTERNATIVES**
@@ -89,6 +90,7 @@ sudo ufw allow 3389
   
 - **RESOURCES**
   - [Tutorial: Installing and configure VNC on Ubuntu 18-04](https://www.digitalocean.com/community/tutorials/how-to-install-and-configure-vnc-on-ubuntu-18-04)
+  - [How to Create Multiple User Accounts in Linux](https://www.tecmint.com/create-multiple-user-accounts-in-linux/)
   - [Headless X Session with x11vnc](https://jasonmurray.org/posts/2021/x11vnc/)
   
 
