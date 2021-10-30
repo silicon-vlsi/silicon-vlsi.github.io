@@ -56,7 +56,7 @@ The following instuction illustrates the steps to setup open-source EDA tools (n
 - Use vnc client eg. `tightvnc` to connect to the instance using the <IP addre>:1 and the passwd set by `vncpasswd`.
 - Now clone all the EDA tools from github in the root location eg. `/cad` and tech/pdk in `/tech`
 - Add all the env variables in `/etc/skel/.bashrc`
-- Create all users and setup each users. For creating batch users, see [this article](https://www.tecmint.com/create-multiple-user-accounts-in-linux/)
+- Create all users and setup each users. For creating batch users, use ```newuser``` command, see [this article](https://www.tecmint.com/create-multiple-user-accounts-in-linux/)
 - **CREATE SNAPSHOT** to use it to replicate VMs
 
 **ALTERNATIVES**
