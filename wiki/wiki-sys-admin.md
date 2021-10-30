@@ -626,7 +626,7 @@ Follow these steps for the above configuration:
 ## LINUX BASICS
    
 **X WINDOW SYSTEM**
-   - XFree86 was the de fcto X Server till 2004 after which a fork of it is maintained by non-profit X.Org foundation which is the predomination implementation now.
+   - XFree86 was the de facto X Server till 2004 after which a fork of it is maintained by non-profit X.Org foundation which is the predominant implementation now.
    - Key components of a X Window System:
      - _Display Manager (DM)_: Job is to authenticate users, log them in and startup initial environment using startup scripts. The DM also start the X Server.
      - _X Server_: defines an abstract interface to the system's bitmapped displays and input devices. It understands only basic drawing primitives over a network API which allows it to run on computers which are seprate from the client and, support variety of window managers and widgets.
