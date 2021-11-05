@@ -45,7 +45,18 @@ This wiki contains all the details (except the private and proprietary info) for
 - ``/etc/fstab``: To mount a NFS directory on your system across the reboots, we need to make an entry in /etc/fstab.
 - ``/etc/sysconfig/nfs``: Configuration file of NFS to control on which port rpc and other services are listening. **NOTE** In our setup, we just use the default options.
 
-**Configuring the Export Directory**
+**Configuring and starting a NFS Server**
+- You can check this [blog](https://platform9.com/docs/openstack/tutorials-setup-nfs-server)
+- Install the necessary packages: ```yum -y install nfs-utils nfs-utils-lib```
+- Start the appropriate NFS services:
+```bash
+chkconfig nfs on
+service rpcbind start
+service nfs start
+service nfslock start  
+```
+- Start the `rpcbind` on the client: `$ sudo service rpcbind start`
+- Export the appropriate directories:
 All the shared directories are configured in ``/etc/exports``. Our three main shared directories are configured as follows:
 
 ```bash
