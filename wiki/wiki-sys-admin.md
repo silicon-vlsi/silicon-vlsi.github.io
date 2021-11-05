@@ -56,8 +56,7 @@ service nfs start
 service nfslock start  
 ```
 - Start the `rpcbind` on the client: `$ sudo service rpcbind start`
-- Export the appropriate directories:
-All the shared directories are configured in ``/etc/exports``. Our three main shared directories are configured as follows:
+- Export the appropriate directories by configuring in ``/etc/exports``. Our four main shared directories are configured as follows:
 
 ```bash
 /home/NIS	192.168.6.0/255.255.255.0(rw,async,no_subtree_check)
@@ -65,7 +64,7 @@ All the shared directories are configured in ``/etc/exports``. Our three main sh
 /HOME		192.168.6.0/255.255.255.0(rw,async,no_subtree_check,no_root_squash)
 /CAD		192.168.6.0/255.255.255.0(rw,async,no_subtree_check,no_root_squash)
 ```
-
+   
 **NFS Options**:
    
 - ``rw``: Allows client R/W access.
@@ -73,6 +72,8 @@ All the shared directories are configured in ``/etc/exports``. Our three main sh
 - ``no_subtree_check``: This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security.
 - ``no_root_squash``: This option allows root to connect to the designated directory. **IMPORTANT** For 64-bit installs that has to be done in ``VLSI-SRV-002``, this option is required so ``root`` in ``SRV-002`` can write to the NFS mounts eg. ``/CAD``.
 
+- Export the direcotries: ```$exportfs -a```
+   
 **VLSI-NAS1**
 
 **NOTE**: All mount points are relative to ``/srv/dev-disk-by-label-sg2tb``.
