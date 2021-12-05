@@ -2,7 +2,7 @@
 sort: 1
 ---
 
-# SYSTEM ADMIN
+# IT 
 This wiki contains all the details (except the private and proprietary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
 
 ## COMPUTING INFRASTRUCTURE
@@ -634,4 +634,12 @@ Follow these steps for the above configuration:
  - removing ``.ssh`` and starting fresh seems to work.
  - Deleted ``/var/log/secure`` and now the log won't get updated. Noticed that the previous log file had dot in the end of the permission. So now copied a old secure file which had the dot and stilll won't update. Found from the web that I need to restart ``rsyslog``, ``sudo service rsyslog restart``
  - **SELINUX NOTE** When `tar`-ing a SELinux filesystem, try the `tar --selinux` option. Do some research on it.
+
+# LINUX
+
+## STORAGE
+
+**RAID**
+
+## VPN
 
