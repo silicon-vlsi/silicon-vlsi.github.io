@@ -254,6 +254,17 @@ You can create single user using the above file as well.
 
 #### NIS SERVER
    
+**ADDING A NEW USER USING THE AWS NIS SERVER**
+
+- Login to `aws-ampere` as `centos`
+  - `$sudo useradd <options>`
+  - `$sudo make -C /var/yp`
+- Login to `VLSI-SRV-002` as `admin`
+  - `$sudo mkdir /HOME/<user>`
+  - `$sudo chown -R <user>:users /HOME/<user>`
+  - `$su -l <user>`
+  - `$cp /etc/skel/.cshrc`
+ 
 **MIGRATING NIS SERVER**
    
    The description below is for migrating our local NIS server (RHEL 6) to am AWS Lightsail instance (CentOS 7). But most of it is applicable to other systems as well.
@@ -643,5 +654,14 @@ Follow these steps for the above configuration:
 
 **RAID**
 
+- RAID 0: taking any number of disks and merging them to one volume.
+- RAID 1: Mirroring
+- RAID 5/6 : Stripping + Distributed Parity. 
+  - Now days RAID 5 is not used in disks larger than 500GB unless they are SSDs or enterprise grade HDDs. [See this article for details](https://www.starwindsoftware.com/blog/raid-5-was-great-until-high-capacity-hdds-came-into-play-but-ssds-restored-its-former-glory-2). Instead RAID 10 is always preferred.
+- RAID 10 : Mirroring + Stripping
+
 ### VPN
 
+**PPTP CLIENT ON CentOS-7**
+
+- [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
