@@ -5,7 +5,9 @@ sort: 1
 # IT 
 This wiki contains all the details (except the private and proprietary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
 
-## COMPUTING INFRASTRUCTURE
+## LAUNCHLAB SYSTEM ADMIN
+
+### COMPUTING INFRASTRUCTURE
 ![Computing Infra](IT-infra.png) 
 
 | **Name** | **IP Address** | **Hardware** | **OS** | **Location** | **Purpose** |
@@ -14,7 +16,7 @@ This wiki contains all the details (except the private and proprietary info) for
 | VLSI-NAS1 | 192.168.5.11 | RaspberryPi-3-B+ 1Gb | OpenMediaVault | Server Room | Archive/Backup Server |
 | DT-001->030 | 192.168.51->80 | <FIXME> | Redhat 6 / CentOS 6.10 | Adv VLSI Lab | 30 Workstations |
 
-## STORAGE
+### STORAGE
 
 **VLSI-SRV-001**
 
@@ -120,7 +122,7 @@ You can use the script ``/CAD/apps/bin/tar2nas`` for the above function.
   - ``sudo lvresize -L +100G LVGROUP/lv_name``
   - ``sudo lvchange -ay LVGROUP/lv_name``
 
-## SUBVERSION
+### SUBVERSION
 
 **Setting up a Subversion Server**
    
@@ -171,7 +173,7 @@ svn list svn+ssh://svn@54.254.226.43/home/svn/repos/feynman_svn
 svn checkout svn+ssh://svn@54.254.226.43/home/svn/repos/feynman_svn
 ```
 
-## ROOT ACCESS
+### ROOT ACCESS
    
 - **Root login is COMPLETELY PROHIBITED** unless absolutely necessary in very few cases, since it is a security threat.
 - Please do not start any VNC Servers as root, which is a security threat as well.
@@ -189,7 +191,7 @@ $sudo <command>
 - Add the user (say ``admlocal``) to the group wheel: 
  - ``#usermod -aG wheel admlocal``
 
-## USER ACCOUNTS
+### USER ACCOUNTS
 
 User accounts are broadly divided into three types:
 - ``admin``: Administrator accounts with ``sudo`` capacity. Home directories reside in ``/home/NIS/administrator``.
@@ -250,7 +252,7 @@ You can create single user using the above file as well.
   - Generate the diskusage table: ``#quotacheck -vug /HOME``
  - Assign quotas per user:``edquota <username>``
 
-### NIS SERVER
+#### NIS SERVER
    
 **MIGRATING NIS SERVER**
    
@@ -294,7 +296,7 @@ You can create single user using the above file as well.
      - Make sure the following lines contain ``nis`` as an option in the file ``/etc/nsswitch.conf`` file: ``passwd: files nis`` ``shadow: files nis`` ``group: files nis`` ``hosts: files nis``  ``dns networks: files nis``  ``protocols: files nis``  ``publickey: nisplus``  ``automount: files nis``  ``netgroup: files nis``  ``aliases: files nisplus``
    - To start and stop the ``ypbind`` service: ``sudo service ypbind start/stop/status``
 
-## VNC SERVER
+### VNC SERVER
 
 Currently, vncservers are automatically started for some users ( Check Config file: ``/etc/sysconfig/vncservers`` in VLSI-SRV-002
 
@@ -309,7 +311,7 @@ Currently, vncservers are automatically started for some users ( Check Config fi
  - ``vncserver -kill :10``
 - To list the current servers you are running: ``vncserver -list``
 
-## /CAD/apps
+### /CAD/apps
    
 Local scripts, modulefiles, config, etc are maintained in ``/CAD/apps`` which is also maintained on github at ``https://github.com/silicon-vlsi/cad-apps``.
 
@@ -323,7 +325,7 @@ In order to clone it at a different place:
 - If you get a **Error 403 while accessing URL....** when doing a ``git push``, try:
    - ``git remote set-url origin "https://<github-username/>@github.com/github-username/github-repository-name.git``
    
-## ENVIRONMENT VARIABLES
+### ENVIRONMENT VARIABLES
 
 FIXME: This section needs to be updated.
    
@@ -368,7 +370,7 @@ $module show project/cad-analog/1.0
 $module unload project/cad-analog/1.0
 ```
 
-## BACKUP/Archives
+### BACKUP/Archives
 
 - Currently backups are run weekly (Sunday 4am) and Monthly (Month 1st) from ``VLSI-SERV-001`` to ``VLSI-NAS-001``
 - Backup script ``/CAD/apps/bin/rsync2nas`` is run with the weekly and monthly option using ``crontab`` from the ``root`` account. In order to list all the commands in ``root``'s ``crontab``:
@@ -381,7 +383,7 @@ $module unload project/cad-analog/1.0
 - And ``tar2nas`` is run by a ``crontab`` in the NAS server's ``root`` account. **FIXME** Backup ``~/scripts``.
 - Temporary data can be archived in ``VLSI-SRV-002:/home/local/archive``
 
-## FLEXNET LICENSE SERVER (CADENCE/MENTOR)
+### FLEXNET LICENSE SERVER (CADENCE/MENTOR)
    
 - **Cadence License Documentation** at ``$CDSDOC/license`` or ``/CAD/IC616/doc/license`` [Link-to-PDF](https://www.dropbox.com/s/ou3vda9vpjtnsys/license.pdf)
 - **Mentor License Manual** [PDF](https://www.dropbox.com/s/7fii27aj97gow26/mgc_licen.pdf)
@@ -473,7 +475,7 @@ $setenv CDS_LIC_LICENSE 5280@VLSI-SRV-001
 $set path (/CAD/IC616/tools.lnx86/bin:$path)
 ```
 
-## SETTING UP PROJECT AREA
+### SETTING UP PROJECT AREA
 
 FIXME: This section needs to be updated.
 
@@ -511,7 +513,7 @@ $cadstart
 - To simply ``cd`` or ``pushd`` to a project area, type ``cdproj`` or ``pdproj`` respectively.
 
 
-## SETTING UP A NEW LINUX WORKSTATIONS
+### SETTING UP A NEW LINUX WORKSTATIONS
    
 After loading a OS [Redhat/CentOS] on a new workstation, we need to setup the following:
 - **NOTE**: For CentOS, choose **desktop** installation when given various options eg. (server, LAMP, desktop, etc.)
@@ -622,7 +624,7 @@ Follow these steps for the above configuration:
 - **AFTER** creating the ``/CAD, /PDK, /home/NIS`` mounts and successfully mounting it, you can run the following scripts to complete the rest of the installation:
 - ``/CAD/apps/bin/finish-centos610-inst``
 
-## TROUBLESHOOTING
+### TROUBLESHOOTING
 
  **SSH KEY ACCESS NOT WORKING**
 
@@ -635,11 +637,11 @@ Follow these steps for the above configuration:
  - Deleted ``/var/log/secure`` and now the log won't get updated. Noticed that the previous log file had dot in the end of the permission. So now copied a old secure file which had the dot and stilll won't update. Found from the web that I need to restart ``rsyslog``, ``sudo service rsyslog restart``
  - **SELINUX NOTE** When `tar`-ing a SELinux filesystem, try the `tar --selinux` option. Do some research on it.
 
-# LINUX
+## LINUX KNOWLEDGEBASE
 
-## STORAGE
+### STORAGE
 
 **RAID**
 
-## VPN
+### VPN
 
