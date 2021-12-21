@@ -706,7 +706,7 @@ Follow these steps for the above configuration:
    - Probably a good idea to reboot now.
    - Connect using a client (TightVNC/RealVNC/etc) with the Remote Host as `<IP ADDR>:5901` or simply `<IP ADDR>:1`
    
-** Resources **
+**Resources**
    
    - [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/)
    - [Installing and configuring a VNC server on CentOS 7](https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/)
