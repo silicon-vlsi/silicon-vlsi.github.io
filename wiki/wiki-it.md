@@ -660,8 +660,62 @@ Follow these steps for the above configuration:
   - Now days RAID 5 is not used in disks larger than 500GB unless they are SSDs or enterprise grade HDDs. [See this article for details](https://www.starwindsoftware.com/blog/raid-5-was-great-until-high-capacity-hdds-came-into-play-but-ssds-restored-its-former-glory-2). Instead RAID 10 is always preferred.
 - RAID 10 : Mirroring + Stripping
 
-### VPN
+### X-SERVER
+**XFCE on a CENTOS-7 VIRTUAL MACHINE**
+   - **NOTE** `LXDE` display manager is not available on the CentOS repo.
+   - Install the [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/): `$sudo yum install epel-release`
+   - Install `XFCE` display manager: `$sudo yum groupinstall xfce`
+   
+**VNCSERVER on CentOS-7**
 
-**PPTP CLIENT ON CentOS-7**
+- Install `firewalld`, enable it and reboot:
+   
+```bash
+   $sudo yum install firewalld
+   $sudo systemctl enable firewalld
+   $sudo reboot
+```
+   
+   - Check the firewall running status: `$sudo firewalld --state`
+   - Install tigervnc server: `$sudo yum install tigervnc-server` 
+   - Login to the user you want the server on and set the passwd: `$vncpasswd`
+   - Add a VNC service configuration file by copying an template:
+   
+```bash
+   $sudo cp /lib/systemd/system/vncserver@.service  /etc/systemd/system/vncserver@:1.service
+```
+   
+   - Edit the above service file to replace `<USER>` with the username. 
+   - Now start the daemon and enable the service for system wide use:
+   
+```bash
+   $sudo systemctl daemon-reload
+   $sudo systemctl start vncserver@:1
+   $sudo systemctl status vncserver@:1
+   $sudo systemctl enable vncserver@:1
+```
+   
+   - To list the open ports listening to Xvnc: `$ss -tulpn | grep -i vnc`
+   - Then allow the appropriate ports in the firewall to access it:
+   
+```bash
+   $sudo firewall-cmd --add-port=5901/tcp
+   $sudo firewall-cmd --add-port=5901/tcp --permanent
+```
+   
+   - Probably a good idea to reboot now.
+   - Connect using a client (TightVNC/RealVNC/etc) with the Remote Host as `<IP ADDR>:5901` or simply `<IP ADDR>:1`
+   
+** Resources **
+   
+   - [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/)
+   - [Installing and configuring a VNC server on CentOS 7](https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/)
+   - [How to Install and Configure VNC Server in CentOS 7](https://www.tecmint.com/install-and-configure-vnc-server-in-centos-7/)
+   - [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
+   
+
+### REMOTE ACCESS
+
+**PPTP VPN CLIENT ON CentOS-7**
 
 - [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
