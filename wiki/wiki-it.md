@@ -21,6 +21,16 @@ This wiki contains all the details (except the private and proprietary info) for
 **VLSI-SRV-001**
 
 | **Mount** | **Size** | **Purpose** |
+| ``swap`` | 8G | 0.5xRAM-size |
+| ``/boot`` | 1.5G | Boot files |
+| ``/boot/efi`` | 0.5G | EFI boot files |
+| ``/(root)`` | 150G | CentOS 7 installation files |
+| ``/home`` | 50G | Local home dir |
+| ``/var`` | 25G | log,etc |
+
+**VLSI-SRV-001 (OLD) **
+
+| **Mount** | **Size** | **Purpose** |
 | ``/PDK`` | 200G | PDK installations |
 | ``/home`` | 256G | Faculty home, project directories |
 | ``/HOME`` | 60G | student/trainee/etc home |
