@@ -660,6 +660,15 @@ Follow these steps for the above configuration:
   - Now days RAID 5 is not used in disks larger than 500GB unless they are SSDs or enterprise grade HDDs. [See this article for details](https://www.starwindsoftware.com/blog/raid-5-was-great-until-high-capacity-hdds-came-into-play-but-ssds-restored-its-former-glory-2). Instead RAID 10 is always preferred.
 - RAID 10 : Mirroring + Stripping
 
+**PARTIONING**
+   
+   - When installing CentOS-7, automatic partioning does not work for disk size >2TB so have to choose partion size manually.
+   - A good guide on [Recommended Partioning Scheme](https://docs.centos.org/en-US/centos/install-guide/CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86) 
+   - Essential partions: `/boot, /(root), /home, swap`
+   - Recommended sizes: `/boot (>1G), / (>10G), /home (>1G), swap (see below)`
+     - swap size recommendation (assming no hibernation): For RAM size:  * 2-8GB -> Equal to RAM size * 8-64G -> 4G to 0.5xRAM-size
+
+   
 ### X-SERVER
 **XFCE on a CENTOS-7 VIRTUAL MACHINE**
    - **NOTE** `LXDE` display manager is not available on the CentOS repo.
