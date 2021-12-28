@@ -738,3 +738,13 @@ Follow these steps for the above configuration:
 **PPTP VPN CLIENT ON CentOS-7**
 
 - [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
+   
+### SECURITY
+   
+**SELINUX**
+   
+[Security-Enhanced Linux (SELinux)](https://www.redhat.com/en/topics/linux/what-is-selinux) is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
+   
+   -  You can tell what your system is supposed to be running at by looking at the `/etc/sysconfig/selinux` file.
+     - Default option mode is `enforcing` and policy is `targeted`
+   - The mode can be changed in `/etc/selinux/config`
