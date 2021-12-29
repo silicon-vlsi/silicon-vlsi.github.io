@@ -743,8 +743,17 @@ Follow these steps for the above configuration:
    
 **SELINUX**
    
-[Security-Enhanced Linux (SELinux)](https://www.redhat.com/en/topics/linux/what-is-selinux) is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
+[Security-Enhanced Linux (SELinux)] is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
    
    -  You can tell what your system is supposed to be running at by looking at the `/etc/sysconfig/selinux` file.
      - Default option mode is `enforcing` and policy is `targeted`
-   - The mode can be changed in `/etc/selinux/config`
+   - OR you can use the command `sudo setatus`
+   - The mode can be changed in `/etc/selinux/config` eg. `enforced, permissive, disabled`
+
+```note
+ When switching from **Disabled** to either **Permissive** or **Enforcing** mode, it is highly recommended that the system be rebooted and the filesystem relabeled(?).  
+```
+   
+   - Resources:
+     - [SELinux wiki.centos.org](https://wiki.centos.org/HowTos/SELinux#SELinux_Modes)
+     - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
