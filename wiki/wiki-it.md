@@ -763,6 +763,12 @@ Follow these steps for the above configuration:
      - backup the certificate `/root/cacert.p12` to use for replicating the server.
    - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
    
+   **Resources**
+   - [Quick Start Guide](https://www.freeipa.org/page/Quick_Start_Guide)
+     - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
+   - [How to Install and Configure FreeIPA on CentOS 7 Server](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
+   - [How To Install FreeIPA Server on CentOS 7](https://computingforgeeks.com/install-freeipa-server-centos-7/)
+   
    
    
 #### SELINUX
