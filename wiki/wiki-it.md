@@ -781,3 +781,8 @@ Follow these steps for the above configuration:
    - Resources:
      - [SELinux wiki.centos.org](https://wiki.centos.org/HowTos/SELinux#SELinux_Modes)
      - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
+
+
+* * *
+
+[Nemeth-LinuxSysAdmin-4e]:    https://www.google.co.in/books/edition/UNIX_and_Linux_System_Administration_Han/0SIdBAAAQBAJ?hl=en  
