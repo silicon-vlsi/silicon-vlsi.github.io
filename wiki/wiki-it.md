@@ -739,9 +739,33 @@ Follow these steps for the above configuration:
 
 - [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
    
-### SECURITY
+### USER MANAGEMENT AND SECURITY
+
+#### FREE IPA
    
-**SELINUX**
+[FreeIPA](https://www.freeipa.org) is an integrated Identity and Authentication solution for Linux/UNIX networked environments combining Linux (Fedora), 389 Directory Server, MIT Kerberos, NTP, DNS, Dogtag (Certificate System). It consists of a web interface and command-line administration tools. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.
+   
+**FREE-IPA SERVER INSTALLATION ON CENTOS-7**
+   - Set the static hostname of the server: `#hostnamectl set-hostname srv01.vlsi.silicon.ac.in`
+     - See [documentation](https://www.freeipa.org/page/Deployment_Recommendations) for detail explanation on setting the **host** and **domain** name. The domin should not be the same as the primary domain (`silicon.ac.in`).
+   - Set hostname in `/etc/hosts`: `192.168.6.50    srv01.vlsi.silicon.ac.in`
+   - Update the OS & reboot: `#yum update; reboot`
+   - `#yum install freeipa-server freeipa-server-dns`
+   - `#firewall-cmd --add-service=freeipa-ldap`
+     - Adding the `freeipa-ldap` should open the necessary ports.
+   - Make it permanent: `#firewall-cmd --add-service=freeipa-ldap --permanent`
+   - Install the server: `#ipa-server-install`
+     - Set the Direct Manager Password. Direct Manager is the super user for managing the IPA server.
+     - Set the admin password. Admin is for normal activities such add/edit users.
+     - Configure DNS forwarders: **yes**
+     - Configure reverse zones: **No**
+     - The install ends with the message of opening the ports (already done) 
+     - backup the certificate `/root/cacert.p12` to use for replicating the server.
+   - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
+   
+   
+   
+#### SELINUX
    
 [Security-Enhanced Linux (SELinux)] is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
    
