@@ -768,6 +768,7 @@ Follow these steps for the above configuration:
      - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
    - [How to Install and Configure FreeIPA on CentOS 7 Server](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
    - [How To Install FreeIPA Server on CentOS 7](https://computingforgeeks.com/install-freeipa-server-centos-7/)
+   - [Nemeth-LinuxSysAdmin-5e-2017] : Ch-8/p243 User Mgmt, p-580 LDAP
    
    
    
@@ -791,4 +792,5 @@ Follow these steps for the above configuration:
 
 * * *
 
-[Nemeth-LinuxSysAdmin-4e]:    https://www.google.co.in/books/edition/UNIX_and_Linux_System_Administration_Han/0SIdBAAAQBAJ?hl=en  
+[Nemeth-LinuxSysAdmin-4e]:         https://www.google.co.in/books/edition/UNIX_and_Linux_System_Administration_Han/0SIdBAAAQBAJ?hl=en
+[Nemeth-LinuxSysAdmin-5e-2017]:    https://www.google.com/books/edition/UNIX_and_Linux_System_Administration_Han/f7M1DwAAQBAJ?hl=en
