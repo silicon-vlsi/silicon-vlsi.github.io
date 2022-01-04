@@ -745,7 +745,10 @@ Follow these steps for the above configuration:
    
 [FreeIPA](https://www.freeipa.org) is an integrated Identity and Authentication solution for Linux/UNIX networked environments combining Linux (Fedora), 389 Directory Server, MIT Kerberos, NTP, DNS, Dogtag (Certificate System). It consists of a web interface and command-line administration tools. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.
    
-**FREE-IPA SERVER INSTALLATION ON CENTOS-7**
+**FREE-IPA SERVER INSTALLATION**
+   
+**CENTOS 7**
+   
    - Set the static hostname of the server: `#hostnamectl set-hostname srv01.vlsi.silicon.ac.in`
      - See [documentation](https://www.freeipa.org/page/Deployment_Recommendations) for detail explanation on setting the **host** and **domain** name. The domin should not be the same as the primary domain (`silicon.ac.in`).
    - Set hostname in `/etc/hosts`: `192.168.6.50    srv01.vlsi.silicon.ac.in`
@@ -777,14 +780,41 @@ Follow these steps for the above configuration:
 ```bash
    # authconfig --enablemkhomedir --update
 ```
-     - Check [this](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-homedirs) man page on redhat.com or custom home dir details.
+     - Check [this](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-homedirs) man page on redhat.com for custom home dir details.
    
+   
+**INSTALLING IPA CLIENT**
+   
+**CENTOS 7**
+   
+   - Set the hostname: `#hostnamectl set-hostname dt042.vlsi.silicon.ac.in`
+   - Add to `/etc/hosts`:
+   
+```bash
+192.168.6.50    srv01.vlsi.silicon.ac.in  srv01
+192.168.6.202   dt042.vlsi.silicon.ac.in  dt042
+```  
+
+   - Install the client:
+   
+```bash
+   # ipa-client-install --hostname=`hostname -f` \
+         --server=srv01.vlsi.silicon.ac.in \
+         --domain=vlsi.silicon.ac.in \
+         --realm=VLSI.SILICON.AC.IN
+```
+   - **FIXME** During the install the DNS lookup failed. Changing `/etc/resolv.conf` gets overwritten at boot. Must be a master file that sets.
+ 
    **Resources**
-   - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
-     - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
-   - [How to Install and Configure FreeIPA on CentOS 7 Server -- linuxtechi](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
-   - [How To Install FreeIPA Server on CentOS 7 -- computingforgeeks](https://computingforgeeks.com/install-freeipa-server-centos-7/)
-   - [Install & configure FreeIPA Server & Client on RHEL/CentOS 7 -- golinuxcloud](https://www.golinuxcloud.com/install-freeipa-server-centos-7/)
+   - **Server** 
+     - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
+       - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
+     - [How to Install and Configure FreeIPA on CentOS 7 Server -- linuxtechi](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
+     - [How To Install FreeIPA Server on CentOS 7 -- computingforgeeks](https://computingforgeeks.com/install-freeipa-server-centos-7/)
+   - **Client**
+     - [Install & configure FreeIPA Server & Client on RHEL/CentOS 7 -- golinuxcloud](https://www.golinuxcloud.com/install-freeipa-server-centos-7/)
+     - [How To Configure a FreeIPA Client on CentOS 7 -- digital ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-a-freeipa-client-on-centos-7)
+     - [How to Install FreeIPA Client on CentOS 7 -- howtoforge](https://www.howtoforge.com/how-to-install-freeipa-client-on-centos-7/)
    - [Nemeth-LinuxSysAdmin-5e-2017] : Ch-8/p243 User Mgmt, p-580 LDAP
    
    
