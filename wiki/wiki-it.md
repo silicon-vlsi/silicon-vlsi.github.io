@@ -5,6 +5,223 @@ sort: 1
 # IT 
 This wiki contains all the details (except the private and proprietary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
 
+## LINUX KNOWLEDGEBASE
+
+### STORAGE
+
+**NFS SHARE**
+
+**Important Files for NFS Configuration**
+- ``/etc/exports``: Its a main configuration file of NFS, all exported files and directories are defined in this file at the NFS Server end.
+- ``/etc/fstab``: To mount a NFS directory on your system across the reboots, we need to make an entry in /etc/fstab.
+- ``/etc/sysconfig/nfs``: Configuration file of NFS to control on which port rpc and other services are listening. **NOTE** In our setup, we just use the default options.
+
+**Configuring and starting a NFS Server**
+- **NOTE** The CentOS 7 installation was done with base installation of __File Server with GUI__ so most needed packages were already installed. 
+- Install the necessary packages: `#yum -y install nfs-utils`
+- **Enable** the __NFS__ services so they start at boot: `#systemctl enable {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
+- **Start** the __NFS__ services: `#systemctl start {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
+- **Note** that most of this service may already be running based on your base installation. So you can check the status and restart the m appropriately:
+  - `#systemctl status/restart <service>`
+- Add the __share__ directories to `/etc/exports`:
+
+```bash
+/home/nfs1      *.vlsi.silicon.ac.in(rw,async,no_subtree_check)
+/home/nfs2      *.vlsi.silicon.ac.in(rw,async,no_subtree_check)
+```
+
+- The NFS Options:
+  - ``rw``: Allows client R/W access.
+  - ``async``: default option that should always be used.
+  - ``no_subtree_check``: This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security.
+  - ``no_root_squash``: Root access allowed for mounted directories. **Dangerous!!** **Note** When root access is necessary, enable it temporarily.
+
+**NFS Client**
+
+- Test mounting the share.. eg. : `#mount -t nfs srv01:/home/nfs1 /home/nfs1`
+- If all works add the mounts to `/etc/fstab`:
+
+```bash
+srv01:/home/nfs1        /home/nfs1      nfs     noatime,rsize=32768,wsize=32768
+srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
+```
+
+
+**RAID**
+
+- RAID 0: taking any number of disks and merging them to one volume.
+- RAID 1: Mirroring
+- RAID 5/6 : Stripping + Distributed Parity. 
+  - Now days RAID 5 is not used in disks larger than 500GB unless they are SSDs or enterprise grade HDDs. [See this article for details](https://www.starwindsoftware.com/blog/raid-5-was-great-until-high-capacity-hdds-came-into-play-but-ssds-restored-its-former-glory-2). Instead RAID 10 is always preferred.
+- RAID 10 : Mirroring + Stripping
+
+**PARTIONING**
+   
+   - When installing CentOS-7, automatic partioning does not work for disk size >2TB so have to choose partion size manually.
+   - A good guide on [Recommended Partioning Scheme](https://docs.centos.org/en-US/centos/install-guide/CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86) 
+   - Essential partions: `/boot, /(root), /home, swap`
+   - Recommended sizes: `/boot (>1G), / (>10G), /home (>1G), swap (see below)`
+     - swap size recommendation (assming no hibernation): For RAM size:  * 2-8GB -> Equal to RAM size * 8-64G -> 4G to 0.5xRAM-size
+
+
+   
+### X-SERVER
+**XFCE on a CENTOS-7 VIRTUAL MACHINE**
+   - **NOTE** `LXDE` display manager is not available on the CentOS repo.
+   - Install the [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/): `$sudo yum install epel-release`
+   - Install `XFCE` display manager: `$sudo yum groupinstall xfce`
+   
+**VNCSERVER on CentOS-7**
+
+- Install `firewalld`, enable it and reboot:
+   
+```bash
+   $sudo yum install firewalld
+   $sudo systemctl enable firewalld
+   $sudo reboot
+```
+   
+   - Check the firewall running status: `$sudo firewalld --state`
+   - Install tigervnc server: `$sudo yum install tigervnc-server` 
+   - Login to the user you want the server on and set the passwd: `$vncpasswd`
+   - Add a VNC service configuration file by copying an template:
+   
+```bash
+   $sudo cp /lib/systemd/system/vncserver@.service  /etc/systemd/system/vncserver@:1.service
+```
+   
+   - Edit the above service file to replace `<USER>` with the username. 
+   - Now start the daemon and enable the service for system wide use:
+   
+```bash
+   $sudo systemctl daemon-reload
+   $sudo systemctl start vncserver@:1
+   $sudo systemctl status vncserver@:1
+   $sudo systemctl enable vncserver@:1
+```
+   
+   - To list the open ports listening to Xvnc: `$ss -tulpn | grep -i vnc`
+   - Then allow the appropriate ports in the firewall to access it:
+   
+```bash
+   $sudo firewall-cmd --add-port=5901/tcp
+   $sudo firewall-cmd --add-port=5901/tcp --permanent
+```
+   
+   - Probably a good idea to reboot now.
+   - Connect using a client (TightVNC/RealVNC/etc) with the Remote Host as `<IP ADDR>:5901` or simply `<IP ADDR>:1`
+   
+**Resources**
+   
+   - [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/)
+   - [Installing and configuring a VNC server on CentOS 7](https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/)
+   - [How to Install and Configure VNC Server in CentOS 7](https://www.tecmint.com/install-and-configure-vnc-server-in-centos-7/)
+   - [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
+   
+
+### REMOTE ACCESS
+
+**PPTP VPN CLIENT ON CentOS-7**
+
+- [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
+   
+### USER MANAGEMENT AND SECURITY
+
+#### FREE IPA
+   
+[FreeIPA](https://www.freeipa.org) is an integrated Identity and Authentication solution for Linux/UNIX networked environments combining Linux (Fedora), 389 Directory Server, MIT Kerberos, NTP, DNS, Dogtag (Certificate System). It consists of a web interface and command-line administration tools. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.
+   
+**FREE-IPA SERVER INSTALLATION**
+   
+**CENTOS 7**
+   
+   - Set the static hostname of the server: `#hostnamectl set-hostname srv01.vlsi.silicon.ac.in`
+     - See [documentation](https://www.freeipa.org/page/Deployment_Recommendations) for detail explanation on setting the **host** and **domain** name. The domin should not be the same as the primary domain (`silicon.ac.in`).
+   - Set hostname in `/etc/hosts`: `192.168.6.50    srv01.vlsi.silicon.ac.in`
+   - Update the OS & reboot: `#yum update; reboot`
+   - `#yum install freeipa-server freeipa-server-dns`
+   - `#firewall-cmd --add-service=freeipa-ldap`
+     - Adding the `freeipa-ldap` should open the necessary ports.
+   - Make it permanent: `#firewall-cmd --add-service=freeipa-ldap --permanent`
+   - Install the server: `#ipa-server-install`
+     - Set the Direct Manager Password. Direct Manager is the super user for managing the IPA server.
+     - Set the admin password. Admin is for normal activities such add/edit users.
+     - Configure DNS forwarders: **yes**
+     - Configure reverse zones: **No**
+     - The install ends with the message of opening the ports (already done) 
+     - backup the certificate `/root/cacert.p12` to use for replicating the server.
+   - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
+   - If the shared (NFS,SMB,etc.) home directories are exported from the same server, which is the case for us, then we need to take care of two things:
+     - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`:
+   
+```bash
+   # semanage fcontext -a -e /home /home/nfs1
+```
+   
+     - Do the same thing for any other custom home directories.
+     - Install, if not already, the `oddjob-mkhomedir` package on the system which provides the `pam_oddjob_mkhomedir.so` library, which the `authconfig` command uses to create home directories. `The pam_oddjob_mkhomedir.so` library, unlike the default `pam_mkhomedir.so` library, can create SELinux labels. The `authconfig` command automatically uses the `pam_oddjob_mkhomedir.so` library if it is available. Otherwise, it will default to using `pam_mkhomedir.so`.
+     - Make sure the `oddjobd` service is running: `# systemctl status oddjobd`
+     - During the `ipa-server` installation, `ipa-client` is also installed by default without the option `--enablemkhomedir` which is needed to for first login in the server which hosts the home directories so for other clients who mount this directory, they don't need the option. Run the `authconfig` command:
+
+```bash
+   # authconfig --enablemkhomedir --update
+```
+     - Check [this](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-homedirs) man page on redhat.com for custom home dir details.
+   
+   
+**INSTALLING IPA CLIENT**
+   
+**CENTOS 7**
+   
+   - Set the hostname: `#hostnamectl set-hostname dt042.vlsi.silicon.ac.in`
+   - Add to `/etc/hosts`:
+   
+```bash
+192.168.6.50    srv01.vlsi.silicon.ac.in  srv01
+192.168.6.202   dt042.vlsi.silicon.ac.in  dt042
+```  
+
+   - Install the client:
+   
+```bash
+   # ipa-client-install --hostname=`hostname -f` \
+         --server=srv01.vlsi.silicon.ac.in \
+         --domain=vlsi.silicon.ac.in \
+         --realm=VLSI.SILICON.AC.IN
+```
+   - **FIXME** During the install the DNS lookup failed. Changing `/etc/resolv.conf` gets overwritten at boot. Must be a master file that sets.
+ 
+   **Resources**
+   - **Server** 
+     - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
+       - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
+     - [How to Install and Configure FreeIPA on CentOS 7 Server -- linuxtechi](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
+     - [How To Install FreeIPA Server on CentOS 7 -- computingforgeeks](https://computingforgeeks.com/install-freeipa-server-centos-7/)
+   - **Client**
+     - [Install & configure FreeIPA Server & Client on RHEL/CentOS 7 -- golinuxcloud](https://www.golinuxcloud.com/install-freeipa-server-centos-7/)
+     - [How To Configure a FreeIPA Client on CentOS 7 -- digital ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-a-freeipa-client-on-centos-7)
+     - [How to Install FreeIPA Client on CentOS 7 -- howtoforge](https://www.howtoforge.com/how-to-install-freeipa-client-on-centos-7/)
+   - [Nemeth-LinuxSysAdmin-5e-2017] : Ch-8/p243 User Mgmt, p-580 LDAP
+   
+   
+   
+#### SELINUX
+   
+[Security-Enhanced Linux (SELinux)] is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
+   
+   -  You can tell what your system is supposed to be running at by looking at the `/etc/sysconfig/selinux` file.
+     - Default option mode is `enforcing` and policy is `targeted`
+   - OR you can use the command `sudo setatus`
+   - The mode can be changed in `/etc/selinux/config` eg. `enforced, permissive, disabled`
+
+```note
+ When switching from **Disabled** to either **Permissive** or **Enforcing** mode, it is highly recommended that the system be rebooted and the filesystem relabeled(?).  
+```
+   
+   - Resources:
+     - [SELinux wiki.centos.org](https://wiki.centos.org/HowTos/SELinux#SELinux_Modes)
+     - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
+
 ## LAUNCHLAB SYSTEM ADMIN
 
 ### COMPUTING INFRASTRUCTURE
@@ -657,186 +874,7 @@ Follow these steps for the above configuration:
  - removing ``.ssh`` and starting fresh seems to work.
  - Deleted ``/var/log/secure`` and now the log won't get updated. Noticed that the previous log file had dot in the end of the permission. So now copied a old secure file which had the dot and stilll won't update. Found from the web that I need to restart ``rsyslog``, ``sudo service rsyslog restart``
  - **SELINUX NOTE** When `tar`-ing a SELinux filesystem, try the `tar --selinux` option. Do some research on it.
-
-## LINUX KNOWLEDGEBASE
-
-### STORAGE
-
-**RAID**
-
-- RAID 0: taking any number of disks and merging them to one volume.
-- RAID 1: Mirroring
-- RAID 5/6 : Stripping + Distributed Parity. 
-  - Now days RAID 5 is not used in disks larger than 500GB unless they are SSDs or enterprise grade HDDs. [See this article for details](https://www.starwindsoftware.com/blog/raid-5-was-great-until-high-capacity-hdds-came-into-play-but-ssds-restored-its-former-glory-2). Instead RAID 10 is always preferred.
-- RAID 10 : Mirroring + Stripping
-
-**PARTIONING**
    
-   - When installing CentOS-7, automatic partioning does not work for disk size >2TB so have to choose partion size manually.
-   - A good guide on [Recommended Partioning Scheme](https://docs.centos.org/en-US/centos/install-guide/CustomSpoke-x86/#sect-recommended-partitioning-scheme-x86) 
-   - Essential partions: `/boot, /(root), /home, swap`
-   - Recommended sizes: `/boot (>1G), / (>10G), /home (>1G), swap (see below)`
-     - swap size recommendation (assming no hibernation): For RAM size:  * 2-8GB -> Equal to RAM size * 8-64G -> 4G to 0.5xRAM-size
-
-   
-### X-SERVER
-**XFCE on a CENTOS-7 VIRTUAL MACHINE**
-   - **NOTE** `LXDE` display manager is not available on the CentOS repo.
-   - Install the [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/): `$sudo yum install epel-release`
-   - Install `XFCE` display manager: `$sudo yum groupinstall xfce`
-   
-**VNCSERVER on CentOS-7**
-
-- Install `firewalld`, enable it and reboot:
-   
-```bash
-   $sudo yum install firewalld
-   $sudo systemctl enable firewalld
-   $sudo reboot
-```
-   
-   - Check the firewall running status: `$sudo firewalld --state`
-   - Install tigervnc server: `$sudo yum install tigervnc-server` 
-   - Login to the user you want the server on and set the passwd: `$vncpasswd`
-   - Add a VNC service configuration file by copying an template:
-   
-```bash
-   $sudo cp /lib/systemd/system/vncserver@.service  /etc/systemd/system/vncserver@:1.service
-```
-   
-   - Edit the above service file to replace `<USER>` with the username. 
-   - Now start the daemon and enable the service for system wide use:
-   
-```bash
-   $sudo systemctl daemon-reload
-   $sudo systemctl start vncserver@:1
-   $sudo systemctl status vncserver@:1
-   $sudo systemctl enable vncserver@:1
-```
-   
-   - To list the open ports listening to Xvnc: `$ss -tulpn | grep -i vnc`
-   - Then allow the appropriate ports in the firewall to access it:
-   
-```bash
-   $sudo firewall-cmd --add-port=5901/tcp
-   $sudo firewall-cmd --add-port=5901/tcp --permanent
-```
-   
-   - Probably a good idea to reboot now.
-   - Connect using a client (TightVNC/RealVNC/etc) with the Remote Host as `<IP ADDR>:5901` or simply `<IP ADDR>:1`
-   
-**Resources**
-   
-   - [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/)
-   - [Installing and configuring a VNC server on CentOS 7](https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/)
-   - [How to Install and Configure VNC Server in CentOS 7](https://www.tecmint.com/install-and-configure-vnc-server-in-centos-7/)
-   - [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
-   
-
-### REMOTE ACCESS
-
-**PPTP VPN CLIENT ON CentOS-7**
-
-- [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
-   
-### USER MANAGEMENT AND SECURITY
-
-#### FREE IPA
-   
-[FreeIPA](https://www.freeipa.org) is an integrated Identity and Authentication solution for Linux/UNIX networked environments combining Linux (Fedora), 389 Directory Server, MIT Kerberos, NTP, DNS, Dogtag (Certificate System). It consists of a web interface and command-line administration tools. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.
-   
-**FREE-IPA SERVER INSTALLATION**
-   
-**CENTOS 7**
-   
-   - Set the static hostname of the server: `#hostnamectl set-hostname srv01.vlsi.silicon.ac.in`
-     - See [documentation](https://www.freeipa.org/page/Deployment_Recommendations) for detail explanation on setting the **host** and **domain** name. The domin should not be the same as the primary domain (`silicon.ac.in`).
-   - Set hostname in `/etc/hosts`: `192.168.6.50    srv01.vlsi.silicon.ac.in`
-   - Update the OS & reboot: `#yum update; reboot`
-   - `#yum install freeipa-server freeipa-server-dns`
-   - `#firewall-cmd --add-service=freeipa-ldap`
-     - Adding the `freeipa-ldap` should open the necessary ports.
-   - Make it permanent: `#firewall-cmd --add-service=freeipa-ldap --permanent`
-   - Install the server: `#ipa-server-install`
-     - Set the Direct Manager Password. Direct Manager is the super user for managing the IPA server.
-     - Set the admin password. Admin is for normal activities such add/edit users.
-     - Configure DNS forwarders: **yes**
-     - Configure reverse zones: **No**
-     - The install ends with the message of opening the ports (already done) 
-     - backup the certificate `/root/cacert.p12` to use for replicating the server.
-   - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
-   - If the shared (NFS,SMB,etc.) home directories are exported from the same server, which is the case for us, then we need to take care of two things:
-     - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`:
-   
-```bash
-   # semanage fcontext -a -e /home /home/nfs1
-```
-   
-     - Do the same thing for any other custom home directories.
-     - Install, if not already, the `oddjob-mkhomedir` package on the system which provides the `pam_oddjob_mkhomedir.so` library, which the `authconfig` command uses to create home directories. `The pam_oddjob_mkhomedir.so` library, unlike the default `pam_mkhomedir.so` library, can create SELinux labels. The `authconfig` command automatically uses the `pam_oddjob_mkhomedir.so` library if it is available. Otherwise, it will default to using `pam_mkhomedir.so`.
-     - Make sure the `oddjobd` service is running: `# systemctl status oddjobd`
-     - During the `ipa-server` installation, `ipa-client` is also installed by default without the option `--enablemkhomedir` which is needed to for first login in the server which hosts the home directories so for other clients who mount this directory, they don't need the option. Run the `authconfig` command:
-
-```bash
-   # authconfig --enablemkhomedir --update
-```
-     - Check [this](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-homedirs) man page on redhat.com for custom home dir details.
-   
-   
-**INSTALLING IPA CLIENT**
-   
-**CENTOS 7**
-   
-   - Set the hostname: `#hostnamectl set-hostname dt042.vlsi.silicon.ac.in`
-   - Add to `/etc/hosts`:
-   
-```bash
-192.168.6.50    srv01.vlsi.silicon.ac.in  srv01
-192.168.6.202   dt042.vlsi.silicon.ac.in  dt042
-```  
-
-   - Install the client:
-   
-```bash
-   # ipa-client-install --hostname=`hostname -f` \
-         --server=srv01.vlsi.silicon.ac.in \
-         --domain=vlsi.silicon.ac.in \
-         --realm=VLSI.SILICON.AC.IN
-```
-   - **FIXME** During the install the DNS lookup failed. Changing `/etc/resolv.conf` gets overwritten at boot. Must be a master file that sets.
- 
-   **Resources**
-   - **Server** 
-     - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
-       - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
-     - [How to Install and Configure FreeIPA on CentOS 7 Server -- linuxtechi](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
-     - [How To Install FreeIPA Server on CentOS 7 -- computingforgeeks](https://computingforgeeks.com/install-freeipa-server-centos-7/)
-   - **Client**
-     - [Install & configure FreeIPA Server & Client on RHEL/CentOS 7 -- golinuxcloud](https://www.golinuxcloud.com/install-freeipa-server-centos-7/)
-     - [How To Configure a FreeIPA Client on CentOS 7 -- digital ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-a-freeipa-client-on-centos-7)
-     - [How to Install FreeIPA Client on CentOS 7 -- howtoforge](https://www.howtoforge.com/how-to-install-freeipa-client-on-centos-7/)
-   - [Nemeth-LinuxSysAdmin-5e-2017] : Ch-8/p243 User Mgmt, p-580 LDAP
-   
-   
-   
-#### SELINUX
-   
-[Security-Enhanced Linux (SELinux)] is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
-   
-   -  You can tell what your system is supposed to be running at by looking at the `/etc/sysconfig/selinux` file.
-     - Default option mode is `enforcing` and policy is `targeted`
-   - OR you can use the command `sudo setatus`
-   - The mode can be changed in `/etc/selinux/config` eg. `enforced, permissive, disabled`
-
-```note
- When switching from **Disabled** to either **Permissive** or **Enforcing** mode, it is highly recommended that the system be rebooted and the filesystem relabeled(?).  
-```
-   
-   - Resources:
-     - [SELinux wiki.centos.org](https://wiki.centos.org/HowTos/SELinux#SELinux_Modes)
-     - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
-
-
 * * *
 
 [Nemeth-LinuxSysAdmin-4e]:         https://www.google.co.in/books/edition/UNIX_and_Linux_System_Administration_Han/0SIdBAAAQBAJ?hl=en
