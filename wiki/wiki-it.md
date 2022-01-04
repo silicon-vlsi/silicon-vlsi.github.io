@@ -764,10 +764,11 @@ Follow these steps for the above configuration:
    - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
    
    **Resources**
-   - [Quick Start Guide](https://www.freeipa.org/page/Quick_Start_Guide)
+   - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
      - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
-   - [How to Install and Configure FreeIPA on CentOS 7 Server](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
-   - [How To Install FreeIPA Server on CentOS 7](https://computingforgeeks.com/install-freeipa-server-centos-7/)
+   - [How to Install and Configure FreeIPA on CentOS 7 Server -- linuxtechi](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
+   - [How To Install FreeIPA Server on CentOS 7 -- computingforgeeks](https://computingforgeeks.com/install-freeipa-server-centos-7/)
+   - [Install & configure FreeIPA Server & Client on RHEL/CentOS 7 -- golinuxcloud](https://www.golinuxcloud.com/install-freeipa-server-centos-7/)
    - [Nemeth-LinuxSysAdmin-5e-2017] : Ch-8/p243 User Mgmt, p-580 LDAP
    
    
