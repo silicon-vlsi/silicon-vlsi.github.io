@@ -16,7 +16,7 @@ This wiki contains all the details (except the private and proprietary info) for
 - ``/etc/fstab``: To mount a NFS directory on your system across the reboots, we need to make an entry in /etc/fstab.
 - ``/etc/sysconfig/nfs``: Configuration file of NFS to control on which port rpc and other services are listening. **NOTE** In our setup, we just use the default options.
 
-**Configuring and starting a NFS Server**
+**Configuring and starting a NFS Server on CentOS 7**
 - **NOTE** The CentOS 7 installation was done with base installation of __File Server with GUI__ so most needed packages were already installed. 
 - Install the necessary packages: `#yum -y install nfs-utils`
 - **Enable** the __NFS__ services so they start at boot: `#systemctl enable {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
