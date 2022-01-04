@@ -762,6 +762,22 @@ Follow these steps for the above configuration:
      - The install ends with the message of opening the ports (already done) 
      - backup the certificate `/root/cacert.p12` to use for replicating the server.
    - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
+   - If the shared (NFS,SMB,etc.) home directories are exported from the same server, which is the case for us, then we need to take care of two things:
+     - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`:
+   
+```bash
+   # semanage fcontext -a -e /home /home/nfs1
+```
+   
+     - Do the same thing for any other custom home directories.
+     - Install, if not already, the `oddjob-mkhomedir` package on the system which provides the `pam_oddjob_mkhomedir.so` library, which the `authconfig` command uses to create home directories. `The pam_oddjob_mkhomedir.so` library, unlike the default `pam_mkhomedir.so` library, can create SELinux labels. The `authconfig` command automatically uses the `pam_oddjob_mkhomedir.so` library if it is available. Otherwise, it will default to using `pam_mkhomedir.so`.
+     - Make sure the `oddjobd` service is running: `# systemctl status oddjobd`
+     - During the `ipa-server` installation, `ipa-client` is also installed by default without the option `--enablemkhomedir` which is needed to for first login in the server which hosts the home directories so for other clients who mount this directory, they don't need the option. Run the `authconfig` command:
+
+```bash
+   # authconfig --enablemkhomedir --update
+```
+     - Check [this](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-homedirs) man page on redhat.com or custom home dir details.
    
    **Resources**
    - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
