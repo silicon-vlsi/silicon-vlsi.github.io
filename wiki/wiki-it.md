@@ -19,8 +19,10 @@ This wiki contains all the details (except the private and proprietary info) for
 **Configuring and starting a NFS Server on CentOS 7**
 - **NOTE** The CentOS 7 installation was done with base installation of __File Server with GUI__ so most needed packages were already installed. 
 - Install the necessary packages: `#yum -y install nfs-utils`
-- **Enable** the __NFS__ services so they start at boot: `#systemctl enable {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
-- **Start** the __NFS__ services: `#systemctl start {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
+- **Enable** the __NFS__ services so they start at boot: 
+  - `#systemctl enable {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
+- **Start** the __NFS__ services: 
+  - `#systemctl start {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
 - **Note** that most of this service may already be running based on your base installation. So you can check the status and restart the m appropriately:
   - `#systemctl status/restart <service>`
 - Add the __share__ directories to `/etc/exports`:
