@@ -34,9 +34,10 @@ This wiki contains all the details (except the private and proprietary info) for
 
 - The NFS Options:
   - ``rw``: Allows client R/W access.
-  - ``async``: default option that should always be used.
+  - ``async``: This option allows the clients to write to the files before they are written to the disk. It will improve speed but may have problems with two clients writing simulataneosly. See this [post](https://serverfault.com/questions/499174/etc-exports-mount-option#:~:text=exports(5)%20async%20This%20option,storage%20(e.g.%20disc%20drive).) for details.
   - ``no_subtree_check``: This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security.
   - ``no_root_squash``: Root access allowed for mounted directories. **Dangerous!!** **Note** When root access is necessary, enable it temporarily.
+  - If the export is through kerberos then you need option `sec=sys:krb5p` **FIXME** Need to research more.
 
 **NFS Client**
 
