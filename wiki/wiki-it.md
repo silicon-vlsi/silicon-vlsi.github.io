@@ -155,11 +155,7 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
      - backup the certificate `/root/cacert.p12` to use for replicating the server.
    - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
    - If the shared (NFS,SMB,etc.) home directories are exported from the same server, which is the case for us, then we need to take care of two things:
-     - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`:
-   
-```bash
-   $ sudo semanage fcontext -a -e /home /home/nfs1
-```
+     - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`: `$ sudo semanage fcontext -a -e /home /home/nfs1`
 
      - Do the same thing for any other custom home directories.
      - Install, if not already, the `oddjob-mkhomedir` package on the system which provides the `pam_oddjob_mkhomedir.so` library, which the `authconfig` command uses to create home directories. `The pam_oddjob_mkhomedir.so` library, unlike the default `pam_mkhomedir.so` library, can create SELinux labels. The `authconfig` command automatically uses the `pam_oddjob_mkhomedir.so` library if it is available. Otherwise, it will default to using `pam_mkhomedir.so`.
