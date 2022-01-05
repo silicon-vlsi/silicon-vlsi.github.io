@@ -157,9 +157,8 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
    - If the shared (NFS,SMB,etc.) home directories are exported from the same server, which is the case for us, then we need to take care of two things:
      - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`:
    
-
 ```bash
-   # semanage fcontext -a -e /home /home/nfs1
+   $ sudo semanage fcontext -a -e /home /home/nfs1
 ```
 
      - Do the same thing for any other custom home directories.
