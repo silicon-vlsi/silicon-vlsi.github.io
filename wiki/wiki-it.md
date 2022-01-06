@@ -193,7 +193,6 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
  
    **Resources**
    - **Server** 
-     - [Fedora 19 (~CentOS 7) FreeIPA Guide](https://docs.fedoraproject.org/en-US/Fedora/18/html/FreeIPA_Guide/index.html)
      - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
        - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
      - [How to Install and Configure FreeIPA on CentOS 7 Server -- linuxtechi](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
@@ -202,7 +201,7 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
      - [Install & configure FreeIPA Server & Client on RHEL/CentOS 7 -- golinuxcloud](https://www.golinuxcloud.com/install-freeipa-server-centos-7/)
      - [How To Configure a FreeIPA Client on CentOS 7 -- digital ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-a-freeipa-client-on-centos-7)
      - [How to Install FreeIPA Client on CentOS 7 -- howtoforge](https://www.howtoforge.com/how-to-install-freeipa-client-on-centos-7/)
-   - [FreeIPA Guide -- Fedora 18 (CentOS6)](https://docs.fedoraproject.org/en-US/Fedora/18/html/FreeIPA_Guide/index.html)
+   - [FreeIPA Guide -- Fedora 18/19 (CentOS6/7)](https://docs.fedoraproject.org/en-US/Fedora/18/html/FreeIPA_Guide/index.html)
    - [Nemeth-LinuxSysAdmin-5e-2017] : Ch-8/p243 User Mgmt, p-580 LDAP
    
    
