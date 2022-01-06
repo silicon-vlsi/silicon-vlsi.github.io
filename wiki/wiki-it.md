@@ -7,6 +7,106 @@ This wiki contains all the details (except the private and proprietary info) for
 
 ## LINUX KNOWLEDGEBASE
 
+- [RHEL 7 Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7)
+- [CentOS 7 Release Notes](https://wiki.centos.org/action/show/Manuals/ReleaseNotes/CentOS7.2009?action=show&redirect=Manuals%2FReleaseNotes%2FCentOS7)
+- [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
+   
+### USER MANAGEMENT AND SECURITY
+
+#### FREE IPA
+   
+[FreeIPA](https://www.freeipa.org) is an integrated Identity and Authentication solution for Linux/UNIX networked environments combining Linux (Fedora), 389 Directory Server, MIT Kerberos, NTP, DNS, Dogtag (Certificate System). It consists of a web interface and command-line administration tools. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.
+   
+**FREE-IPA SERVER INSTALLATION**
+   
+**CENTOS 7**
+   
+   - Set the static hostname of the server: `#hostnamectl set-hostname srv01.vlsi.silicon.ac.in`
+     - See [documentation](https://www.freeipa.org/page/Deployment_Recommendations) for detail explanation on setting the **host** and **domain** name. The domin should not be the same as the primary domain (`silicon.ac.in`).
+   - Set hostname in `/etc/hosts`: `192.168.6.50    srv01.vlsi.silicon.ac.in`
+   - Update the OS & reboot: `#yum update; reboot`
+   - `#yum install freeipa-server freeipa-server-dns`
+   - `#firewall-cmd --add-service=freeipa-ldap`
+     - Adding the `freeipa-ldap` should open the necessary ports.
+   - Make it permanent: `#firewall-cmd --add-service=freeipa-ldap --permanent`
+   - Install the server: `#ipa-server-install`
+     - Set the Direct Manager Password. Direct Manager is the super user for managing the IPA server.
+     - Set the admin password. Admin is for normal activities such add/edit users.
+     - Configure DNS forwarders: **yes**
+     - Configure reverse zones: **No**
+     - The install ends with the message of opening the ports (already done) 
+     - backup the certificate `/root/cacert.p12` to use for replicating the server.
+   - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
+   - If the shared (NFS,SMB,etc.) home directories are exported from the same server, which is the case for us, then we need to take care of two things:
+     - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`: `$ sudo semanage fcontext -a -e /home /home/nfs1`
+
+     - Do the same thing for any other custom home directories.
+     - Install, if not already, the `oddjob-mkhomedir` package on the system which provides the `pam_oddjob_mkhomedir.so` library, which the `authconfig` command uses to create home directories. `The pam_oddjob_mkhomedir.so` library, unlike the default `pam_mkhomedir.so` library, can create SELinux labels. The `authconfig` command automatically uses the `pam_oddjob_mkhomedir.so` library if it is available. Otherwise, it will default to using `pam_mkhomedir.so`.
+     - Make sure the `oddjobd` service is running: `# systemctl status oddjobd`
+     - During the `ipa-server` installation, `ipa-client` is also installed by default without the option `--enablemkhomedir` which is needed to for first login in the server which hosts the home directories so for other clients who mount this directory, they don't need the option. Run the `authconfig` command:
+
+```bash
+   # authconfig --enablemkhomedir --update
+```
+   
+   - Check [this](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-homedirs) man page on redhat.com for custom home dir details.
+   
+   
+**INSTALLING IPA CLIENT**
+   
+**CENTOS 7**
+   
+   - Set the hostname: `#hostnamectl set-hostname dt042.vlsi.silicon.ac.in`
+   - Add to `/etc/hosts`:
+   
+```bash
+192.168.6.50    srv01.vlsi.silicon.ac.in  srv01
+192.168.6.202   dt042.vlsi.silicon.ac.in  dt042
+```  
+
+   - Install the client:
+   
+```bash
+   # ipa-client-install --hostname=`hostname -f` \
+         --server=srv01.vlsi.silicon.ac.in \
+         --domain=vlsi.silicon.ac.in \
+         --realm=VLSI.SILICON.AC.IN
+```
+   - **FIXME** During the install the DNS lookup failed. Changing `/etc/resolv.conf` gets overwritten at boot. Must be a master file that sets.
+ 
+   **Resources**
+   - **Server** 
+     - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
+       - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
+     - [How to Install and Configure FreeIPA on CentOS 7 Server -- linuxtechi](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
+     - [How To Install FreeIPA Server on CentOS 7 -- computingforgeeks](https://computingforgeeks.com/install-freeipa-server-centos-7/)
+   - **Client**
+     - [Install & configure FreeIPA Server & Client on RHEL/CentOS 7 -- golinuxcloud](https://www.golinuxcloud.com/install-freeipa-server-centos-7/)
+     - [How To Configure a FreeIPA Client on CentOS 7 -- digital ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-a-freeipa-client-on-centos-7)
+     - [How to Install FreeIPA Client on CentOS 7 -- howtoforge](https://www.howtoforge.com/how-to-install-freeipa-client-on-centos-7/)
+   - [FreeIPA Guide -- Fedora 18/19 (CentOS6/7)](https://docs.fedoraproject.org/en-US/Fedora/18/html/FreeIPA_Guide/index.html)
+   - [Nemeth-LinuxSysAdmin-5e-2017] : Ch-8/p243 User Mgmt, p-580 LDAP
+   
+   
+   
+#### SELINUX
+   
+[Security-Enhanced Linux (SELinux)] is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
+   
+   -  You can tell what your system is supposed to be running at by looking at the `/etc/sysconfig/selinux` file.
+     - Default option mode is `enforcing` and policy is `targeted`
+   - OR you can use the command `sudo setatus`
+   - The mode can be changed in `/etc/selinux/config` eg. `enforced, permissive, disabled`
+
+```note
+ When switching from **Disabled** to either **Permissive** or **Enforcing** mode, it is highly recommended that the system be rebooted and the filesystem relabeled(?).  
+```
+   
+   - Resources:
+     - [SELinux wiki.centos.org](https://wiki.centos.org/HowTos/SELinux#SELinux_Modes)
+     - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
+
+
 ### STORAGE
 
 **NFS SHARE**
@@ -127,101 +227,6 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 **PPTP VPN CLIENT ON CentOS-7**
 
 - [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
-   
-### USER MANAGEMENT AND SECURITY
-
-#### FREE IPA
-   
-[FreeIPA](https://www.freeipa.org) is an integrated Identity and Authentication solution for Linux/UNIX networked environments combining Linux (Fedora), 389 Directory Server, MIT Kerberos, NTP, DNS, Dogtag (Certificate System). It consists of a web interface and command-line administration tools. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.
-   
-**FREE-IPA SERVER INSTALLATION**
-   
-**CENTOS 7**
-   
-   - Set the static hostname of the server: `#hostnamectl set-hostname srv01.vlsi.silicon.ac.in`
-     - See [documentation](https://www.freeipa.org/page/Deployment_Recommendations) for detail explanation on setting the **host** and **domain** name. The domin should not be the same as the primary domain (`silicon.ac.in`).
-   - Set hostname in `/etc/hosts`: `192.168.6.50    srv01.vlsi.silicon.ac.in`
-   - Update the OS & reboot: `#yum update; reboot`
-   - `#yum install freeipa-server freeipa-server-dns`
-   - `#firewall-cmd --add-service=freeipa-ldap`
-     - Adding the `freeipa-ldap` should open the necessary ports.
-   - Make it permanent: `#firewall-cmd --add-service=freeipa-ldap --permanent`
-   - Install the server: `#ipa-server-install`
-     - Set the Direct Manager Password. Direct Manager is the super user for managing the IPA server.
-     - Set the admin password. Admin is for normal activities such add/edit users.
-     - Configure DNS forwarders: **yes**
-     - Configure reverse zones: **No**
-     - The install ends with the message of opening the ports (already done) 
-     - backup the certificate `/root/cacert.p12` to use for replicating the server.
-   - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
-   - If the shared (NFS,SMB,etc.) home directories are exported from the same server, which is the case for us, then we need to take care of two things:
-     - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`: `$ sudo semanage fcontext -a -e /home /home/nfs1`
-
-     - Do the same thing for any other custom home directories.
-     - Install, if not already, the `oddjob-mkhomedir` package on the system which provides the `pam_oddjob_mkhomedir.so` library, which the `authconfig` command uses to create home directories. `The pam_oddjob_mkhomedir.so` library, unlike the default `pam_mkhomedir.so` library, can create SELinux labels. The `authconfig` command automatically uses the `pam_oddjob_mkhomedir.so` library if it is available. Otherwise, it will default to using `pam_mkhomedir.so`.
-     - Make sure the `oddjobd` service is running: `# systemctl status oddjobd`
-     - During the `ipa-server` installation, `ipa-client` is also installed by default without the option `--enablemkhomedir` which is needed to for first login in the server which hosts the home directories so for other clients who mount this directory, they don't need the option. Run the `authconfig` command:
-
-```bash
-   # authconfig --enablemkhomedir --update
-```
-   
-   - Check [this](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-homedirs) man page on redhat.com for custom home dir details.
-   
-   
-**INSTALLING IPA CLIENT**
-   
-**CENTOS 7**
-   
-   - Set the hostname: `#hostnamectl set-hostname dt042.vlsi.silicon.ac.in`
-   - Add to `/etc/hosts`:
-   
-```bash
-192.168.6.50    srv01.vlsi.silicon.ac.in  srv01
-192.168.6.202   dt042.vlsi.silicon.ac.in  dt042
-```  
-
-   - Install the client:
-   
-```bash
-   # ipa-client-install --hostname=`hostname -f` \
-         --server=srv01.vlsi.silicon.ac.in \
-         --domain=vlsi.silicon.ac.in \
-         --realm=VLSI.SILICON.AC.IN
-```
-   - **FIXME** During the install the DNS lookup failed. Changing `/etc/resolv.conf` gets overwritten at boot. Must be a master file that sets.
- 
-   **Resources**
-   - **Server** 
-     - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
-       - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
-     - [How to Install and Configure FreeIPA on CentOS 7 Server -- linuxtechi](https://www.linuxtechi.com/install-configure-freeipa-centos-7-server/)
-     - [How To Install FreeIPA Server on CentOS 7 -- computingforgeeks](https://computingforgeeks.com/install-freeipa-server-centos-7/)
-   - **Client**
-     - [Install & configure FreeIPA Server & Client on RHEL/CentOS 7 -- golinuxcloud](https://www.golinuxcloud.com/install-freeipa-server-centos-7/)
-     - [How To Configure a FreeIPA Client on CentOS 7 -- digital ocean tutorial](https://www.digitalocean.com/community/tutorials/how-to-configure-a-freeipa-client-on-centos-7)
-     - [How to Install FreeIPA Client on CentOS 7 -- howtoforge](https://www.howtoforge.com/how-to-install-freeipa-client-on-centos-7/)
-   - [FreeIPA Guide -- Fedora 18/19 (CentOS6/7)](https://docs.fedoraproject.org/en-US/Fedora/18/html/FreeIPA_Guide/index.html)
-   - [Nemeth-LinuxSysAdmin-5e-2017] : Ch-8/p243 User Mgmt, p-580 LDAP
-   
-   
-   
-#### SELINUX
-   
-[Security-Enhanced Linux (SELinux)] is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
-   
-   -  You can tell what your system is supposed to be running at by looking at the `/etc/sysconfig/selinux` file.
-     - Default option mode is `enforcing` and policy is `targeted`
-   - OR you can use the command `sudo setatus`
-   - The mode can be changed in `/etc/selinux/config` eg. `enforced, permissive, disabled`
-
-```note
- When switching from **Disabled** to either **Permissive** or **Enforcing** mode, it is highly recommended that the system be rebooted and the filesystem relabeled(?).  
-```
-   
-   - Resources:
-     - [SELinux wiki.centos.org](https://wiki.centos.org/HowTos/SELinux#SELinux_Modes)
-     - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
 
 ## LAUNCHLAB SYSTEM ADMIN
 
