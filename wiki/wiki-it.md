@@ -50,6 +50,8 @@ This wiki contains all the details (except the private and proprietary info) for
 ```
    
    - Check [this](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-homedirs) man page on redhat.com for custom home dir details.
+   - [Setting up User Home Directories in IPA -- redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/users#home-directories)
+     - **NOTE** in the above document: "Auto-creating home directories for new users on an NFS share is **not supported**"
    
    
 **INSTALLING IPA CLIENT**
