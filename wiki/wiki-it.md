@@ -10,8 +10,19 @@ This wiki contains all the details (except the private and proprietary info) for
 - [RHEL 7 Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7)
 - [CentOS 7 Release Notes](https://wiki.centos.org/action/show/Manuals/ReleaseNotes/CentOS7.2009?action=show&redirect=Manuals%2FReleaseNotes%2FCentOS7)
 - [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
-   
+
+### SYSTEM ADMINISTRATION
+- Installing and using the `authconfig` GUI (**NOTE** `authconfig-tui` is deprecated)
+  - `# yum install authconfig-gtk`
+  - Launch it: `#system-config-authentication`  **NOTE** command takes effect after quiting GUI.
+  - [Redhat documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-install)
+
 ### USER MANAGEMENT AND SECURITY
+#### NIS
+
+- Followed the following two blogs to setup but the client got all broken so need to debug.
+- [NIS Server setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=1)
+- [NIS Client setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=2)
 
 #### FREE IPA
    
