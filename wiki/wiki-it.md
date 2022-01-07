@@ -77,6 +77,11 @@ This wiki contains all the details (except the private and proprietary info) for
    - **FIXME** During the install the DNS lookup failed. Changing `/etc/resolv.conf` gets overwritten at boot. Must be a master file that sets.
  
    **Resources**
+   - **automount**
+     - [Setting up User Home directories -- redhat.com](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/users#home-directories)
+     - [Using automount -- redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/automount)
+     - [Setting up kerboros aware NFS Server](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-server)
+     - [Setting up kerboros aware NFS Client](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-client)
    - **Server** 
      - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
        - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
