@@ -30,19 +30,12 @@ This wiki contains all the details (except the private and proprietary info) for
 - `# yum -y install ypserv rpcbind`
 - `# ypdomainname vlsi.silicon.ac.in`
 - Add `NISDOMAIN=vlsi.silicon.ac.in` to `/etc/sysconfig/network`
-- Add network you want to access the NIS server: Add the following to `/var/yp/securenets`
-
-```bash
-255.0.0.0      127.0.0.0
-255.255.255.0  192.168.6.0
-```
-
-  - **Note** This probably can be omitted because our previous NIS server did not have this.
+- **Ignored** the `/var/yp/securenet` instruction. Was probably creating a problem where I had to restart `rpcbind` everytime there was an update to the server.
 - Add the server and the clients' IP address for NIS database to `/etc/hosts`
 
 ```bash
-192.168.6.50   srv01.vlsi.silicon.ac.in
-192.168.6.202  dt042.vlsi.silicon.ac.in
+192.168.6.50   srv01.vlsi.silicon.ac.in srv01
+192.168.6.202  dt042.vlsi.silicon.ac.in dt042
 ```
 
 - `#systemctl start {rpcbind, ypserv, ypxfrd, yppasswdd}`
@@ -51,7 +44,7 @@ This wiki contains all the details (except the private and proprietary info) for
   - Add the list of NIS servers : `srv01.vlsi.silicon.ac.in` 
   - 'Ctrl+D' to end the list of servers.
 - This will build the database in `/var/yp/<DOMAINNAME>`
-- Now run `#ypinit -s srv01` on all slave servers.
+  - If you have slave servers: run `# ypinit -s srv01` on all slave servers.
 - Now when you add an user to the local server `srv01`, update NIS database:
   - `# make -C /var/yp`
 - To allow ports in the firewall, add the following to `/etc/sysconfig/network`
