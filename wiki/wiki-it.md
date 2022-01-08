@@ -22,10 +22,9 @@ This wiki contains all the details (except the private and proprietary info) for
 
 - Followed the following two blogs to setup but the client got all broken so need to debug.
   - [NIS Server setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=1)
-    - **Note** Not sure if we need the SELinux part of it.
   - [NIS Client setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=2)
 
-**NIS SERVER**
+**NIS SERVER ON CENTOS 7**
 
 - `# yum -y install ypserv rpcbind`
 - `# ypdomainname vlsi.silicon.ac.in`
@@ -68,6 +67,18 @@ YPSERV_ARGS="-p 945"
 # firewall-cmd --reload
 ```
 
+**NIS CLIENT ON CENTOS 7**
+
+- `# yum install ypbind rpcbind`
+- `# yum ypdomainname vlsi.silicon.ac.in`
+- Add `NISDOMAIN=vlsi.silicon.ac.in` to `/etc/sysconfig/network`
+- `# authconfig --enablenis --nisdomain=vlsi.silicon.ac.in --nisserver=srv01.vlsi.silicon.ac.in --update`
+  - **Note** If the homedirs are NFS mounted, then no need to use the option `--mkhomedir`
+- `# systemctl start rpcbind ypbind`
+- `# systemctl enable rpcbind ypbind`
+- Type `ypwhich` to see what NIS server is the client binding to.
+- To change passwd in the client, use `yppasswd`
+- **Note** Ignored the instruction on how to enable automatic creation of homedir for SELinux enabled linux. For NFS mounted homedir, mkhomedir does not work so I don't think this appies to NFS mounted homedirs.
 
 #### FREE IPA
    
