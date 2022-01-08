@@ -21,17 +21,71 @@ This wiki contains all the details (except the private and proprietary info) for
 #### NIS
 
 - Followed the following two blogs to setup but the client got all broken so need to debug.
-- [NIS Server setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=1)
-- [NIS Client setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=2)
+  - [NIS Server setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=1)
+    - **Note** Not sure if we need the SELinux part of it.
+  - [NIS Client setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=2)
+
+**NIS SERVER**
+
+- `# yum -y install ypserv rpcbind`
+- `# ypdomainname vlsi.silicon.ac.in`
+- Add `NISDOMAIN=vlsi.silicon.ac.in` to `/etc/sysconfig/network`
+- Add network you want to access the NIS server: Add the following to `/var/yp/securenets`
+
+```bash
+255.0.0.0      127.0.0.0
+255.255.255.0  192.168.6.0
+```
+
+  - **Note** This probably can be omitted because our previous NIS server did not have this.
+- Add the server and the clients' IP address for NIS database to `/etc/hosts`
+
+```bash
+192.168.6.50   srv01.vlsi.silicon.ac.in
+192.168.6.202  dt042.vlsi.silicon.ac.in
+```
+
+- `#systemctl start {rpcbind, ypserv, ypxfrd, yppasswdd}`
+- `#systemctl enable {rpcbind, ypserv, ypxfrd, yppasswdd}`
+- Upadate NIS database: `#/usr/lib64/yp/ypinit -m`
+  - Add the list of NIS servers : `srv01.vlsi.silicon.ac.in` 
+  - 'Ctrl+D' to end the list of servers.
+- This will build the database in `/var/yp/<DOMAINNAME>`
+- Now run `#ypinit -s srv01` on all slave servers.
+- Now when you add an user to the local server `srv01`, update NIS database:
+  - `# make -C /var/yp`
+- To allow ports in the firewall, add the following to `/etc/sysconfig/network`
+
+```bash
+YPSERV_ARGS="-p 944"
+YPSERV_ARGS="-p 945"
+```
+
+- Add `YPPASSWD_ARGS="--port 946` to `/etc/sysconfig/yppasswdd`
+- `# systemctl restart rpcbind ypserv ypxfrd yppasswdd`
+- Open the ports in firewall:
+
+```bash
+# firewall-cmd --add-service=rpc-bind --permanent
+# firewall-cmd --add-port=944/tcp --permanent
+# firewall-cmd --add-port=944/udp --permanent
+# firewall-cmd --add-port=945/tcp --permanent
+# firewall-cmd --add-port=945/udp --permanent
+# firewall-cmd --add-port=946/udp --permanent
+# firewall-cmd --reload
+```
+
 
 #### FREE IPA
    
 [FreeIPA](https://www.freeipa.org) is an integrated Identity and Authentication solution for Linux/UNIX networked environments combining Linux (Fedora), 389 Directory Server, MIT Kerberos, NTP, DNS, Dogtag (Certificate System). It consists of a web interface and command-line administration tools. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.
+
+```note
+Home directories cannot be created automatically on NFS mounts when using IPA. This was the major reason for not implementing IPA.
+```
    
-**FREE-IPA SERVER INSTALLATION**
-   
-**CENTOS 7**
-   
+**FREE-IPA SERVER INSTALLATION ON CENTOS 7**
+
    - Set the static hostname of the server: `#hostnamectl set-hostname srv01.vlsi.silicon.ac.in`
      - See [documentation](https://www.freeipa.org/page/Deployment_Recommendations) for detail explanation on setting the **host** and **domain** name. The domin should not be the same as the primary domain (`silicon.ac.in`).
    - Set hostname in `/etc/hosts`: `192.168.6.50    srv01.vlsi.silicon.ac.in`
@@ -50,7 +104,6 @@ This wiki contains all the details (except the private and proprietary info) for
    - Access the FreeIPA admin portal using the URL: `https://srv01.vlsi.silicon.ac.in`
    - If the shared (NFS,SMB,etc.) home directories are exported from the same server, which is the case for us, then we need to take care of two things:
      - If the LDAP (ipa) users home directories are customed ie. not in `/home`. For example: `/home/nfs1` then apply the correct SELinux context and permissions from the `/home` directory to the home directory that is created on the local system eg. `/home/nfs1`: `$ sudo semanage fcontext -a -e /home /home/nfs1`
-
      - Do the same thing for any other custom home directories.
      - Install, if not already, the `oddjob-mkhomedir` package on the system which provides the `pam_oddjob_mkhomedir.so` library, which the `authconfig` command uses to create home directories. `The pam_oddjob_mkhomedir.so` library, unlike the default `pam_mkhomedir.so` library, can create SELinux labels. The `authconfig` command automatically uses the `pam_oddjob_mkhomedir.so` library if it is available. Otherwise, it will default to using `pam_mkhomedir.so`.
      - Make sure the `oddjobd` service is running: `# systemctl status oddjobd`
@@ -85,14 +138,14 @@ This wiki contains all the details (except the private and proprietary info) for
          --domain=vlsi.silicon.ac.in \
          --realm=VLSI.SILICON.AC.IN
 ```
-   - **FIXME** During the install the DNS lookup failed. Changing `/etc/resolv.conf` gets overwritten at boot. Must be a master file that sets.
+   - **NOTE** During the install the DNS lookup failed. Changing `/etc/resolv.conf` gets overwritten at boot. Must be a master file that sets. Just make sure that DNS lookup in `/etc/nsswitch.conf` the first nameserver is the IPA server.
  
    **Resources**
    - **automount**
+     - **NOTE** Could not get automount to work. Tried mounting NFS using Kerberos but it still didn't.
      - [Setting up User Home directories -- redhat.com](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/users#home-directories)
      - [Using automount -- redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/automount)
-     - [Setting up kerboros aware NFS Server](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-server)
-     - [Setting up kerboros aware NFS Client](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-client)
+
    - **Server** 
      - [Quick Start Guide -- freeipa](https://www.freeipa.org/page/Quick_Start_Guide)
        - [Deployment Recommendations](https://www.freeipa.org/page/Deployment_Recommendations)
@@ -137,6 +190,7 @@ This wiki contains all the details (except the private and proprietary info) for
 **Configuring and starting a NFS Server on CentOS 7**
 - **NOTE** The CentOS 7 installation was done with base installation of __File Server with GUI__ so most needed packages were already installed. 
 - Install the necessary packages: `#yum -y install nfs-utils`
+- Change owner and group of the NFS share: `#chown nfsnobody:nfsnobody /home/nfs1` **NOTE** not sure if this matters.
 - **Enable** the __NFS__ services so they start at boot: 
   - `#systemctl enable {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
 - **Start** the __NFS__ services: 
@@ -167,6 +221,10 @@ srv01:/home/nfs1        /home/nfs1      nfs     noatime,rsize=32768,wsize=32768
 srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 ```
 
+**Resources**
+
+     - [Setting up kerboros aware NFS Server](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-server)
+     - [Setting up kerboros aware NFS Client](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-client)
 
 **RAID**
 
