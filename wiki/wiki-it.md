@@ -16,6 +16,17 @@ This wiki contains all the details (except the private and proprietary info) for
   - `# yum install authconfig-gtk`
   - Launch it: `#system-config-authentication`  **NOTE** command takes effect after quiting GUI.
   - [Redhat documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system-level_authentication_guide/authconfig-install)
+- Installing cockpit on CentOS 7:
+
+```bash
+# yum install cockpit
+# systemctl enable --now cockpit.socket
+# firewall-cmd --permanent --zone=public --add-service=cockpit
+# firewall-cmd --reload
+```
+
+  - Access the cockpit from web browser using the URL: `https://<SERVER-IP>:9090
+
 
 ### USER MANAGEMENT AND SECURITY
 #### NIS
