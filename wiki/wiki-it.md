@@ -25,8 +25,10 @@ This wiki contains all the details (except the private and proprietary info) for
 # firewall-cmd --reload
 ```
 
-  - Access the cockpit from web browser using the URL: `https://<SERVER-IP>:9090
-
+- Access the cockpit from web browser using the URL: `https://<SERVER-IP>:9090`
+- Resources:
+  -[Intro to Cockpit -- redhat](https://www.redhat.com/sysadmin/intro-cockpit)
+  -[Getting started -- redhat 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/getting_started_with_cockpit/index)
 
 ### USER MANAGEMENT AND SECURITY
 #### NIS
