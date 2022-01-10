@@ -197,7 +197,7 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
 
 ### STORAGE
 
-**NFS SHARE**
+#### NFS SHARE
 
 **Important Files for NFS Configuration**
 - ``/etc/exports``: Its a main configuration file of NFS, all exported files and directories are defined in this file at the NFS Server end.
@@ -242,6 +242,31 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 
      - [Setting up kerboros aware NFS Server](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-server)
      - [Setting up kerboros aware NFS Client](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-client)
+
+#### QUOTA
+
+**SETTING DISK QUOTA ON A XFS FILESYSTEM ON CENTOS 7**
+
+- The instructions are from this [Redhat doc](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsquota)
+- XFS quotas are enabled at mount time, with specific mount options. Each mount option can also be specified as `noenforce`; this allows usage reporting without enforcing any limits. Valid quota mount options are:
+  - `uquota`/`uqnoenforce`: User quotas
+  - `gquota`/`gqnoenforce`: Group quotas
+  - `pquota`/`pqnoenforce`: Project quota
+- An example of an entry in `/etc/fstab`:
+  - `/dev/mapper/nfs-home_NFS /home/nfs1  xfs defaults,uquota,gquota,pquota        0 0`
+- To set a block limit for an user (say `500MB` for `user1`):
+  - `# xfs_quota -x -c 'limit -u -g bsoft=400m bhard=500m user1' /home/nfs1`
+  - To set a group limit (say `500MB` for the ENTIRE group `eng`), use the above command with the exeception: `-g` and `eng` instead of __-u__ and __user1__ 
+- **Setting Project Limits**:
+  - Before configuring limits for project-controlled directories, add them first to `/etc/projects`. Project names can be added to `/etc/projectid` to map project IDs to project names. Once a project is added to `/etc/projects`, initialize its project directory using the following command:
+    - `# xfs_quota -x -c 'project -s projectname' project_path`
+  - Quotas for projects with initialized directories can then be configured, with:
+    - `xfs_quota -x -c 'limit -p bsoft=1000m bhard=1200m projectname'
+- **Reporting Quota Limits**:
+  - `$ quota username`
+  - `# xfs_quota -x -c 'report -h' /home/nfs1`
+
+#### RAID/PARTIONING
 
 **RAID**
 
