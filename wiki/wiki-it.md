@@ -355,7 +355,19 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 
 ### EDA TOOLS
 
-#### CADENCE ON CENTOS 7
+#### CADENCE
+
+**SPECTRE ON CENTOS 7**
+
+- Installed Spectre (21.1) using iScape
+- Read the Relase Notes from iScape.
+- Run `checkSysConf` to check the OS, packages, patches, etc needed to run Spectre
+- `# /CAD/cadence/SPECTRE211/tools.lnx86/bin/checkSysConf SPECTRE21.1`
+  - Install all the missing packages 
+  - **Note** Spectre requires a 32-bit (i686) `glibc` along with the 64-bit.
+  - Install it with explicit architecture: `#sudo yum install glibc.i686`  
+
+**IC 618 ON CENTOS 7**
 
 - After choosing the base package `Gnome Desktop` during install, you need to isntall the following packages to run cadence.
   - `libXScrnSaver` (libXss.so.1), `mesa-libGLU` (libGLU.so.1), `xorg-x11-fonts-ISO8859-1-75dpi`
