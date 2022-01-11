@@ -12,6 +12,13 @@ This wiki contains all the details (except the private and proprietary info) for
 - [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
 
 ### SYSTEM ADMINISTRATION
+
+#### INSTALLATION AND PACKAGE MANGEMENT
+
+- To **find** a package which __provides__ a certain library eg. `libXss.so.1`
+  - `$ yum provides libXss.so.1` 
+
+#### MONITOR AND CONFIGURATION
 - Installing and using the `authconfig` GUI (**NOTE** `authconfig-tui` is deprecated)
   - `# yum install authconfig-gtk`
   - Launch it: `#system-config-authentication`  **NOTE** command takes effect after quiting GUI.
@@ -345,6 +352,15 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 **PPTP VPN CLIENT ON CentOS-7**
 
 - [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
+
+### EDA TOOLS
+
+#### CADENCE ON CENTOS 7
+
+- After choosing the base package `Gnome Desktop` during install, you need to isntall the following packages to run cadence.
+  - `libXScrnSaver` (libXss.so.1), `mesa-libGLU` (libGLU.so.1), `xorg-x11-fonts-ISO8859-1-75dpi`
+
+
 
 ## LAUNCHLAB SYSTEM ADMIN
 
