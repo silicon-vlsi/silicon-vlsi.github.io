@@ -196,7 +196,17 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
 ```note
  When switching from **Disabled** to either **Permissive** or **Enforcing** mode, it is highly recommended that the system be rebooted and the filesystem relabeled(?).  
 ```
-   
+
+   - Some useful SELinux commands
+     - `$ ls -Z file1`
+       - To view the SELinux context of the file in the following format: __user:role:type:level__ 
+       - **SELinux user** is a SELinux specific identity using SELinux policy that is mapped to an user to inherit the policy. 
+       - The command `# semanage login -l` lists all the users with their assigned SELinux user, the MLS/MCS security level and allowed services.
+       - **role** is part of SELinux Role-Based Access COntrol (RBAC) security model.
+       - **type** is attribute of Type enforcement.
+       - **level** is an attribute of MLS/MCS security level.
+     - `tar --selinux ...` to preserve the SELinux properties. **FIXME** Need to research more on this one...
+     - 
    - Resources:
      - [SELinux wiki.centos.org](https://wiki.centos.org/HowTos/SELinux#SELinux_Modes)
      - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
@@ -357,8 +367,20 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 
 #### CADENCE
 
+**IC 618 ON CENTOS 7**
+
+- After installation run the patch test:
+  - `<INSTALL-DIR>/tools.lnx86/bin/checkSysConf IC6.1.8`
+  - Required packages: `glibc`, `elfutils-libelf`, `ksh`, `mesa-libGL`, `mesa-libGLU`, `motif`, `libXp`, `libpng`, `libjpeg-turbo`, `expat`, `glibc-devel`, `gdb`, `xorg-x11-fonts-misc`, `xorg-x11-fonts-ISO8859-1-75dpi7.5`, `redhat-lsb`, `libXscrnSaver`, `apr`, `apr-util`, `compat-db47`, `xorg-x11-server-Xvfb`, `mesa-dri-drivers`, `openssl-devel`
+
+**MMSIM ON CENTOS 7**
+
+- **NOTE** MMSIM is no longer supported by Cadence. It's SPECTRE. But we don't have the license for it.
+- Used the previous installation MMSIM15.1 and seems to work without any extra patches/pkgs.
+
 **SPECTRE ON CENTOS 7**
 
+- **NOTE** We DO NOT HAVE licenses for SPECTRE right now. And Cadence doesn't support MMSIM anymore. So need to use the old installation.
 - Installed Spectre (21.1) using iScape
 - Read the Relase Notes from iScape.
 - Run `checkSysConf` to check the OS, packages, patches, etc needed to run Spectre
@@ -367,10 +389,7 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
   - **Note** Spectre requires a 32-bit (i686) `glibc` along with the 64-bit.
   - Install it with explicit architecture: `#sudo yum install glibc.i686`  
 
-**IC 618 ON CENTOS 7**
 
-- After choosing the base package `Gnome Desktop` during install, you need to isntall the following packages to run cadence.
-  - `libXScrnSaver` (libXss.so.1), `mesa-libGLU` (libGLU.so.1), `xorg-x11-fonts-ISO8859-1-75dpi`
 
 
 
