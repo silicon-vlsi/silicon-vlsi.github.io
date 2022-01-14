@@ -390,10 +390,21 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
   - Install it with explicit architecture: `#sudo yum install glibc.i686`  
 
 
+## IT (NEW)
 
+### NETWORKING
 
+**IP ASSIGNMENTS**
 
-## LAUNCHLAB SYSTEM ADMIN
+- The Advanced VLSI Lab now is under a new VLAN `192.168.11.0/24` with the following broad assignment:
+  - Training Lab: `192.168.11.1-30`
+  - Advanced VLSI Lab: `192.168.11.31-70`
+  - DHCP: `192.168.11.71-220`
+  - Servers: `192.168.11.221-153` : SRV01-`221-`, SRV02-`229-`, SRV03-`237-`
+  - Gateway: `192.168.11.254`
+  - DNS: `10.3.208.1`, `8.8.8.8`
+
+## IT INFRA (OLD)
 
 ### COMPUTING INFRASTRUCTURE
 ![Computing Infra](IT-infra.png) 
