@@ -319,7 +319,7 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
    $sudo reboot
 ```
    
-   - Check the firewall running status: `$sudo firewalld --state`
+   - Check the firewall running status: `$sudo firewall-cmd --state`
    - Install tigervnc server: `$sudo yum install tigervnc-server` 
    - Login to the user you want the server on and set the passwd: `$vncpasswd`
    - Add a VNC service configuration file by copying an template:
