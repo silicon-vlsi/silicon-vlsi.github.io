@@ -5,7 +5,7 @@ sort: 1
 # Projects 
 
 ## A 32-bit RISC-V-based Microcontroller in 180nm CMOS Technology for Low-Power IoT Applications
-While India is poised to emerge as the _Hotbed for IoT Opportunities_, it's semiconductor dependencies is a glaring reminder of a long road ahead before being technologically independent. This project is a step towards the goal of bridging that gap. This microcontroller is intended for use in low-power IoT based applications such as environment (temperature, humidity, air-quality) monitoring systems. Some of the major design efforts in this project are:
+This microcontroller is intended to be used in low-power IoT applications where the demand on processing is low while consuming minimal power from a watch battery intended to run IoT sensor nodes for 5-10 years. Majority of the IoT applications such as environment monitoring sensors ( temperature, humidity air quality) sensors fall in this category. Some of the major design efforts in this project are:
 
 - Generating a small-footprint and low-power RISC-V core  using the open-source [PULPino](https://github.com/pulp-platform/pulpino) platform developed at ETH Zurich.
 - Verification of the core with IoT application C-programs.
@@ -14,6 +14,13 @@ While India is poised to emerge as the _Hotbed for IoT Opportunities_, it's semi
 - A 10-bit, 100 kHz Successive Approximation Resistor (SAR) ADC for interfacing sensors to the microcontroller.
 - Temperature-independent voltage and current reference for biasing internal circuits.
 - Temperature compensated Ring-Oscillator for generating internal clock signal. 
+
+This project aims at creating specialized manpower and Intellectual Property in the area ESDM space of VLSI and Embedded System which is currently a national interest for India. The main social objectives of this project are:
+
+- Generate industry-ready manpower in System and Chip design for fostering a semiconductor ecosystem in the country.
+- Bridging the gap between industry and academia by promoting industry-led training and R&D activities.
+- To develop core Intellectual Property (IP) in key areas of ESDM to make our country self-sufficient.
+- Encourage a startup mentality in the country for young entrepreneurs to drive and grow this development.
 
 ## A sub-nanoamp Programmable Current Reference Design in 28nm CMOS Technology
 This is an industry-collaborated project developing various analog IP blocks for an ultra-efficient neuromorphic processor in 28-nanometer CMOS technology. Various analog and mixed-signal blocks require a programmable current reference all the way down to sub-nanoamp of current which extremely challenging in this technology. Major design efforts in this project are:
