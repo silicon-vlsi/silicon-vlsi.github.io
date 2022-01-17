@@ -224,7 +224,11 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
 **Configuring and starting a NFS Server on CentOS 7**
 - **NOTE** The CentOS 7 installation was done with base installation of __File Server with GUI__ so most needed packages were already installed. 
 - Install the necessary packages: `#yum -y install nfs-utils`
-- Change owner and group of the NFS share: `#chown nfsnobody:nfsnobody /home/nfs1` **NOTE** not sure if this matters.
+- Change owner and group of the NFS share: `#chown nfsnobody:nfsnobody /home/nfs1`
+  - This is for security so if there is breach through NFS the user nfsnobody has no shell. 
+- Enable NFS port (2049/tcp and 2049/udp) through the **firewall**
+  - `# firewall-cmd --permanent --add-service=nfs`
+  - `# firewall-cmd --reload`
 - **Enable** the __NFS__ services so they start at boot: 
   - `#systemctl enable {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
 - **Start** the __NFS__ services: 
@@ -254,6 +258,15 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
 srv01:/home/nfs1        /home/nfs1      nfs     noatime,rsize=32768,wsize=32768
 srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 ```
+
+**Troubleshooting NFS**
+
+- `#mount -v ...` will output debug information
+- On the server `# iptables -S | grep 2049` will show if the NFS ports are in the firewall rules.
+- `# rpcinfo -p <server/client>` will show all the RPC port info. Check if NFS port is open. 
+- If `rpcinfo` shows **no route to host** probably port is not open in the firewall or network routing issues.
+- `# route -n` to check the network route.
+
 
 **Resources**
 
@@ -404,6 +417,26 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
   - Gateway: `192.168.11.254`
   - DNS: `10.3.208.1`, `8.8.8.8`
 
+- **Domain Name**: `vlsi.silicon.sc.in`
+  - `srv01.vlsi.silicon.ac.in` : 192.168.11.221
+
+**PARTIONING**
+
+**srv01.vlsi.silicon.ac.in**
+
+| **Mount** | **Size** | **Purpose** |
+| ``swap`` | 8G | 0.5xRAM-size |
+| ``/boot`` | 1.5G | Boot files |
+| ``/boot/efi`` | 0.5G | EFI boot files |
+| ``/(root)`` | 150G | CentOS 7 installation files |
+| ``/home`` | 50G | Local home dir |
+| ``/var`` | 25G | log,etc |
+| ``/home`` | 25G | system home dirs |
+| ``/home/local`` | 400G | local mount (sims, etc) |
+| ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
+
+
+
 ## IT INFRA (OLD)
 
 ### COMPUTING INFRASTRUCTURE
@@ -417,15 +450,6 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 
 ### STORAGE
 
-**VLSI-SRV-001**
-
-| **Mount** | **Size** | **Purpose** |
-| ``swap`` | 8G | 0.5xRAM-size |
-| ``/boot`` | 1.5G | Boot files |
-| ``/boot/efi`` | 0.5G | EFI boot files |
-| ``/(root)`` | 150G | CentOS 7 installation files |
-| ``/home`` | 50G | Local home dir |
-| ``/var`` | 25G | log,etc |
 
 **VLSI-SRV-001 (OLD) **
 
