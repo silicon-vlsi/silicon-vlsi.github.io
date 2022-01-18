@@ -8,6 +8,18 @@ This wiki contains all the details (except the private and proprietary info) for
 ## LINUX KNOWLEDGEBASE
 
 - [RHEL 7 Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7)
+  - **Deployment**: [Installation Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide)
+  - **System Administration**:
+    - [SysAdmin Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide)
+    - [Common Admin commands](https://access.redhat.com/articles/1189123)
+    - [Using cockpit to manage CentOS/RHEL servers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/managing_systems_using_the_rhel_7_web_console)
+    - [Networking Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide)
+    - [Kernel Admin Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/kernel_administration_guide)
+    - [Performance Tuning](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/performance_tuning_guide)
+    - [Resource Management](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/resource_management_guide)
+  - **Security**: [Security Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/security_guide) | [SELinux](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide)
+  - **Storage**: [Storage Admin Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide) | [LVM Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/logical_volume_manager_administration)
+ 
 - [CentOS 7 Release Notes](https://wiki.centos.org/action/show/Manuals/ReleaseNotes/CentOS7.2009?action=show&redirect=Manuals%2FReleaseNotes%2FCentOS7)
 - [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
 
