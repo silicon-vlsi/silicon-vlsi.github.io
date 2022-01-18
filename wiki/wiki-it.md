@@ -9,6 +9,7 @@ This wiki contains all the details (except the private and proprietary info) for
 
 - [RHEL 7 Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7)
   - **Deployment**: [Installation Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide)
+    - [A Simple guide to Automated Installation using Kickstart File](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
   - **System Administration**:
     - [SysAdmin Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide)
     - [Common Admin commands](https://access.redhat.com/articles/1189123)
