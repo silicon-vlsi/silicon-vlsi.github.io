@@ -416,7 +416,16 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
   - Install it with explicit architecture: `#sudo yum install glibc.i686`  
 
 
-## IT (NEW)
+## IT/CAD SETUP
+
+### SOFTWARE/PACKAGES
+
+- **NEW CENTOS 7 INSTALLATION**
+  - 
+  - For cadence check the required packages in Linux Knowledgebase -> EDA Tools section
+  - `Shell.pm` perl module is missing in new CentOS 7 installations. To install the module using cpan:
+    - `# cpan Shell` The first time using cpan, it will ask for configuration, choose all the defaults.
+  
 
 ### NETWORKING
 
@@ -433,6 +442,8 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 - **Domain Name**: `vlsi.silicon.sc.in`
   - `srv01.vlsi.silicon.ac.in` : 192.168.11.221
 
+### STORAGE
+
 **PARTIONING**
 
 **srv01.vlsi.silicon.ac.in**
@@ -447,6 +458,7 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 | ``/home`` | 25G | system home dirs |
 | ``/home/local`` | 400G | local mount (sims, etc) |
 | ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
+
 
 
 
