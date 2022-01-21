@@ -51,6 +51,18 @@ This wiki contains all the details (except the private and proprietary info) for
   -[Getting started -- redhat 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/getting_started_with_cockpit/index)
 
 ### USER MANAGEMENT AND SECURITY
+
+#### USERS/GROUPS
+
+- [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups)
+- Range of `UID/GID`, umask,etc are set in `/etc/login.defs`
+- Password aging can be set with `chage`
+- The GUI for user management is `Users`
+- See [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups) for **command-line utilities** for user/group management.
+- 
+
+
+
 #### NIS
 
 - Followed the following two blogs to setup but the client got all broken so need to debug.
