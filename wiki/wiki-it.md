@@ -11,7 +11,7 @@ This wiki contains all the details (except the private and proprietary info) for
   - **Deployment**: [Installation Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide)
     - [A Simple guide to Automated Installation using Kickstart File](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
   - **System Administration**:
-    - | [**SysAdmin Guide**](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide) | [User/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-getting_started#sec-Managing_User_Accounts) |
+    - | [**SysAdmin Guide**](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide) | [User/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups#s1-users-groups-introduction) |
     - [Common Admin commands](https://access.redhat.com/articles/1189123)
     - [Using cockpit to manage CentOS/RHEL servers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/managing_systems_using_the_rhel_7_web_console)
     - [Networking Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide)
