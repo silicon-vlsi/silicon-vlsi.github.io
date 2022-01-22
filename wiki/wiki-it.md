@@ -61,8 +61,6 @@ This wiki contains all the details (except the private and proprietary info) for
 - See [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups) for **command-line utilities** for user/group management.
 - 
 
-
-
 #### NIS
 
 - Followed the following two blogs to setup but the client got all broken so need to debug.
@@ -310,7 +308,7 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 - An example of an entry in `/etc/fstab`:
   - `/dev/mapper/nfs-home_NFS /home/nfs1  xfs defaults,uquota,gquota,pquota        0 0`
 - To set a block limit for an user (say `500MB` for `user1`):
-  - `# xfs_quota -x -c 'limit -u -g bsoft=400m bhard=500m user1' /home/nfs1`
+  - `# xfs_quota -x -c 'limit -u bsoft=400m bhard=500m user1' /home/nfs1`
   - To set a group limit (say `500MB` for the ENTIRE group `eng`), use the above command with the exeception: `-g` and `eng` instead of __-u__ and __user1__ 
 - **Setting Project Limits**:
   - Before configuring limits for project-controlled directories, add them first to `/etc/projects`. Project names can be added to `/etc/projectid` to map project IDs to project names. Once a project is added to `/etc/projects`, initialize its project directory using the following command:
