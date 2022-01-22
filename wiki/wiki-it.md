@@ -315,6 +315,25 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
     - `# xfs_quota -x -c 'project -s projectname' project_path`
   - Quotas for projects with initialized directories can then be configured, with:
     - `xfs_quota -x -c 'limit -p bsoft=1000m bhard=1200m projectname'
+    - Example from the man page:
+
+```bash
+ # mount -o prjquota /dev/xvm/var /var
+ # echo 42:/var/log >> /etc/projects
+ # echo logfiles:42 >> /etc/projid
+ # xfs_quota -x -c 'project -s logfiles' /var
+ # xfs_quota -x -c 'limit -p bhard=1g logfiles' /var
+```
+
+    - Same as above without the need of config file:
+  
+```bash
+# rm -f /etc/projects /etc/projid
+# mount -o prjquota /dev/xvm/var /var
+# xfs_quota -x -c 'project -s -p /var/log 42' /var
+# xfs_quota -x -c 'limit -p bhard=1g 42' /var
+```
+
 - **Reporting Quota Limits**:
   - `$ quota username`
   - `# xfs_quota -x -c 'report -h' /home/nfs1`
