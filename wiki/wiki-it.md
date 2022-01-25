@@ -447,10 +447,22 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 
 ## IT/CAD SETUP
 
+### SETTING UP PROJECT AREA
+
+- Create an user for each project using the convention of starting letter p eg. `pvolta`
+- Change `umask` in `.cshrc` to `027` so files created by `pvolta` cannot be read by others.
+- create the project directory: `/home/nfs1/projects/VOLTA/REV1/work`
+- Change projects owner and group of `VOLTA` directory and underneath to `pvolta`
+- The `work` directory should have r+w perm for pvolta group so other can create project in the work directory.
+- Now you can create the master work area with the user `pvolta` using the `siproj` script.
+  - For other users, first include them in the project group eg. `pvolta`
+- For cadence:
+  - Create the initialization file and cdslib `cdsint-<PROJ>-<REV>.il` and `cds-<PROJ>-<REV>.lib`
+  - Assign quota for the project directory. [See quota section]
+
 ### SOFTWARE/PACKAGES
 
-- **NEW CENTOS 7 INSTALLATION**
-  - 
+- **NEW CENTOS 7 INSTALLATION** 
   - For cadence check the required packages in Linux Knowledgebase -> EDA Tools section
   - `Shell.pm` perl module is missing in new CentOS 7 installations. To install the module using cpan:
     - `# cpan Shell` The first time using cpan, it will ask for configuration, choose all the defaults.
