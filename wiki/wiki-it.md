@@ -60,6 +60,11 @@ This wiki contains all the details (except the private and proprietary info) for
 - The GUI for user management is `Users`
 - See [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups) for **command-line utilities** for user/group management.
 - A good article on [Unix Groups](https://csguide.cs.princeton.edu/account/groups) from Princeton's CS Dept.
+- **Shared Directory**: eg `/home/local/simulation`. Created a group called `localsim` which will consists of all users allowed to share the directory.
+  - `# chgrp localsim /home/local/simulation`
+  - `# chmod g=swrx,t+ /home/local/simulation`
+    - `-s` keeps group ownership to the original group owner ie. `localsim`
+    - `t+` keeps the files/dir sticky such that only the creator can change it.
 
 #### NIS
 
