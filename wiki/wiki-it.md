@@ -14,6 +14,7 @@ This wiki contains all the details (except the private and proprietary info) for
   - Reboot, finish initial config and login as `centos`
   - Update: `centos> sudo yum update`
 - Setup **Networking** using the `nmtui` ncurses based application. (Command line version is `nmcli`)
+- Setup **NIS** client using the [instructions](#nis) in the knowledgebase section.
 - Setup **NIS**
 
 
