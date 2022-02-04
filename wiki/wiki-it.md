@@ -12,10 +12,16 @@ This wiki contains all the details (except the private and proprietary info) for
 - Install the **GNOME Desktop** selection of the CentOS7 (Will be automated with kickstarter)
   - During installation create the root password and an admin user named `centos`
   - Reboot, finish initial config and login as `centos`
-  - Update: `centos> sudo yum update`
+  - Update: `centos$ sudo yum update`
 - Setup **Networking** using the `nmtui` ncurses based application. (Command line version is `nmcli`)
+- Set hostname eg. `centos$ sudo hostname tdt12.vlsi.silicon.ac.in`
+- Add all the hosts from file `hosts' into `/etc/hosts`
+- Add the NFS mounts to `/etc/fstab` from the file `fstab` and run `$sudo mount -a`
+- Run the **patch** script: `$sudo /CAD/apps7/bin/patch-centos.sh`
+  - You might have to run this few times to see if everything is configured properly.
+- link silicon.csh: `$sudo ln -s /CAD/apps7/etc/silicon.csh /etc/profile.d/.`
 - Setup **NIS** client using the [instructions](#nis) in the knowledgebase section.
-- Setup **NIS**
+- Reboot
 
 
 
