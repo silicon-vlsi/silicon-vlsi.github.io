@@ -5,11 +5,85 @@ sort: 1
 # IT 
 This wiki contains all the details (except the private and proprietary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
 
+## IT/CAD SETUP
+
+### SETTING UP NEW CENTOS DESKTOP
+
+- Install the **GNOME Desktop** selection of the CentOS7 (Will be automated with kickstarter)
+  - During installation create the root password and an admin user named `centos`
+  - Reboot, finish initial config and login as `centos`
+  - Update: `centos> sudo yum update`
+- Setup **Networking** using the `nmtui` ncurses based application. (Command line version is `nmcli`)
+- Setup **NIS**
+
+
+
+### SETTING UP PROJECT AREA
+
+- Create an user for each project using the convention of starting letter `p` eg. `pvolta`
+- Change `umask` in `.cshrc` to `027` so files created by `pvolta` cannot be read by __others__.
+- create the project directory: `/home/nfs1/projects/VOLTA/REV1/work`
+- Change projects owner and group of `VOLTA` directory and underneath to `pvolta`
+- The `work` directory should have `g=swrx,t+` for `pvolta` group so users in `pvolta` group can create project area under this directory but they cannot delete the `work` directory and all the newly created files/directory by project users will have their file groups with the original group of the directory so all users in the group `pvolta` can share files.
+  - `# chmod g=swrx,+t work`
+  - `s` sets the `setgid` bit for the directory. When set on a directory, the __setgid__ bit causes newly created files within the directory to take on the group ownership of the directory ie. `pvolta` rather than the default/primary group of the user that created it. This makes it easier to share the directory among several users, as long as they belong to the same group. This one is especially useful for shared project directory.
+  - `+t` keeps the dir `work` sticky, the filesystem won't allow you to delete or rename it unless you are the owner. Just write permission is not enough. This way users in the 'pvolta' group will not be able to delete it, only the creator.
+  - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
+- Now you can create the master work area with the user `pvolta` using the `siproj` script.
+  - For other users, first include them in the project group eg. `pvolta`
+- For cadence:
+  - Create the initialization file and cdslib `cdsint-<PROJ>-<REV>.il` and `cds-<PROJ>-<REV>.lib`
+  - Assign quota for the project directory. [See quota section]
+
+### SOFTWARE/PACKAGES
+
+- **NEW CENTOS 7 INSTALLATION** 
+  - For cadence check the required packages in Linux Knowledgebase -> EDA Tools section
+  - `Shell.pm` perl module is missing in new CentOS 7 installations. To install the module using cpan:
+    - `# cpan Shell` The first time using cpan, it will ask for configuration, choose all the defaults.
+  
+
+### NETWORKING
+
+**IP ASSIGNMENTS**
+
+- The Advanced VLSI Lab now is under a new VLAN `192.168.11.0/24` with the following broad assignment:
+  - Training Lab: `192.168.11.1-30`
+  - Advanced VLSI Lab: `192.168.11.31-70`
+  - DHCP: `192.168.11.71-220`
+  - Servers: `192.168.11.221-153` : SRV01-`221-`, SRV02-`229-`, SRV03-`237-`
+  - Gateway: `192.168.11.254`
+  - DNS: `10.3.208.1`, `8.8.8.8`
+
+- **Domain Name**: `vlsi.silicon.sc.in`
+  - `srv01.vlsi.silicon.ac.in` : 192.168.11.221
+
+### STORAGE
+
+**PARTIONING**
+
+**srv01.vlsi.silicon.ac.in**
+
+| **Mount** | **Size** | **Purpose** |
+| ``swap`` | 8G | 0.5xRAM-size |
+| ``/boot`` | 1.5G | Boot files |
+| ``/boot/efi`` | 0.5G | EFI boot files |
+| ``/(root)`` | 150G | CentOS 7 installation files |
+| ``/home`` | 50G | Local home dir |
+| ``/var`` | 25G | log,etc |
+| ``/home`` | 25G | system home dirs |
+| ``/home/local`` | 400G | local mount (sims, etc) |
+| ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
+
+
+
+
 ## LINUX KNOWLEDGEBASE
 
 - [RHEL 7 Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7)
   - **Deployment**: [Installation Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide)
     - [A Simple guide to Automated Installation using Kickstart File](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
+    - [Kickstart command reference](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax)
   - **System Administration**:
     - | [**SysAdmin Guide**](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide) | [User/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups#s1-users-groups-introduction) |
     - [Common Admin commands](https://access.redhat.com/articles/1189123)
@@ -449,66 +523,6 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
   - Install all the missing packages 
   - **Note** Spectre requires a 32-bit (i686) `glibc` along with the 64-bit.
   - Install it with explicit architecture: `#sudo yum install glibc.i686`  
-
-
-## IT/CAD SETUP
-
-### SETTING UP PROJECT AREA
-
-- Create an user for each project using the convention of starting letter `p` eg. `pvolta`
-- Change `umask` in `.cshrc` to `027` so files created by `pvolta` cannot be read by __others__.
-- create the project directory: `/home/nfs1/projects/VOLTA/REV1/work`
-- Change projects owner and group of `VOLTA` directory and underneath to `pvolta`
-- The `work` directory should have `g=swrx,t+` for `pvolta` group so users in `pvolta` group can create project area under this directory but they cannot delete the `work` directory and all the newly created files/directory by project users will have their file groups with the original group of the directory so all users in the group `pvolta` can share files.
-  - `# chmod g=swrx,+t work`
-  - `s` sets the `setgid` bit for the directory. When set on a directory, the __setgid__ bit causes newly created files within the directory to take on the group ownership of the directory ie. `pvolta` rather than the default/primary group of the user that created it. This makes it easier to share the directory among several users, as long as they belong to the same group. This one is especially useful for shared project directory.
-  - `+t` keeps the dir `work` sticky, the filesystem won't allow you to delete or rename it unless you are the owner. Just write permission is not enough. This way users in the 'pvolta' group will not be able to delete it, only the creator.
-  - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
-- Now you can create the master work area with the user `pvolta` using the `siproj` script.
-  - For other users, first include them in the project group eg. `pvolta`
-- For cadence:
-  - Create the initialization file and cdslib `cdsint-<PROJ>-<REV>.il` and `cds-<PROJ>-<REV>.lib`
-  - Assign quota for the project directory. [See quota section]
-
-### SOFTWARE/PACKAGES
-
-- **NEW CENTOS 7 INSTALLATION** 
-  - For cadence check the required packages in Linux Knowledgebase -> EDA Tools section
-  - `Shell.pm` perl module is missing in new CentOS 7 installations. To install the module using cpan:
-    - `# cpan Shell` The first time using cpan, it will ask for configuration, choose all the defaults.
-  
-
-### NETWORKING
-
-**IP ASSIGNMENTS**
-
-- The Advanced VLSI Lab now is under a new VLAN `192.168.11.0/24` with the following broad assignment:
-  - Training Lab: `192.168.11.1-30`
-  - Advanced VLSI Lab: `192.168.11.31-70`
-  - DHCP: `192.168.11.71-220`
-  - Servers: `192.168.11.221-153` : SRV01-`221-`, SRV02-`229-`, SRV03-`237-`
-  - Gateway: `192.168.11.254`
-  - DNS: `10.3.208.1`, `8.8.8.8`
-
-- **Domain Name**: `vlsi.silicon.sc.in`
-  - `srv01.vlsi.silicon.ac.in` : 192.168.11.221
-
-### STORAGE
-
-**PARTIONING**
-
-**srv01.vlsi.silicon.ac.in**
-
-| **Mount** | **Size** | **Purpose** |
-| ``swap`` | 8G | 0.5xRAM-size |
-| ``/boot`` | 1.5G | Boot files |
-| ``/boot/efi`` | 0.5G | EFI boot files |
-| ``/(root)`` | 150G | CentOS 7 installation files |
-| ``/home`` | 50G | Local home dir |
-| ``/var`` | 25G | log,etc |
-| ``/home`` | 25G | system home dirs |
-| ``/home/local`` | 400G | local mount (sims, etc) |
-| ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
 
 
 
