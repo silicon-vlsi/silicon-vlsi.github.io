@@ -9,6 +9,41 @@ This wiki contains all the details (except the private and proprietary info) for
 
 ### SETTING UP NEW CENTOS DESKTOP
 
+**AUTO INSTALL USING KICKSTART**
+
+**CREATING A KICKSTART USB BOOT MEDIA**
+
+- [Automatic Install Doc from Redhat]{https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart}
+  - [Kickstart Syntax](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax)
+  - Current **kickstart** file is in `/CAD/apps7/etc/anaconda-ks.cfg`
+- After a manual insallation, **Anaconda** records the steps in `/root/anaconda-ks.cfg`
+- Download the CentOS iso to say `/root/`
+- `# mount -o loop /root/centos7x64.iso /mnt/`
+- Create a working directory and copy the DVD content to it. For example:
+
+```bash
+# mkdir /root/centos-install/
+# shopt -s dotglob
+# cp -avRf /mnt/* /root/centos-install/
+```
+
+- `# umount /mnt/`
+- Edit the **kickstart** file `anaconda-ks.cfg` which contains all installation and post-install confguration, mainly:
+  - Set the network (**NOTE** the IP address and hostname is set to a temporary one)
+  - Add all extra packages in the `%package` section
+  - Add post-installation script:
+    - Append `/etc/hosts`
+    - Create mount points for NFS mounts
+    - Append `/etc/fstab` with NFS mounts
+    - ln -s /CAD/apps7/etc/silicon.csh /etc/profile.d/.
+    - Setup NIS client
+    - make local directory
+    - cpan Shell
+- `# cp /root/anakonda-ks.cfg /root/centos-install/`
+- Replace __white space__ with `\x20` : `isoinfo -d -i rhel-server-7.3-x86_64-dvd.iso | grep "Volume id" | sed -e 's/Volume id: //' -e 's/ /\\x20/g'
+- 
+
+**MANUAL INSTALL**
 - Install the **GNOME Desktop** selection of the CentOS7 (Will be automated with kickstarter)
   - During installation create the root password and an admin user named `centos`
   - Reboot, finish initial config and login as `centos`
