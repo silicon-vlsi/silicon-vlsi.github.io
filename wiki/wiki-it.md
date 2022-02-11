@@ -41,7 +41,36 @@ This wiki contains all the details (except the private and proprietary info) for
     - cpan Shell
 - `# cp /root/anakonda-ks.cfg /root/centos-install/`
 - Replace __white space__ with `\x20` : `isoinfo -d -i rhel-server-7.3-x86_64-dvd.iso | grep "Volume id" | sed -e 's/Volume id: //' -e 's/ /\\x20/g'
-- 
+- Add a new menu entry to the boot `/root/centos-install/isolinux/isolinux.cfg` file that uses the Kickstart file. The LABEL is the output from the previous command. For example:
+
+```bash
+label kickstart
+menu label ^Kickstart Installation of CentOS 7
+kernel vmlinuz
+
+append initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
+```
+
+- For USB UEFI boot, edit the grub.cfg
+- Mount the volume: `# mount /root/centos-install/images/efiboot.img /mnt/`
+- Add a new menu entry to `/mnt/EFI/BOOT/grub.cfg`
+
+```bash
+menuentry{
+'Kickstart Installation of CentOS 7' --class fedora --class gnu-linux --class gnu --class os {
+        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
+        initrdefi /images/pxeboot/initrd.img
+}
+```
+
+- `umount /mnt`
+- Create the ISO **NOTE**: The volume Id has the original spaces instead of of \x20
+
+```bash
+# mkisofs -untranslated-filenames -volid "CentOS 7 x86_64" \
+  -J -joliet-long -rational-rock -translation-table -input-charset utf-8 -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -o /root/rhel-ks.iso -graft-points /root/rhel-install/
+```
+
 
 **MANUAL INSTALL**
 - Install the **GNOME Desktop** selection of the CentOS7 (Will be automated with kickstarter)
