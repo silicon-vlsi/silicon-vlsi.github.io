@@ -13,9 +13,8 @@ This wiki contains all the details (except the private and proprietary info) for
 
 **CREATING A KICKSTART USB BOOT MEDIA**
 
-- [Automatic Install Doc from Redhat]{https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart}
+- [Automatic Install Doc from Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
   - [Kickstart Syntax](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax)
-  - Current **kickstart** file is in `/CAD/apps7/etc/anaconda-ks.cfg`
 - After a manual insallation, **Anaconda** records the steps in `/root/anaconda-ks.cfg`
 - Download the CentOS iso to say `/root/`
 - `# mount -o loop /root/centos7x64.iso /mnt/`
@@ -40,7 +39,14 @@ This wiki contains all the details (except the private and proprietary info) for
     - make local directory
     - cpan Shell
 - `# cp /root/anakonda-ks.cfg /root/centos-install/`
-- Replace __white space__ with `\x20` : `isoinfo -d -i rhel-server-7.3-x86_64-dvd.iso | grep "Volume id" | sed -e 's/Volume id: //' -e 's/ /\\x20/g'
+- Replace __white space__ with `\x20` : 
+
+```bash
+# isoinfo -d -i rhel-server-7.3-x86_64-dvd.iso |\
+  grep "Volume id" |\
+  sed -e 's/Volume id: //' -e 's/ /\\x20/g
+```
+
 - Add a new menu entry to the boot `/root/centos-install/isolinux/isolinux.cfg` file that uses the Kickstart file. The LABEL is the output from the previous command. For example:
 
 ```bash
@@ -48,7 +54,8 @@ label kickstart
 menu label ^Kickstart Installation of CentOS 7
 kernel vmlinuz
 
-append initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
+append initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 \
+        inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
 ```
 
 - For USB UEFI boot, edit the grub.cfg
@@ -56,9 +63,10 @@ append initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 inst.ks=hd:L
 - Add a new menu entry to `/mnt/EFI/BOOT/grub.cfg`
 
 ```bash
-menuentry{
-'Kickstart Installation of CentOS 7' --class fedora --class gnu-linux --class gnu --class os {
-        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
+menuentry 'Kickstart Installation of CentOS 7' \
+          --class fedora --class gnu-linux --class gnu --class os {
+        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 \
+           inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
         initrdefi /images/pxeboot/initrd.img
 }
 ```
@@ -68,9 +76,15 @@ menuentry{
 
 ```bash
 # mkisofs -untranslated-filenames -volid "CentOS 7 x86_64" \
-  -J -joliet-long -rational-rock -translation-table -input-charset utf-8 -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -eltorito-alt-boot -e images/efiboot.img -no-emul-boot -o /root/rhel-ks.iso -graft-points /root/rhel-install/
+  -J -joliet-long -rational-rock -translation-table -input-charset utf-8 \
+  -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot \
+  -boot-load-size 4 -boot-info-table -eltorito-alt-boot \
+  -e images/efiboot.img -no-emul-boot -o /root/centos-ks.iso \
+  -graft-points /root/centos-install/
 ```
 
+- Make it bootable: `# isohybrid --uefi centos-ks.iso`
+- Make a bootable USB: `# dd if=centos-ks.iso of=/dev/sdb bs=521k`
 
 **MANUAL INSTALL**
 - Install the **GNOME Desktop** selection of the CentOS7 (Will be automated with kickstarter)
