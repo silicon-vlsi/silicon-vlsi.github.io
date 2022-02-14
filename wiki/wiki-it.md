@@ -11,6 +11,16 @@ This wiki contains all the details (except the private and proprietary info) for
 
 **AUTO INSTALL USING KICKSTART**
 
+- Install CentOS 7 using a kickstart USB media as detailed below.
+- After reboot and accepting EULA, login 
+- Change the IP address and hostname: `# nmtui`
+- Add quota option for `/home` in `/etc/fstab` eg:
+  - `/dev/mapper/centos-home   /home   xfs   defaults,pquota   0 0`
+- Set the xfs quota for /home/local/simulation:
+  `# /CAD/apps7/bin/patch-localquota.sh`
+- Update the distribution:
+  - `# yum update`
+
 **CREATING A KICKSTART USB BOOT MEDIA**
 
 - [Automatic Install Doc from Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
