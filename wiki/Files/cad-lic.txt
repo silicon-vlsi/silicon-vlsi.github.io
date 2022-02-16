@@ -1,8 +1,6 @@
-# CADENCE
-
 **UG Bundle/40-Users**
 
-**IC PRODUCTS**
+**IC6 PRODUCTS**
 
 ```bash
 ########################## LICENSE KEYS END HERE ######################
@@ -137,8 +135,6 @@
 
 
 
-
-# MENTOR
 
 **HEP1 Bundle/40-Users**
 
