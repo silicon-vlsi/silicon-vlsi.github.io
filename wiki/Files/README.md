@@ -2,4 +2,4 @@
 
 source: `{{ page.path }}`
 
-- ![Odisha Travel Guide](travelGuide-Odisha.pdf)
+- [Odisha Travel Guide](travelGuide-Odisha.pdf)
