@@ -14,7 +14,7 @@ sort: 3
 
 - **Mr. Dhananjaya Tripathy**, *Assistant Professor* • M.Tech, VSSUT-Rourkela • 4+ years of teaching experience • 4+ years of research experience • 4 publication • *Research interest*: Analog VLSI design. Design, simulation and study of semiconductor dev.
 
-- **Mr. Prasant Swain**, *Technical Asst.* • M.Tech (graduating), B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
+- **Mr. Prasant Swain**, *Technical Asst.* • M.Tech, B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
 
 ## Current Students
