@@ -16,8 +16,8 @@ This wiki contains all the details (except the private and proprietary info) for
 - Change the IP address and hostname: `# nmtui`
 - Add quota option for `/home` in `/etc/fstab` eg:
   - `/dev/mapper/centos-home   /home   xfs   defaults,pquota   0 0`
-- Set the xfs quota for /home/local/simulation:
-  `# /CAD/apps7/bin/patch-localquota.sh`
+- `# cpan Shell`
+- `# /CAD/apps7/bin/patch-localquota.sh`
 - Update the distribution:
   - `# yum update`
 
