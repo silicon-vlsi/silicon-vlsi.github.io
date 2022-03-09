@@ -16,8 +16,10 @@ This wiki contains all the details (except the private and proprietary info) for
 - Change the IP address and hostname: `# nmtui`
 - Add quota option for `/home` in `/etc/fstab` eg:
   - `/dev/mapper/centos-home   /home   xfs   defaults,pquota   0 0`
-- `# cpan Shell`
+- `# /CAD/apps7/bin/patch-centos.sh`
 - `# /CAD/apps7/bin/patch-localquota.sh`
+- `$ /CAD/apps7/bin/check-install.sh > report.txt`
+  - Check the file `report.txt` for any issues with the installation.
 - Update the distribution:
   - `# yum update`
 
