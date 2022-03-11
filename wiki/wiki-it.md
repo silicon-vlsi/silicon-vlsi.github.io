@@ -20,6 +20,7 @@ This wiki contains all the details (except the private and proprietary info) for
 - `# /CAD/apps7/bin/patch-localquota.sh`
 - `$ /CAD/apps7/bin/check-install.sh > report.txt`
   - Check the file `report.txt` for any issues with the installation.
+  - If there are any uninstalled packages then run `# /CAD/apps7/bin/patch-pkg.sh`
 - Update the distribution:
   - `# yum update`
 
@@ -138,6 +139,7 @@ menuentry 'Kickstart Installation of CentOS 7' \
   - For cadence check the required packages in Linux Knowledgebase -> EDA Tools section
   - `Shell.pm` perl module is missing in new CentOS 7 installations. To install the module using cpan:
     - `# cpan Shell` The first time using cpan, it will ask for configuration, choose all the defaults.
+    - **NOTE** This is not needed now since it was only used in `siproj` script and that's removed now.
   
 
 ### NETWORKING
@@ -152,7 +154,7 @@ menuentry 'Kickstart Installation of CentOS 7' \
   - Gateway: `192.168.11.254`
   - DNS: `10.3.208.1`, `8.8.8.8`
 
-- **Domain Name**: `vlsi.silicon.sc.in`
+- **Domain Name**: `vlsi.silicon.ac.in`
   - `srv01.vlsi.silicon.ac.in` : 192.168.11.221
 
 ### STORAGE
