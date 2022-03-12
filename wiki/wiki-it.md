@@ -164,7 +164,7 @@ menuentry 'Kickstart Installation of CentOS 7' \
 **srv01.vlsi.silicon.ac.in**
 
 | **Mount** | **Size** | **Purpose** |
-| ``swap`` | 8G | 0.5xRAM-size |
+| ``swap`` | 8G | 0.5xRAM-size [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
 | ``/boot`` | 1.5G | Boot files |
 | ``/boot/efi`` | 0.5G | EFI boot files |
 | ``/(root)`` | 150G | CentOS 7 installation files |
