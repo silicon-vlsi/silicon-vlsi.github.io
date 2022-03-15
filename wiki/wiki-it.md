@@ -14,6 +14,7 @@ This wiki contains all the details (except the private and proprietary info) for
 - Install CentOS 7 using a kickstart USB media as detailed below.
 - After reboot and accepting EULA, login 
 - Change the IP address and hostname: `# nmtui`
+- Add hostname to `/etc/hosts`
 - Add quota option for `/home` in `/etc/fstab` eg:
   - `/dev/mapper/centos-home   /home   xfs   defaults,pquota   0 0`
 - `# /CAD/apps7/bin/patch-centos.sh`
