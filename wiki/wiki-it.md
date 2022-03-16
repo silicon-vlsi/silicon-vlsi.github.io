@@ -17,7 +17,7 @@ This wiki contains all the details (except the private and proprietary info) for
 - Add hostname to `/etc/hosts`
 - Add quota option for `/home` in `/etc/fstab` eg:
   - `/dev/mapper/centos-home   /home   xfs   defaults,pquota   0 0`
-- `# /CAD/apps7/bin/patch-centos.sh`
+- `# /CAD/apps7/bin/patch-centos.sh` 
 - `# /CAD/apps7/bin/patch-localquota.sh`
 - `$ /CAD/apps7/bin/check-install.sh > report.txt`
   - Check the file `report.txt` for any issues with the installation.
@@ -41,7 +41,7 @@ This wiki contains all the details (except the private and proprietary info) for
 ```
 
 - `# umount /mnt/`
-- Edit the **kickstart** file `anaconda-ks.cfg` which contains all installation and post-install confguration, mainly:
+- Edit the **kickstart** file `anaconda-ks-desktop.cfg` which contains all installation and post-install confguration, mainly:
   - Set the network (**NOTE** the IP address and hostname is set to a temporary one)
   - Add all extra packages in the `%package` section
   - Add post-installation script:
@@ -51,7 +51,7 @@ This wiki contains all the details (except the private and proprietary info) for
     - ln -s /CAD/apps7/etc/silicon.csh /etc/profile.d/.
     - Setup NIS client
     - make local directory
-    - cpan Shell
+- `$ksvalidator anaconda-ks-desktop.cfg`
 - `# cp /root/anakonda-ks.cfg /root/centos-install/`
 - Replace __white space__ with `\x20` : 
 
