@@ -476,6 +476,46 @@ srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
 - [Setting up kerboros aware NFS Server](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-server)
 - [Setting up kerboros aware NFS Client](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-client)
 
+
+#### CREATING A MIRROR USING RSYNC
+
+This section will walk you through the steps of mirroring a server directory eg. `srv01:/CAD` in a second file server eg. `srv03:/CAD` to create a mirror of the same. 
+
+
+**SETUP THE DESTINATION**
+
+- Make sure ``rsync` is installed in both the linux servers: `yum install rsync`
+- Configure `rsync` __daemon__ by editing `/etc/rsyncd.conf` on the **destination server**:
+
+```bash
+# any name you like
+[cad]
+# destination directory for copy
+path = /CAD
+# hosts you allow to access
+hosts allow = <IP ADDRESS OF SOURCE>
+hosts deny = *
+list = true
+uid = root
+gid = root
+read only = false
+```
+
+- Befor starting the daemon, open the port `873/tcp` and the service `rsynd` :
+  - `# firewall-cmd --permanent --add-service=`rsyncd`
+  - `# firewall-cmd --permanent --add-port=873/tcp`
+  - `# firewall-cmd --reload`
+- Start and enable the __daemon__ :
+  - `# systemctl start rsyncd`
+  - `# systemctl enable rsyncd`
+
+**INITIATE TRANSFER FROM THE SOURCE**
+
+- `# rsync -avz --delete /CAD   <IPADDR DESTINATION>:/CAD`
+- You can include the aboce in a **crontab** for scheduled syncing.
+- For eaxample: To sync everyday at 2AM, the crontab entry will loke like this:
+  `00 02 * * * rsync -avz --delete rsync -avz --delete /CAD   <IPADDR DESTINATION>:/CAD`
+
 #### QUOTA
 
 **SETTING DISK QUOTA ON A XFS FILESYSTEM ON CENTOS 7**
