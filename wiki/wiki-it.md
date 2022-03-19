@@ -484,7 +484,7 @@ This section will walk you through the steps of mirroring a server directory eg.
 
 **SETUP THE DESTINATION**
 
-- Make sure ``rsync` is installed in both the linux servers: `yum install rsync`
+- Make sure `rsync` is installed in both the linux servers: `yum install rsync`
 - Configure `rsync` __daemon__ by editing `/etc/rsyncd.conf` on the **destination server**:
 
 ```bash
@@ -515,6 +515,11 @@ read only = false
 - You can include the aboce in a **crontab** for scheduled syncing.
 - For eaxample: To sync everyday at 2AM, the crontab entry will loke like this:
   `00 02 * * * rsync -avz --delete rsync -avz --delete /CAD   <IPADDR DESTINATION>:/CAD`
+
+**Resources**
+
+- [Rsync : Sync Files/Directories](https://www.server-world.info/en/note?os=CentOS_7&p=rsync)
+- [How to Use Rsync to Copy/Sync Files Between Servers](https://www.atlantic.net/vps-hosting/how-to-use-rsync-copy-sync-files-servers/)
 
 #### QUOTA
 
