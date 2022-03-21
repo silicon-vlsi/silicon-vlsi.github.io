@@ -99,6 +99,7 @@ menuentry 'Kickstart Installation of CentOS 7' \
 
 - Make it bootable: `# isohybrid --uefi centos-ks.iso`
 - Make a bootable USB: `# dd if=centos-ks.iso of=/dev/sdb bs=512k`
+  - **NOTE** WRITE TO PARENT DEVICE eg. **/dev/sdb** and NOT __/dev/sdb1__
 
 **MANUAL INSTALL**
 - Install the **GNOME Desktop** selection of the CentOS7 (Will be automated with kickstarter)
