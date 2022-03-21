@@ -512,10 +512,12 @@ read only = false
 
 **INITIATE TRANSFER FROM THE SOURCE**
 
-- `# rsync -avz --delete /CAD   <IPADDR DESTINATION>:/CAD`
-- You can include the aboce in a **crontab** for scheduled syncing.
-- For eaxample: To sync everyday at 2AM, the crontab entry will loke like this:
-  `00 02 * * * rsync -avz --delete rsync -avz --delete /CAD   <IPADDR DESTINATION>:/CAD`
+- `# rsync -avz --delete /CAD/   <IPADDR/HOSTNAME DESTINATION>:/CAD`
+  - **NOTE** Looks like I can sync to any directory not just the one in __path__ in `/etc/rsyncd.conf`
+  - It's important to have the directory end in `/` ie. `/CAD/` instead of `/CAD`. The later will get synced to destination `/CAD/CAD`
+- You can include the above in a **crontab** for scheduled syncing.
+- For eaxample: To sync everyday at 4AM, the crontab entry will loke like this:
+  - `00 04 * * * rsync -avz --delete /CAD/   <IPADDR/HOSTNAME DESTINATION>:/CAD > /var/log/rsync-cad.log 2> /var/log/rsync-cad.err`
 
 **Resources**
 
