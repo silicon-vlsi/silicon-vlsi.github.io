@@ -431,6 +431,8 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
 - Change owner and group of the NFS share: `#chown nfsnobody:nfsnobody /home/nfs1`
   - This is for security so if there is breach through NFS the user nfsnobody has no shell. 
 - Enable NFS port (2049/tcp and 2049/udp) through the **firewall**
+  - `# firewall-cmd --permanent --add-port=2049/tcp`
+  - `# firewall-cmd --permanent --add-port=2049/udp`
   - `# firewall-cmd --permanent --add-service=nfs`
   - `# firewall-cmd --reload`
 - **Enable** the __NFS__ services so they start at boot: 
