@@ -12,26 +12,34 @@ This wiki contains all the details (except the private and proprietary info) for
 **MANUAL INSTALL**
 - Start desktop with a CentOS7 USB and and boot press `F12 (or F10)` and choose USB media
 - After setting the language, keyboard, etc. set the following
-  - network and hostname
+  - Set **static network** and **hostname**
+    - IP: `192.168.11.xx`
+    - SUBNET: `255.255.255.0`
+    - GATEWAY: `192.168.11.254`
+    - DNS: `10.3.208.1,8.8.8.8`
+    - hostname: `<desktopname>.vlsi.silicon.ac.in`
   - Base Environment **GNOME Desktop** with following addons:
     - GNOME Applications 
     - Legacy X Window System Compatibility
     - Office Suite and Productivity
-    - 
-- Install the **GNOME Desktop** selection of the CentOS7 
-  - During installation create the root password and an admin user named `centos`
-  - Reboot, finish initial config and login as `centos`
-  - Update: `centos$ sudo yum update`
-- Setup **Networking** using the `nmtui` ncurses based application. (Command line version is `nmcli`)
-- Set hostname eg. `centos$ sudo hostname tdt12.vlsi.silicon.ac.in`
-- Add all the hosts from file `hosts' into `/etc/hosts`
-- Add the NFS mounts to `/etc/fstab` from the file `fstab` and run `$sudo mount -a`
-- Run the **patch** script: `$sudo /CAD/apps7/bin/patch-centos.sh`
-  - You might have to run this few times to see if everything is configured properly.
-- link silicon.csh: `$sudo ln -s /CAD/apps7/etc/silicon.csh /etc/profile.d/.`
-- Setup **NIS** client using the [instructions](#nis) in the knowledgebase section.
+    - Compatibility Libraries
+    - Development Tools
+    - Security Tools
+    - System Administration Tools
+  - Choose the default automatic partition.
+- Start installation
+- Create user:
+  - Set password for `root`
+  - Create an **administrative** username `centos`
+- **Reboot** and login as `centos`
+- - Add quota option for `/home` in `/etc/fstab` eg:
+  - `/dev/mapper/centos-home   /home   xfs   defaults,pquota   0 0`
+- `sudo yum install git`
+- `git clone https://github.com/silicon-vlsi/cad-apps7`
+- `~/cad-apps7/bin/post-install-centos7.sh all`
+- `~/cad-apps7/bin/check-install.sh`
 - Reboot
-
+- Update when appropriate: `sudo yum update`
 
 **AUTO INSTALL USING KICKSTART**
 
