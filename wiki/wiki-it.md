@@ -3,9 +3,14 @@ sort: 1
 ---
 
 # IT 
-This wiki contains all the details (except the private and proprietary info) for system administrators for the Advanced VLSI Lab at SIT, BBSR.
 
-## IT/CAD SETUP
+## USER GUIDE
+
+### CHANGING PASSWORD
+
+### CREATING AND USING A PROJECT AREA
+
+## ADMIN GUIDE
 
 ### SETTING UP NEW CENTOS DESKTOP
 
@@ -32,7 +37,7 @@ This wiki contains all the details (except the private and proprietary info) for
   - Set password for `root`
   - Create an **administrative** username `centos`
 - **Reboot** and login as `centos`
-- - Add quota option for `/home` in `/etc/fstab` eg:
+- Add quota option for `/home` in `/etc/fstab` eg:
   - `/dev/mapper/centos-home   /home   xfs   defaults,pquota   0 0`
 - `sudo yum install git`
 - `git clone https://github.com/silicon-vlsi/cad-apps7`
@@ -49,13 +54,90 @@ This wiki contains all the details (except the private and proprietary info) for
 - Add hostname to `/etc/hosts`
 - Add quota option for `/home` in `/etc/fstab` eg:
   - `/dev/mapper/centos-home   /home   xfs   defaults,pquota   0 0`
-- `# /CAD/apps7/bin/patch-centos.sh` 
-- `# /CAD/apps7/bin/patch-localquota.sh`
-- `$ /CAD/apps7/bin/check-install.sh > report.txt`
-  - Check the file `report.txt` for any issues with the installation.
-  - If there are any uninstalled packages then run `# /CAD/apps7/bin/patch-pkg.sh`
-- Update the distribution:
-  - `# yum update`
+- `git clone https://github.com/silicon-vlsi/cad-apps7`
+- `~/cad-apps7/bin/post-install-centos7.sh all`
+- `~/cad-apps7/bin/check-install.sh`
+- Reboot
+- Update when appropriate: `sudo yum update`
+
+
+### SETTING UP PROJECT AREA
+
+- Create an user for each project using the convention of starting letter `p` eg. `pvolta`
+- Change `umask` in `.cshrc` to `027` so files created by `pvolta` cannot be read by __others__.
+- create the project directory: `/home/nfs1/projects/VOLTA/REV1/work`
+- Change projects owner and group of `VOLTA` directory and underneath to `pvolta`
+- The `work` directory should have `g=swrx,t+` for `pvolta` group so users in `pvolta` group can create project area under this directory but they cannot delete the `work` directory and all the newly created files/directory by project users will have their file groups with the original group of the directory so all users in the group `pvolta` can share files.
+  - `# chmod g=swrx,+t work`
+  - `s` sets the `setgid` bit for the directory. When set on a directory, the __setgid__ bit causes newly created files within the directory to take on the group ownership of the directory ie. `pvolta` rather than the default/primary group of the user that created it. This makes it easier to share the directory among several users, as long as they belong to the same group. This one is especially useful for shared project directory.
+  - `+t` keeps the dir `work` sticky, the filesystem won't allow you to delete or rename it unless you are the owner. Just write permission is not enough. This way users in the 'pvolta' group will not be able to delete it, only the creator.
+  - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
+- Now you can create the master work area with the user `pvolta` using the `siproj` script.
+  - For other users, first include them in the project group eg. `pvolta`
+- For cadence:
+  - Create the initialization file and cdslib `cdsint-<PROJ>-<REV>.il` and `cds-<PROJ>-<REV>.lib`
+  - Assign quota for the project directory. [See quota section]
+  
+
+## LAB IT INFO
+
+### NETWORKING
+
+**IP ASSIGNMENTS**
+
+- The Advanced VLSI Lab now is under a new VLAN `192.168.11.0/24` with the following broad assignment:
+  - Training Lab: `192.168.11.1-30`
+  - Advanced VLSI Lab: `192.168.11.31-70`
+  - DHCP: `192.168.11.71-220`
+  - Servers: `192.168.11.221-153` : SRV01-`221-`, SRV02-`229-`, SRV03-`237-`
+  - Gateway: `192.168.11.254`
+  - DNS: `10.3.208.1`, `8.8.8.8`
+
+- **Domain Name**: `vlsi.silicon.ac.in`
+  - `srv01.vlsi.silicon.ac.in` : 192.168.11.221
+
+### STORAGE
+
+**PARTIONING**
+
+**srv01.vlsi.silicon.ac.in**
+
+| **Mount** | **Size** | **Purpose** |
+| ``swap`` | 8G | 0.5xRAM-size [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
+| ``/boot`` | 1.5G | Boot files |
+| ``/boot/efi`` | 0.5G | EFI boot files |
+| ``/(root)`` | 150G | CentOS 7 installation files |
+| ``/home`` | 50G | Local home dir |
+| ``/var`` | 25G | log,etc |
+| ``/home`` | 25G | system home dirs |
+| ``/home/local`` | 400G | local mount (sims, etc) |
+| ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
+
+
+
+
+## LINUX KNOWLEDGEBASE
+
+- [RHEL 7 Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7)
+  - **Deployment**: [Installation Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide)
+    - [A Simple guide to Automated Installation using Kickstart File](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
+    - [Kickstart command reference](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax)
+  - **System Administration**:
+    - | [**SysAdmin Guide**](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide) | [User/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups#s1-users-groups-introduction) |
+    - [Common Admin commands](https://access.redhat.com/articles/1189123)
+    - [Using cockpit to manage CentOS/RHEL servers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/managing_systems_using_the_rhel_7_web_console)
+    - [Networking Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide)
+    - [Kernel Admin Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/kernel_administration_guide)
+    - [Performance Tuning](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/performance_tuning_guide)
+    - [Resource Management](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/resource_management_guide)
+  - | **Security** | [Security Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/security_guide) | [SELinux](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide) |
+  - | **Storage** | [Storage Admin Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide) | [LVM Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/logical_volume_manager_administration) |
+ 
+- [CentOS 7 Release Notes](https://wiki.centos.org/action/show/Manuals/ReleaseNotes/CentOS7.2009?action=show&redirect=Manuals%2FReleaseNotes%2FCentOS7)
+- [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
+
+
+### SYSTEM ADMINISTRATION
 
 **CREATING A KICKSTART USB BOOT MEDIA**
 
@@ -133,90 +215,6 @@ menuentry 'Kickstart Installation of CentOS 7' \
 - Make a bootable USB: `# dd if=centos-ks.iso of=/dev/sdb bs=512k`
   - **NOTE** WRITE TO PARENT DEVICE eg. **/dev/sdb** and NOT __/dev/sdb1__
 
-
-
-### SETTING UP PROJECT AREA
-
-- Create an user for each project using the convention of starting letter `p` eg. `pvolta`
-- Change `umask` in `.cshrc` to `027` so files created by `pvolta` cannot be read by __others__.
-- create the project directory: `/home/nfs1/projects/VOLTA/REV1/work`
-- Change projects owner and group of `VOLTA` directory and underneath to `pvolta`
-- The `work` directory should have `g=swrx,t+` for `pvolta` group so users in `pvolta` group can create project area under this directory but they cannot delete the `work` directory and all the newly created files/directory by project users will have their file groups with the original group of the directory so all users in the group `pvolta` can share files.
-  - `# chmod g=swrx,+t work`
-  - `s` sets the `setgid` bit for the directory. When set on a directory, the __setgid__ bit causes newly created files within the directory to take on the group ownership of the directory ie. `pvolta` rather than the default/primary group of the user that created it. This makes it easier to share the directory among several users, as long as they belong to the same group. This one is especially useful for shared project directory.
-  - `+t` keeps the dir `work` sticky, the filesystem won't allow you to delete or rename it unless you are the owner. Just write permission is not enough. This way users in the 'pvolta' group will not be able to delete it, only the creator.
-  - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
-- Now you can create the master work area with the user `pvolta` using the `siproj` script.
-  - For other users, first include them in the project group eg. `pvolta`
-- For cadence:
-  - Create the initialization file and cdslib `cdsint-<PROJ>-<REV>.il` and `cds-<PROJ>-<REV>.lib`
-  - Assign quota for the project directory. [See quota section]
-
-### SOFTWARE/PACKAGES
-
-- **NEW CENTOS 7 INSTALLATION** 
-  - For cadence check the required packages in Linux Knowledgebase -> EDA Tools section
-  - `Shell.pm` perl module is missing in new CentOS 7 installations. To install the module using cpan:
-    - `# cpan Shell` The first time using cpan, it will ask for configuration, choose all the defaults.
-    - **NOTE** This is not needed now since it was only used in `siproj` script and that's removed now.
-  
-
-### NETWORKING
-
-**IP ASSIGNMENTS**
-
-- The Advanced VLSI Lab now is under a new VLAN `192.168.11.0/24` with the following broad assignment:
-  - Training Lab: `192.168.11.1-30`
-  - Advanced VLSI Lab: `192.168.11.31-70`
-  - DHCP: `192.168.11.71-220`
-  - Servers: `192.168.11.221-153` : SRV01-`221-`, SRV02-`229-`, SRV03-`237-`
-  - Gateway: `192.168.11.254`
-  - DNS: `10.3.208.1`, `8.8.8.8`
-
-- **Domain Name**: `vlsi.silicon.ac.in`
-  - `srv01.vlsi.silicon.ac.in` : 192.168.11.221
-
-### STORAGE
-
-**PARTIONING**
-
-**srv01.vlsi.silicon.ac.in**
-
-| **Mount** | **Size** | **Purpose** |
-| ``swap`` | 8G | 0.5xRAM-size [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
-| ``/boot`` | 1.5G | Boot files |
-| ``/boot/efi`` | 0.5G | EFI boot files |
-| ``/(root)`` | 150G | CentOS 7 installation files |
-| ``/home`` | 50G | Local home dir |
-| ``/var`` | 25G | log,etc |
-| ``/home`` | 25G | system home dirs |
-| ``/home/local`` | 400G | local mount (sims, etc) |
-| ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
-
-
-
-
-## LINUX KNOWLEDGEBASE
-
-- [RHEL 7 Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7)
-  - **Deployment**: [Installation Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide)
-    - [A Simple guide to Automated Installation using Kickstart File](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
-    - [Kickstart command reference](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax)
-  - **System Administration**:
-    - | [**SysAdmin Guide**](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide) | [User/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups#s1-users-groups-introduction) |
-    - [Common Admin commands](https://access.redhat.com/articles/1189123)
-    - [Using cockpit to manage CentOS/RHEL servers](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/managing_systems_using_the_rhel_7_web_console)
-    - [Networking Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/networking_guide)
-    - [Kernel Admin Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/kernel_administration_guide)
-    - [Performance Tuning](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/performance_tuning_guide)
-    - [Resource Management](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/resource_management_guide)
-  - | **Security** | [Security Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/security_guide) | [SELinux](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/selinux_users_and_administrators_guide) |
-  - | **Storage** | [Storage Admin Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide) | [LVM Guide](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/logical_volume_manager_administration) |
- 
-- [CentOS 7 Release Notes](https://wiki.centos.org/action/show/Manuals/ReleaseNotes/CentOS7.2009?action=show&redirect=Manuals%2FReleaseNotes%2FCentOS7)
-- [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
-
-### SYSTEM ADMINISTRATION
 
 #### INSTALLATION AND PACKAGE MANGEMENT
 
