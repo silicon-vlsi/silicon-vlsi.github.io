@@ -79,6 +79,22 @@ sort: 1
   - Assign quota for the project directory. [See quota section]
   
 
+### USERS/GROUPS
+
+- [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups)
+- Range of `UID/GID`, umask,etc are set in `/etc/login.defs`
+- Password aging can be set with `chage`
+- The GUI for user management is `Users`
+- See [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups) for **command-line utilities** for user/group management.
+- A good article on [Unix Groups](https://csguide.cs.princeton.edu/account/groups) from Princeton's CS Dept.
+- **Shared Directory**: eg `/home/local/simulation`. Created a group called `localsim` which will consists of all users allowed to share the directory.
+  - `# chgrp localsim /home/local/simulation`
+  - `# chmod g=swrx,+t /home/local/simulation`
+    - `s` sets the `setgid` bit for the directory. When set on a directory, the __setgid__ bit causes newly created files within the directory to take on the group ownership of the directory rather than the default/primary group of the user that created it. This makes it easier to share the directory among several users, as long as they belong to the same group. This one is especially useful for shared project directory.
+    - `+t` keeps the dir sticky, the filesystem won't allow you to delete or rename it unless you are the owner. Just write permission is not enough. This way users in the 'localsim' group will not be able to delete it, only the creator.
+    - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
+
+
 ## LAB IT INFO
 
 ### NETWORKING
@@ -114,8 +130,6 @@ sort: 1
 | ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
 
 
-
-
 ## LINUX KNOWLEDGEBASE
 
 - [RHEL 7 Documentation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7)
@@ -136,10 +150,12 @@ sort: 1
 - [CentOS 7 Release Notes](https://wiki.centos.org/action/show/Manuals/ReleaseNotes/CentOS7.2009?action=show&redirect=Manuals%2FReleaseNotes%2FCentOS7)
 - [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
 
+### OS AND PACKAGE INSTALLATION
 
-### SYSTEM ADMINISTRATION
-
-**CREATING A KICKSTART USB BOOT MEDIA**
+- To **find** a package which __provides__ a certain library eg. `libXss.so.1`
+  - `$ yum provides libXss.so.1`
+  
+#### CREATING A KICKSTART USB BOOT MEDIA
 
 - [Automatic Install Doc from Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
   - [Kickstart Syntax](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax)
@@ -214,12 +230,9 @@ menuentry 'Kickstart Installation of CentOS 7' \
 - Make it bootable: `# isohybrid --uefi centos-ks.iso`
 - Make a bootable USB: `# dd if=centos-ks.iso of=/dev/sdb bs=512k`
   - **NOTE** WRITE TO PARENT DEVICE eg. **/dev/sdb** and NOT __/dev/sdb1__
+ 
 
-
-#### INSTALLATION AND PACKAGE MANGEMENT
-
-- To **find** a package which __provides__ a certain library eg. `libXss.so.1`
-  - `$ yum provides libXss.so.1` 
+### SYSTEM ADMIN
 
 #### MONITOR AND CONFIGURATION
 - Installing and using the `authconfig` GUI (**NOTE** `authconfig-tui` is deprecated)
@@ -240,22 +253,6 @@ menuentry 'Kickstart Installation of CentOS 7' \
   -[Intro to Cockpit -- redhat](https://www.redhat.com/sysadmin/intro-cockpit)
   -[Getting started -- redhat 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/getting_started_with_cockpit/index)
 
-### USER MANAGEMENT AND SECURITY
-
-#### USERS/GROUPS
-
-- [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups)
-- Range of `UID/GID`, umask,etc are set in `/etc/login.defs`
-- Password aging can be set with `chage`
-- The GUI for user management is `Users`
-- See [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups) for **command-line utilities** for user/group management.
-- A good article on [Unix Groups](https://csguide.cs.princeton.edu/account/groups) from Princeton's CS Dept.
-- **Shared Directory**: eg `/home/local/simulation`. Created a group called `localsim` which will consists of all users allowed to share the directory.
-  - `# chgrp localsim /home/local/simulation`
-  - `# chmod g=swrx,+t /home/local/simulation`
-    - `s` sets the `setgid` bit for the directory. When set on a directory, the __setgid__ bit causes newly created files within the directory to take on the group ownership of the directory rather than the default/primary group of the user that created it. This makes it easier to share the directory among several users, as long as they belong to the same group. This one is especially useful for shared project directory.
-    - `+t` keeps the dir sticky, the filesystem won't allow you to delete or rename it unless you are the owner. Just write permission is not enough. This way users in the 'localsim' group will not be able to delete it, only the creator.
-    - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
 
 #### NIS
 
