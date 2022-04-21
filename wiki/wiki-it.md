@@ -6,9 +6,25 @@ sort: 1
 
 ## USER GUIDE
 
-### CHANGING PASSWORD
+### Getting Started
 
-### CREATING AND USING A PROJECT AREA
+- To change your **password** use the NIS command `ypasswd`
+- To load environment variable for different tools and projects, the open source tool `module-environment` is used which makes it very modular to __load__ and __unload__ environment variables. Following are some examples:
+  - `module av` will **display** all the modules available to load or unload.
+  - Some common modules for different CAD tools are:
+    - `module load tools/IC/618` **loads** all the necessary environment variables for Cadence Virtuoso 6.18
+    - `module load tools/SPECTRE/211` will load the env variables for Spectre simulator.
+    - `module load tools/calibre/2021-4-33-16` for Calibre layout verification tool.
+    - `module load tools/ASSURA/41-618 tools/PVS/19-14-ISR4` for ASSURA and PVS verification tool.
+  - `module list` will **list** all the currently loaded modules.
+  - `module show tools/IC/618` will **shows** all the environment variables set in that module `tools/IC/618`
+  - `module unload tools/IC/618` will **remove** all the environment related to module `tools/IC/618`
+- **Simulation results** should be in the local drive in `/home/local/simulation/<USER>` directory. Storing simulation results in your home or project directory will quickly use up your disk quota.
+  - To automatically point all your Cadence simulation to the above directory, add the following command to your `.cdsinit` file in the Cadence work area:
+    - `envSetVal("asimenv.startup" "projectDir" 'string strcat("/home/local/simulation/" getShellEnvVar("USER") ))`
+  - For Tanner tools, the modulefile sets the env variable `TANNERWINEPREFIX` to `/home/local/simulation/<USER>/.wine-2020-3u3` so the user doesn't have to do anything.
+
+### Creating and Using Project and Training Areas
 
 ## ADMIN GUIDE
 
