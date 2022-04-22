@@ -134,16 +134,56 @@ sort: 1
 
 **srv01.vlsi.silicon.ac.in**
 
+This is the primary NFS file server. `/CAD` and `/PDK` are mounted in the NeumannLab (training). VoltaLab uses srv03 to mount `/CAD` and `/PDK`
+
 | **Mount** | **Size** | **Purpose** |
 | ``swap`` | 8G | 0.5xRAM-size [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
 | ``/boot`` | 1.5G | Boot files |
 | ``/boot/efi`` | 0.5G | EFI boot files |
-| ``/(root)`` | 150G | CentOS 7 installation files |
-| ``/home`` | 50G | Local home dir |
+| ``/(root)`` | 125G | CentOS 7 installation files |
+| ``/home`` | 25G | Local home dir |
 | ``/var`` | 25G | log,etc |
-| ``/home`` | 25G | system home dirs |
 | ``/home/local`` | 400G | local mount (sims, etc) |
 | ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
+| ``/home/nfs2`` | 100G | NFS mount for trainings |
+| ``/CAD`` | 650G | NFS mount for NeumannLab |
+| ``/PDK`` | 270G | PDK mount for NeumannLab |
+
+
+**srv02.vlsi.silicon.ac.in**
+
+This is a computer server with **20 Xeon Cores** and **128GB RAM**. This also serves the Cadence and Mentor License Servers.
+ 
+| **Mount** | **Size** | **Purpose** |
+| ``swap`` | 16G | >4G [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
+| ``/boot`` | 1.5G | Boot files |
+| ``/boot/efi`` | 0.5G | EFI boot files |
+| ``/(root)`` | 125G | CentOS 7 installation files |
+| ``/home`` | 100G | Local home dir |
+| ``/var`` | 50G | log,etc |
+| ``/home/local`` | 500G | local mount (sims, etc) |
+| ``/home/virt1`` | 250G | For Virtual Machines |
+| ``/home/virt2`` | 250G | For Virtual Machines |
+| ``/home/virt3`` | 250G | For Virtual Machines |
+| ``/home/virt4`` | 250G | For Virtual Machines |
+
+
+**srv03.vlsi.silicon.ac.in**
+
+This is the first file server of VLSI Lab. It's used as a shadow server which mirrors srv01. Currently only /CAD and /PDK are mirrored (rsynced)
+
+| **Mount** | **Size** | **Purpose** |
+| ``swap`` | 8G | 0.5xRAM-size [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
+| ``/boot`` | 1.5G | Boot files |
+| ``/boot/efi`` | 0.5G | EFI boot files |
+| ``/(root)`` | 125G | CentOS 7 installation files |
+| ``/home`` | 25G | Local home dir |
+| ``/var`` | 25G | log,etc |
+| ``/home/local`` | 200G | local mount (sims, etc) |
+| ``/pdk`` | 100G | Mirrors /PDK from srv01  |
+| ``/cad`` | 400G | Mirrors /CAD from srv01 |
+| ``/home/nfs3`` | 100G | reserved for future use |
+| ``/home/nfs4`` | 100G | reserved for future use |
 
 
 ## LINUX KNOWLEDGEBASE
