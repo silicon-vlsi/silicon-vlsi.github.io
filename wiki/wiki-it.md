@@ -78,7 +78,7 @@ sort: 1
 
 ### Cadence/Mentor Flexnet License Server 
 
-** START AND STOP **
+**START AND STOP**
 
 - Cadence:
   - `/CAD/apps7/bin/cdslic start` : Starts the License Server 
@@ -89,7 +89,7 @@ sort: 1
   - `/CAD/apps7/bin/mgclic stop` : Stops the License Server 
   - `/CAD/apps7/bin/mgclic status` : Checks the statusi eg. license usage
 
-** INSTALLING A NEW LICENCE FILE **
+**INSTALLING A NEW LICENCE FILE**
 
 - Stop the license server.
 - Copy the new license file to `/CAD/licenseServers/cadence[mentor]/licFiles`
