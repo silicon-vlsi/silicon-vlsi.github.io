@@ -28,7 +28,7 @@ sort: 1
 
 ## ADMIN GUIDE
 
-### SETTING UP NEW CENTOS DESKTOP
+### Setting up new CentOS 7 Desktop
 
 **MANUAL INSTALL**
 - Start desktop with a CentOS7 USB and and boot press `F12 (or F10)` and choose USB media
@@ -62,7 +62,7 @@ sort: 1
 - Reboot
 - Update when appropriate: `sudo yum update`
 
-**AUTO INSTALL USING KICKSTART**
+**Auto Install Using Kickstart**
 
 - Install CentOS 7 using a kickstart USB media as detailed below.
 - After reboot and accepting EULA, login 
@@ -76,8 +76,39 @@ sort: 1
 - Reboot
 - Update when appropriate: `sudo yum update`
 
+### Cadence/Mentor Flexnet License Server 
 
-### SETTING UP PROJECT AREA
+** START AND STOP **
+
+- Cadence:
+  - `/CAD/apps7/bin/cdslic start` : Starts the License Server 
+  - `/CAD/apps7/bin/cdslic stop` : Stops the License Server 
+  - `/CAD/apps7/bin/cdslic status` : Checks the statusi eg. license usage
+- Mentor/Siemens:
+  - `/CAD/apps7/bin/mgclic start` : Starts the License Server 
+  - `/CAD/apps7/bin/mgclic stop` : Stops the License Server 
+  - `/CAD/apps7/bin/mgclic status` : Checks the statusi eg. license usage
+
+** INSTALLING A NEW LICENCE FILE **
+
+- Stop the license server.
+- Copy the new license file to `/CAD/licenseServers/cadence[mentor]/licFiles`
+- Update the symbolic link `/CAD/licenseServers/cadence[mentor]/license-current.dat`
+- Edit license file too: 1) add the hostname/IP of the server (**srv02**), 2) path to the daemon (**/CAD/.../cdslmd**) and 3) the daemon port (**PORT=5281/1718**): 
+
+```bash
+#Cadence
+SERVER srv02 98BE9429134A 5280
+DAEMON cdslmd /CAD/licenseServers/cadence/lmtools-v11-7-0-0/bin/cdslmd PORT=5281
+
+#Mentor
+SERVER srv02 98BE9429134A 1717
+DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin PORT=1718
+```
+
+- Start the license server.
+
+### Setting Up Project Area
 
 - Create an user for each project using the convention of starting letter `p` eg. `pvolta`
 - Change `umask` in `.cshrc` to `027` so files created by `pvolta` cannot be read by __others__.
@@ -95,7 +126,7 @@ sort: 1
   - Assign quota for the project directory. [See quota section]
   
 
-### USERS/GROUPS
+### Users/Groups
 
 - [Redhat Doc on Users/Groups](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-managing_users_and_groups)
 - Range of `UID/GID`, umask,etc are set in `/etc/login.defs`
@@ -1140,6 +1171,7 @@ $module unload project/cad-analog/1.0
 - **Cadence License Documentation** at ``$CDSDOC/license`` or ``/CAD/IC616/doc/license`` [Link-to-PDF](https://www.dropbox.com/s/ou3vda9vpjtnsys/license.pdf)
 - **Mentor License Manual** [PDF](https://www.dropbox.com/s/7fii27aj97gow26/mgc_licen.pdf)
 - Mentor AppNote MG576233 : Scripts for starting license server [PDF](https://www.dropbox.com/s/x5cnh4ubot5ahpz/AppNote-LicAutoStart.pdf PDF)
+- Cadence Support Article on setup and debug of license server [Link](https://support.cadence.com/apex/ArticleAttachmentPortal?id=a1Od0000000sbWnEAI&pageName=ArticleContent)
 
 **FLEXNET LICENSING COMPONENTS**
 
@@ -1156,12 +1188,22 @@ All the Cadence and Mentor applications are FlexNet-enabled application that com
 
 ```bash
 #Cadence
-SERVER VLSI-SRV-001 98BE9429134A 5280
-DAEMON cdslmd /CAD/licenseServers/cadence/lmtools-v11-7-0-0/bin/cdslmd
+SERVER srv02 98BE9429134A 5280
+DAEMON cdslmd /CAD/licenseServers/cadence/lmtools-v11-7-0-0/bin/cdslmd PORT=5281
 
 #Mentor
-SERVER VLSI-SRV-001 98BE9429134A 1717
-DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin
+SERVER srv02 98BE9429134A 1717
+DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin PORT=1718
+```
+
+**NOTE** In CentOS 7 pretty much all ports are shut by default. So typically the DAEMON line doesn't have a port assigned so it picks an available free port but in CentOS 7, you have to specifically assign one using the PORT=<NUM> argument and open that port in the firewall.
+
+```bash
+sudo firewall-cmd --add-port=5280/tcp --permanent
+sudo firewall-cmd --add-port=5281/tcp --permanent
+sudo firewall-cmd --add-port=1717/tcp --permanent
+sudo firewall-cmd --add-port=1718/tcp --permanent
+sudo firewall-cmd --reload
 ```
 
 **IMPORTANT NOTE** Keep the ``cdslmd`` version same as that provided originally with the license file else some applications may fail.
