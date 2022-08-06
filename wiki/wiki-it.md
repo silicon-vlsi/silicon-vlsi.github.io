@@ -8,7 +8,7 @@ sort: 1
 
 ### Getting Started
 
-- To change your **password** use the NIS command `ypasswd`
+- To change your **password** use the NIS command `yppasswd`
 - To load environment variable for different tools and projects, the open source tool `module-environment` is used which makes it very modular to __load__ and __unload__ environment variables. Following are some examples:
   - `module av` will **display** all the modules available to load or unload.
   - Some common modules for different CAD tools are:
