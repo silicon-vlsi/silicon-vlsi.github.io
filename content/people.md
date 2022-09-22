@@ -27,7 +27,7 @@ sort: 3
 
 - **Chandan Singh**, *ECE, 2022* • Project/Training: Foundations of VLSI and Advanced digital and CMOS VLSI • Company: Mentor Graphics EDA
 
-- **Abhinav Das**, *ECE, 2022* • Project: Design and implementation of electronic circuit for temperature characterization of a temperature chamber • Company: CoreEL Technologies
+- **Abhinab Das**, *ECE, 2022* • Project: Design and implementation of electronic circuit for temperature characterization of a temperature chamber • Company: CoreEL Technologies
 
 - **Neha Samantaray**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Company: Sevya Multimedia PVT. Ltd.
 
@@ -64,13 +64,6 @@ sort: 3
 - **Vikash Kumar**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/iamkrvikash)
 
 - **Waqar Ahemad**, *EIE, 2021* • Project: Inverter chain design 
-
-- **Abhinab Das**, *ECE, 2022* • Project: SRAM Compilation using OpenRAM Compiler 
-
-- **Chandan Singh**, *ECE, 2022* • Project: SRAM Compilation using OpenRAM Compiler 
-
-- **Subham Rath**, *ECE, 2022* • Project: SRAM Compilation using OpenRAM Compiler
-
 
 
 **2020 BATCH:**
