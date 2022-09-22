@@ -18,6 +18,22 @@ sort: 3
 
 
 ## Current Students
+
+## Past Students
+
+**2022 BATCH:**
+- **Subham Rath**, *ECE, 2022* • Company: Micron Technology
+
+- **Chandan Singh**, *ECE, 2022* • Company: Mentor Graphics EDA
+
+- **Abhinav Das**, *ECE, 2022* • Company: CoreEL Technologies
+
+- **Neha Samantaray**, *ECE, 2022* • Company: Sevya Multimedia PVT. Ltd.
+
+- **Satya Ranjan Panda**, *ECE, 2022* • Company: Global Foudries
+
+**2021 BATCH:**
+
 - **Ajit Kumar Patro**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github)
 
 - **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • [gitHub-page](https://github.com/Chirag-Mohanty)
@@ -55,7 +71,6 @@ sort: 3
 - **Subham Rath**, *ECE, 2022* • Project: SRAM Compilation using OpenRAM Compiler
 
 
-## Past Students
 
 **2020 BATCH:**
 
