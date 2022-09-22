@@ -8,13 +8,13 @@ sort: 3
 
 - **Dr. Prakash Rout**, *Professor* • Ph.D from NIT, Rourkela • M.Tech. From KIIT University. • 16+ years of teaching experience • 10 years of research experience • 20 publication • *Research interest*: Mixed Signal VLSI Design. Design, simulation of semiconductor devices.
 
-- **Mr. Santunu Sarangi**, *Assistant Professor* • Ph.D (graduating), [IIT-Kharagpur](http://www.iitkgp.ac.in/) • M.Tech, [NIT-Rourkela](https://www.nitrkl.ac.in/) • 6 years of teaching experience • 6 years of research experience • 7 publication • 2 patents(filed) • *Research interest*: Mixed-signal VLSI design: High-Speed SerDES and low-power bandgap. :link: [LinkedIn](https://www.linkedin.com/in/santunu-sarangi-b731305b/)
+- **Mr. Santunu Sarangi**, *Assistant Professor* • Ph.D (graduating), [IIT-Kharagpur](http://www.iitkgp.ac.in/) • M.Tech, [NIT-Rourkela](https://www.nitrkl.ac.in/) • 4 years of teaching experience • 8 years of research experience • 7 publication • 2 patents(filed) • *Research interest*: Mixed-signal VLSI design: High-Speed SerDES and low-power bandgap. :link: [LinkedIn](https://www.linkedin.com/in/santunu-sarangi-b731305b/)
 
 - **Dr. Debasish Nayak**, *Sr. Assistant Professor* • Ph.D, NIT-Rourkela • M.Tech, BPUT-Rourkela • 10+ years of teaching experience • 8 years of research experience • 14 publication • *Research interest*: Mixed-signal VLSI design. Design, simulation and study of semiconductor dev. 
 
 - **Mr. Dhananjaya Tripathy**, *Assistant Professor* • M.Tech, VSSUT-Rourkela • 4+ years of teaching experience • 4+ years of research experience • 4 publication • *Research interest*: Analog VLSI design. Design, simulation and study of semiconductor dev.
 
-- **Mr. Prasant Swain**, *Technical Asst.* • M.Tech, B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
+- **Mr. Prasant Swain**, *Technical Asst.* Ph.D (cont.)• M.Tech, B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
 
 ## Current Students
@@ -22,15 +22,16 @@ sort: 3
 ## Past Students
 
 **2022 BATCH:**
-- **Subham Rath**, *ECE, 2022* • Company: Micron Technology
 
-- **Chandan Singh**, *ECE, 2022* • Company: Mentor Graphics EDA
+- **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Company: Micron Technology
 
-- **Abhinav Das**, *ECE, 2022* • Company: CoreEL Technologies
+- **Chandan Singh**, *ECE, 2022* • Project/Training: Foundations of VLSI and Advanced digital and CMOS VLSI • Company: Mentor Graphics EDA
 
-- **Neha Samantaray**, *ECE, 2022* • Company: Sevya Multimedia PVT. Ltd.
+- **Abhinav Das**, *ECE, 2022* • Project: Design and implementation of electronic circuit for temperature characterization of a temperature chamber • Company: CoreEL Technologies
 
-- **Satya Ranjan Panda**, *ECE, 2022* • Company: Global Foudries
+- **Neha Samantaray**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Company: Sevya Multimedia PVT. Ltd.
+
+- **Satya Ranjan Panda**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Company: Global Foudries
 
 **2021 BATCH:**
 
