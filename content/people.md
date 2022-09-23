@@ -23,7 +23,11 @@ sort: 3
 - **Patarla Vinay Kumar**, *Andhra University
 
 **2021 BATCH:**
-- **Soumay Ranjan Khadagray**, *[SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/)* - Domain: Process Design Kit (PDK) Design (DRC/LVS) - Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) - [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
+- **Soumay Ranjan Khadagray**, *[SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/)* • **Domain:** Process Design Kit (PDK) Design (DRC/LVS) • Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
+
+- **Swadesh Kumar Nath**, *[CET Bhubaneswar](https://www.cet.edu.in/)* • **Domain:** Process Design Kit (PDK) Design (DRC/LVS) • Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/swadesh-kumar-nath-b394a1194/)
+
+- **Arpita Padhi**, *[NIST Berhampur](https://nist.edu/)* • **Domain:** Scribe line Layout • Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/arpita-padhi/)
 
 ## Project Students
 
