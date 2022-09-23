@@ -31,6 +31,22 @@ sort: 3
 
 ## Past Students
 
+**2023 BATCH:**
+
+- **Debarchan Swain**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/debarchan-swain-0511a2191) 
+
+- **Rudra Narayan Sahu**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rnsahu/)
+
+- **Tusar Nayak**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/tusar-kumar-nayak-445841196/) 
+
+- **Rutucharya Panda**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rutucharya-panda-30a9a422b/)
+
+- **Erica Banerjee**, *ECE, 2023* • Project: Currently doing internship at [Micron Technology](https://in.micron.com/) in SCRIBE Layout domain • :link: [LinkedIn](https://www.linkedin.com/in/erica-banerjee-225554218/)
+
+- **Punyatoya Mohanty**, *ECE, 2023* • Project: TRD Intern at [STMicroelectronics](https://www.st.com/) • :link: [LinkedIn](https://www.linkedin.com/in/punyatoya21/) 
+
+- **Sristi Rani**, *ECE, 2023* • Project: TRD Intern at [STMicroelectronics](https://www.st.com/) • :link: [LinkedIn](https://www.linkedin.com/in/sristi-rani/)
+
 **2022 BATCH:**
 
 - **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Current Company: [Micron Technology](https://in.micron.com/) • [gitHub-page](https://github.com/SubhamRath) • :link: [LinkedIn](https://www.linkedin.com/in/srath01)
