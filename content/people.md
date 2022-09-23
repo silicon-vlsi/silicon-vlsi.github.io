@@ -21,7 +21,9 @@ sort: 3
 
 **2022 BATCH:**
 - **Patarla Vinay Kumar**, *Andhra University
+
 **2021 BATCH:**
+- **Soumay Ranjan Khadagray**, *[SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/)* - Domain: Process Design Kit (PDK) Design (DRC/LVS) - Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) - [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
 
 ## Project Students
 
