@@ -23,7 +23,7 @@ sort: 3
 
 **2022 BATCH:**
 
-- **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Company: Micron Technology
+- **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Company: Micron Technology • [gitHub-page](https://github.com/SubhamRath) • [Linkedin](https://www.linkedin.com/in/srath01)
 
 - **Chandan Singh**, *ECE, 2022* • Project/Training: Foundations of VLSI and Advanced digital and CMOS VLSI • Company: Mentor Graphics EDA
 
