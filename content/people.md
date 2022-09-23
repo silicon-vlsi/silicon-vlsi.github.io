@@ -49,31 +49,31 @@ sort: 3
 
 - **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/Chirag-Mohanty) • :link: [LinkedIn](https://www.linkedin.com/in/chirag-mohanty) 
 
-- **Gautam Kumar**, *ECE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • Current Company: [Cadence Design System](https://www.cadence.com) • [LinkedIn](https://www.linkedin.com/in/gkumar194)
+- **Gautam Kumar**, *ECE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • Current Company: [Cadence Design System](https://www.cadence.com) • :link: [LinkedIn](https://www.linkedin.com/in/gkumar194)
 
 - **Pracheeta Mohapatra**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/pracheeta-mohapatra-1850b219a) 
 
 - **Punyadeep Pattnaik**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • Current Company: [Wipro Technologies](https://www.wipro.com) • :link: [LinkedIn](https://www.linkedin.com/in/ppattanaik) 
 
-- **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
+- **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • :link: [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
 
-- **Rajkumar Laldev**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [CoreEL Technology](https://www.coreel.com) • [gitHub-page](https://github.com/kumarraj5364) • [LinkedIn](https://www.linkedin.com/in/rajkumar99)
+- **Rajkumar Laldev**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [CoreEL Technology](https://www.coreel.com) • [gitHub-page](https://github.com/kumarraj5364) • :link: [LinkedIn](https://www.linkedin.com/in/rajkumar99)
 
-- **Sachin Modi**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Marquee Semiconductor](https://marqueesemi.com) • [LinkedIn](https://www.linkedin.com/in/sachin-modi-511550205)
+- **Sachin Modi**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Marquee Semiconductor](https://marqueesemi.com) • :link: [LinkedIn](https://www.linkedin.com/in/sachin-modi-511550205)
 
-- **Satabdi Panda**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM. • Current Company: [Synopsys Inc.](https://www.synopsys.com)  • [gitHub-page](https://github.com/satabdi25-2000) • [LinkedIn](https://www.linkedin.com/in/satabdi-panda-18bb4817b/)
+- **Satabdi Panda**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM. • Current Company: [Synopsys Inc.](https://www.synopsys.com)  • [gitHub-page](https://github.com/satabdi25-2000) • :link: [LinkedIn](https://www.linkedin.com/in/satabdi-panda-18bb4817b/)
 
-- **Shubham Kumar**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • [LinkedIn](https://www.linkedin.com/in/shubham2020)
+- **Shubham Kumar**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/shubham2020)
 
-- **Smruti Rekha Prusty**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/sprusty23) • [LinkedIn](https://www.linkedin.com/in/sprusty23) 
+- **Smruti Rekha Prusty**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/sprusty23) • :link: [LinkedIn](https://www.linkedin.com/in/sprusty23) 
 
-- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: Inverter chain design • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102) 
+- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: Inverter chain design • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102) 
 
-- **Sushree Priyadarshini**, *EIE, 2021* • Project: Inverter chain design • Current Company: [TCS](https://www.tcs.com/) • [LinkedIn](https://www.linkedin.com/in/sushreep)
+- **Sushree Priyadarshini**, *EIE, 2021* • Project: Inverter chain design • Current Company: [TCS](https://www.tcs.com/) • :link: [LinkedIn](https://www.linkedin.com/in/sushreep)
 
-- **Vikash Kumar**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell. • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • [gitHub-page](https://github.com/iamkrvikash) • [LinkedIn](https://www.linkedin.com/in/iamkrvikash)
+- **Vikash Kumar**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell. • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • [gitHub-page](https://github.com/iamkrvikash) • :link: [LinkedIn](https://www.linkedin.com/in/iamkrvikash)
 
-- **Waqar Ahemad**, *EIE, 2021* • Project: Inverter chain design • Current Company: [Perfect VIP](http://www.perfectvips.com) • [LinkedIn](https://www.linkedin.com/in/md-waqar-ahmed/)
+- **Waqar Ahemad**, *EIE, 2021* • Project: Inverter chain design • Current Company: [Perfect VIP](http://www.perfectvips.com) • :link: [LinkedIn](https://www.linkedin.com/in/md-waqar-ahmed/)
 
 
 **2020 BATCH:**
