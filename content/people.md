@@ -55,7 +55,7 @@ sort: 3
 
 - **Punyadeep Pattnaik**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • Current Company: [Wipro Technologies](https://www.wipro.com) • :link: [LinkedIn](https://www.linkedin.com/in/ppattanaik) 
 
-- **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • :link: [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
+- **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • Current Company: [Accenture](https://www.accenture.com) • :link: [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
 
 - **Rajkumar Laldev**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [CoreEL Technology](https://www.coreel.com) • [gitHub-page](https://github.com/kumarraj5364) • :link: [LinkedIn](https://www.linkedin.com/in/rajkumar99)
 
