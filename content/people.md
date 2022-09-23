@@ -23,47 +23,47 @@ sort: 3
 
 **2022 BATCH:**
 
-- **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Company: Micron Technology • [gitHub-page](https://github.com/SubhamRath) • [Linkedin](https://www.linkedin.com/in/srath01)
+- **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Current Company: [Micron Technology](https://in.micron.com/) • [gitHub-page](https://github.com/SubhamRath) • [LinkedIn](https://www.linkedin.com/in/srath01)
 
-- **Chandan Singh**, *ECE, 2022* • Project/Training: Foundations of VLSI and Advanced digital and CMOS VLSI • Company: Mentor Graphics EDA
+- **Chandan Singh**, *ECE, 2022* • Project/Training: Foundations of VLSI and Advanced digital and CMOS VLSI • Current Company: [Mentor Graphics](https://eda.sw.siemens.com/en-US/) • [LinkedIn](https://www.linkedin.com/in/csingh-2208/)
 
-- **Abhinab Das**, *ECE, 2022* • Project: Design and implementation of electronic circuit for temperature characterization of a temperature chamber • Company: CoreEL Technologies
+- **Abhinab Das**, *ECE, 2022* • Project: Design and implementation of electronic circuit for temperature characterization of a temperature chamber • Current Company: [CoreEL Technologies](https://www.coreel.com/)
 
-- **Neha Samantaray**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Company: Sevya Multimedia PVT. Ltd.
+- **Neha Samantaray**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Current Company: [Sevya Multimedia PVT. Ltd.](https://sevyamultimedia.com) • [LinkedIn](https://www.linkedin.com/in/neha-samantaray-32a6b51b9) 
 
-- **Satya Ranjan Panda**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Company: Global Foudries
+- **Satya Ranjan Panda**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Current Company: [Global Foudries](https://gf.com/) • [LinkedIn](https://www.linkedin.com/in/satya-panda-41b9491b4)
 
 **2021 BATCH:**
 
-- **Ajit Kumar Patro**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github)
+- **Ajit Kumar Patro**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github) • [LinkedIn](https://www.linkedin.com/in/akpatro13) • Current Company: [Intel Corporation](https://www.intel.in/)
 
-- **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • [gitHub-page](https://github.com/Chirag-Mohanty)
+- **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • [gitHub-page](https://github.com/Chirag-Mohanty) • [LinkedIn](https://www.linkedin.com/in/chirag-mohanty) • Current Company: [VVDN Technology](https://www.vvdntech.com)
 
-- **Gautam Kumar**, *ECE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • [gitHub-page]
+- **Gautam Kumar**, *ECE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • [LinkedIn](https://www.linkedin.com/in/gkumar194) • Current Company: [Cadence Design System](https://www.cadence.com)
 
-- **Pracheeta Mohapatra**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page]
+- **Pracheeta Mohapatra**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [LinkedIn](https://www.linkedin.com/in/pracheeta-mohapatra-1850b219a) • Current Company: [Sevya Multimedia](https://sevyamultimedia.com)
 
-- **Punyadeep Pattnaik**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page]
+- **Punyadeep Pattnaik**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • [LinkedIn](https://www.linkedin.com/in/ppattanaik) • Current Company: [Wipro Technologies](https://www.wipro.com)
 
-- **Rajeev Kumar**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • [gitHub-page]
+- **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
 
-- **Rajkumar Laldev**, *ECE, 2021* • Project: AMBA APB protocol • [gitHub-page](https://github.com/kumarraj5364)
+- **Rajkumar Laldev**, *ECE, 2021* • Project: AMBA APB protocol • [gitHub-page](https://github.com/kumarraj5364) • [LinkedIn](https://www.linkedin.com/in/rajkumar99)
 
-- **Sachin Modi**, *ECE, 2021* • Project: AMBA APB protocol • [gitHub-page]
+- **Sachin Modi**, *ECE, 2021* • Project: AMBA APB protocol • [LinkedIn](https://www.linkedin.com/in/sachin-modi-511550205)
 
-- **Satabdi Panda**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page](https://github.com/satabdi25-2000)
+- **Satabdi Panda**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [gitHub-page](https://github.com/satabdi25-2000) • [LinkedIn](https://www.linkedin.com/in/satabdi-panda-18bb4817b/)
 
-- **Shubham Kumar**, *ECE, 2021* • Project: AMBA APB protocol • [gitHub-page]
+- **Shubham Kumar**, *ECE, 2021* • Project: AMBA APB protocol • [LinkedIn](https://www.linkedin.com/in/shubham2020)
 
-- **Smruti Rekha Prusty**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page](https://github.com/sprusty23)
+- **Smruti Rekha Prusty**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • [gitHub-page](https://github.com/sprusty23) • [LinkedIn](https://www.linkedin.com/in/sprusty23) • Current Company: [VVDN Technology](https://www.vvdntech.com)
 
-- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: Inverter chain design 
+- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: Inverter chain design • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102) 
 
-- **Sushree Priyadarshini**, *EIE, 2021* • Project: Inverter chain design 
+- **Sushree Priyadarshini**, *EIE, 2021* • Project: Inverter chain design • [LinkedIn](https://www.linkedin.com/in/sushreep)
 
-- **Vikash Kumar**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/iamkrvikash)
+- **Vikash Kumar**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/iamkrvikash) • [LinkedIn](https://www.linkedin.com/in/iamkrvikash)
 
-- **Waqar Ahemad**, *EIE, 2021* • Project: Inverter chain design 
+- **Waqar Ahemad**, *EIE, 2021* • Project: Inverter chain design • [LinkedIn](https://www.linkedin.com/in/md-waqar-ahmed/)
 
 
 **2020 BATCH:**
