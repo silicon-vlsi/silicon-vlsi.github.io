@@ -47,6 +47,20 @@ sort: 3
 
 - **Sristi Rani**, *ECE, 2023* • Project: TRD Intern at [STMicroelectronics](https://www.st.com/) • :link: [LinkedIn](https://www.linkedin.com/in/sristi-rani/)
 
+- **Barsha Parida**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology • :link: [LinkedIn](https://www.linkedin.com/in/barsha-parida-8a3479212/) 
+
+- **Meerashree Sahoo**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn]()
+
+- **Subhrajita Gantayat**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/subhrajitagantayat/) 
+
+- **Sumant Polaki**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology.. • :link: [LinkedIn](https://www.linkedin.com/in/sumant-polaki-a68070199/)
+
+- **Shruti Shubhra**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/shruti-shubhra/)
+
+- **Puja Kumari**, *ECE, 2023* • Project: Design and verification of digital circuits • :link: [LinkedIn](https://www.linkedin.com/in/puja-kumari-252119239/) 
+
+- **Divyajit Swain**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/dibyajit-swain-9278b5228/)
+
 **2022 BATCH:**
 
 - **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Current Company: [Micron Technology](https://in.micron.com/) • [gitHub-page](https://github.com/SubhamRath) • :link: [LinkedIn](https://www.linkedin.com/in/srath01)
