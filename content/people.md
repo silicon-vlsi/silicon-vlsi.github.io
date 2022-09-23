@@ -16,8 +16,17 @@ sort: 3
 
 - **Mr. Prasant Swain**, *Technical Asst.* Ph.D (cont.)• M.Tech, B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
+## Students
+## Training Students
 
-## Current Students
+**2022 BATCH:**
+**2021 BATCH:**
+
+## Project Students
+
+## Present Students
+
+**2023 BATCH:**
 
 ## Past Students
 
