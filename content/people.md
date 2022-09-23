@@ -27,9 +27,62 @@ sort: 3
 
 ## Present Students
 
-**2023 BATCH:**
 
-## Past Students
+**2024 BATCH:**
+
+- **Abhishek**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Akhilesh**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Aman**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Anuska**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Answesh**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Debasmita**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Jagan**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn](https://www.linkedin.com/in/suhrid-dutta-530830206/)
+
+- **Jyoti Prakash**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Kirtirekha**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Kishan**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Mahesh**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Mohit**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Mrityunjay**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Oom**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Prayas**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Pratyush**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Priyam**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Priyanshu**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Priyanshu**, *EEE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Rituparnar**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Rudransh**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Shruti**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Smrity**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Subhalaxmi**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Suhrid**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Sunanda**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+
+- **Swayam**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
 
 **2023 BATCH:**
 
@@ -60,6 +113,8 @@ sort: 3
 - **Puja Kumari**, *ECE, 2023* • Project: Design and verification of digital circuits • :link: [LinkedIn](https://www.linkedin.com/in/puja-kumari-252119239/) 
 
 - **Divyajit Swain**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/dibyajit-swain-9278b5228/)
+
+## Past Students
 
 **2022 BATCH:**
 
