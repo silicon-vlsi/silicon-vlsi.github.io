@@ -23,27 +23,27 @@ sort: 3
 
 **2022 BATCH:**
 
-- **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Current Company: [Micron Technology](https://in.micron.com/) • [gitHub-page](https://github.com/SubhamRath) • [LinkedIn](https://www.linkedin.com/in/srath01)
+- **Subham Rath**, *ECE, 2022* • Project: Design and implementation of a Low-power bandgap reference (BGR) circuit in 180nm CMOS technology • Current Company: [Micron Technology](https://in.micron.com/) • [gitHub-page](https://github.com/SubhamRath) • :link: [LinkedIn](https://www.linkedin.com/in/srath01)
 
-- **Chandan Singh**, *ECE, 2022* • Project/Training: Foundations of VLSI and Advanced digital and CMOS VLSI • Current Company: [Mentor Graphics](https://eda.sw.siemens.com/en-US/) • [LinkedIn](https://www.linkedin.com/in/csingh-2208/)
+- **Chandan Singh**, *ECE, 2022* • Project/Training: Foundations of VLSI and Advanced digital and CMOS VLSI • Current Company: [Mentor Graphics](https://eda.sw.siemens.com/en-US/) • :link: [LinkedIn](https://www.linkedin.com/in/csingh-2208/)
 
 - **Abhinab Das**, *ECE, 2022* • Project: Design and implementation of electronic circuit for temperature characterization of a temperature chamber • Current Company: [CoreEL Technologies](https://www.coreel.com/)
 
-- **Neha Samantaray**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Current Company: [Sevya Multimedia PVT. Ltd.](https://sevyamultimedia.com) • [LinkedIn](https://www.linkedin.com/in/neha-samantaray-32a6b51b9) 
+- **Neha Samantaray**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Current Company: [Sevya Multimedia PVT. Ltd.](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/neha-samantaray-32a6b51b9) 
 
-- **Satya Ranjan Panda**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Current Company: [Global Foudries](https://gf.com/) • [LinkedIn](https://www.linkedin.com/in/satya-panda-41b9491b4)
+- **Satya Ranjan Panda**, *ECE, 2022* • Project: Design and Characterization of 6T-SRAM • Current Company: [Global Foudries](https://gf.com/) • :link: [LinkedIn](https://www.linkedin.com/in/satya-panda-41b9491b4)
 
 **2021 BATCH:**
 
-- **Ajit Kumar Patro**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell.  • [gitHub-page](https://github.com/akpatro-github) • [LinkedIn](https://www.linkedin.com/in/akpatro13) • Current Company: [Intel Corporation](https://www.intel.in/)
+- **Ajit Kumar Patro**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell. • Current Company: [Intel Corporation](https://www.intel.in) • [gitHub-page](https://github.com/akpatro-github) • :link:[LinkedIn](https://www.linkedin.com/in/akpatro13) 
 
-- **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • [gitHub-page](https://github.com/Chirag-Mohanty) • [LinkedIn](https://www.linkedin.com/in/chirag-mohanty) • Current Company: [VVDN Technology](https://www.vvdntech.com)
+- **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/Chirag-Mohanty) • :link: [LinkedIn](https://www.linkedin.com/in/chirag-mohanty) 
 
-- **Gautam Kumar**, *ECE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • [LinkedIn](https://www.linkedin.com/in/gkumar194) • Current Company: [Cadence Design System](https://www.cadence.com)
+- **Gautam Kumar**, *ECE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • Current Company: [Cadence Design System](https://www.cadence.com) • [LinkedIn](https://www.linkedin.com/in/gkumar194)
 
-- **Pracheeta Mohapatra**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM  • [LinkedIn](https://www.linkedin.com/in/pracheeta-mohapatra-1850b219a) • Current Company: [Sevya Multimedia](https://sevyamultimedia.com)
+- **Pracheeta Mohapatra**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/pracheeta-mohapatra-1850b219a) 
 
-- **Punyadeep Pattnaik**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • [LinkedIn](https://www.linkedin.com/in/ppattanaik) • Current Company: [Wipro Technologies](https://www.wipro.com)
+- **Punyadeep Pattnaik**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • Current Company: [Wipro Technologies](https://www.wipro.com) • :link: [LinkedIn](https://www.linkedin.com/in/ppattanaik) 
 
 - **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
 
