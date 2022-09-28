@@ -130,6 +130,12 @@ sort: 3
 
 - **Vikash Kumar**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK (LVS/PLS) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Analog VLSI Circuit Design, Layout and Verification and PDK (LVS/PLS) Design domain • [LinkedIn](https://www.linkedin.com/in/iamkrvikash)
 
+- **Gautam Kumar**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as an Application Engineer at [Cadence Design System](https://www.cadence.com) • Trained in Analog VLSI Circuit and Layout Design, and PDK (PEX) Design domain • [LinkedIn](https://www.linkedin.com/in/gkumar194)
+
+- **Rajkumar Laldev**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a RTL Verification Engineer at [CoreEL Technology](https://www.coreel.com) • Trained in Digital Logic Design using Verilog. • [gitHub-page](https://github.com/kumarraj5364) • [LinkedIn](https://www.linkedin.com/in/rajkumar99)
+
+
+
 
 - **Swadesh Kumar Nath**, *[CET Bhubaneswar](https://www.cet.edu.in/)* • **Domain:** Process Design Kit (PDK) Design (DRC/LVS) • Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/swadesh-kumar-nath-b394a1194/)
 
@@ -153,7 +159,7 @@ sort: 3
 
 - **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/Chirag-Mohanty) • :link: [LinkedIn](https://www.linkedin.com/in/chirag-mohanty) 
 
-- **Gautam Kumar**, *ECE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • Current Company: [Cadence Design System](https://www.cadence.com) • :link: [LinkedIn](https://www.linkedin.com/in/gkumar194)
+
 
 
 
@@ -161,7 +167,7 @@ sort: 3
 
 - **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • Current Company: [Accenture](https://www.accenture.com) • :link: [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
 
-- **Rajkumar Laldev**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [CoreEL Technology](https://www.coreel.com) • [gitHub-page](https://github.com/kumarraj5364) • :link: [LinkedIn](https://www.linkedin.com/in/rajkumar99)
+
 
 - **Sachin Modi**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Marquee Semiconductor](https://marqueesemi.com) • :link: [LinkedIn](https://www.linkedin.com/in/sachin-modi-511550205)
 
@@ -172,8 +178,6 @@ sort: 3
 - **Smruti Rekha Prusty**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/sprusty23) • :link: [LinkedIn](https://www.linkedin.com/in/sprusty23) 
 
 - **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: Inverter chain design • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102) 
-
-- **Sushree Priyadarshini**, *EIE, 2021* • Project: Inverter chain design • Current Company: [TCS](https://www.tcs.com/) • :link: [LinkedIn](https://www.linkedin.com/in/sushreep)
 
 
 
