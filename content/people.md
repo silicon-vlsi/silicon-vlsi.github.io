@@ -118,7 +118,18 @@ sort: 3
 
 ## Past Students
 
-- **Soumay Ranjan Khadagray**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK Design engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in PDK (DRC/LVS) Design for leading semiconductor organizations. • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
+- **Soumay Ranjan Khadagray**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in PDK (DRC/LVS) design domain for leading semiconductor organizations. • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
+
+- **Pracheeta Mohapatra**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Digital VLSI (Pcell/Plib) Design domain for leading semiconductor organizations. • [LinkedIn](https://www.linkedin.com/in/pracheeta-mohapatra-1850b219a)
+
+- **Punyadeep Pattnaik**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a Design and Verification Engineer at a leading semiconductor organization through [Wipro Technologies](https://www.wipro.com • Trained in Digital VLSI Circuit Design and Verification domain • [LinkedIn](https://www.linkedin.com/in/ppattanaik)
+
+- **Ajit Kumar Patro**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a Standard Cell Library Development Engineer at [Intel Corporation](https://www.intel.in) • Trained in Analog VLSI Circuit Design, Layout and Verification domain • [LinkedIn](https://www.linkedin.com/in/akpatro13)
+
+- **Satabdi Panda**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a AMS Layout Engineer at [Synopsys Inc.](https://www.synopsys.com) • Trained in Analog VLSI Circuit Design, Layout and Verification and PDK (LVS/PLS) Design domain • [LinkedIn](https://www.linkedin.com/in/satabdi-panda-18bb4817b/)
+
+- **Vikash Kumar**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK (LVS/PLS) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Analog VLSI Circuit Design, Layout and Verification and PDK (LVS/PLS) Design domain • [LinkedIn](https://www.linkedin.com/in/iamkrvikash)
+
 
 - **Swadesh Kumar Nath**, *[CET Bhubaneswar](https://www.cet.edu.in/)* • **Domain:** Process Design Kit (PDK) Design (DRC/LVS) • Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/swadesh-kumar-nath-b394a1194/)
 
@@ -138,15 +149,15 @@ sort: 3
 
 **2021 BATCH:**
 
-- **Ajit Kumar Patro**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell. • Current Company: [Intel Corporation](https://www.intel.in) • [gitHub-page](https://github.com/akpatro-github) • :link:[LinkedIn](https://www.linkedin.com/in/akpatro13) 
+
 
 - **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/Chirag-Mohanty) • :link: [LinkedIn](https://www.linkedin.com/in/chirag-mohanty) 
 
 - **Gautam Kumar**, *ECE, 2021* • Project: SRAM Compilation using OpenRAM Compiler • Current Company: [Cadence Design System](https://www.cadence.com) • :link: [LinkedIn](https://www.linkedin.com/in/gkumar194)
 
-- **Pracheeta Mohapatra**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/pracheeta-mohapatra-1850b219a) 
 
-- **Punyadeep Pattnaik**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • Current Company: [Wipro Technologies](https://www.wipro.com) • :link: [LinkedIn](https://www.linkedin.com/in/ppattanaik) 
+
+
 
 - **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • Current Company: [Accenture](https://www.accenture.com) • :link: [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
 
@@ -154,7 +165,7 @@ sort: 3
 
 - **Sachin Modi**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Marquee Semiconductor](https://marqueesemi.com) • :link: [LinkedIn](https://www.linkedin.com/in/sachin-modi-511550205)
 
-- **Satabdi Panda**, *EIE, 2021* • Project: A comparative cell stability analysis between 6T and 8T CMOS SRAM. • Current Company: [Synopsys Inc.](https://www.synopsys.com)  • [gitHub-page](https://github.com/satabdi25-2000) • :link: [LinkedIn](https://www.linkedin.com/in/satabdi-panda-18bb4817b/)
+
 
 - **Shubham Kumar**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/shubham2020)
 
@@ -164,7 +175,7 @@ sort: 3
 
 - **Sushree Priyadarshini**, *EIE, 2021* • Project: Inverter chain design • Current Company: [TCS](https://www.tcs.com/) • :link: [LinkedIn](https://www.linkedin.com/in/sushreep)
 
-- **Vikash Kumar**, *ECE, 2021* • Project: A comparative study of 6T SRAM with 6T SE-SRAM cell. • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • [gitHub-page](https://github.com/iamkrvikash) • :link: [LinkedIn](https://www.linkedin.com/in/iamkrvikash)
+
 
 - **Waqar Ahemad**, *EIE, 2021* • Project: Inverter chain design • Current Company: [Perfect VIP](http://www.perfectvips.com) • :link: [LinkedIn](https://www.linkedin.com/in/md-waqar-ahmed/)
 
