@@ -118,7 +118,7 @@ sort: 3
 
 ## Past Students
 
-- **Soumay Ranjan Khadagray**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK Designer at a leading semiconductor organisation throug [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
+- **Soumay Ranjan Khadagray**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK Design engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in PDK (DRC/LVS) Design for leading semiconductor organizations. • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
 
 - **Swadesh Kumar Nath**, *[CET Bhubaneswar](https://www.cet.edu.in/)* • **Domain:** Process Design Kit (PDK) Design (DRC/LVS) • Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/swadesh-kumar-nath-b394a1194/)
 
