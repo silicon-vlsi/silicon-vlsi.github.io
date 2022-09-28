@@ -118,21 +118,31 @@ sort: 3
 
 ## Past Students
 
-- **Soumay Ranjan Khadagray**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in PDK (DRC/LVS) design domain for leading semiconductor organizations. • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
+- **Soumay Ranjan Khadagray**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a PDK Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in PDK (DRC/LVS) design domain for leading semiconductor organizations. • [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102/)
 
-- **Pracheeta Mohapatra**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Digital VLSI (Pcell/Plib) Design domain for leading semiconductor organizations. • [LinkedIn](https://www.linkedin.com/in/pracheeta-mohapatra-1850b219a)
+- **Pracheeta Mohapatra**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a PDK Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Digital VLSI (Pcell/Plib) Design domain for leading semiconductor organizations. • [LinkedIn](https://www.linkedin.com/in/pracheeta-mohapatra-1850b219a)
 
-- **Punyadeep Pattnaik**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a Design and Verification Engineer at a leading semiconductor organization through [Wipro Technologies](https://www.wipro.com • Trained in Digital VLSI Circuit Design and Verification domain • [LinkedIn](https://www.linkedin.com/in/ppattanaik)
+- **Punyadeep Pattnaik**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a Design and Verification Engineer at a leading semiconductor organization through [Wipro Technologies](https://www.wipro.com • Trained in Digital VLSI Circuit Design and Verification domain • [LinkedIn](https://www.linkedin.com/in/ppattanaik)
 
-- **Ajit Kumar Patro**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a Standard Cell Library Development Engineer at [Intel Corporation](https://www.intel.in) • Trained in Analog VLSI Circuit Design, Layout and Verification domain • [LinkedIn](https://www.linkedin.com/in/akpatro13)
+- **Ajit Kumar Patro**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a Standard Cell Library Development Engineer at [Intel Corporation](https://www.intel.in) • Trained in Analog VLSI Circuit Design, Layout and Verification domain • [LinkedIn](https://www.linkedin.com/in/akpatro13)
 
-- **Satabdi Panda**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a AMS Layout Engineer at [Synopsys Inc.](https://www.synopsys.com) • Trained in Analog VLSI Circuit Design, Layout and Verification and PDK (LVS/PLS) Design domain • [LinkedIn](https://www.linkedin.com/in/satabdi-panda-18bb4817b/)
+- **Satabdi Panda**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a AMS Layout Engineer at [Synopsys Inc.](https://www.synopsys.com) • Trained in Analog VLSI Circuit Design, Layout and Verification and PDK (LVS/PLS) Design domain • [LinkedIn](https://www.linkedin.com/in/satabdi-panda-18bb4817b/)
 
-- **Vikash Kumar**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a PDK (LVS/PLS) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Analog VLSI Circuit Design, Layout and Verification and PDK (LVS/PLS) Design domain • [LinkedIn](https://www.linkedin.com/in/iamkrvikash)
+- **Vikash Kumar**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a PDK (LVS/PLS) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Analog VLSI Circuit Design, Layout and Verification and PDK (LVS/PLS) Design domain • [LinkedIn](https://www.linkedin.com/in/iamkrvikash)
 
-- **Gautam Kumar**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as an Application Engineer at [Cadence Design System](https://www.cadence.com) • Trained in Analog VLSI Circuit and Layout Design, and PDK (PEX) Design domain • [LinkedIn](https://www.linkedin.com/in/gkumar194)
+- **Gautam Kumar**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as an Application Engineer at [Cadence Design System](https://www.cadence.com) • Trained in Analog VLSI Circuit and Layout Design, and PDK (PEX) Design domain • [LinkedIn](https://www.linkedin.com/in/gkumar194)
 
-- **Rajkumar Laldev**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch* woking as a RTL Verification Engineer at [CoreEL Technology](https://www.coreel.com) • Trained in Digital Logic Design using Verilog. • [gitHub-page](https://github.com/kumarraj5364) • [LinkedIn](https://www.linkedin.com/in/rajkumar99)
+- **Rajkumar Laldev**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a RTL Verification Engineer at [CoreEL Technology](https://www.coreel.com) • Trained in Digital Logic Design using Verilog. • [gitHub-page](https://github.com/kumarraj5364) • [LinkedIn](https://www.linkedin.com/in/rajkumar99)
+
+- **Shubham Kumar**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a PDK (Pcell/Plib) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Digital Logic Design using Verilog and PDK Design domain •  • [LinkedIn](https://www.linkedin.com/in/shubham2020)
+
+- **Chirag Mohanty**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a RF Design Engineer at [VVDN Technology](https://www.vvdntech.com) • Trained in Analog Circuit and Layout Design domain  • [gitHub-page](https://github.com/Chirag-Mohanty) • [LinkedIn](https://www.linkedin.com/in/chirag-mohanty)
+
+- **Smruti Rekha Prusty**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a RF Design Engineer at [VVDN Technology](https://www.vvdntech.com) • Trained in Analog Circuit and Layout Design domain  • [LinkedIn](https://www.linkedin.com/in/sprusty23/)
+
+- **Sachin Modi**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a DV Engineer at [Marquee Semiconductor](https://marqueesemi.com) • Trained in Digital Logic Design and Verification domain  • [LinkedIn](https://www.linkedin.com/in/sachin-modi-511550205)
+
+- **Waqar Ahemad**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a DV Engineer at [Perfect VIP](http://www.perfectvips.com) • Trained in Digital Logic Design and Verification domain  • [LinkedIn](https://www.linkedin.com/in/md-waqar-ahmed/)
 
 
 
@@ -157,7 +167,6 @@ sort: 3
 
 
 
-- **Chirag Mohanty**, *ECE, 2021* • Project: Characterization of Novel 9T SRAM Cell • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/Chirag-Mohanty) • :link: [LinkedIn](https://www.linkedin.com/in/chirag-mohanty) 
 
 
 
@@ -165,23 +174,9 @@ sort: 3
 
 
 
-- **Rajeev Ranjan**, *ECE, 2021* • Project: Callibration of PT100 temperature sensor • Current Company: [Accenture](https://www.accenture.com) • :link: [LinkedIn](https://www.linkedin.com/in/rajeev-ranjan-r2710)
 
 
 
-- **Sachin Modi**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Marquee Semiconductor](https://marqueesemi.com) • :link: [LinkedIn](https://www.linkedin.com/in/sachin-modi-511550205)
-
-
-
-- **Shubham Kumar**, *ECE, 2021* • Project: AMBA APB protocol • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/shubham2020)
-
-- **Smruti Rekha Prusty**, *ECE, 2021* • Project: A comparative study of 6T, 8T and 9T SRAM Cells • Current Company: [VVDN Technology](https://www.vvdntech.com) • [gitHub-page](https://github.com/sprusty23) • :link: [LinkedIn](https://www.linkedin.com/in/sprusty23) 
-
-- **Soumya Ranjan Khadagray**, *EIE, 2021* • Project: Inverter chain design • Current Company: [Sevya Multimedia](https://sevyamultimedia.com) • :link: [LinkedIn](https://www.linkedin.com/in/soumya-ranjan-k-881a01102) 
-
-
-
-- **Waqar Ahemad**, *EIE, 2021* • Project: Inverter chain design • Current Company: [Perfect VIP](http://www.perfectvips.com) • :link: [LinkedIn](https://www.linkedin.com/in/md-waqar-ahmed/)
 
 
 **2020 BATCH:**
