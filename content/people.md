@@ -16,21 +16,9 @@ sort: 3
 
 - **Mr. Prasant Swain**, *Technical Asst.* Ph.D (cont.) • M.Tech, B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
-# Students
-## Training Students
+# Trainees
 
-**2022 BATCH:**
-- **Patarla Vinay Kumar**, *Andhra University
-
-**2021 BATCH:**
-
-
-## Project Students
-
-## Present Students
-
-
-**2024 BATCH:**
+## Present Trainees
 
 - **Abhishek**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
 
@@ -86,8 +74,6 @@ sort: 3
 
 - **Swayam**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
 
-**2023 BATCH:**
-
 - **Debarchan Swain**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/debarchan-swain-0511a2191) 
 
 - **Rudra Narayan Sahu**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rnsahu/)
@@ -116,7 +102,7 @@ sort: 3
 
 - **Divyajit Swain**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/dibyajit-swain-9278b5228/)
 
-## Past Students
+## Past Trainees
 
 - **Subham Rath**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2022 Batch,* working as a CAD Engineer at [Micron Technology](https://in.micron.com/) • Trained in Analog VLSI Circuit and Layout design. [gitHub-page](https://github.com/SubhamRath) • :link: [LinkedIn](https://www.linkedin.com/in/srath01)
 
