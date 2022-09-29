@@ -74,7 +74,7 @@ sort: 3
 
 - **Swayam**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
 
-- **Debarchan Swain**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/debarchan-swain-0511a2191) 
+- **Debarchan Swain**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/debarchan-swain-0511a2191) 
 
 - **Rudra Narayan Sahu**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rnsahu/)
 
