@@ -8,13 +8,13 @@ sort: 3
 
 - **Dr. Prakash Rout**, *Professor* • Ph.D from NIT, Rourkela • M.Tech. From KIIT University. • 16+ years of teaching experience • 10 years of research experience • 20 publication • *Research interest*: Mixed Signal VLSI Design. Design, simulation of semiconductor devices.
 
-- [**Santunu Sarangi**], *Assistant Professor* • Ph.D (graduating), [IIT-Kharagpur](http://www.iitkgp.ac.in/) • M.Tech, [NIT-Rourkela](https://www.nitrkl.ac.in/) • 4 years of teaching experience • 8 years of research experience • 7 publication • 2 patents(filed) • *Research interest*: Mixed-signal VLSI design: High-Speed SerDES and low-power bandgap. :link: [LinkedIn](https://www.linkedin.com/in/santunu-sarangi-b731305b/)
+- [**Santunu Sarangi**], *Assistant Professor* • Ph.D. (graduating), [IIT-Kharagpur](http://www.iitkgp.ac.in/) • M.Tech, [NIT-Rourkela](https://www.nitrkl.ac.in/) • 4 years of teaching experience • 8 years of research experience • 7 publication • 2 patents(filed) • *Research interest*: Mixed-signal VLSI design: High-Speed SerDES and low-power bandgap. :link: [LinkedIn](https://www.linkedin.com/in/santunu-sarangi-b731305b/)
 
 - **Dr. Debasish Nayak**, *Sr. Assistant Professor* • Ph.D, NIT-Rourkela • M.Tech, BPUT-Rourkela • 10+ years of teaching experience • 8 years of research experience • 14 publication • *Research interest*: Mixed-signal VLSI design. Design, simulation and study of semiconductor dev. 
 
-- **Mr. Dhananjaya Tripathy**, *Assistant Professor* • M.Tech, VSSUT-Rourkela • 4+ years of teaching experience • 4+ years of research experience • 4 publication • *Research interest*: Analog VLSI design. Design, simulation and study of semiconductor dev.
+- **Mr. Dhananjaya Tripathy**, *Assistant Professor* • Ph.D. (cont.) M.Tech, VSSUT-Rourkela • 4+ years of teaching experience • 4+ years of research experience • 4 publication • *Research interest*: Analog VLSI design. Design, simulation and study of semiconductor dev.
 
-- **Mr. Prasant Swain**, *Technical Asst.* Ph.D (cont.) • M.Tech, B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
+- **Mr. Prasant Swain**, *Technical Asst.* Ph.D. (cont.) • M.Tech, B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
 # Trainees
 
