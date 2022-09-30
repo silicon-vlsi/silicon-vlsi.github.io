@@ -20,87 +20,89 @@ sort: 3
 
 ## Present Trainees
 
-- **Abhishek**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Abhishek**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Akhilesh**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Akhilesh**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Aman**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Aman**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Anuska**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Anuska**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Answesh**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Answesh**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Debasmita**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Debasmita**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Jagan**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn](https://www.linkedin.com/in/suhrid-dutta-530830206/)
+- **Jagan**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn](https://www.linkedin.com/in/suhrid-dutta-530830206/)
 
-- **Jyoti Prakash**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Jyoti Prakash**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Kirtirekha**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Kirtirekha**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Kishan**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Kishan**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Mahesh**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Mahesh**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Mohit**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Mohit**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Mrityunjay**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Mrityunjay**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Oom**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Oom**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Prayas**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Prayas**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Pratyush**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Pratyush**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Priyam**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Priyam**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Priyanshu**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Priyanshu**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Priyanshu**, *EEE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Priyanshu**, *BTech (EEE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Rituparnar**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Priyanshu Mishara**, *BTech (EEE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Rudransh**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Rituparnar**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Shruti**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Rudransh**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Smrity**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Shruti Rakha**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Subhalaxmi**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Smrity Lata**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Suhrid**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Subhalaxmi**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Sunanda**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Suhrid**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Swayam**, *ECE, [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/)* • Project: Fundamentals of digital logic design, electric circuit design and VLSI Circuit design • [LinkedIn]()
+- **Sunanda Sahu**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Debarchan Swain**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/debarchan-swain-0511a2191) 
+- **Swayam**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Rudra Narayan Sahu**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rnsahu/)
+- **Debarchan Swain**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of I/O circuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/debarchan-swain-0511a2191) 
 
-- **Tusar Nayak**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/tusar-kumar-nayak-445841196/) 
+- **Rudra Narayan Sahu**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of I/O circuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rnsahu/)
 
-- **Rutucharya Panda**, *ECE, 2023* • Project: Design and Implementation if I/O cirvuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rutucharya-panda-30a9a422b/)
+- **Tusar Nayak**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of I/O circuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/tusar-kumar-nayak-445841196/) 
 
-- **Erica Banerjee**, *ECE, 2023* • Project: Currently doing internship at [Micron Technology](https://in.micron.com/) in SCRIBE Layout domain • :link: [LinkedIn](https://www.linkedin.com/in/erica-banerjee-225554218/)
+- **Rutucharya Panda**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of I/O circuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rutucharya-panda-30a9a422b/)
 
-- **Punyatoya Mohanty**, *ECE, 2023* • Project: TRD Intern at [STMicroelectronics](https://www.st.com/) • :link: [LinkedIn](https://www.linkedin.com/in/punyatoya21/) 
+- **Erica Banerjee**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Currently doing internship at [Micron Technology](https://in.micron.com/) in SCRIBE Layout domain • :link: [LinkedIn](https://www.linkedin.com/in/erica-banerjee-225554218/)
 
-- **Sristi Rani**, *ECE, 2023* • Project: TRD Intern at [STMicroelectronics](https://www.st.com/) • :link: [LinkedIn](https://www.linkedin.com/in/sristi-rani/)
+- **Punyatoya Mohanty**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Currently doing internship at [STMicroelectronics](https://www.st.com/) in PDK domain  • :link: [LinkedIn](https://www.linkedin.com/in/punyatoya21/) 
 
-- **Barsha Parida**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology • :link: [LinkedIn](https://www.linkedin.com/in/barsha-parida-8a3479212/) 
+- **Sristi Rani**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Currently doing internship at [STMicroelectronics](https://www.st.com/) in PDK domain • :link: [LinkedIn](https://www.linkedin.com/in/sristi-rani/)
 
-- **Meerashree Sahoo**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn]()
+- **Barsha Parida**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of Low-power bandgap reference ciecuit in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/barsha-parida-8a3479212/) 
 
-- **Subhrajita Gantayat**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/subhrajitagantayat/) 
+- **Meerashree Sahoo**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn]()
 
-- **Sumant Polaki**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology.. • :link: [LinkedIn](https://www.linkedin.com/in/sumant-polaki-a68070199/)
+- **Subhrajita Gantayat**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/subhrajitagantayat/) 
 
-- **Shruti Shubhra**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/shruti-shubhra/)
+- **Sumant Polaki**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/sumant-polaki-a68070199/)
 
-- **Puja Kumari**, *ECE, 2023* • Project: Design and verification of digital circuits • :link: [LinkedIn](https://www.linkedin.com/in/puja-kumari-252119239/) 
+- **Shruti Shubhra**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/shruti-shubhra/)
 
-- **Divyajit Swain**, *ECE, 2023* • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology. • :link: [LinkedIn](https://www.linkedin.com/in/dibyajit-swain-9278b5228/)
+- **Divyajit Swain**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design domain • :link: [LinkedIn](https://www.linkedin.com/in/dibyajit-swain-9278b5228/)
+
+- **Puja Kumari**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Digital Design and Verification • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology.  • :link: [LinkedIn](https://www.linkedin.com/in/puja-kumari-252119239/) 
 
 ## Past Trainees
 
