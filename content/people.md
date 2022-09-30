@@ -8,7 +8,7 @@ sort: 3
 
 - **Dr. Prakash Rout**, *Professor* • Ph.D from NIT, Rourkela • M.Tech. From KIIT University. • 16+ years of teaching experience • 10 years of research experience • 20 publication • *Research interest*: Mixed Signal VLSI Design. Design, simulation of semiconductor devices.
 
-- [**Santunu Sarangi**](https://silicon.ac.in/wp-content/uploads/2022/04/SANTUNU-SARANGIFES19113.pdf), *Assistant Professor* • Ph.D (graduating), [IIT-Kharagpur](http://www.iitkgp.ac.in/) • M.Tech, [NIT-Rourkela](https://www.nitrkl.ac.in/) • 4 years of teaching experience • 8 years of research experience • 7 publication • 2 patents(filed) • *Research interest*: Mixed-signal VLSI design: High-Speed SerDES and low-power bandgap. :link: [LinkedIn](https://www.linkedin.com/in/santunu-sarangi-b731305b/)
+- [**Santunu Sarangi**], *Assistant Professor* • Ph.D (graduating), [IIT-Kharagpur](http://www.iitkgp.ac.in/) • M.Tech, [NIT-Rourkela](https://www.nitrkl.ac.in/) • 4 years of teaching experience • 8 years of research experience • 7 publication • 2 patents(filed) • *Research interest*: Mixed-signal VLSI design: High-Speed SerDES and low-power bandgap. :link: [LinkedIn](https://www.linkedin.com/in/santunu-sarangi-b731305b/)
 
 - **Dr. Debasish Nayak**, *Sr. Assistant Professor* • Ph.D, NIT-Rourkela • M.Tech, BPUT-Rourkela • 10+ years of teaching experience • 8 years of research experience • 14 publication • *Research interest*: Mixed-signal VLSI design. Design, simulation and study of semiconductor dev. 
 
@@ -80,7 +80,7 @@ sort: 3
 
 - **Suhrid Dutta**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • :link: [LinkedIn](https://www.linkedin.com/in/suhrid-dutta-530830206/)
 
-- **Sunanda Sahu**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • :link: [LinkedIn]()
+- **Sunanda Sahu**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • :link: [LinkedIn](https://www.linkedin.com/in/sunanda-sahu-24a008252/)
 
 - **Swayam Swroop Ojha**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • :link: [LinkedIn](https://www.linkedin.com/in/swayam-swroop-ojha-1a573121b/)
 
@@ -174,9 +174,6 @@ sort: 3
 - **Swarna Prabha Nanda**, *ECE, 2022* • Project: Design & Implementation of SRAM controller in 180nm CMOS technology • Current Company: [Marquee Semiconductor](https://marqueesemi.com/)
 
 - **Tapan Karan**, *ECE, 2022* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
-
-
-**2019 BATCH**
 
 
 - **Abhishek Kumar**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
