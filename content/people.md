@@ -24,19 +24,19 @@ sort: 3
 
 - **Akhilesh**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
-- **Aman Ranjan Pani**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
+- **Aman Ranjan Pani**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn](https://www.linkedin.com/in/aman-ranjan-pani-886646222/)
 
-- **Anuska maji**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
+- **Anuska maji**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn](https://www.linkedin.com/in/anushka-maji-878109212/)
 
-- **Answesh Moharana**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
+- **Answesh Moharana**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn](https://www.linkedin.com/in/anwesh-moharana-94659821a/)
 
-- **Debasmita Sahoo**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
+- **Debasmita Sahoo**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn](https://www.linkedin.com/in/debasmita-sahoo-0a77a824a/)
 
-- **Himanshu Bhusan Panda**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
+- **Himanshu Bhusan Panda**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn](https://www.linkedin.com/in/himanshu-bhusan-panda-5617361a0/)
 
 - **Jagan Kumar Patro**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn](https://www.linkedin.com/in/suhrid-dutta-530830206/)
 
-- **Jyoti Prakash Pani**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
+- **Jyoti Prakash Pani**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn](https://www.linkedin.com/in/jyotiprakash-pani-953353206/)
 
 - **Kirtirekha Behera**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • [LinkedIn]()
 
