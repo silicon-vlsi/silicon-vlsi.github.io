@@ -28,6 +28,10 @@ sort: 1
 
 ## ADMIN GUIDE
 
+### Frequently Used Commands
+
+- `$ yum provides libXss.so.1` : To **find** a package which __provides__ a certain library eg. `libXss.so.1`
+
 ### Setting up new CentOS 7 Desktop
 
 **MANUAL INSTALL**
@@ -142,6 +146,379 @@ DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin PORT=1718
     - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
 
 
+### NIS
+
+- Followed the following two blogs to setup but the client got all broken so need to debug.
+  - [NIS Server setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=1)
+  - [NIS Client setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=2)
+
+**NIS SERVER ON CENTOS 7**
+
+- `# yum -y install ypserv rpcbind`
+- `# ypdomainname vlsi.silicon.ac.in`
+- Add `NISDOMAIN=vlsi.silicon.ac.in` to `/etc/sysconfig/network`
+- **Ignored** the `/var/yp/securenet` instruction. Was probably creating a problem where I had to restart `rpcbind` everytime there was an update to the server.
+- Add the server and the clients' IP address for NIS database to `/etc/hosts`
+
+```bash
+192.168.6.50   srv01.vlsi.silicon.ac.in srv01
+192.168.6.202  dt042.vlsi.silicon.ac.in dt042
+```
+
+- `#systemctl start {rpcbind, ypserv, ypxfrd, yppasswdd}`
+- `#systemctl enable {rpcbind, ypserv, ypxfrd, yppasswdd}`
+- Upadate NIS database: `#/usr/lib64/yp/ypinit -m`
+  - Add the list of NIS servers : `srv01.vlsi.silicon.ac.in` 
+  - 'Ctrl+D' to end the list of servers.
+- This will build the database in `/var/yp/<DOMAINNAME>`
+  - If you have slave servers: run `# ypinit -s srv01` on all slave servers.
+- Now when you add an user to the local server `srv01`, update NIS database:
+  - `# make -C /var/yp`
+- To allow ports in the firewall, add the following to `/etc/sysconfig/network`
+
+```bash
+YPSERV_ARGS="-p 944"
+YPSERV_ARGS="-p 945"
+```
+
+- Add `YPPASSWD_ARGS="--port 946` to `/etc/sysconfig/yppasswdd`
+- `# systemctl restart rpcbind ypserv ypxfrd yppasswdd`
+- Open the ports in firewall:
+
+```bash
+# firewall-cmd --add-service=rpc-bind --permanent
+# firewall-cmd --add-port=944/tcp --permanent
+# firewall-cmd --add-port=944/udp --permanent
+# firewall-cmd --add-port=945/tcp --permanent
+# firewall-cmd --add-port=945/udp --permanent
+# firewall-cmd --add-port=946/udp --permanent
+# firewall-cmd --reload
+```
+
+**NIS CLIENT ON CENTOS 7**
+
+- `# yum install ypbind rpcbind`
+- `# yum ypdomainname vlsi.silicon.ac.in`
+- Add `NISDOMAIN=vlsi.silicon.ac.in` to `/etc/sysconfig/network`
+- `# authconfig --enablenis --nisdomain=vlsi.silicon.ac.in --nisserver=srv01.vlsi.silicon.ac.in --update`
+  - **Note** If the homedirs are NFS mounted, then no need to use the option `--mkhomedir`
+- `# systemctl start rpcbind ypbind`
+- `# systemctl enable rpcbind ypbind`
+- Type `ypwhich` to see what NIS server is the client binding to.
+- To change passwd in the client, use `yppasswd`
+- **Note** Ignored the instruction on how to enable automatic creation of homedir for SELinux enabled linux. For NFS mounted homedir, mkhomedir does not work so I don't think this appies to NFS mounted homedirs.
+
+
+### NFS Share
+
+**Important Files for NFS Configuration**
+- ``/etc/exports``: Its a main configuration file of NFS, all exported files and directories are defined in this file at the NFS Server end.
+- ``/etc/fstab``: To mount a NFS directory on your system across the reboots, we need to make an entry in /etc/fstab.
+- ``/etc/sysconfig/nfs``: Configuration file of NFS to control on which port rpc and other services are listening. **NOTE** In our setup, we just use the default options.
+
+**Configuring and starting a NFS Server on CentOS 7**
+- **NOTE** The CentOS 7 installation was done with base installation of __File Server with GUI__ so most needed packages were already installed. 
+- Install the necessary packages: `#yum -y install nfs-utils`
+- Change owner and group of the NFS share: `#chown nfsnobody:nfsnobody /home/nfs1`
+  - This is for security so if there is breach through NFS the user nfsnobody has no shell. 
+- Enable NFS port (2049/tcp and 2049/udp) through the **firewall**
+  - `# firewall-cmd --permanent --add-port=2049/tcp`
+  - `# firewall-cmd --permanent --add-port=2049/udp`
+  - `# firewall-cmd --permanent --add-service=nfs`
+  - `# firewall-cmd --reload`
+- **Enable** the __NFS__ services so they start at boot: 
+  - `#systemctl enable {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
+- **Start** the __NFS__ services: 
+  - `#systemctl start {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
+- **Note** that most of this service may already be running based on your base installation. So you can check the status and restart the m appropriately:
+  - `#systemctl status/restart <service>`
+- Add the __share__ directories to `/etc/exports`:
+
+```bash
+/home/nfs1      *.vlsi.silicon.ac.in(rw,async,no_subtree_check)
+/home/nfs2      *.vlsi.silicon.ac.in(rw,async,no_subtree_check)
+```
+
+- The NFS Options:
+  - ``rw``: Allows client R/W access.
+  - ``async``: This option allows the clients to write to the files before they are written to the disk. It will improve speed but may have problems with two clients writing simulataneosly. See this [post](https://serverfault.com/questions/499174/etc-exports-mount-option#:~:text=exports(5)%20async%20This%20option,storage%20(e.g.%20disc%20drive).) for details.
+  - ``no_subtree_check``: This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security.
+  - ``no_root_squash``: Root access allowed for mounted directories. **Dangerous!!** **Note** When root access is necessary, enable it temporarily.
+  - If the export is through kerberos then you need option `sec=sys:krb5p` **FIXME** Need to research more.
+
+**NFS Client**
+
+- Test mounting the share.. eg. : `#mount -t nfs srv01:/home/nfs1 /home/nfs1`
+- If all works add the mounts to `/etc/fstab`:
+
+```bash
+srv01:/home/nfs1        /home/nfs1      nfs     noatime,rsize=32768,wsize=32768
+srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
+```
+
+**Troubleshooting NFS**
+
+- `#mount -v ...` will output debug information
+- On the server `# iptables -S | grep 2049` will show if the NFS ports are in the firewall rules.
+- `# rpcinfo -p <server/client>` will show all the RPC port info. Check if NFS port is open. 
+- If `rpcinfo` shows **no route to host** probably port is not open in the firewall or network routing issues.
+- `# route -n` to check the network route.
+
+
+**Resources**
+
+- [Setting up kerboros aware NFS Server](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-server)
+- [Setting up kerboros aware NFS Client](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-client)
+
+
+### Creating a Mirror using rsync
+
+This section will walk you through the steps of mirroring a server directory eg. `srv01:/CAD` in a second file server eg. `srv03:/CAD` to create a mirror of the same. 
+
+
+**SETUP THE DESTINATION**
+
+- Make sure `rsync` is installed in both the linux servers: `yum install rsync`
+- Configure `rsync` __daemon__ by editing `/etc/rsyncd.conf` on the **destination server**:
+
+```bash
+# any name you like
+[cad]
+# destination directory for copy
+path = /CAD
+# hosts you allow to access
+hosts allow = <IP ADDRESS OF SOURCE>
+hosts deny = *
+list = true
+uid = root
+gid = root
+read only = false
+```
+
+- Befor starting the daemon, open the port `873/tcp` and the service `rsynd` :
+  - `# firewall-cmd --permanent --add-service=`rsyncd`
+  - `# firewall-cmd --permanent --add-port=873/tcp`
+  - `# firewall-cmd --reload`
+- Start and enable the __daemon__ :
+  - `# systemctl start rsyncd`
+  - `# systemctl enable rsyncd`
+
+**INITIATE TRANSFER FROM THE SOURCE**
+
+- `# rsync -avz --delete /CAD/   <IPADDR/HOSTNAME DESTINATION>:/CAD`
+  - **NOTE** Looks like I can sync to any directory not just the one in __path__ in `/etc/rsyncd.conf`
+  - It's important to have the directory end in `/` ie. `/CAD/` instead of `/CAD`. The later will get synced to destination `/CAD/CAD`
+- You can include the above in a **crontab** for scheduled syncing.
+- For eaxample: To sync everyday at 4AM, the crontab entry will loke like this:
+  - `00 04 * * * rsync -avz --delete /CAD/   <IPADDR/HOSTNAME DESTINATION>:/CAD > /var/log/rsync-cad.log 2> /var/log/rsync-cad.err`
+
+**Resources**
+
+- [Rsync : Sync Files/Directories](https://www.server-world.info/en/note?os=CentOS_7&p=rsync)
+- [How to Use Rsync to Copy/Sync Files Between Servers](https://www.atlantic.net/vps-hosting/how-to-use-rsync-copy-sync-files-servers/)
+
+### Quota
+
+**SETTING DISK QUOTA ON A XFS FILESYSTEM ON CENTOS 7**
+
+- The instructions are from this [Redhat doc](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsquota)
+- XFS quotas are enabled at mount time, with specific mount options. Each mount option can also be specified as `noenforce`; this allows usage reporting without enforcing any limits. Valid quota mount options are:
+  - `uquota`/`uqnoenforce`: User quotas
+  - `gquota`/`gqnoenforce`: Group quotas
+  - `pquota`/`pqnoenforce`: Project quota
+- An example of an entry in `/etc/fstab`:
+  - `/dev/mapper/nfs-home_NFS /home/nfs1  xfs defaults,uquota,gquota,pquota        0 0`
+- To set a block limit for an user (say `500MB` for `user1`):
+  - `# xfs_quota -x -c 'limit -u bsoft=400m bhard=500m user1' /home/nfs1`
+  - To set a group limit (say `500MB` for the ENTIRE group `eng`), use the above command with the exeception: `-g` and `eng` instead of __-u__ and __user1__ 
+- **Setting Project Limits**:
+  - Before configuring limits for project-controlled directories, add them first to `/etc/projects`. Project names can be added to `/etc/projectid` to map project IDs to project names. Once a project is added to `/etc/projects`, initialize its project directory using the following command:
+    - `# xfs_quota -x -c 'project -s projectname' project_path`
+  - Quotas for projects with initialized directories can then be configured, with:
+    - `xfs_quota -x -c 'limit -p bsoft=1000m bhard=1200m projectname'
+    - Example from the man page:
+
+```bash
+ # mount -o prjquota /dev/xvm/var /var
+ # echo 42:/var/log >> /etc/projects
+ # echo logfiles:42 >> /etc/projid
+ # xfs_quota -x -c 'project -s logfiles' /var
+ # xfs_quota -x -c 'limit -p bhard=1g logfiles' /var
+```
+
+    - Same as above without the need of config file:
+  
+```bash
+# rm -f /etc/projects /etc/projid
+# mount -o prjquota /dev/xvm/var /var
+# xfs_quota -x -c 'project -s -p /var/log 42' /var
+# xfs_quota -x -c 'limit -p bhard=1g 42' /var
+```
+
+- **Reporting Quota Limits**:
+  - `$ quota username`
+  - `# xfs_quota -x -c 'report -h' /home/nfs1`
+
+
+### X-Server
+**XFCE on a CENTOS-7 VIRTUAL MACHINE**
+   - **NOTE** `LXDE` display manager is not available on the CentOS repo.
+   - Install the [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/): `$sudo yum install epel-release`
+   - Install `XFCE` display manager: `$sudo yum groupinstall xfce`
+   
+**VNCSERVER on CentOS-7**
+
+- Install `firewalld`, enable it and reboot:
+   
+```bash
+   $sudo yum install firewalld
+   $sudo systemctl enable firewalld
+   $sudo reboot
+```
+   
+   - Check the firewall running status: `$sudo firewall-cmd --state`
+   - Install tigervnc server: `$sudo yum install tigervnc-server` 
+   - Login to the user you want the server on and set the passwd: `$vncpasswd`
+   - Add a VNC service configuration file by copying an template:
+   
+```bash
+   $sudo cp /lib/systemd/system/vncserver@.service  /etc/systemd/system/vncserver@:1.service
+```
+   
+   - Edit the above service file to replace `<USER>` with the username. 
+   - Now start the daemon and enable the service for system wide use:
+   
+```bash
+   $sudo systemctl daemon-reload
+   $sudo systemctl start vncserver@:1
+   $sudo systemctl status vncserver@:1
+   $sudo systemctl enable vncserver@:1
+```
+   
+   - To list the open ports listening to Xvnc: `$ss -tulpn | grep -i vnc`
+   - Then allow the appropriate ports in the firewall to access it:
+   
+```bash
+   $sudo firewall-cmd --add-port=5901/tcp
+   $sudo firewall-cmd --add-port=5901/tcp --permanent
+```
+   
+   - Probably a good idea to reboot now.
+   - Connect using a client (TightVNC/RealVNC/etc) with the Remote Host as `<IP ADDR>:5901` or simply `<IP ADDR>:1`
+   
+**Resources**
+   
+   - [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/)
+   - [Installing and configuring a VNC server on CentOS 7](https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/)
+   - [How to Install and Configure VNC Server in CentOS 7](https://www.tecmint.com/install-and-configure-vnc-server-in-centos-7/)
+   - [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
+   
+
+### Remote Access
+
+**PPTP VPN CLIENT ON CentOS-7**
+
+- [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
+
+### EDA Tools
+
+#### CADENCE
+
+**IC 618 ON CENTOS 7**
+
+- After installation run the patch test:
+  - `<INSTALL-DIR>/tools.lnx86/bin/checkSysConf IC6.1.8`
+  - Required packages: `glibc`, `elfutils-libelf`, `ksh`, `mesa-libGL`, `mesa-libGLU`, `motif`, `libXp`, `libpng`, `libjpeg-turbo`, `expat`, `glibc-devel`, `gdb`, `xorg-x11-fonts-misc`, `xorg-x11-fonts-ISO8859-1-75dpi7.5`, `redhat-lsb`, `libXscrnSaver`, `apr`, `apr-util`, `compat-db47`, `xorg-x11-server-Xvfb`, `mesa-dri-drivers`, `openssl-devel`
+
+**MMSIM ON CENTOS 7**
+
+- **NOTE** MMSIM is no longer supported by Cadence. It's SPECTRE. But we don't have the license for it.
+- Used the previous installation MMSIM15.1 and seems to work without any extra patches/pkgs.
+
+**SPECTRE ON CENTOS 7**
+
+- **NOTE** We DO NOT HAVE licenses for SPECTRE right now. And Cadence doesn't support MMSIM anymore. So need to use the old installation.
+- Installed Spectre (21.1) using iScape
+- Read the Relase Notes from iScape.
+- Run `checkSysConf` to check the OS, packages, patches, etc needed to run Spectre
+
+### Creating a Kickstart USB Boot Media
+
+- [Automatic Install Doc from Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
+  - [Kickstart Syntax](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax)
+- After a manual insallation, **Anaconda** records the steps in `/root/anaconda-ks.cfg`
+- Download the CentOS iso to say `/root/`
+- `# mount -o loop /root/centos7x64.iso /mnt/`
+- Create a working directory and copy the DVD content to it. For example:
+
+```bash
+# mkdir /root/centos-install/
+# shopt -s dotglob
+# cp -avRf /mnt/* /root/centos-install/
+```
+
+- `# umount /mnt/`
+- Edit the **kickstart** file `anaconda-ks-desktop.cfg` which contains all installation and post-install confguration, mainly:
+  - Set the network (**NOTE** the IP address and hostname is set to a temporary one)
+  - Add all extra packages in the `%package` section
+  - Add post-installation script:
+    - Append `/etc/hosts`
+    - Create mount points for NFS mounts
+    - Append `/etc/fstab` with NFS mounts
+    - ln -s /CAD/apps7/etc/silicon.csh /etc/profile.d/.
+    - Setup NIS client
+    - make local directory
+- `$ksvalidator anaconda-ks-desktop.cfg`
+- `# cp /root/anakonda-ks.cfg /root/centos-install/`
+- Replace __white space__ with `\x20` : 
+
+```bash
+# isoinfo -d -i rhel-server-7.3-x86_64-dvd.iso |\
+  grep "Volume id" |\
+  sed -e 's/Volume id: //' -e 's/ /\\x20/g
+```
+
+- Add a new menu entry to the boot `/root/centos-install/isolinux/isolinux.cfg` file that uses the Kickstart file. The LABEL is the output from the previous command. For example:
+
+```bash
+label kickstart
+menu label ^Kickstart Installation of CentOS 7
+kernel vmlinuz
+
+append initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 \
+        inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
+```
+
+- For USB UEFI boot, edit the grub.cfg
+- Mount the volume: `# mount /root/centos-install/images/efiboot.img /mnt/`
+- Add a new menu entry to `/mnt/EFI/BOOT/grub.cfg`
+
+```bash
+menuentry 'Kickstart Installation of CentOS 7' \
+          --class fedora --class gnu-linux --class gnu --class os {
+        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 \
+           inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
+        initrdefi /images/pxeboot/initrd.img
+}
+```
+
+- `umount /mnt`
+- Create the ISO **NOTE**: The volume Id has the original spaces instead of of \x20
+
+```bash
+# mkisofs -untranslated-filenames -volid "CentOS 7 x86_64" \
+  -J -joliet-long -rational-rock -translation-table -input-charset utf-8 \
+  -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot \
+  -boot-load-size 4 -boot-info-table -eltorito-alt-boot \
+  -e images/efiboot.img -no-emul-boot -o /root/centos-ks.iso \
+  -graft-points /root/centos-install/
+```
+
+- Make it bootable: `# isohybrid --uefi centos-ks.iso`
+- Make a bootable USB: `# dd if=centos-ks.iso of=/dev/sdb bs=512k`
+  - **NOTE** WRITE TO PARENT DEVICE eg. **/dev/sdb** and NOT __/dev/sdb1__
+ 
+
 ## LAB IT INFO
 
 ### NETWORKING
@@ -237,88 +614,7 @@ This is the first file server of VLSI Lab. It's used as a shadow server which mi
 - [CentOS 7 Release Notes](https://wiki.centos.org/action/show/Manuals/ReleaseNotes/CentOS7.2009?action=show&redirect=Manuals%2FReleaseNotes%2FCentOS7)
 - [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
 
-### OS AND PACKAGE INSTALLATION
-
-- To **find** a package which __provides__ a certain library eg. `libXss.so.1`
-  - `$ yum provides libXss.so.1`
   
-#### CREATING A KICKSTART USB BOOT MEDIA
-
-- [Automatic Install Doc from Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
-  - [Kickstart Syntax](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-syntax)
-- After a manual insallation, **Anaconda** records the steps in `/root/anaconda-ks.cfg`
-- Download the CentOS iso to say `/root/`
-- `# mount -o loop /root/centos7x64.iso /mnt/`
-- Create a working directory and copy the DVD content to it. For example:
-
-```bash
-# mkdir /root/centos-install/
-# shopt -s dotglob
-# cp -avRf /mnt/* /root/centos-install/
-```
-
-- `# umount /mnt/`
-- Edit the **kickstart** file `anaconda-ks-desktop.cfg` which contains all installation and post-install confguration, mainly:
-  - Set the network (**NOTE** the IP address and hostname is set to a temporary one)
-  - Add all extra packages in the `%package` section
-  - Add post-installation script:
-    - Append `/etc/hosts`
-    - Create mount points for NFS mounts
-    - Append `/etc/fstab` with NFS mounts
-    - ln -s /CAD/apps7/etc/silicon.csh /etc/profile.d/.
-    - Setup NIS client
-    - make local directory
-- `$ksvalidator anaconda-ks-desktop.cfg`
-- `# cp /root/anakonda-ks.cfg /root/centos-install/`
-- Replace __white space__ with `\x20` : 
-
-```bash
-# isoinfo -d -i rhel-server-7.3-x86_64-dvd.iso |\
-  grep "Volume id" |\
-  sed -e 's/Volume id: //' -e 's/ /\\x20/g
-```
-
-- Add a new menu entry to the boot `/root/centos-install/isolinux/isolinux.cfg` file that uses the Kickstart file. The LABEL is the output from the previous command. For example:
-
-```bash
-label kickstart
-menu label ^Kickstart Installation of CentOS 7
-kernel vmlinuz
-
-append initrd=initrd.img inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 \
-        inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
-```
-
-- For USB UEFI boot, edit the grub.cfg
-- Mount the volume: `# mount /root/centos-install/images/efiboot.img /mnt/`
-- Add a new menu entry to `/mnt/EFI/BOOT/grub.cfg`
-
-```bash
-menuentry 'Kickstart Installation of CentOS 7' \
-          --class fedora --class gnu-linux --class gnu --class os {
-        linuxefi /images/pxeboot/vmlinuz inst.stage2=hd:LABEL=CentOS\x207\x20x86_64 \
-           inst.ks=hd:LABEL=CentOS\x207\x20x86_64:/anaconda-ks.cfg
-        initrdefi /images/pxeboot/initrd.img
-}
-```
-
-- `umount /mnt`
-- Create the ISO **NOTE**: The volume Id has the original spaces instead of of \x20
-
-```bash
-# mkisofs -untranslated-filenames -volid "CentOS 7 x86_64" \
-  -J -joliet-long -rational-rock -translation-table -input-charset utf-8 \
-  -b isolinux/isolinux.bin -c isolinux/boot.cat -no-emul-boot \
-  -boot-load-size 4 -boot-info-table -eltorito-alt-boot \
-  -e images/efiboot.img -no-emul-boot -o /root/centos-ks.iso \
-  -graft-points /root/centos-install/
-```
-
-- Make it bootable: `# isohybrid --uefi centos-ks.iso`
-- Make a bootable USB: `# dd if=centos-ks.iso of=/dev/sdb bs=512k`
-  - **NOTE** WRITE TO PARENT DEVICE eg. **/dev/sdb** and NOT __/dev/sdb1__
- 
-
 ### SYSTEM ADMIN
 
 #### MONITOR AND CONFIGURATION
@@ -340,68 +636,6 @@ menuentry 'Kickstart Installation of CentOS 7' \
   -[Intro to Cockpit -- redhat](https://www.redhat.com/sysadmin/intro-cockpit)
   -[Getting started -- redhat 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/getting_started_with_cockpit/index)
 
-
-#### NIS
-
-- Followed the following two blogs to setup but the client got all broken so need to debug.
-  - [NIS Server setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=1)
-  - [NIS Client setup](https://www.server-world.info/en/note?os=CentOS_7&p=nis&f=2)
-
-**NIS SERVER ON CENTOS 7**
-
-- `# yum -y install ypserv rpcbind`
-- `# ypdomainname vlsi.silicon.ac.in`
-- Add `NISDOMAIN=vlsi.silicon.ac.in` to `/etc/sysconfig/network`
-- **Ignored** the `/var/yp/securenet` instruction. Was probably creating a problem where I had to restart `rpcbind` everytime there was an update to the server.
-- Add the server and the clients' IP address for NIS database to `/etc/hosts`
-
-```bash
-192.168.6.50   srv01.vlsi.silicon.ac.in srv01
-192.168.6.202  dt042.vlsi.silicon.ac.in dt042
-```
-
-- `#systemctl start {rpcbind, ypserv, ypxfrd, yppasswdd}`
-- `#systemctl enable {rpcbind, ypserv, ypxfrd, yppasswdd}`
-- Upadate NIS database: `#/usr/lib64/yp/ypinit -m`
-  - Add the list of NIS servers : `srv01.vlsi.silicon.ac.in` 
-  - 'Ctrl+D' to end the list of servers.
-- This will build the database in `/var/yp/<DOMAINNAME>`
-  - If you have slave servers: run `# ypinit -s srv01` on all slave servers.
-- Now when you add an user to the local server `srv01`, update NIS database:
-  - `# make -C /var/yp`
-- To allow ports in the firewall, add the following to `/etc/sysconfig/network`
-
-```bash
-YPSERV_ARGS="-p 944"
-YPSERV_ARGS="-p 945"
-```
-
-- Add `YPPASSWD_ARGS="--port 946` to `/etc/sysconfig/yppasswdd`
-- `# systemctl restart rpcbind ypserv ypxfrd yppasswdd`
-- Open the ports in firewall:
-
-```bash
-# firewall-cmd --add-service=rpc-bind --permanent
-# firewall-cmd --add-port=944/tcp --permanent
-# firewall-cmd --add-port=944/udp --permanent
-# firewall-cmd --add-port=945/tcp --permanent
-# firewall-cmd --add-port=945/udp --permanent
-# firewall-cmd --add-port=946/udp --permanent
-# firewall-cmd --reload
-```
-
-**NIS CLIENT ON CENTOS 7**
-
-- `# yum install ypbind rpcbind`
-- `# yum ypdomainname vlsi.silicon.ac.in`
-- Add `NISDOMAIN=vlsi.silicon.ac.in` to `/etc/sysconfig/network`
-- `# authconfig --enablenis --nisdomain=vlsi.silicon.ac.in --nisserver=srv01.vlsi.silicon.ac.in --update`
-  - **Note** If the homedirs are NFS mounted, then no need to use the option `--mkhomedir`
-- `# systemctl start rpcbind ypbind`
-- `# systemctl enable rpcbind ypbind`
-- Type `ypwhich` to see what NIS server is the client binding to.
-- To change passwd in the client, use `yppasswd`
-- **Note** Ignored the instruction on how to enable automatic creation of homedir for SELinux enabled linux. For NFS mounted homedir, mkhomedir does not work so I don't think this appies to NFS mounted homedirs.
 
 #### FREE IPA
    
@@ -515,158 +749,6 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
      - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
 
 
-### STORAGE
-
-#### NFS SHARE
-
-**Important Files for NFS Configuration**
-- ``/etc/exports``: Its a main configuration file of NFS, all exported files and directories are defined in this file at the NFS Server end.
-- ``/etc/fstab``: To mount a NFS directory on your system across the reboots, we need to make an entry in /etc/fstab.
-- ``/etc/sysconfig/nfs``: Configuration file of NFS to control on which port rpc and other services are listening. **NOTE** In our setup, we just use the default options.
-
-**Configuring and starting a NFS Server on CentOS 7**
-- **NOTE** The CentOS 7 installation was done with base installation of __File Server with GUI__ so most needed packages were already installed. 
-- Install the necessary packages: `#yum -y install nfs-utils`
-- Change owner and group of the NFS share: `#chown nfsnobody:nfsnobody /home/nfs1`
-  - This is for security so if there is breach through NFS the user nfsnobody has no shell. 
-- Enable NFS port (2049/tcp and 2049/udp) through the **firewall**
-  - `# firewall-cmd --permanent --add-port=2049/tcp`
-  - `# firewall-cmd --permanent --add-port=2049/udp`
-  - `# firewall-cmd --permanent --add-service=nfs`
-  - `# firewall-cmd --reload`
-- **Enable** the __NFS__ services so they start at boot: 
-  - `#systemctl enable {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
-- **Start** the __NFS__ services: 
-  - `#systemctl start {nfs-server, rpcbind, nfs-lock, nfs-idmap}`
-- **Note** that most of this service may already be running based on your base installation. So you can check the status and restart the m appropriately:
-  - `#systemctl status/restart <service>`
-- Add the __share__ directories to `/etc/exports`:
-
-```bash
-/home/nfs1      *.vlsi.silicon.ac.in(rw,async,no_subtree_check)
-/home/nfs2      *.vlsi.silicon.ac.in(rw,async,no_subtree_check)
-```
-
-- The NFS Options:
-  - ``rw``: Allows client R/W access.
-  - ``async``: This option allows the clients to write to the files before they are written to the disk. It will improve speed but may have problems with two clients writing simulataneosly. See this [post](https://serverfault.com/questions/499174/etc-exports-mount-option#:~:text=exports(5)%20async%20This%20option,storage%20(e.g.%20disc%20drive).) for details.
-  - ``no_subtree_check``: This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security.
-  - ``no_root_squash``: Root access allowed for mounted directories. **Dangerous!!** **Note** When root access is necessary, enable it temporarily.
-  - If the export is through kerberos then you need option `sec=sys:krb5p` **FIXME** Need to research more.
-
-**NFS Client**
-
-- Test mounting the share.. eg. : `#mount -t nfs srv01:/home/nfs1 /home/nfs1`
-- If all works add the mounts to `/etc/fstab`:
-
-```bash
-srv01:/home/nfs1        /home/nfs1      nfs     noatime,rsize=32768,wsize=32768
-srv01:/home/nfs2        /home/nfs2      nfs     noatime,rsize=32768,wsize=32768
-```
-
-**Troubleshooting NFS**
-
-- `#mount -v ...` will output debug information
-- On the server `# iptables -S | grep 2049` will show if the NFS ports are in the firewall rules.
-- `# rpcinfo -p <server/client>` will show all the RPC port info. Check if NFS port is open. 
-- If `rpcinfo` shows **no route to host** probably port is not open in the firewall or network routing issues.
-- `# route -n` to check the network route.
-
-
-**Resources**
-
-- [Setting up kerboros aware NFS Server](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-server)
-- [Setting up kerboros aware NFS Client](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/linux_domain_identity_authentication_and_policy_guide/krb-nfs-client)
-
-
-#### CREATING A MIRROR USING RSYNC
-
-This section will walk you through the steps of mirroring a server directory eg. `srv01:/CAD` in a second file server eg. `srv03:/CAD` to create a mirror of the same. 
-
-
-**SETUP THE DESTINATION**
-
-- Make sure `rsync` is installed in both the linux servers: `yum install rsync`
-- Configure `rsync` __daemon__ by editing `/etc/rsyncd.conf` on the **destination server**:
-
-```bash
-# any name you like
-[cad]
-# destination directory for copy
-path = /CAD
-# hosts you allow to access
-hosts allow = <IP ADDRESS OF SOURCE>
-hosts deny = *
-list = true
-uid = root
-gid = root
-read only = false
-```
-
-- Befor starting the daemon, open the port `873/tcp` and the service `rsynd` :
-  - `# firewall-cmd --permanent --add-service=`rsyncd`
-  - `# firewall-cmd --permanent --add-port=873/tcp`
-  - `# firewall-cmd --reload`
-- Start and enable the __daemon__ :
-  - `# systemctl start rsyncd`
-  - `# systemctl enable rsyncd`
-
-**INITIATE TRANSFER FROM THE SOURCE**
-
-- `# rsync -avz --delete /CAD/   <IPADDR/HOSTNAME DESTINATION>:/CAD`
-  - **NOTE** Looks like I can sync to any directory not just the one in __path__ in `/etc/rsyncd.conf`
-  - It's important to have the directory end in `/` ie. `/CAD/` instead of `/CAD`. The later will get synced to destination `/CAD/CAD`
-- You can include the above in a **crontab** for scheduled syncing.
-- For eaxample: To sync everyday at 4AM, the crontab entry will loke like this:
-  - `00 04 * * * rsync -avz --delete /CAD/   <IPADDR/HOSTNAME DESTINATION>:/CAD > /var/log/rsync-cad.log 2> /var/log/rsync-cad.err`
-
-**Resources**
-
-- [Rsync : Sync Files/Directories](https://www.server-world.info/en/note?os=CentOS_7&p=rsync)
-- [How to Use Rsync to Copy/Sync Files Between Servers](https://www.atlantic.net/vps-hosting/how-to-use-rsync-copy-sync-files-servers/)
-
-#### QUOTA
-
-**SETTING DISK QUOTA ON A XFS FILESYSTEM ON CENTOS 7**
-
-- The instructions are from this [Redhat doc](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/xfsquota)
-- XFS quotas are enabled at mount time, with specific mount options. Each mount option can also be specified as `noenforce`; this allows usage reporting without enforcing any limits. Valid quota mount options are:
-  - `uquota`/`uqnoenforce`: User quotas
-  - `gquota`/`gqnoenforce`: Group quotas
-  - `pquota`/`pqnoenforce`: Project quota
-- An example of an entry in `/etc/fstab`:
-  - `/dev/mapper/nfs-home_NFS /home/nfs1  xfs defaults,uquota,gquota,pquota        0 0`
-- To set a block limit for an user (say `500MB` for `user1`):
-  - `# xfs_quota -x -c 'limit -u bsoft=400m bhard=500m user1' /home/nfs1`
-  - To set a group limit (say `500MB` for the ENTIRE group `eng`), use the above command with the exeception: `-g` and `eng` instead of __-u__ and __user1__ 
-- **Setting Project Limits**:
-  - Before configuring limits for project-controlled directories, add them first to `/etc/projects`. Project names can be added to `/etc/projectid` to map project IDs to project names. Once a project is added to `/etc/projects`, initialize its project directory using the following command:
-    - `# xfs_quota -x -c 'project -s projectname' project_path`
-  - Quotas for projects with initialized directories can then be configured, with:
-    - `xfs_quota -x -c 'limit -p bsoft=1000m bhard=1200m projectname'
-    - Example from the man page:
-
-```bash
- # mount -o prjquota /dev/xvm/var /var
- # echo 42:/var/log >> /etc/projects
- # echo logfiles:42 >> /etc/projid
- # xfs_quota -x -c 'project -s logfiles' /var
- # xfs_quota -x -c 'limit -p bhard=1g logfiles' /var
-```
-
-    - Same as above without the need of config file:
-  
-```bash
-# rm -f /etc/projects /etc/projid
-# mount -o prjquota /dev/xvm/var /var
-# xfs_quota -x -c 'project -s -p /var/log 42' /var
-# xfs_quota -x -c 'limit -p bhard=1g 42' /var
-```
-
-- **Reporting Quota Limits**:
-  - `$ quota username`
-  - `# xfs_quota -x -c 'report -h' /home/nfs1`
-
 #### RAID/PARTIONING
 
 **RAID**
@@ -687,87 +769,6 @@ read only = false
 
 
    
-### X-SERVER
-**XFCE on a CENTOS-7 VIRTUAL MACHINE**
-   - **NOTE** `LXDE` display manager is not available on the CentOS repo.
-   - Install the [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/): `$sudo yum install epel-release`
-   - Install `XFCE` display manager: `$sudo yum groupinstall xfce`
-   
-**VNCSERVER on CentOS-7**
-
-- Install `firewalld`, enable it and reboot:
-   
-```bash
-   $sudo yum install firewalld
-   $sudo systemctl enable firewalld
-   $sudo reboot
-```
-   
-   - Check the firewall running status: `$sudo firewall-cmd --state`
-   - Install tigervnc server: `$sudo yum install tigervnc-server` 
-   - Login to the user you want the server on and set the passwd: `$vncpasswd`
-   - Add a VNC service configuration file by copying an template:
-   
-```bash
-   $sudo cp /lib/systemd/system/vncserver@.service  /etc/systemd/system/vncserver@:1.service
-```
-   
-   - Edit the above service file to replace `<USER>` with the username. 
-   - Now start the daemon and enable the service for system wide use:
-   
-```bash
-   $sudo systemctl daemon-reload
-   $sudo systemctl start vncserver@:1
-   $sudo systemctl status vncserver@:1
-   $sudo systemctl enable vncserver@:1
-```
-   
-   - To list the open ports listening to Xvnc: `$ss -tulpn | grep -i vnc`
-   - Then allow the appropriate ports in the firewall to access it:
-   
-```bash
-   $sudo firewall-cmd --add-port=5901/tcp
-   $sudo firewall-cmd --add-port=5901/tcp --permanent
-```
-   
-   - Probably a good idea to reboot now.
-   - Connect using a client (TightVNC/RealVNC/etc) with the Remote Host as `<IP ADDR>:5901` or simply `<IP ADDR>:1`
-   
-**Resources**
-   
-   - [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/)
-   - [Installing and configuring a VNC server on CentOS 7](https://serverspace.io/support/help/installing-and-configuring-a-vnc-server-on-centos-7/)
-   - [How to Install and Configure VNC Server in CentOS 7](https://www.tecmint.com/install-and-configure-vnc-server-in-centos-7/)
-   - [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
-   
-
-### REMOTE ACCESS
-
-**PPTP VPN CLIENT ON CentOS-7**
-
-- [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
-
-### EDA TOOLS
-
-#### CADENCE
-
-**IC 618 ON CENTOS 7**
-
-- After installation run the patch test:
-  - `<INSTALL-DIR>/tools.lnx86/bin/checkSysConf IC6.1.8`
-  - Required packages: `glibc`, `elfutils-libelf`, `ksh`, `mesa-libGL`, `mesa-libGLU`, `motif`, `libXp`, `libpng`, `libjpeg-turbo`, `expat`, `glibc-devel`, `gdb`, `xorg-x11-fonts-misc`, `xorg-x11-fonts-ISO8859-1-75dpi7.5`, `redhat-lsb`, `libXscrnSaver`, `apr`, `apr-util`, `compat-db47`, `xorg-x11-server-Xvfb`, `mesa-dri-drivers`, `openssl-devel`
-
-**MMSIM ON CENTOS 7**
-
-- **NOTE** MMSIM is no longer supported by Cadence. It's SPECTRE. But we don't have the license for it.
-- Used the previous installation MMSIM15.1 and seems to work without any extra patches/pkgs.
-
-**SPECTRE ON CENTOS 7**
-
-- **NOTE** We DO NOT HAVE licenses for SPECTRE right now. And Cadence doesn't support MMSIM anymore. So need to use the old installation.
-- Installed Spectre (21.1) using iScape
-- Read the Relase Notes from iScape.
-- Run `checkSysConf` to check the OS, packages, patches, etc needed to run Spectre
 - `# /CAD/cadence/SPECTRE211/tools.lnx86/bin/checkSysConf SPECTRE21.1`
   - Install all the missing packages 
   - **Note** Spectre requires a 32-bit (i686) `glibc` along with the 64-bit.
