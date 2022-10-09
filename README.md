@@ -4,7 +4,7 @@ The Advanced VLSI Laboratory is a Center of Excellence for training and research
 
 ## Capabilities
 
-- Execute turnkey projects using industry-standard integrated circuit technologies. This includes system design, circuit design, simulation and layout of mixed-signal IP blocks. Assembly of chip-level layout and full industrial-grade temperature (-40C to 125C) characterization.
+- Execute turn-key projects using industry-standard integrated circuit technologies. This includes system design, circuit design, simulation and layout of mixed-signal IP blocks. Assembly of chip-level layout and full industrial-grade temperature (-40C to 125C) characterization.
 - Capable of design, layout and characterize industry-grade analog and digital IP blocks including but not limited to bandgap reference, analog-to-digital converters, digital-to-analog converters, Serial Protocol Interface (SPI), I2C, oscillators, Phase-Locked Loops (PLLs), SRAM, Linear regulators and switch-capacitor power management ICs.
 - NDA with leading semiconductor foundries including XFAB, TSMC, UMC with access ranging from 1um CMOS 600V process to 28nm LV CMOS process. 
 - Training undergraduates and fresh hires to make them industry-ready in various VLSI domains including CMOS design and layout, PDK development, DRAM verification, standard-cell development.
