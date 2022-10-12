@@ -774,12 +774,12 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
   - Install it with explicit architecture: `#sudo yum install glibc.i686`  
 
 
-## LXLE VM USING DOCKER
+### LXLE VM USING DOCKER
 
 - Check this [PDF](Files/LXLE-Docker-Setup-Guide.pdf)
 
 
-## IT INFRA (OLD)
+## OLD WIKI 
 
 ### COMPUTING INFRASTRUCTURE
 ![Computing Infra](IT-infra.png) 
