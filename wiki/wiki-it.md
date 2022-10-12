@@ -615,9 +615,8 @@ This is the first file server of VLSI Lab. It's used as a shadow server which mi
 - [Fedora Documention](https://docs.fedoraproject.org/en-US/Fedora/19/html/Installation_Guide/index.html): Release 18/19 are closest to CentOS/RHEL 7
 
   
-### SYSTEM ADMIN
 
-#### MONITOR AND CONFIGURATION
+### MONITOR AND CONFIGURATION
 - Installing and using the `authconfig` GUI (**NOTE** `authconfig-tui` is deprecated)
   - `# yum install authconfig-gtk`
   - Launch it: `#system-config-authentication`  **NOTE** command takes effect after quiting GUI.
@@ -637,7 +636,7 @@ This is the first file server of VLSI Lab. It's used as a shadow server which mi
   -[Getting started -- redhat 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html-single/getting_started_with_cockpit/index)
 
 
-#### FREE IPA
+### FREE IPA
    
 [FreeIPA](https://www.freeipa.org) is an integrated Identity and Authentication solution for Linux/UNIX networked environments combining Linux (Fedora), 389 Directory Server, MIT Kerberos, NTP, DNS, Dogtag (Certificate System). It consists of a web interface and command-line administration tools. A FreeIPA server provides centralized authentication, authorization and account information by storing data about user, groups, hosts and other objects necessary to manage the security aspects of a network of computers.
 
@@ -721,7 +720,7 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
    
    
    
-#### SELINUX
+### SELINUX
    
 [Security-Enhanced Linux (SELinux)] is a security architecture for Linux systems that allows administrators to have more control over who can access the system.
    
@@ -749,7 +748,7 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
      - [What is SELinux](https://www.redhat.com/en/topics/linux/what-is-selinux)
 
 
-#### RAID/PARTIONING
+### RAID/PARTIONING
 
 **RAID**
 
@@ -775,6 +774,9 @@ Home directories cannot be created automatically on NFS mounts when using IPA. T
   - Install it with explicit architecture: `#sudo yum install glibc.i686`  
 
 
+## LXLE VM USING DOCKER
+
+- Check this [PDF](Files/LXLE-Docker-Setup-Guide.pdf)
 
 
 ## IT INFRA (OLD)

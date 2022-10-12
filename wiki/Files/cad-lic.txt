@@ -96,7 +96,7 @@
 #   Feature: Virtuoso_Layout_Suite_XL       [Version: 6.18] [Feature Qty Per Product: 1]
 #
 # Product Id  : 96210,  [Version: 19.1]
-# Product Name: Cadence(R) Physical Verification System Design Rule Checker 
+# Product Name: CAD Physical Verification System Design Rule Checker 
 # Licensed Rights:
 #   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
 #   Product Comments: 
@@ -108,7 +108,7 @@
 #   Feature: Phys_Ver_Sys_Results_Mgr       [Version: 19.1] [Feature Qty Per Product: 1]
 #
 # Product Id  : 96220,  [Version: 19.1]
-# Product Name: Cadence(R) Physical Verification System Layout vs. Schematic
+# Product Name: CAD Physical Verification System Layout vs. Schematic
 # Licensed Rights:
 #   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
 #   Product Comments: 
@@ -122,7 +122,7 @@
 #   Feature: plotVersa                      [Version: 19.1] [Feature Qty Per Product: 1]
 #
 # Product Id  : QRCX300,  [Version: 20.1]
-# Product Name: Cadence Quantus QRC Extraction - XL
+# Product Name: CAD Quantus QRC Extraction - XL
 # Licensed Rights:
 #   Start Date: 26-may-2020 Exp Date: 03-jul-2020   Product Qty: 40 Type: Floating
 #   Product Comments: 
