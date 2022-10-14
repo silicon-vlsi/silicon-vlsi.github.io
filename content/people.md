@@ -150,7 +150,7 @@ sort: 3
 
 - **Waqar Ahemad**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a DV Engineer at [Perfect VIP](http://www.perfectvips.com) • Trained in Digital Logic Design and Verification domain  • :link: [LinkedIn](https://www.linkedin.com/in/md-waqar-ahmed/)
 
-- **Swadesh Kumar Nath**, *[CET Bhubaneswar](https://www.cet.edu.in/)* • **Domain:** Process Design Kit (PDK) Design (DRC/LVS) • Current Company: [Sevya Multimedia](https://sevyamultimedia.com/) • :link: [LinkedIn](https://www.linkedin.com/in/swadesh-kumar-nath-b394a1194/)
+- **Swadesh Kumar Nath**, *Btech: [CET Bhubaneswar](https://www.cet.edu.in/), 2021 Batch,* • 2021 Batch,* woking as a PDK (LVS/PLS) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Layout and Verification and PDK (LVS/PLS) Design domain • :link: [LinkedIn]()
 
 - **Arpita Padhi**, *[NIST Berhampur](https://nist.edu/)* • **Domain:** Scribe line Layout • Current Company: :link: [Sevya Multimedia](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/arpita-padhi/)
 
