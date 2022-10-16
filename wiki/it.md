@@ -8,17 +8,17 @@ sort: 1
 
 ### Jekyll: Static Page on GitHub
 
-[#jekyll](https://jekyllrb.com) | #github | [#jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) #website #static [[https://adamtheautomator.com/github-pages-jekyll/|#jekyll-tutorial]] [[https://jekyll-themes.com/jekyll-rtd/|#jekyll-rtd-userguide]]
+[#jekyll](https://jekyllrb.com) | #github | [#jekyll-rtd-theme](https://github.com/rundocs/jekyll-rtd-theme) | #website | #static | [#jekyll-tutorial](https://adamtheautomator.com/github-pages-jekyll/) | [#jekyll-rtd-userguide](https://jekyll-themes.com/jekyll-rtd/) 
 
-This section shows you how to create a static web page using [[https://jekyllrb.com|Jekyll]] (and a Jekyll theme) and host it on github.
+This section shows you how to create a static web page using [Jekyll](https://jekyllrb.com) (and a Jekyll theme) and host it on github.
 
 **PREPARING LINUX FOR JEKYLL**
-  * First we need the prereqs on a Linux workstation. Following is for the ''Ubuntu'' on ''AWS'':
-  * <code bash>sudo apt-get install ruby-full build-essential zlib1g-dev</code>
-  * In order to load ''gem'' locally, add the following in ''.bashrc''
-    * <code bash>export GEM_HOME=$HOME/gems</code>
-    * <code bash>export PATH=$HOME/gems/bin:$PATH</code>
-  * <code bash>gem install jekyll bundler</code>
+  * First we need install the prereqs on a Linux workstation. Following is for the ''Ubuntu'' on ''AWS'':
+  * `sudo apt-get install ruby-full build-essential zlib1g-dev`
+  * In order to load `gem` locally, add the following in `.bashrc`
+    * `export GEM_HOME=$HOME/gems`
+    * `export PATH=$HOME/gems/bin:$PATH`
+  * `gem install jekyll bundler`
 
 **CONFIGURING JEKYLL**
   * Site-wise configuration are done using ''_config.yml''
@@ -37,18 +37,18 @@ This section shows you how to create a static web page using [[https://jekyllrb.
 
 **USING JEKYLL TO MAINTAIN THE SITE**
   * Clone the repo to your prepared Linux workstation:
-    * <code bash>git clone https://github.com/silcion-vlsi/silicon-vlsi.github.io</code>
+    * `git clone https://github.com/silcion-vlsi/silicon-vlsi.github.io`
   * Change directory ''cd'' to ''silicon-vlsi.github.io'' and edit ''_config.yml'' change the info.
-  * For the first time after clone, to get the dependencies:<code bash>bundle install</code>
-    * <code bash>bundle update</code> FIXME Document this
-  * Build the site again after the changes:<code bash>bundle exec jekyll build</code>
-  * <code bash>git commit --all [--allow-empty] -m "comment"</code> FIXME: Document when we nee ''--allow-empty''
-  * <code bash>git push</code>
+  * For the first time after clone, to get the dependencies:`bundle install`
+    * `bundle update` FIXME Document this
+  * Build the site again after the changes:`bundle exec jekyll build`
+  * `git commit --all [--allow-empty] -m "comment"` FIXME: Document when we nee ''--allow-empty''
+  * `git push`
 
 **CONTENT MANAGEMENT**
 
 The directory structure (USR tag indicates changes made by the user and SYS typically should be left untouched and synced with the original repo):
-<code bash>
+`
 .
 ├── README.md              : USR: Content for the landing page
 ├── _config.yml            : USR: Site-wide configuration
@@ -69,25 +69,25 @@ The directory structure (USR tag indicates changes made by the user and SYS typi
     ├── doc2
     └── quickref.md
 
-</code>
+`
 
 ** SYNCING THE LOCAL FORK WITH ORIGINAL UPSTREAM REPO**
 FIXME Refer a proper documentation for this and put some more detail in this documentation. 
 
   * Related github docs: [[https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/configuring-a-remote-for-a-fork | Config a remote for fork]], [[https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/syncing-a-fork | Syncing a fork]]
   * **Onetime** config remote upstream repo with the fork:
-    * List the current configured remote repository for your fork.<code bash>git remote -v</code>
-    * Specify the remote upstream repository that will be synced with the fork:<code bash>git remote add upstream  https://github.com/rundocs/jekyll-rtd-theme.git</code>
+    * List the current configured remote repository for your fork.`git remote -v`
+    * Specify the remote upstream repository that will be synced with the fork:`git remote add upstream  https://github.com/rundocs/jekyll-rtd-theme.git`
     * Verify: ''git remote -v''
   * Syncing the fork withe upstream repo:
-    * Fetch the branches and their respective commits from the upstream repository. Commits to BRANCHNAME will be stored in the local branch upstream/BRANCHNAME: <code bash>git fetch upstream</code>
-    * Check out your fork's local default branch - in this case, we use ''develop'' FIXME need more clarity on this one:<code bash>git checkout develop(?)</code>
-    * Merge the changes from the upstream default branch - in this case, ''upstream/develop'' - into your local default branch. This brings your fork's default branch into sync with the upstream repository, without losing your local changes:<code bash>git merge upstream/develop</code>
-    * Push the changes to the fork:<code bash>git push</code>
+    * Fetch the branches and their respective commits from the upstream repository. Commits to BRANCHNAME will be stored in the local branch upstream/BRANCHNAME: `git fetch upstream`
+    * Check out your fork's local default branch - in this case, we use ''develop'' FIXME need more clarity on this one:`git checkout develop(?)`
+    * Merge the changes from the upstream default branch - in this case, ''upstream/develop'' - into your local default branch. This brings your fork's default branch into sync with the upstream repository, without losing your local changes:`git merge upstream/develop`
+    * Push the changes to the fork:`git push`
 ====== LOGOS ======
   * [[http://www.entrepreneur.com/article/232401 | What Does the Color of Your Logo Say About Your Business? (Infographic) ]] : Entrepreneur
 ====== Creating favicon ======
   * Generate a **16x16** image (Gimp, Inkscape, etc) eg. favicon.png
-  * Convert it to a ppm or pnm format eg: <code bash>$ pngtopnm favicon.png > favicon.pnm </code>
-    * **NOTE** If you have more than 256 colors, you'll get an error. You can quantize it to 256 using <code bash>$ pnmquant 256 favicon.pnm > temp.pnm; mv temp.pnm favicon.pnm</code>
-  * Convert using the the utility ''ppmtowinicon'' : <code bash>$ ppmtowinicon -output favicon.ico favicon.pnm</code>
+  * Convert it to a ppm or pnm format eg: `$ pngtopnm favicon.png > favicon.pnm `
+    * **NOTE** If you have more than 256 colors, you'll get an error. You can quantize it to 256 using `$ pnmquant 256 favicon.pnm > temp.pnm; mv temp.pnm favicon.pnm`
+  * Convert using the the utility ''ppmtowinicon'' : `$ ppmtowinicon -output favicon.ico favicon.pnm`
