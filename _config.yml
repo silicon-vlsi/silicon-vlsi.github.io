@@ -1,7 +1,12 @@
-title: jekyll-rtd-theme
-description: Just another documentation theme compatible with GitHub Pages
+title: Mixignal Innovations  
+description: Documentation
 
 theme: null
+
+#url: 
+#baseurl: 
+lang: en
+direction: auto
 
 # debug:
 #   compress: true
