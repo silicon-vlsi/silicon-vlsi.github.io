@@ -89,7 +89,7 @@ FIXME Refer a proper documentation for this and put some more detail in this doc
 
 ### LOGOS
 
-  * [[http://www.entrepreneur.com/article/232401 | What Does the Color of Your Logo Say About Your Business? (Infographic) ]] : Entrepreneur
+  * [What Does the Color of Your Logo Say About Your Business? (Infographic)](http://www.entrepreneur.com/article/232401)
 
 
 ### Creating favicon
