@@ -14,7 +14,7 @@ This section details the steps to setup a __Ubuntu Linode VM__ following the thi
 - Before accessing the instance through **PuTTy**, access the instance using the _root_ login via the **web console**. **NOTE** Most cloud services creates an admin account for access which we will create manually in subsequent steps.
 - Perform **system updates**: `apt update && apt upgrade`
 - Set **local timezone**: `timedatectl set-timezone 'Asia/Calcutta'`
-  - To view all timezones: ` timedatectl list-timezones`
+  - To view all timezones: `timedatectl list-timezones`
 - Set **hostname**: `hostnamectl set-hostname <hostname>`
 - Customize **prompt** in `.bashrc`: `PS1="\u@\h[\W]\$ "`
   - `\u`:username, `\h`:hostname, `\W`: working directory
@@ -36,6 +36,25 @@ alias rm='rm -i'
     - `usermod -aG wheel <adminuser>`
     - Make sure the wheel group is uncommented in `/etc/skel` using the command `#visudo`
       - `%wheel ALL=(ALL) ALL`  **NOTE** `%` is NOT a comment.
+- **Harden SSH Access** by adding authentication via private/public key pair and disable password access.
+  - For **PuTTy**, use **PuTTygen** to generate private/public key pair.
+  - use 4096-bit RSA or ECDSA to generate the key pair.
+  - Save the private key in safe location and add it to the PuTTy session: `Connection -> SSH -> Auth -> Private key file for authentication`
+  - Add the public key to the Linux VM instance: `~/.ssh/authorized_keys`
+  - Andd now when loging in for that particular user, you will not require to use the password.
+- **SSH Daemon Options** in `/etc/ssh/sshd_config`:
+  - Disable _root_ login via SSH: `PermitRootLogin no`
+  - Disable _password auth_: `PasswordAuthentication no`
+  - If using only IPv4 then: `AddressFamily inet`
+  - _Restart_ ssh daemon: `sudo systemctl restart sshd`
+- Use **Fail2Ban** to avoid malicious attack through the SSH port and other ports too. **FIXME** Use the following [Linode Tutorial](https://www.linode.com/docs/guides/using-fail2ban-to-secure-your-server-a-tutorial/) to install and configure fail2ban.
+- **Configure Firewall**. The default application in Ubuntu `ufw` (Uncomplicated Firewall) is disabled. Follow the [Linode Tutorial](https://www.linode.com/docs/guides/configure-firewall-with-ufw/) to install and setup the firewall. Basic setup steps:
+  - Allow SSH connections: `sudo ufw allow ssh`
+  - Use the default rules:
+    - `sudo ufw default allow outgoing`
+    - `sudo ufw default deny incoming`
+  - Enable it: `sudo ufw enable`
+  - Check the status: `sudo ufw status`
 
 ## WebSite/Wiki
 
