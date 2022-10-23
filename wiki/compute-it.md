@@ -13,10 +13,11 @@ This section details the steps to setup a __Ubuntu Linode VM__ following the thi
 - Use the cloud manager to create and view the linux instance.
 - Before accessing the instance through **PuTTy**, access the instance using the _root_ login via the **web console**. **NOTE** Most cloud services creates an admin account for access which we will create manually in subsequent steps.
 - Perform **system updates**: `apt update && apt upgrade`
-- Set **local timezone**: `timedatectl set-timezone 'Asia/Calcutta'
+- Set **local timezone**: `timedatectl set-timezone 'Asia/Calcutta'`
   - To view all timezones: ` timedatectl list-timezones`
-- Set **hostname**: `hostnamectl set-hostname
+- Set **hostname**: `hostnamectl set-hostname <hostname>`
 - Customize **prompt** in `.bashrc`: `PS1="\u@\h[\W]\$ "`
+  - `\u`:username, `\h`:hostname, `\W`: working directory
 - Add some essential aliases to .bashrc:
 
 ```bash
@@ -26,6 +27,15 @@ alias vimr='vim -R'
 alias rm='rm -i'
 ```
 
+- Add the above customization to `/etc/skel/.bashrc` for new users.
+- Create an **admin/sudo** account:
+  - Create the new user: `adduser <admin-username>`
+  - Add the new user to the sudo group: `adduser <admin-username> sudo`
+  - For other distros eg. CentOS or even Ubuntu:
+    - `useradd <adminuser> && passwd <adminuser>`
+    - `usermod -aG wheel <adminuser>`
+    - Make sure the wheel group is uncommented in `/etc/skel` using the command `#visudo`
+      - `%wheel ALL=(ALL) ALL`  **NOTE** `%` is NOT a comment.
 
 ## WebSite/Wiki
 
