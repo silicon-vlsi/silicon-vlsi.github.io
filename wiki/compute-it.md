@@ -2,7 +2,16 @@
 sort: 1
 ---
 
-# IT 
+# COMPUTING & IT 
+
+## Cloud Computing
+
+### Setting Up a Linux VM
+
+This section details the steps to setup a __Linode VM__ following the this [guide](https://www.linode.com/docs/guides/set-up-and-secure/).
+
+- 
+ 
 
 ## WebSite/Wiki
 
