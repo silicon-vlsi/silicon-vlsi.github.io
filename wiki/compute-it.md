@@ -8,10 +8,24 @@ sort: 1
 
 ### Setting Up a Linux VM
 
-This section details the steps to setup a __Linode VM__ following the this [guide](https://www.linode.com/docs/guides/set-up-and-secure/).
+This section details the steps to setup a __Ubuntu Linode VM__ following the this [guide](https://www.linode.com/docs/guides/set-up-and-secure/).
 
-- 
- 
+- Use the cloud manager to create and view the linux instance.
+- Before accessing the instance through **PuTTy**, access the instance using the _root_ login via the **web console**. **NOTE** Most cloud services creates an admin account for access which we will create manually in subsequent steps.
+- Perform **system updates**: `apt update && apt upgrade`
+- Set **local timezone**: `timedatectl set-timezone 'Asia/Calcutta'
+  - To view all timezones: ` timedatectl list-timezones`
+- Set **hostname**: `hostnamectl set-hostname
+- Customize **prompt** in `.bashrc`: `PS1="\u@\h[\W]\$ "`
+- Add some essential aliases to .bashrc:
+
+```bash
+alias date='date +%D'
+alias h='history'
+alias vimr='vim -R'
+alias rm='rm -i'
+```
+
 
 ## WebSite/Wiki
 
