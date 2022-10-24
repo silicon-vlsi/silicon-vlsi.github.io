@@ -56,6 +56,32 @@ alias rm='rm -i'
   - Enable it: `sudo ufw enable`
   - Check the status: `sudo ufw status`
 
+## Networking
+
+### PPTP VPN client in Linux (CentOS7)
+
+**SETUP**
+
+- Followed this [blog](https://zlthinker.github.io/Setup-VPN-on-CentOS) to setup the VPN
+- Install PPTP: `sudo yum install pptp pptp-setup`
+- Configuration: `sudo pptpsetup –create bmt-229 –server [server address] –username [username] –password [pwd] –encrypt`
+- This command will create a file named `bmt-229` under `/etc/ppp/peers/` with server info written inside.
+- This command will also write your username and password into `/etc/ppp/chap-secrets`
+- Register the ppp_mppe kernel module: `sudo modprobe ppp_mppe`
+- Register the nf_conntrack_pptp kernel module: `sudo modprobe nf_conntrack_pptp`
+
+**USER GUIDE**
+    
+- Connect to VPN PPTP: `sudo pppd call config`
+- It will establish PPTP VPN connection. You can type command `ip a | grep ppp` to find the connection name (e.g. `ppp0`). No return indicates connection failure.
+- If any error, you can look into `/var/log/messages` for log info
+- Check IP routing table info: `route -n`
+- Add Network Segment to current connection: 
+  - `route add -net 192.168.11.0 netmask 255.255.255.0 dev ppp0`
+- You can now ping the destination to check the access
+- Disconnect the VPN: `sudo killall pppd`
+
+
 ## WebSite/Wiki
 
 ### Jekyll: Static Page on GitHub
