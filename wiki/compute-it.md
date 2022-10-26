@@ -177,3 +177,15 @@ FIXME Refer a proper documentation for this and put some more detail in this doc
     * **NOTE** If you have more than 256 colors, you'll get an error. You can quantize it to 256 using `$ pnmquant 256 favicon.pnm > temp.pnm; mv temp.pnm favicon.pnm`
   * Convert using the the utility `ppmtowinicon` : `$ ppmtowinicon -output favicon.ico favicon.pnm`
 
+## Open-Source
+
+**Resources**
+
+- [Redhat: What is open source software?](https://www.redhat.com/en/topics/open-source/what-is-open-source-software)
+- [opensource.com:Which open source software license should I use?](https://opensource.com/law/13/1/which-open-source-software-license-should-i-use?extIdCarryOver=true&sc_cid=701f2000001OH6fAAG)
+
+### Licensing
+
+- No copy left: MIT, new BSD
+- Some copy left with patenting & licensing 
+- All copy left: GPLs 
