@@ -56,6 +56,11 @@ alias rm='rm -i'
   - Enable it: `sudo ufw enable`
   - Check the status: `sudo ufw status`
 
+- **Additional Packages**
+  - To build pacakages from source install the essentials:
+    - `sudo apt instal build-essential`
+    - If you need the kernel headers: `sudo apt install linux-headers-``uname -r`` `
+
 ## Networking
 
 ### PPTP VPN client in Linux (CentOS7)
