@@ -70,6 +70,16 @@ alias rm='rm -i'
     - `sudo apt instal build-essential`
     - If you need the kernel headers: `sudo apt install linux-headers-'uname -r'`
 
+### git
+
+**ADDING SSH KEYS github.com**
+
+- github doesn't support https for maintaing repo using API eg. from Linux. Sp most preferre way is to clone and maintain using SSH so need to add SSH keys to the github account.
+- Generating 4096-bit RSA key from **Linux**:
+  - `ssh-keygen -t rsa -b 4096 -C "email"`
+    - _Note_: DSA keys has been dropped by github to improve security. github recommends `ed25119` but is ok with 4096-bit RSA for legacy systems. Decided to use above not to have any issues with legacy systems. See github doc [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
+- To add the keys to github account: click setting from the top-right menu, slect "SSH and GPG keys" and click "New SSK Key" and copy paste from `~/.ssh/id_rsa.pub`
+
 ## Networking
 
 ### PPTP VPN client in Linux (CentOS7)
