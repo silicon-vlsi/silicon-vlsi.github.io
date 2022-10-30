@@ -56,10 +56,19 @@ alias rm='rm -i'
   - Enable it: `sudo ufw enable`
   - Check the status: `sudo ufw status`
 
+- **Install and Configure Dropbox**
+  - `sudo apt-get install dropbox`
+  - Login to the user you want to use Dropbox in.
+  - `dropbox update`
+  - `dropbox start`
+    - _First Time_: `dropbox status` will show you a link that you browse to enter the Dropbox account credential that you want to link to.
+  - Make sure everytime the VM is rebooted, you start dropbox.
+  - _NOTE_ If your distro's repo does not have the packages, Check this Dropbox Links: [Installs](https://help.dropbox.com/installs), [On Linux](https://help.dropbox.com/installs/linux-commands#add).
+
 - **Additional Packages**
   - To build pacakages from source install the essentials:
     - `sudo apt instal build-essential`
-    - If you need the kernel headers: `sudo apt install linux-headers-``uname -r`` `
+    - If you need the kernel headers: `sudo apt install linux-headers-'uname -r'`
 
 ## Networking
 
