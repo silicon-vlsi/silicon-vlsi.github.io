@@ -70,6 +70,21 @@ alias rm='rm -i'
   - Make sure everytime the VM is rebooted, you start dropbox.
   - _NOTE_ If your distro's repo does not have the packages, Check this Dropbox Links: [Installs](https://help.dropbox.com/installs), [On Linux](https://help.dropbox.com/installs/linux-commands#add).
 
+- **Install & Configure AWS CLI**
+  - AWS CLI is mainly used for automatic backups to AWS S3.
+  - Followed this [AWS User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
+  - Prereqs:
+    - Setup an IAM account (instead of the root AWS) or use an existing one.
+    - Create an access ID key and secret key and store it safely.
+  - Before installing, make sure `glibc-tools`, `groff` and `less` are installed.
+  - Install it from AWS:
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+```
+  - `aws --version` to check the installed package.
+  
 - **Additional Packages**
   - To build pacakages from source install the essentials:
     - `sudo apt instal build-essential`
