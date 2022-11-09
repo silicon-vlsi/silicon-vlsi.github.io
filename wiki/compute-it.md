@@ -84,7 +84,10 @@ unzip awscliv2.zip
 sudo ./aws/install
 ```
   - `aws --version` to check the installed package.
-  
+  - To update the current isntallation:
+    - `sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update`
+  - **NOTE** You can install `awscli` package from the Ubuntu repo but lot older version.   
+
 - **Additional Packages**
   - To build pacakages from source install the essentials:
     - `sudo apt instal build-essential`
