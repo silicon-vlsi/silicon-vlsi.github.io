@@ -121,6 +121,11 @@ sudo ./aws/install
     - _Note_: DSA keys has been dropped by github to improve security. github recommends `ed25119` but is ok with 4096-bit RSA for legacy systems. Decided to use above not to have any issues with legacy systems. See github doc [here](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent)
 - To add the keys to github account: click setting from the top-right menu, slect "SSH and GPG keys" and click "New SSK Key" and copy paste from `~/.ssh/id_rsa.pub`
 
+- When adding a SSH key to github if you get an error saying "Key already in use" but you don't see it in the list, Use the following command to see which github account is used in:
+  - `ssh -T -ai ~/.ssh/id_rsa git@github.com`
+
+- If the output is "hi username .." then that git user is using the above key.
+
 ## Networking
 
 ### PPTP VPN client in Linux (CentOS7)
