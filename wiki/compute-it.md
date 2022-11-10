@@ -75,7 +75,7 @@ alias rm='rm -i'
   - Followed this [AWS User Guide](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html).
   - Prereqs:
     - Setup an IAM account (instead of the root AWS) or use an existing one.
-    - Create an access ID key and secret key and store it safely.
+    - Create an access ID key and secret key and store it safely. See [AWS Doc](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-prereqs.html).
   - Before installing, make sure `glibc-tools`, `groff` and `less` are installed.
   - Install it from AWS:
 ```bash
@@ -87,6 +87,24 @@ sudo ./aws/install
   - To update the current isntallation:
     - `sudo ./aws/install --bin-dir /usr/local/bin --install-dir /usr/local/aws-cli --update`
   - **NOTE** You can install `awscli` package from the Ubuntu repo but lot older version.   
+  - **Configure AWS CLI** (See [AWS Doc](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-quickstart.html))
+    - `aws configure --profile user1`  **NOTE** For default configuration omit the --profile option.
+      - AWS Access Key ID: <Enter the Key ID of your IAM user>
+      - AWS Secret Access Key: <Enter it>
+      - Default region name: Give the one most used eg. `ap-southeast-1`
+      - Default output format: default is `json` but use table for more human readable format.
+  - Now you are ready to use the **AWS CLI**
+    - You need to create a S3 bucket for use. See [AWS Doc](https://docs.aws.amazon.com/AmazonS3/latest/userguide/GetStartedWithS3.html).
+      - Example options when creating a bucket:
+        - AWS Region: ap-southeast-1
+        - Copy settings from another bucket. (Specially if rules related Glacier, you don't have to repeat them here.)
+        - Object owner: ACL disable 
+        - Block all public access (private)
+        - Versioning Enabled
+        - Add a tag. (Helps is tracking for eg. cost )
+        - Server side encryption enabled with default SSE-S3.
+    - `aws s3 ls --profile user1` will list all the S3 buckets.
+    - `aws s3 cp --profile user1 <src file> s3://bucket-name`  
 
 - **Additional Packages**
   - To build pacakages from source install the essentials:
