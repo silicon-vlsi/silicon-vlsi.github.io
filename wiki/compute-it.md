@@ -131,26 +131,11 @@ Tags: #git #github
 **USING MULTIPLE GIT ACCOUNTS FROM ONE LINUX ACCOUNT**
 
 - Create different keys for different accounts eg.:
+  - `ssh-keygen -t rsa -b 4096 -C "default"` : This will create the private/public pair id_ras/id_rsa.pub
   - `ssh-keygen -t rsa -b 4096 -f git1 -C "github.com/git1"`
   - `ssh-keygen -t rsa -b 4096 -f git2 -C "github.com/git2"`
-- Create the file `~/.ssh/ssh_config` (perm `600`):
-
-```bash
-# gihub.com/git1 account
-Host git1.github.com
-        HostName github.com
-        PreferredAuthentications publickey
-        IdentityFile ~/.ssh/git1
-        IdentitiesOnly yes
-
-# gihub.com/git2 account
-Host git2.github.com
-        HostName github.com
-        PreferredAuthentications publickey
-        IdentityFile ~/.ssh/git2
-        IdentitiesOnly yes
-```
-
+- Add the public key to the respective git account. Add the default key to the account most used so you will not need to add follow the steps to add the keys to ssh-agent before doing a git push.
+- **NOTE** All documentation suggest to create the file `~/.ssh/ssh_config` file to automatically use the respective keys but just couldn't get it to work.
 - After loging in and let's say you want to use account git1:
   - `eval "$(ssh-agent -s)"` Starts the ssh-agent.
   - `ssh-add ~/.ssh/git1` Adds the private key for git1
