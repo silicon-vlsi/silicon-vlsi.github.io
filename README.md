@@ -38,3 +38,4 @@ Our primary goal is to collaborate with the industry and through various R&D and
 - 30-seater training room for running hands on courses workshops.
 - 12-seater office-cum-conference room for conducting our industry projects and training.
 - Full equipped test laboratory to conduct training and consulting for integrated circuit characterization.
+- A 8-seater office space for executing industry projects.
