@@ -113,6 +113,8 @@ sudo ./aws/install
 
 ### git
 
+Tags: #git #github
+ 
 **ADDING SSH KEYS github.com**
 
 - github doesn't support https for maintaing repo using API eg. from Linux. Sp most preferre way is to clone and maintain using SSH so need to add SSH keys to the github account.
@@ -125,6 +127,38 @@ sudo ./aws/install
   - `ssh -T -ai ~/.ssh/id_rsa git@github.com`
 
 - If the output is "hi username .." then that git user is using the above key.
+
+**USING MULTIPLE GIT ACCOUNTS FROM ONE LINUX ACCOUNT**
+
+- Create different keys for different accounts eg.:
+  - `ssh-keygen -t rsa -b 4096 -f git1 -C "github.com/git1"`
+  - `ssh-keygen -t rsa -b 4096 -f git2 -C "github.com/git2"`
+- Create the file `~/.ssh/ssh_config` (perm `600`):
+
+```bash
+# gihub.com/git1 account
+Host git1.github.com
+        HostName github.com
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/git1
+        IdentitiesOnly yes
+
+# gihub.com/git2 account
+Host git2.github.com
+        HostName github.com
+        PreferredAuthentications publickey
+        IdentityFile ~/.ssh/git2
+        IdentitiesOnly yes
+```
+
+- After loging in and let's say you want to use account git1:
+  - `eval "$(ssh-agent -s)"` Starts the ssh-agent.
+  - `ssh-add ~/.ssh/git1` Adds the private key for git1
+    - `ssh-add -l` will list all the keys in the agent
+    - `ssh-add -D` will delete all the keys.
+  - Now you can do all the git operation for account git1: `git clone/add/commit/push/etc`
+  - Before loging out, kill the ssh-agent process: `pkill -9 -f ssh-agent`
+  - Probably a good idea to add it to crontab.
 
 ## Networking
 
