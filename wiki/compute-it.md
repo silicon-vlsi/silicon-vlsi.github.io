@@ -145,6 +145,41 @@ Tags: #git #github
   - Before loging out, kill the ssh-agent process: `pkill -9 -f ssh-agent`
   - Probably a good idea to add it to crontab.
 
+## Security
+
+### CLI Password Vault pass
+
+**NOTE** This installation is done at **USER LEVEL**. So make sure `pass` is installed eg. `sudo apt install pass`
+
+- `gpg --full-generate-key` skip this step if already installed.
+  - select the kind eg. `RSA`
+  - keysize eg. `4096`
+  - validity eg. `0` (forever)
+  - Enter user info
+
+- `gpg --list-secret-keys --keyid-format LONG` will generate something like this:
+
+```
+sec   4096R/AAAA2222CCCC4444 2021-03-18 [expires: 2023-03-18] uid         John Doe <jdoe@example.com>
+```
+
+- `pass init 'AAAA2222CCCC4444'` to initiate pass using the GPG key ID.
+  - **IMPORTANT** Make the passphrase strong and keep it in a safe place.
+
+- `pass generate -c Internet/github.com 21` to generate a 21-char-long password and copy it to clipboard.
+
+- `pass insert -em banking/citi` will insert a multiline (m) info and echo (e) it back. Press `Ctrl-D` when done entering.
+
+- `pass show banking/citi` displays the password.
+
+- Setting up for Syncing with Git Repo:
+  - Create a git repo in github.com (can be something else too)
+  - `pass git init` will initialize pass DB fir git repo sync.
+  - `pass git remote add origin git@github.com:johndoe/pass-store.git`
+    - Make sure the proper authentication is in place.
+  - `pass git push -u --all`
+
+
 ## Networking
 
 ### PPTP VPN client in Linux (CentOS7)
@@ -169,6 +204,19 @@ Tags: #git #github
   - `route add -net 192.168.11.0 netmask 255.255.255.0 dev ppp0`
 - You can now ping the destination to check the access
 - Disconnect the VPN: `sudo killall pppd`
+
+### PuTTY
+
+**EXPORTING and IMPORTING a SESSION**
+- In windows search and start the *Registry Editor* progam `regedit.exe`
+- Navigate to `HKEY_CURRENT_USER -> Software -> SimonTatham -> PuTTY -> Sessions`
+- Right Click on the session name and export it.
+- To import, `File -> Import`
+
+**DELETING A KEY FROM A SESSION**
+- In windows search and start the *Registry Editor* progam `regedit.exe`
+- Navigate to `HKEY_CURRENT_USER -> Software -> SimonTatham -> PuTTY -> SshHostKeys`
+- Select the appropriate key and delete it.
 
 
 ## WebSite/Wiki
