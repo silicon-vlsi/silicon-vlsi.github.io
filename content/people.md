@@ -204,5 +204,5 @@ sort: 3
 
 - **Unnati kumari Gupta**, *ECE, 2019* • Project: Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Vishal Sao**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a PDK Library Development Engineer at [ST Microelectronics](STMicroelectronics](https://www.st.com/) • Trained in Analog VLSI Circuit and Layout design. [gitHub-page](https://github.com/vsao/) • :link: [LinkedIn](https://www.linkedin.com/in/vishal-sao/)
+- **Vishal Sao**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a PDK Library Development Engineer at [ST Microelectronics](https://www.st.com/) • Trained in Analog VLSI Circuit and Layout design. [gitHub-page](https://github.com/vsao/) • :link: [LinkedIn](https://www.linkedin.com/in/vishal-sao/)
 
