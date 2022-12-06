@@ -152,8 +152,13 @@ sort: 3
 
 - **Swadesh Kumar Nath**, *Btech: [CET Bhubaneswar](https://www.cet.edu.in/), 2021 Batch,* • 2021 Batch,* woking as a PDK (LVS/PLS) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Layout and Verification and PDK (LVS/PLS) Design domain • :link: [LinkedIn](https://www.linkedin.com/in/swadesh-kumar-nath-b394a1194/)
 
-- **Arpita Padhi**, *Btech: [NIST Berhampur](https://nist.edu/), 2021 Batch,* • woking as a Scribe Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/arpita-padhi/)
+- **Arpita Padhi**, *Btech: [NIST Berhampur](https://nist.edu/), 2021 Batch,* • woking as a Scribe Line Layout Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/arpita-padhi/)
 
+- **Tamanna Samal**, *Mtech: [CET Bhubaneswar](https://www.cet.edu.in/), 2021 Batch,* • woking as a Scribe Line Layout Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/tamanna-samal-467ba11b2/)
+
+- **Rohit Kumar**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* • woking as a Scribe Line Layout Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/rohit-kumar-269218190/)
+
+- **Nikita Kumari**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* • woking as a Scribe Line Layout Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/rohit-kumar-269218190/)
 
 - **Aditya Singh**, *ECE, 2022* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
