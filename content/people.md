@@ -194,11 +194,11 @@ sort: 3
 
 - **Sameer Nameo**, *ECE, 2019* • Project: Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • 
 
-- **Sneha kumari**, *ECE, 2019* • Project: Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Sneha kumari**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a Scribe Design Engineer at [Micron Technology](https://in.micron.com/) • Trained in Analog VLSI Circuit and Layout design. • :link: [LinkedIn](https://www.linkedin.com/in/sneha-kumarii/)
 
 - **Shiva Prasad Das**, *ECE, 2019* • Project: Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Samiksha Agrawal**, *ECE, 2019* • Project: SRAM Copmpilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Samiksha Agrawal**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a Scribe Design Engineer at [Micron Technology](https://in.micron.com/) • Trained in Analog VLSI Circuit and Layout design. • :link: [LinkedIn](https://www.linkedin.com/in/samiksha-agrawal/)
 
 - **Suruchi kumari**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
