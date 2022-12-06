@@ -186,9 +186,9 @@ sort: 3
 
 - **Jagyaseni Panda**, *ECE, 2019* • Project: SRAM Compilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) 
 
-- **Manamohan Nath**, *ECE, 2019* • Project: Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Manamohan Nath**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a PDK Development Engineer at [ST Microelectronics](https://www.st.com/) • Trained in Analog VLSI Circuit and Layout design. • :link: [LinkedIn](https://www.linkedin.com/in/manamohan-nath-8b3133174/)
 
-- **Prachi Mrudula**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page](https://github.com/prachi-mrudula) Current Company: [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) 
+- **Prachi Mrudula**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a PDK Development Engineer at [ST Microelectronics](https://www.st.com/) • Trained in Analog VLSI Circuit and Layout design. [gitHub-page](https://github.com/prachi-mrudula) • :link: [LinkedIn](https://www.linkedin.com/in/prachi-mrudula-42310a174/)
 
 - **Pragya Tiwari**, *ECE, 2019* • Project: Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • 
 
