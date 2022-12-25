@@ -34,7 +34,8 @@ sort: 4
 -	P.K.Rout, D.P. Acharya and G. Panda, “Design of a Novel Current Starved VCO via Constrained Geometric Programming" International Journal of Computer Applications (IJCA), vol-3, pp.37-40, 2011.
 
 ## Conferences
--	S. Sarangi, I Som, and T.K. Bhattacharyya "A Compact and Low-power Transmitter Driver Design for High-Speed SerDes System" International Conference on VLSI Design and Embeded Systems (VLSID-2021), February 20-24, 2021 (virtual event) (**Accepted**)
+-	S. Sarangi, I. Som and T. K. Bhattacharyya, "A 10 Gb/s On-chip Jitter Measurement Circuit Based on Transition Region Scanning Method," 2022 35th International Conference on VLSI Design and 2022 21st International Conference on Embedded Systems (VLSID), 2022, pp. 44-49
+-	S. Sarangi, I Som, and T.K. Bhattacharyya "A Compact and Low-power Transmitter Driver Design for High-Speed SerDes System" International Conference on VLSI Design and Embeded Systems (VLSID-2021), February 20-24, 2021 (virtual event)
 -	S. Sarangi, D. Tripathy, S.S. Mahapatra, and S.Rout“ A Power and Area Efficient CMOS Bandgap Reference Circuiwith an integrated Voltage Reference Branch”, in Proc. of Springer Modelling,Simulation, Intelligent Computing(MoSICom-2020), BITS-Pilani Dubai Campus.
 -	D. Nayak, U. Nanda, P. K. Rout, S. M. Biswal, D. Tripathy, S. K. Swain, B. Baral, S. K. Das, “A Novel Driver less SRAM with Indirect Read for Low Energy Consumption and Read Noise Elimination”, in Proc. of IEEE International Conference on Devices for Integrated Circuit (DevIC), March. 2019, pp. 314-317 (2019), Kalyani, India
 -	D. Tripathy, D. Nayak, S. M. Biswal, S. K. Swain, B. Baral, S. K. Das, “A Low Power LNA using Current Reused Technique for UWB Application”, in Proc. of IEEE International Conference on Devices for Integrated Circuit (DevIC), March. 2019, pp. 310-313 (2019), Kalyani, India

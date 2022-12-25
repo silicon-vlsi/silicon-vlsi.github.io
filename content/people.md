@@ -150,10 +150,15 @@ sort: 3
 
 - **Waqar Ahemad**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* woking as a DV Engineer at [Perfect VIP](http://www.perfectvips.com) • Trained in Digital Logic Design and Verification domain  • :link: [LinkedIn](https://www.linkedin.com/in/md-waqar-ahmed/)
 
-- **Swadesh Kumar Nath**, *Btech: [CET Bhubaneswar](https://www.cet.edu.in/), 2021 Batch,* • 2021 Batch,* woking as a PDK (LVS/PLS) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Layout and Verification and PDK (LVS/PLS) Design domain • :link: [LinkedIn]()
+- **Swadesh Kumar Nath**, *Btech: [CET Bhubaneswar](https://www.cet.edu.in/), 2021 Batch,* • 2021 Batch,* woking as a PDK (LVS/PLS) Design Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in Layout and Verification and PDK (LVS/PLS) Design domain • :link: [LinkedIn](https://www.linkedin.com/in/swadesh-kumar-nath-b394a1194/)
 
-- **Arpita Padhi**, *[NIST Berhampur](https://nist.edu/)* • **Domain:** Scribe line Layout • Current Company: :link: [Sevya Multimedia](https://sevyamultimedia.com/) • [LinkedIn](https://www.linkedin.com/in/arpita-padhi/)
+- **Arpita Padhi**, *Btech: [NIST Berhampur](https://nist.edu/), 2021 Batch,* • woking as a Scribe Line Layout Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/arpita-padhi/)
 
+- **Tamanna Samal**, *Mtech: [CET Bhubaneswar](https://www.cet.edu.in/), 2021 Batch,* • woking as a Scribe Line Layout Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/tamanna-samal-467ba11b2/)
+
+- **Rohit Kumar**, *Btech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2021 Batch,* • Woking as a Scribe Line Layout Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/rohit-kumar-269218190/)
+
+- **Nikita Kumari**, *Btech: [Kamla Nehru Institute of Technology, Sultanpur](https://www.knit.ac.in/), 2020 Batch,* • Woking as a Scribe Line Layout Engineer at a leading semiconductor organization through [Sevya Multimedia Pvt. Ltd.](https://sevyamultimedia.com/) • Trained in analog and standard cell layout design :link: [LinkedIn](https://www.linkedin.com/in/nikita-kumari-346b87206/)
 
 - **Aditya Singh**, *ECE, 2022* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
@@ -175,7 +180,6 @@ sort: 3
 
 - **Tapan Karan**, *ECE, 2022* • Project: Design & Implementation of Bandgap voltage reference(BGR) in 0.18um CMOS for wide input supply swing
 
-
 - **Abhishek Kumar**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
 
 - **Anshuman Mishara**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
@@ -186,23 +190,23 @@ sort: 3
 
 - **Jagyaseni Panda**, *ECE, 2019* • Project: SRAM Compilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) 
 
-- **Manamohan Nath**, *ECE, 2019* • Project: Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Manamohan Nath**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a PDK Development Engineer at [ST Microelectronics](https://www.st.com/) • Trained in Analog VLSI Circuit and Layout design. • :link: [LinkedIn](https://www.linkedin.com/in/manamohan-nath-8b3133174/)
 
-- **Prachi Mrudula**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page](https://github.com/prachi-mrudula) Current Company: [Sevya Multinedia Private Limited](https://sevyamultimedia.com/) 
+- **Prachi Mrudula**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a PDK Development Engineer at [ST Microelectronics](https://www.st.com/) • Trained in Analog VLSI Circuit and Layout design. [gitHub-page](https://github.com/prachi-mrudula) • :link: [LinkedIn](https://www.linkedin.com/in/prachi-mrudula-42310a174/)
 
 - **Pragya Tiwari**, *ECE, 2019* • Project: Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • 
 
 - **Sameer Nameo**, *ECE, 2019* • Project: Design of SPI Controller for serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • 
 
-- **Sneha kumari**, *ECE, 2019* • Project: Design of Low Power Decoder for SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Sneha kumari**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a Scribe Design Engineer at [Micron Technology](https://in.micron.com/) • Trained in Analog VLSI Circuit and Layout design. • :link: [LinkedIn](https://www.linkedin.com/in/sneha-kumarii/)
 
 - **Shiva Prasad Das**, *ECE, 2019* • Project: Design of Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Samiksha Agrawal**, *ECE, 2019* • Project: SRAM Copmpilation using OpenRAM Compiler • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Samiksha Agrawal**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a Scribe Design Engineer at [Micron Technology](https://in.micron.com/) • Trained in Analog VLSI Circuit and Layout design. • :link: [LinkedIn](https://www.linkedin.com/in/samiksha-agrawal/)
 
 - **Suruchi kumari**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
 - **Unnati kumari Gupta**, *ECE, 2019* • Project: Design of sense amplifier for Low Power SPI/I2C serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology 
 
-- **Vishal Sao**, *ECE, 2019* • Project: Design of I2C Slave to interface with serial SRAM suited for IOT based embedded system in 0.6um CMOS Technology • [gitHub-page](https://github.com/vsao/) • Current Company: • [Sevya Multinedia Private Limited](https://sevyamultimedia.com/)
+- **Vishal Sao**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2019 Batch,* working as a PDK Library Development Engineer at [ST Microelectronics](https://www.st.com/) • Trained in Analog VLSI Circuit and Layout design. [gitHub-page](https://github.com/vsao/) • :link: [LinkedIn](https://www.linkedin.com/in/vishal-sao/)
 
