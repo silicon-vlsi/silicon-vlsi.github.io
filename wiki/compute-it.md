@@ -172,13 +172,22 @@ sec   4096R/AAAA2222CCCC4444 2021-03-18 [expires: 2023-03-18] uid         John D
 
 - `pass show banking/citi` displays the password.
 
-- Setting up for Syncing with Git Repo:
+- **Setting up for Syncing with Git Repo**:
   - Create a git repo in github.com (can be something else too)
   - `pass git init` will initialize pass DB fir git repo sync.
   - `pass git remote add origin git@github.com:johndoe/pass-store.git`
     - Make sure the proper authentication is in place.
   - `pass git push -u --all`
 
+- **Cloning the git pass**
+  - From the server export the keys:
+    - `gpg --export-secret-keys > privkey.asc`
+    - `gpg --export > pubkey.asc`
+    - Make sure you store in a safe place.
+  - Import on the new client:
+    - `gpg --import pubkey.asc`
+    - `gpg --allow-secret-key-import --import privkey.asc`
+  - Clone the git repo **FIXME**
 
 ## Networking
 
