@@ -187,7 +187,10 @@ sec   4096R/AAAA2222CCCC4444 2021-03-18 [expires: 2023-03-18] uid         John D
   - Import on the new client:
     - `gpg --import pubkey.asc`
     - `gpg --allow-secret-key-import --import privkey.asc`
-  - Clone the git repo **FIXME**
+  - Clone the git repo from the server (FIXME: How to clone from github?)
+    - Setup SSH keys between client-server if it's setup that way.
+    - `git clone user@server:~/.password-store`
+    - Now you can use the client pass but push from client has issues. So best to use it only for pull. 
 
 ## Networking
 
