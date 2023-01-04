@@ -442,6 +442,17 @@ read only = false
 - Read the Relase Notes from iScape.
 - Run `checkSysConf` to check the OS, packages, patches, etc needed to run Spectre
 
+#### iverilog and gtkwave 
+
+- **NOTE** The following instruction is for installing `iverilog` and `gtkwave` from the CentOS 7 EPEL repo. So it needs to be installed in each desktop seprately.
+- Add EPEL (if not already) repo to the installer: `sudo yum install epel-release`
+- `sudo yum install iverilog`
+- `sudo yum install gtkwave`
+- To compile simple verilog module and it's testbench: say `mydut.v` and `tb_mydut.v`
+  - `iverilog -o tb_mydut.vvp mydut.v tb_mydut.v` : Compile the verilog codes and create an output `tb_mydut.vvp`
+  - `vvp tb_mydut.vvp` : Convert the compiled output to a VCD format for GTKWave.
+  - `gtkwave dump.vcd` : Note: the filename `dump.vcd` is assumed to be in `tb_mydut.v`
+
 ### Creating a Kickstart USB Boot Media
 
 - [Automatic Install Doc from Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)

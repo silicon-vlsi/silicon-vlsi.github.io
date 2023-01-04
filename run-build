@@ -1,2 +1,4 @@
 #!/bin/bash
 bundle exec jekyll build
+git commit -m "update" -a
+git push
