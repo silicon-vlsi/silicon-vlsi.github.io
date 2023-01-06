@@ -30,7 +30,10 @@ sort: 1
 
 ### Frequently Used Commands
 
-- `$ yum provides libXss.so.1` : To **find** a package which __provides__ a certain library eg. `libXss.so.1`
+- FIXME: Copy the commands from /CAD/apps7/bin/LinuxRef.md
+- `yum provides libXss.so.1` : To **find** a package which __provides__ a certain library eg. `libXss.so.1`
+- **GIT**
+  - `git reset <file>` : undo changes
 
 ### Setting up new CentOS 7 Desktop
 
@@ -112,23 +115,36 @@ DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin PORT=1718
 
 - Start the license server.
 
-### Setting Up Project Area
+### Setting up a Project
 
-- Create an user for each project using the convention of starting letter `p` eg. `pvolta`
-- Change `umask` in `.cshrc` to `027` so files created by `pvolta` cannot be read by __others__.
-- create the project directory: `/home/nfs1/projects/VOLTA/REV1/work`
-- Change projects owner and group of `VOLTA` directory and underneath to `pvolta`
-- The `work` directory should have `g=swrx,t+` for `pvolta` group so users in `pvolta` group can create project area under this directory but they cannot delete the `work` directory and all the newly created files/directory by project users will have their file groups with the original group of the directory so all users in the group `pvolta` can share files.
-  - `# chmod g=swrx,+t work`
-  - `s` sets the `setgid` bit for the directory. When set on a directory, the __setgid__ bit causes newly created files within the directory to take on the group ownership of the directory ie. `pvolta` rather than the default/primary group of the user that created it. This makes it easier to share the directory among several users, as long as they belong to the same group. This one is especially useful for shared project directory.
-  - `+t` keeps the dir `work` sticky, the filesystem won't allow you to delete or rename it unless you are the owner. Just write permission is not enough. This way users in the 'pvolta' group will not be able to delete it, only the creator.
-  - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
-- Now you can create the master work area with the user `pvolta` using the `siproj` script.
-  - For other users, first include them in the project group eg. `pvolta`
-- For cadence:
-  - Create the initialization file and cdslib `cdsint-<PROJ>-<REV>.il` and `cds-<PROJ>-<REV>.lib`
-  - Assign quota for the project directory. [See quota section]
-  
+- **CREATE A PROJECT USER**
+  - Create an __user__ for each project using the convention of starting letter `p` eg. `pvolta`
+  - Change `umask` in `.cshrc` to `027` so files created by `pvolta` cannot be read by __others__.
+- **CREATE THE PROJECT DIRECTORY**
+  - create the project directory: `/home/nfs1/projects/VOLTA/REV1/work`
+  - Change projects owner and group of `VOLTA` directory and underneath to `pvolta`
+  - The `work` directory should have `g=swrx,t+` for `pvolta` group so users in `pvolta` group can create project area under this directory but they cannot delete the `work` directory and all the newly created files/directory by project users will have their file groups with the original group of the directory so all users in the group `pvolta` can share files.
+    - `# chmod g=swrx,+t work`
+    - `s` sets the `setgid` bit for the directory. When set on a directory, the __setgid__ bit causes newly created files within the directory to take on the group ownership of the directory ie. `pvolta` rather than the default/primary group of the user that created it. This makes it easier to share the directory among several users, as long as they belong to the same group. This one is especially useful for shared project directory.
+    - `+t` keeps the dir `work` sticky, the filesystem won't allow you to delete or rename it unless you are the owner. Just write permission is not enough. This way users in the 'pvolta' group will not be able to delete it, only the creator.
+    - For more on __setgid__ and __sticky__ bits, see Section 5.5 (p-132) in [Nemeth-LinuxSysAdmin-5e-2017]
+  - Now you can create the master work area with the user `pvolta` using the `siproj` script.
+    - For other users, first include them in the project group eg. `pvolta`
+  - Assign __quota__ for the project directory. [See quota section](#quota)
+ 
+- **SETTING UP CONFIG FILES** 
+  - Steps to get a project setup so users can use the `siproj` script to setup a project area.
+  - Create an entry in `/CAD/apps7/bin/training.list`.
+    - `project.list` for projects.
+  - Check the script `/CAD/apps/bin/siproj` for any customization needed.
+  - Create the `modulefile` in `/CAD/apps7/modulefiles/projects`
+  - Create an alias for it in `/CAD/apps7/etc/silicon.csh`
+    - `silicon.csh` soft linked in `/etc/profile.d`
+  - For **Cadence**:
+    - Create a cdsinit file eg. `/CAD/apps7/etc/cdsinit-VOLTA-REV1.il`
+    - Create a cds.lib file eg. `/CAD/apps7/etc/cds-VOLTA-REV1.lib`
+    - Create dummyLibs (optional) for a tree-like library in LibManager. eg. `/CAD/apps7/etc/dummyLibs/TeslaRev1Libs`
+
 
 ### Users/Groups
 
