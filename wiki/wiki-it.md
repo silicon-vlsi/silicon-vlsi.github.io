@@ -35,6 +35,22 @@ sort: 1
 - **GIT**
   - `git reset <file>` : undo changes
 
+### User Administration
+
+- All user database is maintained in GoogleSheet (vlsi account) `UserList7-AdvVLSI`
+- Open the appropriate tab eg. `permanent`, `VLabs`
+- Add, remove or modify the user in the sheet.
+  - for modified users, put a `*` in front of the serial number to indicate pending changes.
+- Export it as a CSV file (`File -> Download -> csv` eg. `2023-0128-VLabs-GroupUpdate.csv`
+- Copy the above file to `/CAD/apps7/users`
+- Remove all entries except the required users. **NOTE** DO NOT REMOVE THE HEADER (First 5 lines)
+- Run `buseradd` script with the appropriate options:
+  - New user: `sudo buseradd -cq -i <file.csv>`
+    - Option `q` is for setting the quotas. 
+  - Update: `sudo buseradd -g -i 2023-0128-VLabs-GroupUpdate.csv`
+  - Remove users: `sudo buseradd -d -i <file.csv>`
+- Update NIS: `sudo make -C /var/yp`
+
 ### Setting up new CentOS 7 Desktop
 
 **MANUAL INSTALL**
