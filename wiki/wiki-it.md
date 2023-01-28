@@ -30,10 +30,27 @@ sort: 1
 
 ### Frequently Used Commands
 
-- FIXME: Copy the commands from /CAD/apps7/bin/LinuxRef.md
+- **NOTE**: Keep this section in sync with /CAD/apps7/bin/LinuxRef.md
 - `yum provides libXss.so.1` : To **find** a package which __provides__ a certain library eg. `libXss.so.1`
 - **GIT**
   - `git reset <file>` : undo changes
+- `umask 027` will result in files with 640 perms and dirs with 750 perm.
+- `unix-cmd > output.log 2> error.log` : redirection of **stdout to output.log** and **stderr to error.log** 
+- `chown -R <owner>:<group> <dir>` : Will recursively change __owner__ and __group__ of files and directories.
+- `chmod -R a+rX` : will recursively __append_ read/execute(rX) for all (a) ie. user/group/other directories (X) and append only read for files only. **NOTE** This will not change __dot__ files.
+- `chmod -R o-rwX` : will recursively __remove__ read/write/execute(rwX) for __others__.
+- `chmod -R g+r` : will recursively __append__ read for __groups__.
+- `tar -o ...` : -o option will overwrite the ownership to the one who is untaring right now.
+- `find . -type d -name .svn -exec rm -rf {}\;`
+- `sudo -u <user> <command>` : Runs the `<command>` as user `<user>`
+- `sudo -u <user> -g <group> <command>` : Runs the `<command>` as user `<user>` and the group `<group>` instead of the primary group of the user.
+- `sudo sh/csh -c "echo NISDOMAIN=vlsi.silicon.ac.in >> /etc/sysconfig/networks"` : Commands which have breaks in them are passed to a shell else after the first part, the rest will executed as the normal user and not sudoer.
+- `sudo xfs_quota -x -c 'report -h' /home/nfs1`
+- `echo "whatevever text" | sudo tee -a file.txt` : Will echo text as root
+- If you have tar ball with no permission for "other" and the user and group does not exist:
+  - `tar -o -xzvf file.tar.gz`
+  - `chmod -R o+rX <root-dir>` : will recursivley add read perms for files and r+x for directories, for "others" 
+
 
 ### User Administration
 
@@ -391,6 +408,15 @@ read only = false
   - `$ quota username`
   - `# xfs_quota -x -c 'report -h' /home/nfs1`
 
+
+### VIRTUAL MACHINES
+
+#### Setting up VM in CentOS 7 using KVM
+
+- Useful Resource:
+  - https://www.linuxtechi.com/install-kvm-hypervisor-on-centos-7-and-rhel-7/
+  - https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/
+  - https://tuxfixer.com/install-and-configure-kvm-qemu-on-centos-7-rhel-7-bridge-vhost-network-interface/
 
 ### X-Server
 **XFCE on a CENTOS-7 VIRTUAL MACHINE**
