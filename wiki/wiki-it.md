@@ -418,6 +418,19 @@ read only = false
   - https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/
   - https://tuxfixer.com/install-and-configure-kvm-qemu-on-centos-7-rhel-7-bridge-vhost-network-interface/
 
+- If the server has multiple ethernet ports, a new port can be configured and the VM can be bridged through that port to avoid network congestion.
+- Easiest way to configure the new one is to copy a working config and change the IP address (if static) and UUID.
+  - `cd /etc/sysconfig/network-scripts`
+  - `cp ifcfg-em2 ifcfg-em2-orig` : backup the original file.
+  - `cp ifcfg-em1 ifcfg-em2`
+  - Update the unique params:
+    - `NAME="em2"`
+    - `UUID="<copy from orig file>"`
+    - `DEVICE="em2"`
+    - `IPADDR="<Static IP>"`
+  - `sudo systemctl restart NetworkManager`
+  - `ip a` : Check if the port is up and running
+
 ### X-Server
 **XFCE on a CENTOS-7 VIRTUAL MACHINE**
    - **NOTE** `LXDE` display manager is not available on the CentOS repo.
