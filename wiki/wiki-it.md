@@ -414,22 +414,83 @@ read only = false
 #### Setting up VM in CentOS 7 using KVM
 
 - Useful Resource:
-  - https://www.linuxtechi.com/install-kvm-hypervisor-on-centos-7-and-rhel-7/
-  - https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/
-  - https://tuxfixer.com/install-and-configure-kvm-qemu-on-centos-7-rhel-7-bridge-vhost-network-interface/
+  - [Install KVM Hypervisor on CentOS7](https://www.linuxtechi.com/install-kvm-hypervisor-on-centos-7-and-rhel-7/): Primarily used this as a guide.
+  - [KVM on a Headless CentOS 7](https://www.cyberciti.biz/faq/how-to-install-kvm-on-centos-7-rhel-7-headless-server/)
+  - [KVM Bridge on CentOS 7](https://tuxfixer.com/install-and-configure-kvm-qemu-on-centos-7-rhel-7-bridge-vhost-network-interface/)
+  - [Configuring Storage for QEMU/KVM in CentOS7](https://bashtheshell.com/guide/configuring-lvm-storage-for-qemukvm-vms-using-virt-manager-on-centos-7/#)
+  - [Bridge Interface to Access Host network](https://getlabsdone.com/how-to-create-a-bridge-interface-in-centos-redhat-linux/)
 
-- If the server has multiple ethernet ports, a new port can be configured and the VM can be bridged through that port to avoid network congestion.
+- Essentially followed this [great blog](https://www.linuxtechi.com/install-kvm-hypervisor-on-centos-7-and-rhel-7/)
+- When installing the CentOS 7, if you choose the Virtualization along with a Display Manager (Gnome, KDE) then you can skip the following:
+  - `# yum install qemu-kvm qemu-img virt-manager libvirt libvirt-python libvirt-client virt-install virt-viewer bridge-utils`
+  - `# systemctl start libvirtd`
+  - `systemctl enable libvirtd`
+  - `lsmod | grep kvm` To check if KVM module is loaded or not.
+  - `yum install "@X Window System" xorg-x11-xauth xorg-x11-fonts-* xorg-x11-utils -y` if Mimimal install without X.
+- Before starting the Virtual Manager, configure the network bridge.
+- In this installation our host has multiple ethernet ports so we are going to dedicate one of the ports to the Virtual machine so the Virtual Machine looks as part of the host network instead of the default VMs behind a virtual NAT. This also does a nice load balancing on the ports. This part took some searching to get it working. Check this [Blog](https://getlabsdone.com/how-to-create-a-bridge-interface-in-centos-redhat-linux/).
 - Easiest way to configure the new one is to copy a working config and change the IP address (if static) and UUID.
   - `cd /etc/sysconfig/network-scripts`
   - `cp ifcfg-em2 ifcfg-em2-orig` : backup the original file.
   - `cp ifcfg-em1 ifcfg-em2`
   - Update the unique params:
-    - `NAME="em2"`
-    - `UUID="<copy from orig file>"`
-    - `DEVICE="em2"`
-    - `IPADDR="<Static IP>"`
-  - `sudo systemctl restart NetworkManager`
-  - `ip a` : Check if the port is up and running
+
+```bash
+TYPE=Ethernet
+BOOTPROTO=static
+DEVICE=em2
+ONBOOT=yes
+UUID="e1382762-ad1f-4ca3-9981-09489cbb948a"
+NAME=em2
+BRIDGE=br0
+IPADDR=192.168.6.30
+NETMASK=255.255.255.0
+GATEWAY=192.168.6.254
+DNS1=10.3.208.1
+DNS2=8.8.8.8
+```
+
+- Create the bridge interface `/etc/sysconfig/network-scripts/ifcfg-br0`
+
+```bash
+TYPE=Bridge
+BOOTPROTO=static
+DEVICE=br0
+ONBOOT=yes
+IPADDR=192.168.6.30
+NETMASK=255.255.255.0
+GATEWAY=192.168.6.254
+DNS1=10.3.208.1
+DNS2=8.8.8.8
+```
+
+- `sudo systemctl restart NetworkManager`
+- Check the interfaces `ip a`:
+
+```bash
+3: em2: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc mq master br0 state UP group default qlen 1000
+    link/ether 00:00:00:00:62:3a brd ff:ff:ff:ff:ff:ff
+6: br0: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc noqueue state UP group default qlen 1000
+    link/ether 00:00:00:00:00:00 brd ff:ff:ff:ff:ff:ff
+    inet 192.168.6.30/24 brd 192.168.6.255 scope global noprefixroute br0
+       valid_lft forever preferred_lft forever
+```
+
+- `sudo virt-namanger` : Start the Virtual Manager.
+- Choose the ISO image to start isntallation.
+- Choose Memory and CPUs.
+- For storage, A LVM partition in the host was used which was mounted on say `/home/vm1`
+  - Select "enable storage for this virtual machine"
+  - Select "Select or create custom storage" and click `Manage`
+  - "Choose Storage Volume" dialog box will pop up. Click the "+" sign.
+  - Give a name say `vm1-pool` and choos type `dir:Filesystem Directory` and click `Forward`
+  - Browse to the mounted directory `/home/vm1` and click `Finish`
+  - Now you should see the volume `vm2-pool` in the Volume manager.
+  - Select the volume and click the "+" sign
+  - Give a name and select format (default "qcow2") and choose the size. 
+  - Now choose the volume and start the isntallation.
+- After installation the network is going to be in DHCP mode, use `nmtui` to change it static and provide a inique IP address eg `192.168.6.31`.
+- Follow the steps on creating a new desktop to complete the setup.
 
 ### X-Server
 **XFCE on a CENTOS-7 VIRTUAL MACHINE**
@@ -652,7 +713,7 @@ This is a computer server with **20 Xeon Cores** and **128GB RAM**. This also se
 | ``/home`` | 100G | Local home dir |
 | ``/var`` | 50G | log,etc |
 | ``/home/local`` | 500G | local mount (sims, etc) |
-| ``/home/virt1`` | 250G | For Virtual Machines |
+| ``/home/virt1`` | 250G | Used for VirtualMachine VM1-srv02|
 | ``/home/virt2`` | 250G | For Virtual Machines |
 | ``/home/virt3`` | 250G | For Virtual Machines |
 | ``/home/virt4`` | 250G | For Virtual Machines |
@@ -672,7 +733,7 @@ This is the first file server of VLSI Lab. It's used as a shadow server which mi
 | ``/home/local`` | 200G | local mount (sims, etc) |
 | ``/pdk`` | 100G | Mirrors /PDK from srv01  |
 | ``/cad`` | 400G | Mirrors /CAD from srv01 |
-| ``/home/nfs3`` | 100G | reserved for future use |
+| ``/home/nfs3`` | 100G | /CAD2 in clients for digital tools|
 | ``/home/nfs4`` | 100G | reserved for future use |
 
 
