@@ -432,7 +432,8 @@ read only = false
 - In this installation our host has multiple ethernet ports so we are going to dedicate one of the ports to the Virtual machine so the Virtual Machine looks as part of the host network instead of the default VMs behind a virtual NAT. This also does a nice load balancing on the ports. This part took some searching to get it working. Check this [Blog](https://getlabsdone.com/how-to-create-a-bridge-interface-in-centos-redhat-linux/).
 - Easiest way to configure the new one is to copy a working config and change the IP address (if static) and UUID.
   - `cd /etc/sysconfig/network-scripts`
-  - `cp ifcfg-em2 ifcfg-em2-orig` : backup the original file.
+  - `cp ifcfg-em2 ~/baks/ifcfg-em2-orig` : backup the original file.
+    - **NOTE** Do not copy backups in `/etc/sysconfig/network-scripts` since the Network Manager reads all the files and will make a mess of the network.
   - `cp ifcfg-em1 ifcfg-em2`
   - Update the unique params:
 
@@ -489,7 +490,11 @@ DNS2=8.8.8.8
   - Now you should see the volume `vm2-pool` in the Volume manager.
   - Select the volume and click the "+" sign
   - Give a name and select format (default "qcow2") and choose the size. 
-  - Now choose the volume and start the isntallation.
+  - Now choose the volume and start the installation.
+- After system reboot, from the VM console click "Show Virtual Hardware Detail" (A light bulb sign)
+  - Click the "NIC" hardware 
+  - Choose `Bridge br0` Network source.
+  - Device Model : `virtio`
 - After installation the network is going to be in DHCP mode, use `nmtui` to change it static and provide a inique IP address eg `192.168.6.31`.
 - Follow the steps on creating a new desktop to complete the setup.
 
