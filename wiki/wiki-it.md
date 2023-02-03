@@ -31,13 +31,12 @@ sort: 1
 ### Frequently Used Commands
 
 - **NOTE**: Keep this section in sync with /CAD/apps7/bin/LinuxRef.md
+
 - `yum provides libXss.so.1` : To **find** a package which __provides__ a certain library eg. `libXss.so.1`
-- **GIT**
-  - `git reset <file>` : undo changes
 - `umask 027` will result in files with 640 perms and dirs with 750 perm.
 - `unix-cmd > output.log 2> error.log` : redirection of **stdout to output.log** and **stderr to error.log** 
 - `chown -R <owner>:<group> <dir>` : Will recursively change __owner__ and __group__ of files and directories.
-- `chmod -R a+rX` : will recursively __append_ read/execute(rX) for all (a) ie. user/group/other directories (X) and append only read for files only. **NOTE** This will not change __dot__ files.
+- `chmod -R a+rX` : will recursively __append__ read/execute(rX) for all (a) ie. user/group/other directories (X) and append only read for files only. **NOTE** This will not change __dot__ files.
 - `chmod -R o-rwX` : will recursively __remove__ read/write/execute(rwX) for __others__.
 - `chmod -R g+r` : will recursively __append__ read for __groups__.
 - `tar -o ...` : -o option will overwrite the ownership to the one who is untaring right now.
@@ -50,7 +49,9 @@ sort: 1
 - If you have tar ball with no permission for "other" and the user and group does not exist:
   - `tar -o -xzvf file.tar.gz`
   - `chmod -R o+rX <root-dir>` : will recursivley add read perms for files and r+x for directories, for "others" 
-
+- `yum provides libXss.so.1` : To **find** a package which __provides__ a certain library eg. `libXss.so.1`
+- **GIT**
+  - `git reset <file>` : undo changes
 
 ### User Administration
 
