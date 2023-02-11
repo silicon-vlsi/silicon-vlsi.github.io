@@ -499,6 +499,12 @@ DNS2=8.8.8.8
 - Follow the steps on creating a new desktop to complete the setup.
 
 ### X-Server
+Tags: #xserver #vncserver
+
+**Useful Links**
+
+- [TigerVNC doc@Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/system_administrators_guide/ch-tigervnc)
+
 **XFCE on a CENTOS-7 VIRTUAL MACHINE**
    - **NOTE** `LXDE` display manager is not available on the CentOS repo.
    - Install the [Extra Package of Enterprise Liux (EPEL)](https://docs.fedoraproject.org/en-US/epel/): `$sudo yum install epel-release`
