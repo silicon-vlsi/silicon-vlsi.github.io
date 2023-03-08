@@ -313,7 +313,7 @@ sudo firewall-cmd --list-port
 - **Distributing the Keys**
 - If the SSH keys are used between the servers, make sure the public keys are appropriately added in `~/.ssh/authorized_keys`
 - Using `scp`, copy:
-  - `docosvm01:/etc/tinc/tincvpn1/hosts/docosvm01` to `vlsisrv01:/etc/tinc/tincvpn1/hosts/` 
+  - `docosvm01:/etc/tinc/tincvpn1/hosts/docosvm01` to `vlsisrv02:/etc/tinc/tincvpn1/hosts/` 
   - `vlsisrv02:/etc/tinc/tincvpn1/hosts/vlsisrv02` to `docosvm01:/etc/tinc/tincvpn1/hosts/` 
   - **Note**: Although the blog suggests to change the public IP of `docosvm01` to the VPN subnet IP, you don't have to.
 
@@ -323,6 +323,25 @@ sudo firewall-cmd --list-port
 - `sudo systemctl start tinc@tincvpn1` will start the daemon in the background.
 - `sudo systemctl enable tinc@tincvpn1` will start the daemon at startup. **FIXME** presently not starting at boot.
   
+
+**ADDING ANOTHER TINC SERVER**
+
+- If you want to add another _server_ say `docosvm02` for peer-to-peer access to the same client `vlsisrv02`:
+- Setup `docosvm02` just like `docosvm01` above.
+- Add 'ConnectTo' to the `vlsisrv02:/etc/tinc/tincvpn1/tinc.conf` to include `docosvm02` as well:
+
+```bash
+Name = vlsisrv02
+AddressFamily = ipv4
+Interface = tun0
+ConnectTo = docosvm01
+ConnectTo = docosvm02
+```
+
+- Copy the keys: `docosvm02:/etc/tinc/tincvpn1/hosts/docosvm02` to `vlsisrv02:/etc/tinc/tincvpn1/hosts/` 
+
+- Restart `tinc` on `vlsisrv02`: `sudo systemctl restart tinc@tincvpn1`
+- If all goes well, that's it!
 
 ### PPTP VPN client 
 
