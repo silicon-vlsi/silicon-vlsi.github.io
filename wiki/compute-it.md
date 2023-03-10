@@ -475,6 +475,23 @@ FIXME Refer a proper documentation for this and put some more detail in this doc
     * **NOTE** If you have more than 256 colors, you'll get an error. You can quantize it to 256 using `$ pnmquant 256 favicon.pnm > temp.pnm; mv temp.pnm favicon.pnm`
   * Convert using the the utility `ppmtowinicon` : `$ ppmtowinicon -output favicon.ico favicon.pnm`
 
+## Media
+
+### Audio-Video
+
+**YouTube DOWNLOAD**
+
+- `sudo curl -L https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp -o /usr/local/bin/yt-dlp`
+- `sudo chmod a+rx /usr/local/bin/yt-dlp`
+- `sudo yt-dlp -U` : To update
+- **NOTE** The `yt-dlp` and `youtube-dl` packages in Ubuntu 22.04 was broken as of 2023/03/10
+
+**EXTRACTING AUDIO FROM MP4**
+
+- Install `ffmpeg` : `sudo apt install ffmpeg`
+- To extract: `ffmpeg -i <file.mp4> out.mp3`
+- See script `~/bin/yt-extract`
+
 ## Open-Source
 
 **Resources**
