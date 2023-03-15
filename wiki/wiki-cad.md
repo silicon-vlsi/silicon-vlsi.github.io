@@ -97,7 +97,10 @@ sudo ufw allow 3389
 
 ## OpenROAD INSTALLATION
 
-**CentOS 7**
+**RESOURCES**
+- [OpenROAD Flow Scripts Tutorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html#configuring-the-design)
+
+**CentOS 7 INSTALLATION**
 
 - `cd; mkdir ORFS; cd ORFS`
 - `git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts`
@@ -106,3 +109,4 @@ sudo ufw allow 3389
 - `source /opt/rh/devtoolset-8/enable`
 - `source /opt/rh/llvm-toolset-7.0/enable`
 - `./build_openroad.sh --local`
+
