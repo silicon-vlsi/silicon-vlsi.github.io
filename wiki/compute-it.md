@@ -108,8 +108,9 @@ sudo ./aws/install
 
 - **Additional Packages**
   - To build pacakages from source install the essentials:
-    - `sudo apt instal build-essential`
-    - If you need the kernel headers: `sudo apt install linux-headers-'uname -r'`
+    - `sudo apt instal build-essential bison flex libx11-dev libxaw7-dev libtool libreadline-dev libncurses-dev automake autoconf texinfo`
+      - If you need the kernel headers: `sudo apt install linux-headers-'uname -r'`
+    - `sudo apt install texlive-font-utils ghostscript` : For `epstpdf`,....
 
 ### git
 
