@@ -498,6 +498,13 @@ DNS2=8.8.8.8
 - After installation the network is going to be in DHCP mode, use `nmtui` to change it static and provide a inique IP address eg `192.168.6.31`.
 - Follow the steps on creating a new desktop to complete the setup.
 
+
+#### Cloning a Virtual Machine
+
+- Easiest way to create a quick clone is to use the `virt-manager`, right-click on the VM (that is shutdown) and click "Clone".
+- Use defaults to create an exact clone but with the a seprate hardisk on the same directory as one used above.
+- Power up the clone first and change the **Hostname** and **IP Address**. Everything else should run as the parent VM. 
+
 ### X-Server
 Tags: #xserver #vncserver
 
@@ -684,7 +691,12 @@ menuentry 'Kickstart Installation of CentOS 7' \
   - Training Lab: `192.168.11.1-30`
   - Advanced VLSI Lab: `192.168.11.31-70`
   - DHCP: `192.168.11.71-220`
-  - Servers: `192.168.11.221-153` : SRV01-`221-`, SRV02-`229-`, SRV03-`237-`
+  - Servers: `192.168.11.221-153` : 
+    - SRV01: em1: `11.221` (File Server), em2: `11.222` (License Server)
+    - SRV02: em1: `11.229`, em2<-br0: `11.230`, em3: `--`, em4: `--`
+      - vm01: eth0<-br0 : `11.231`
+      - vm02: eth0<-br0 : `11.232`
+    - SRV03: en02: `--`, en03: `11.237`, en04: `--`, en05: `--`
   - Gateway: `192.168.11.254`
   - DNS: `10.3.208.1`, `8.8.8.8`
 

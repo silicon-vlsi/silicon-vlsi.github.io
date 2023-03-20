@@ -100,7 +100,7 @@ sudo ufw allow 3389
 **RESOURCES**
 - [OpenROAD Flow Scripts Tutorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html#configuring-the-design)
 
-**CentOS 7 INSTALLATION**
+**CentOS 7 LOCAL INSTALLATION**
 
 - `cd; mkdir ORFS; cd ORFS`
 - `git clone --recursive https://github.com/The-OpenROAD-Project/OpenROAD-flow-scripts`
@@ -109,4 +109,10 @@ sudo ufw allow 3389
 - `source /opt/rh/devtoolset-8/enable`
 - `source /opt/rh/llvm-toolset-7.0/enable`
 - `./build_openroad.sh --local`
-
+  - This will locally install all tools in the `tools` folder.
+- `source ./setup_env.sh` to load the environement in a `bash` shell. You will see a following message:
+  - `OPENROAD: <path>/OpenROAD-flow-scripts/tools/OpenROAD`
+- You can follow the [OpenROAD Flow Scripts Tutorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html#configuring-the-design) to start and continue with the flow.
+- For a quick check of the flow:
+  - `cd flow`
+  - `make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk` 
