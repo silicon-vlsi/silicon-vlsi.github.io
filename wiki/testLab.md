@@ -4,6 +4,14 @@ sort: 3
 
 # TEST LAB
 
+## FPGA
+
+### Spartan 6 Dev Board
+
+**Resources**
+- [AHMY SP6LX9 Lab Trainer Kit Technical Reference](AHMY_SP6LX9_LT_Spartan6-TechRef.pdf)
+
+
 ## Equipment
 
 ### HIMA Temperature Chamber 
