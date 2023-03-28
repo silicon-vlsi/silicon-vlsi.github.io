@@ -149,6 +149,116 @@ DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin PORT=1718
 
 - Start the license server.
 
+
+**INSTALLING A NEW FLEXNET SERVER**
+
+- **Documnets/Resources**
+  - **Cadence License Documentation** at ``$CDSDOC/license`` or ``/CAD/IC616/doc/license`` [Link-to-PDF](https://www.dropbox.com/s/ou3vda9vpjtnsys/license.pdf)
+  - **Mentor License Manual** [PDF](https://www.dropbox.com/s/7fii27aj97gow26/mgc_licen.pdf)
+  - Mentor AppNote MG576233 : Scripts for starting license server [PDF](https://www.dropbox.com/s/x5cnh4ubot5ahpz/AppNote-LicAutoStart.pdf PDF)
+  - Cadence Support Article on setup and debug of license server [Link](https://support.cadence.com/apex/ArticleAttachmentPortal?id=a1Od0000000sbWnEAI&pageName=ArticleContent)
+
+**Flexnet Licensing Components**
+
+All the Cadence and Mentor applications are FlexNet-enabled application that communicates with the license server, a license manager daemon that contacts the client applications and passes the connection to the appropriate vendor daemon that tracks the license status and a files that stores licensing data.
+
+- **FlexNet-Enabled Application Program**-- All the Cadence and Mentor applications eg. Virtuoso, Assura, Pyxis, etc.
+- **License Manager Daemon (lmgrd)**-- The lmgrd daemon handles initial contact with the client application programs and passes the connection to the appropriate vendor daemon. The ``lmgrd`` daemon also starts and restarts the vendor daemons. 
+ - **NOTE** It's best to run the same version of ``lmgrd`` as the vendor daemon ``mgcld/cdslmd``. Also two different versions of ``lmgrd`` can be run simultaneously for different tools. ``lmgrd`` is in almost all the bin directories of Cadence apps.: Copied the the bin directory from ``/cad/INCISIV102_lnx86/tools/bin`` to ``/CAD/licenseServers/cadence/lmtools-v11-7-0-0``
+ - For Mentor Graphics the ``lmgrd`` location is ``/CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl`` **NOTE**: ``*.ixl`` is for 32-bit OS and ``*.aol`` is for 64-bit OS. VLSI-SRV-001 is 32-bit RHEL 6.
+- **Vendor Daemon (mgcld/cdslmd)**-- The vendor daemon, ``mgcld/cdslmd``, keeps track of the licenses that are checked out. If the ``mgcld/cdslmd`` process terminates for any reason, all users lose their licenses but usually regain them automatically when ``lmgrd`` restarts ``mgcld/cdslmd``. The vendor daemon for Cadence and Mentor:
+ - ``/CAD/licenseServers/cadence/lmtools-v11-7-0-0/bin/cdslmd``
+ - ``/CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin/mgcld``
+- **License File**-- The license file is a text file where FlexNet stores licensing data. Vendor creates this license file, which contains information about the server and ``mgcld/cdslmd`` and at least one line of data, called the INCREMENT line, for each licensed product. Each INCREMENT line contains an encryption code that is based on data on that line, the host ID of the server(s), and other vendor-supplied data such as expiration date, count, and version. For Mentor this file can be downloaded from the support center. After getting the license file, you have to customize the first two lines:
+
+```bash
+#Cadence
+SERVER srv02 98BE9429134A 5280
+DAEMON cdslmd /CAD/licenseServers/cadence/lmtools-v11-7-0-0/bin/cdslmd PORT=5281
+
+#Mentor
+SERVER srv02 98BE9429134A 1717
+DAEMON mgcld /CAD/licenseServers/mentor/mgls_v9-16_5-1-0.ixl/bin PORT=1718
+```
+
+**NOTE** The server name (srv02 or IP) should be the same as the hostname.
+
+**NOTE** In CentOS 7 pretty much all ports are shut by default. So typically the DAEMON line doesn't have a port assigned so it picks an available free port but in CentOS 7, you have to specifically assign one using the PORT=<NUM> argument and open that port in the firewall.
+
+```bash
+sudo firewall-cmd --add-port=5280/tcp --permanent
+sudo firewall-cmd --add-port=5281/tcp --permanent
+sudo firewall-cmd --add-port=1717/tcp --permanent
+sudo firewall-cmd --add-port=1718/tcp --permanent
+sudo firewall-cmd --reload
+```
+
+**IMPORTANT NOTE** Keep the ``cdslmd`` version same as that provided originally with the license file else some applications may fail.
+
+- Current **license files** located at 
+ - ``/CAD/licenseServers/mentor/licFiles`` and ``/CAD/licenseServers/cadence/licFiles``
+- The current used license files are symbolic linked to:
+ - ``/CAD/licenseServers/mentor/license-current.dat`` and ``/CAD/licenseServers/cadence/license-current.dat``
+
+**Script for Automatically Starting the License Server**
+- For reasons of security, the ``lmgrd`` daemon should not be started as root. For the autostart of the license server script ``cdslic/mgclic``, a username of the same name is created as follows: 
+ - ``useradd -u 65535 -g 65534 -d / -s /bin/sh -c "License Server" cdslic`` The account has same group ID as user 'nobody', which limits the acess to system and network resources. Strongly advised not make this a NIS user account.
+ - As root change the password to a strong one.
+ - Since this is a non-priviledged user, make sure it can access the license file in read mode and the log file in read-write mode.
+ - Therefore, change the group of the log file ``/var/tmp/lmgrd.log`` to ``65534`` ie.:
+ - ``#chgrp 65534 /var/tmp/lmgrd.log``
+ - ``#chown cdslic /var/tmp/lmgrd.log``
+
+**NOTE**: The following method does not apply to CentOS 7.
+- Add the scripts ``cdslic/mgclic`` (Cadence/Mentor) in ``/etc/init.d`` and
+- change the permissions to ``rwxr-xr-x``: ``#chmod 755 /etc/init.d/[cdslic/mgclic]``
+- ``cd /etc/init.d`` and add the run level info to the system services ``#/sbin/chkconfig --add [cdslic/mgclic]``
+- To verify it will run at the desired levels: ``$/sbin/chkconfig --list [cdslic/mgclic]``
+- In the script you'll find ``#chkconfig: 345 99 30``. The values represent the run levels (``3,4,5``), the start order (99) and the stop order (30). **DO NOT** remove the commnet (#) from this line.
+- NOTE: not only this script starts on boot but also shuts down gracefully during shutdown. You can also start, stop, restart, query, etc. the server with the script. The command syntax is:
+ - ``service cdslic {start | stop | restart | status | lmver} `` where:
+ - ``start``: starts the server
+ - ``stop``: stops the server
+ - ``status``: status of the server
+ - ``restart``: restarts the server
+ - ``lmver``: Version of flexnet
+
+**RELEASING UNUSED LICENSES**
+
+- In order to check-in licenses that are sitting idle for a period of time, a file named in the format ``<vendor-daemon>.opt``, ``cdslmd.opt`` and ``mgcld.opt`` are placed in ``/CAD/licenseServers/cadence`` and ``/CAD/licenseServers/mentor`` for Cadence and Menotr repectively, with the following option:
+```bash
+# Comment
+TIMEOUTALL 3600
+```
+
+- This ensures all license features that are capable of TIMEOUT, are checked-in after 3600 secs (1 hour) of idle time.
+- A detail description of it can be found at the [Cadence Support](https://support.cadence.com/apex/ArticleAttachmentPortal?id=a1Od0000000nZpZ&pageName=ArticleContent)
+
+**SOME USEFUL COMMANDS NOT IN CDSLIC**
+
+- To remove a license from a user or a zombie process (do a lmstat and get all the info):
+
+```bash
+$lmremove <feature> <user> <host> <display>
+$lmremove Virtuoso_Schematic_Editor_XL amishra DT-005 :0.0
+```
+
+- Other useful commands:
+
+```bash
+$lic_error
+$lmdiag
+$lmhostid
+```
+
+**ENVIRONMENT VARIABLES FOR APPLICATION TO ACCESS THE SERVER**
+
+```bash
+$setenv LM_LICENSE_FILE 5280@VLSI-SRV-001
+$setenv CDS_LIC_LICENSE 5280@VLSI-SRV-001
+$set path (/CAD/IC616/tools.lnx86/bin:$path)
+```
+
 ### Setting up a Project
 
 - **CREATE A PROJECT USER**
