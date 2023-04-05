@@ -1,13 +1,41 @@
 # Advanced VLSI Laboratory, Silicon Institute of Technology, Bhubaneswar 
 
-The Advanced VLSI Laboratory is a Center of Excellence for training and research in the area of CMOS integrated circuits (IC) and electronic system design & manufacturing (ESDM). Our primary goal is to provide an ecosystem for fostering real-life, project-based learning for the next generation engineering students and fresh graduates aspiring to join the VLSI industry. This will allow our students to be industry ready, bridging a critical gap between the academia and industry.
+The Advanced VLSI Laboratory is a Center of Excellence (CoE) for training and R&D work in the area of CMOS integrated circuits (IC) and electronic system design & manufacturing (ESDM). The CoE's primary goal is to provide an ecosystem for fostering real-life, project-based learning for the next generation engineering students and fresh graduates aspiring to start a career in VLSI industry. This will allow our students to be industry ready, bridging a critical gap between the academia and industry.
 
 ## Capabilities
 
-- Execute turn-key projects using industry-standard integrated circuit technologies. This includes system design, circuit design, simulation and layout of mixed-signal IP blocks. Assembly of chip-level layout and full industrial-grade temperature (-40C to 125C) characterization.
-- Capable of design, layout and characterize industry-grade analog and digital IP blocks including but not limited to bandgap reference, analog-to-digital converters, digital-to-analog converters, Serial Protocol Interface (SPI), I2C, oscillators, Phase-Locked Loops (PLLs), SRAM, Linear regulators and switch-capacitor power management ICs.
+- **Training undergraduates and fresh hires** to make them industry-ready in various VLSI domains including **CMOS design and layout, PDK development, DRAM verification, standard-cell development**.
+- **Execute turn-key projects** using industry-standard integrated circuit technologies. This includes system design, circuit design, simulation and layout of **mixed-signal IP blocks**. Assembly of chip-level layout and full industrial-grade temperature (-40C to 125C) characterization.
+- Capable of design, layout and characterize industry-grade analog and digital IP blocks including but not limited to **bandgap reference, analog-to-digital converters, digital-to-analog converters, Serial Protocol Interface (SPI), I2C, oscillators, Phase-Locked Loops (PLLs), SRAM, Linear regulators and switch-capacitor power management ICs**.
 - NDA with leading semiconductor foundries including XFAB, TSMC, UMC with access ranging from 1um CMOS 600V process to 28nm LV CMOS process. 
-- Training undergraduates and fresh hires to make them industry-ready in various VLSI domains including CMOS design and layout, PDK development, DRAM verification, standard-cell development.
+
+## Industry Collaboration
+
+The primary goal is to collaborate with the industry and through various R&D and training activities, make our students industry-ready. We collaborate with various industry partners for R&D, training and fabrication activities. Our partners include:
+- [STMicroelectronics](https://www.st.com), Noida, India
+- [Micron Technology](https://www.micron.com), Hyderabad, India
+- [Boston Microtechnology, Greater Boston, USA](http://www.bostonmicrotek.com)
+- [Sevya Multimedia, Noida, India](https://www.sevyamultimedia.com)
+- [XFAB, Erfurt, Germany](https://www.xfab.com)
+- [Innatera Nanosystems B.V., Delft, The Netherlands](https://www.innatera.com)
+- [Muse Semiconductor, Colorado, USA](https://musesemi.com)
+- [VLSI Experts, Noida, India](https://www.vlsiexpert.com)
+
+## Resources
+
+- Faculties with wide ranging experience in industry and academia to teach, train and execute industry projects. [See Faculty Profiles Here](https://silicon-vlsi.github.io/content/people.html)
+- Collaboration with industry experts to fill expertise gaps in training and project execution.
+- Enterprise-grade Electronic Design Automation (EDA) tools from [Cadence Design Systems](https://www.cadence.com) and [Siemens EDA](https://eda.sw.siemens.com/en-US/) (Previously Mentor Graphics).
+- Collaboration with world-class foundries such as [XFAB](https://www.xfab.com) and [TSMC](https://www.tsmc.com) to fabricate our designed integrated circuits.
+- Enterprise-grade IT infrastructure:
+  - 2 Enterprise **NAS server** hosting all project, technology and EDA files.
+  - 40-Core **Compute server** for high-performance R&D work.
+  - 30-workstation **Advanced VLSI Lab** for research, training and hands-on workshops.
+  - 12-seater **Training Lab** equiped with 12 workstation and conferencing system for industry projects and trainings.
+  - All workstations and servers connected across the campus through a **fiber network** backbone.
+  - All workstations and servers running **CentOS linux OS** are manged centrally.
+- Full equipped test laboratory to conduct training and consulting for integrated circuit characterization.
+- A 8-seater **office space** for executing industry projects.
 
 ## Current and Past Activities
 
@@ -17,25 +45,3 @@ The Advanced VLSI Laboratory is a Center of Excellence for training and research
 - Undergraduate training in CMOS VLSI design and layout. 
 - Training new hires for industry project in various VLSI domains including simulation, layout, PDK design and DRAM verification.
 
-
-## Industry Collaboration
-Our primary goal is to collaborate with the industry and through various R&D and training activities, make our students industry-ready. We collaborate with various industry partners for R&D, training and fabrication activities. Our partners include:
-- STMicroelectronics, Noida, India
-- Boston Microtechnology, Greater Boston, USA
-- Innatera Nanosystems B.V., Delft, The Netherlands
-- XFAB, Erfurt, Germany
-- Muse Semiconductor, Colorado, USA
-- IMEC, Belgium
-- Sevya Multimedia, Noida, India
-- VLSI Experts, Noida, India
-
-## Resources
-- Faculties with wide ranging experience in industry and academia to teach, train and execute industry projects.
-- Collaboration with industry experts to fill expertise gaps in training and project execution.
-- Enterprise-grade Electronic Design Automation (EDA) tools from Cadence Design Systems and Mentor Graphics.
-- Collaboration with world-class foundries such as XFAB and TSMC to fabricate our designed integrated circuits.
-- Enterprise-grade 40-Core Compute server with an attached NAS server to provide a world-class IT infrastructure.
-- 30-seater training room for running hands on courses workshops.
-- 12-seater office-cum-conference room for conducting our industry projects and training.
-- Full equipped test laboratory to conduct training and consulting for integrated circuit characterization.
-- A 8-seater office space for executing industry projects.
