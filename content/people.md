@@ -10,7 +10,7 @@ sort: 3
 
 - [**Dr. Santunu Sarangi**](https://silicon.ac.in/wp-content/uploads/2022/04/SANTUNU-SARANGIFES19113.pdf), *Assistant Professor* • Ph.D., [IIT-Kharagpur](http://www.iitkgp.ac.in/) • M.Tech, [NIT-Rourkela](https://www.nitrkl.ac.in/) • 4 years of teaching experience • 8 years of research experience • 7 publication • 2 patents(filed) • *Research interest*: Mixed-signal VLSI design: High-Speed SerDES and low-power bandgap. :link: [LinkedIn](https://www.linkedin.com/in/santunu-sarangi-b731305b/)
 
-- **[Dr. Debasish Nayak**](https://silicon.ac.in/wp-content/uploads/2022/04/Debasish-NayakFES09523.pdf), *Sr. Assistant Professor* • Ph.D, NIT-Rourkela • M.Tech, BPUT-Rourkela • 10+ years of teaching experience • 8 years of research experience • 14 publication • *Research interest*: Mixed-signal VLSI design. Design, simulation and study of semiconductor dev. 
+- [**Dr. Debasish Nayak**](https://silicon.ac.in/wp-content/uploads/2022/04/Debasish-NayakFES09523.pdf), *Sr. Assistant Professor* • Ph.D, NIT-Rourkela • M.Tech, BPUT-Rourkela • 10+ years of teaching experience • 8 years of research experience • 14 publication • *Research interest*: Mixed-signal VLSI design. Design, simulation and study of semiconductor dev. 
 
 - [**Mr. Dhananjaya Tripathy**](https://silicon.ac.in/wp-content/uploads/2021/06/FES14844_Dhananjay-Tripathy.pdf), *Assistant Professor* • Ph.D. (cont.), NIT Rourkela, M.Tech, VSSUT-Rourkela • 4+ years of teaching experience • 4+ years of research experience • 4 publication • *Research interest*: Analog VLSI design. Design, simulation and study of semiconductor dev.
 
