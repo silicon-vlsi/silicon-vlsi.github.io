@@ -20,9 +20,9 @@ sort: 3
 
 - [**Mrs. Aradhana Raju**](https://silicon.ac.in/wp-content/uploads/2022/03/Aradhana-Raju.pdf), *Assistant Professor* • Ph.D. (cont.), [KIIT University](https://kiit.ac.in/), M.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 15+ years of teaching experience • 5+ years of research experience • 4 publication  • 1 patent  *Research interest*: VLSI design and semiconductor devices.
 
-- **Mr. Prasant Swain**, *Technical Asst.* Ph.D. (cont.), [BPUT Odisha](https://www.bput.ac.in/) • M.Tech, [BPUT Odisha](https://www.bput.ac.in/) B.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
+- **Mr. Prasant Swain**, *Technical Asst.* Ph.D. (cont.), [BPUT Odisha](https://www.bput.ac.in/) • M.Tech & B.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
-- **Mr. Prabhat Kumar Singh**, *Technical Asst.* Ph.D. (cont.), [BPUT Odisha](https://www.bput.ac.in/) • M.Tech, [BPUT Odisha](https://www.bput.ac.in/) B.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 13 years of academic experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
+- **Mr. Prabhat Kumar Singh**, *Technical Asst.* Ph.D. (cont.), [BPUT Odisha](https://www.bput.ac.in/) • M.Tech & B.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 13 years of academic experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
 # Trainees
 
