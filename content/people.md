@@ -14,9 +14,15 @@ sort: 3
 
 - [**Dr. Debasish Nayak**](https://silicon.ac.in/wp-content/uploads/2022/04/Debasish-NayakFES09523.pdf), *Sr. Assistant Professor* • Ph.D, [NIT Rourkela](https://www.nitrkl.ac.in/) • M.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 10+ years of teaching experience • 8 years of research experience • 14 publication • *Research interest*: Mixed-signal VLSI design. Design, simulation and study of semiconductor dev. 
 
-- [**Mr. Dhananjaya Tripathy**](https://silicon.ac.in/wp-content/uploads/2021/06/FES14844_Dhananjay-Tripathy.pdf), *Assistant Professor* • Ph.D. (cont.), [NIT Rourkela](https://www.nitrkl.ac.in/), M.Tech, [VSSUT Burla](https://www.vssut.ac.in/) • 10+ years of teaching experience • 5+ years of research experience • 4 publication • *Research interest*: Analog VLSI design. Design, simulation and study of semiconductor dev.
+- [**Mr. Sushant Kumar Pattanaik**](https://silicon.ac.in/wp-content/uploads/2022/03/Sushant-Kumar-Pattnaik.pdf), *Assistant Professor* • Ph.D. (cont.), [KIIT University](https://www.nitrkl.ac.in/), M.Tech, [VSSUT Burla](https://www.vssut.ac.in/) • 12+ years of teaching experience • 5+ years of research experience • 3+ years of industry experience • 10 publication • *Research interest*: Leakage minimization in adder circuits, SRAM design, area optimization of UART, embeded and IoT.
 
-- **Mr. Prasant Swain**, *Technical Asst.* Ph.D. (cont.) • M.Tech, B.Tech, BPUT-Rourkela • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
+- [**Mr. Dhananjaya Tripathy**](https://silicon.ac.in/wp-content/uploads/2021/06/FES14844_Dhananjay-Tripathy.pdf), *Assistant Professor* • Ph.D. (cont.), [NIT Rourkela](https://kiit.ac.in/), M.Tech, [NIT Rourkela](https://www.nitrkl.ac.in/) • 10+ years of teaching experience • 5+ years of research experience • 4 publication • *Research interest*: Analog VLSI design. Design, simulation and study of semiconductor devices.
+
+- [**Mrs. Aradhana Raju**](https://silicon.ac.in/wp-content/uploads/2022/03/Aradhana-Raju.pdf), *Assistant Professor* • Ph.D. (cont.), [KIIT University](https://kiit.ac.in/), M.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 15+ years of teaching experience • 5+ years of research experience • 4 publication  • 1 patent  *Research interest*: VLSI design and semiconductor devices.
+
+- **Mr. Prasant Swain**, *Technical Asst.* Ph.D. (cont.), [BPUT Odisha](https://www.bput.ac.in/) • M.Tech, [BPUT Odisha](https://www.bput.ac.in/) B.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 13 years of academic experience • 4 years of industry experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
+
+- **Mr. Prabhat Kumar Singh**, *Technical Asst.* Ph.D. (cont.), [BPUT Odisha](https://www.bput.ac.in/) • M.Tech, [BPUT Odisha](https://www.bput.ac.in/) B.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 13 years of academic experience • Area of Interest: VLSI Design Tool Technology, Embedded Systems Design and Linux system administration.
 
 # Trainees
 
