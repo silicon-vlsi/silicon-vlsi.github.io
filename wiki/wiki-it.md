@@ -34,7 +34,9 @@ sort: 1
 
 - `yum provides libXss.so.1` : To **find** a package which __provides__ a certain library eg. `libXss.so.1`
 - `umask 027` will result in files with 640 perms and dirs with 750 perm.
-- `unix-cmd > output.log 2> error.log` : redirection of **stdout to output.log** and **stderr to error.log** 
+- **Output Redirection:**:
+  - **bash**: `unix-cmd > output.log 2> error.log` : redirection of **stdout to output.log** and **stderr to error.log** 
+  - **sh**: `unix-cmd > output.log 2>&1` : redirection of **stdout and stderr output.log** 
 - `chown -R <owner>:<group> <dir>` : Will recursively change __owner__ and __group__ of files and directories.
 - `chmod -R a+rX` : will recursively __append__ read/execute(rX) for all (a) ie. user/group/other directories (X) and append only read for files only. **NOTE** This will not change __dot__ files.
 - `chmod -R o-rwX` : will recursively __remove__ read/write/execute(rwX) for __others__.
