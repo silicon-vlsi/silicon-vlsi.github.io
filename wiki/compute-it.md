@@ -226,6 +226,7 @@ Name = docosvm01
 AddressFamily = ipv4
 Interface = tun0
 ```
+**IMPORTANT NOTE**: The interface Name (`docosvm01`) has to **different** from the `hostname`.
 
 - Create a host config file (name same as above `Name`) `/etc/tinc/tincvpn1/hosts/docosvm01` with the following content:
 
@@ -263,6 +264,9 @@ sudo firewall-cmd --add-port=655/tcp --permanent
 sudo firewall-cmd --reload
 sudo firewall-cmd --list-port
 ```
+
+For **Ubuntu** you can use `ufw`: `sudo ufw allow 655/tcp ; sudo ufw reload`
+
 
 - **Confiuring the Client** `vlsisrv02`:
 - `sudo mkdir -p /etc/tinc/tincvpn1/hosts`
