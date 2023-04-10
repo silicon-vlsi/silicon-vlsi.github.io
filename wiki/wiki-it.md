@@ -677,11 +677,172 @@ Tags: #xserver #vncserver
    - [How To Set Up a Firewall Using FirewallD on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-firewall-using-firewalld-on-centos-7)
    
 
-### Remote Access
+### VPN
 
-**PPTP VPN CLIENT ON CentOS-7**
+#### Peer-to-Peer VPN using tinc
+
+**SETUP on CentOS 7**
+
+- Mostly followed this [blog](https://www.digitalocean.com/community/tutorials/how-to-install-tinc-and-set-up-a-basic-vpn-on-ubuntu-18-04) on Digital Ocean. **Note**: The blog is for Ubuntu 18.04
+- The setup was done on two linux machines: VM on cloud (`docosvm01`) and a server behind a firewall (`vlsisrv02`), both running CentOS 7.
+- Install `tinc` on both the machines: `sudo yum install tinc`
+  - Make sure the `epel` repo is enabled.
+- The setup's goal is to have `docosvm01` listen to connect requests from other clients eg. `vlsisrv02`. Primary reason being the VM has public address which avoids any NAT problems. The clients can be behind a NAT without any issues.
+- Create the configuration directory on both the machines (`tincvpn1` is name for this VPN conn):
+  - `sudo mkdir -p /etc/tinc/tincvpn1/hosts` 
+- Create the config file `/etc/tinc/tincvpn1/tinc.conf` with the following content:
+
+```bash
+Name = docosvm01
+AddressFamily = ipv4
+Interface = tun0
+```
+**IMPORTANT NOTE**: The interface Name (`docosvm01`) has to **different** from the `hostname`.
+
+- Create a host config file (name same as above `Name`) `/etc/tinc/tincvpn1/hosts/docosvm01` with the following content:
+
+```bash
+Address = <Public IP of the VM>
+Subnet = 10.0.0.1/32
+```
+
+- `sudo tincd -n tincvpn1 -K4096` : create the public/private pair keys
+  - Choose the default options. The public key will get autimatically appended to the host file.
+- Create the link-up script `/etc/tinc/tincvpn1/tinc-up` :
+
+```bash
+#!/bin/sh
+ip link set $INTERFACE up
+ip addr add 10.0.0.1/32 dev $INTERFACE
+ip route add 10.0.0.0/24 dev $INTERFACE
+```
+
+- Create the link-down script `/etc/tinc/tincvpn1/tinc-down` :
+
+```bash
+#!/bin/sh
+ip route del 10.0.0.0/24 dev $INTERFACE
+ip addr del 10.0.0.1/32 dev $INTERFACE
+ip link set $INTERFACE down
+```
+
+- `sudo chmod 755 /etc/tinc/tincvpn1/tinc-*`
+- Open the port `655` (not sure which so opened both tcp/udp):
+
+```bash
+sudo firewall-cmd --add-port=655/udp --permanent
+sudo firewall-cmd --add-port=655/tcp --permanent
+sudo firewall-cmd --reload
+sudo firewall-cmd --list-port
+```
+
+For **Ubuntu** you can use `ufw`: `sudo ufw allow 655/tcp ; sudo ufw reload`
+
+
+- **Confiuring the Client** `vlsisrv02`:
+- `sudo mkdir -p /etc/tinc/tincvpn1/hosts`
+- `/etc/tinc/tincvpn1/tinc.conf`:
+
+```bash
+Name = vlsisrv02
+AddressFamily = ipv4
+Interface = tun0
+ConnectTo = docosvm01
+```
+
+- `/etc/tinc/tincvpn1/hosts/vlsisrv02`:
+
+```bash
+Subnet = 10.0.0.2/32
+```
+
+- `sudo tincd -n tincvpn1 -K4096` : Create key pairs.
+
+- `/etc/tinc/tincvpn1/tinc-up`:
+
+```bash
+#!/bin/sh
+ip link set $INTERFACE up
+ip addr add 10.0.0.2/32 dev $INTERFACE
+ip route add 10.0.0.0/24 dev $INTERFACE
+```
+
+- `/etc/tinc/tincvpn1/tinc-down`:
+
+```bash
+#!/bin/sh
+ip route del 10.0.0.0/24 dev $INTERFACE
+ip addr del 10.0.0.2/32 dev $INTERFACE
+ip link set $INTERFACE down
+```
+
+- `sudo chmod 755 /etc/tinc/tincvpn1/tinc-*`
+- Open the ports `655`:
+
+```bash
+sudo firewall-cmd --add-port=655/udp --permanent
+sudo firewall-cmd --add-port=655/tcp --permanent
+sudo firewall-cmd --reload
+sudo firewall-cmd --list-port
+```
+
+- **Distributing the Keys**
+- If the SSH keys are used between the servers, make sure the public keys are appropriately added in `~/.ssh/authorized_keys`
+- Using `scp`, copy:
+  - `docosvm01:/etc/tinc/tincvpn1/hosts/docosvm01` to `vlsisrv02:/etc/tinc/tincvpn1/hosts/` 
+  - `vlsisrv02:/etc/tinc/tincvpn1/hosts/vlsisrv02` to `docosvm01:/etc/tinc/tincvpn1/hosts/` 
+  - **Note**: Although the blog suggests to change the public IP of `docosvm01` to the VPN subnet IP, you don't have to.
+
+- **Testing the setup**:
+  - `sudo tincd -n netname -D -d3` on both the servers will start the daemon in foreground (`-D`) in verbose debug mode (`-d3`).
+  - If it runs successfully you can `ping 10.0.0.2` from `docosvm01`
+- `sudo systemctl start tinc@tincvpn1` will start the daemon in the background.
+- `sudo systemctl enable tinc@tincvpn1` will start the daemon at startup. **FIXME** presently not starting at boot.
+  
+
+**ADDING ANOTHER TINC SERVER**
+
+- If you want to add another _server_ say `docosvm02` for peer-to-peer access to the same client `vlsisrv02`:
+- Setup `docosvm02` just like `docosvm01` above.
+- Add 'ConnectTo' to the `vlsisrv02:/etc/tinc/tincvpn1/tinc.conf` to include `docosvm02` as well:
+
+```bash
+Name = vlsisrv02
+AddressFamily = ipv4
+Interface = tun0
+ConnectTo = docosvm01
+ConnectTo = docosvm02
+```
+
+- Copy the keys: `docosvm02:/etc/tinc/tincvpn1/hosts/docosvm02` to `vlsisrv02:/etc/tinc/tincvpn1/hosts/` 
+
+- Restart `tinc` on `vlsisrv02`: `sudo systemctl restart tinc@tincvpn1`
+- If all goes well, that's it!
+
+#### PPTP VPN CLIENT ON CentOS-7
 
 - [See this site](https://zlthinker.github.io/Setup-VPN-on-CentOS) for step-by-step instruction on how to setup a PPTP VPN connection from CentOS 7.
+
+**SETUP on CentOS 7**
+
+- Followed this [blog](https://zlthinker.github.io/Setup-VPN-on-CentOS) to setup the VPN
+- Install PPTP: `sudo yum install pptp pptp-setup`
+- Configuration: `sudo pptpsetup –create bmt-229 –server [server address] –username [username] –password [pwd] –encrypt`
+- This command will create a file named `bmt-229` under `/etc/ppp/peers/` with server info written inside.
+- This command will also write your username and password into `/etc/ppp/chap-secrets`
+- Register the ppp_mppe kernel module: `sudo modprobe ppp_mppe`
+- Register the nf_conntrack_pptp kernel module: `sudo modprobe nf_conntrack_pptp`
+
+**USER GUIDE**
+    
+- Connect to VPN PPTP: `sudo pppd call config`
+- It will establish PPTP VPN connection. You can type command `ip a | grep ppp` to find the connection name (e.g. `ppp0`). No return indicates connection failure.
+- If any error, you can look into `/var/log/messages` for log info
+- Check IP routing table info: `route -n`
+- Add Network Segment to current connection: 
+  - `route add -net 192.168.11.0 netmask 255.255.255.0 dev ppp0`
+- You can now ping the destination to check the access
+- Disconnect the VPN: `sudo killall pppd`
 
 ### EDA Tools
 
