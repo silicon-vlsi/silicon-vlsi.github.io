@@ -964,12 +964,14 @@ menuentry 'Kickstart Installation of CentOS 7' \
   - Training Lab: `192.168.11.1-30`
   - Advanced VLSI Lab: `192.168.11.31-70`
   - DHCP: `192.168.11.71-220`
-  - Servers: `192.168.11.221-153` : 
+  - Servers: `192.168.11.221-249` : 
     - SRV01: em1: `11.221` (File Server), em2: `11.222` (License Server)
     - SRV02: em1: `11.229`, em2<-br0: `11.230`, em3: `--`, em4: `--`
       - vm01: eth0<-br0 : `11.231`
       - vm02: eth0<-br0 : `11.232`
     - SRV03: en02: `--`, en03: `11.237`, en04: `--`, en05: `--`
+  - Aruba WiFi Access Point: 11.250
+  - 11.251-253 is unused.
   - Gateway: `192.168.11.254`
   - DNS: `10.3.208.1`, `8.8.8.8`
 
