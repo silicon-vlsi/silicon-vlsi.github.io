@@ -99,6 +99,7 @@ sudo ufw allow 3389
 
 **RESOURCES**
 - [OpenROAD Flow Scripts Tutorial](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html#configuring-the-design)
+- [Vijayan's Video Tutorials](https://drive.google.com/drive/folders/1gAh5-9hbRfipVhKopFb635S3WDPAS3_k?usp=sharing)
 
 **CentOS 7 LOCAL INSTALLATION**
 
@@ -116,3 +117,14 @@ sudo ufw allow 3389
 - For a quick check of the flow:
   - `cd flow`
   - `make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk` 
+  
+  ** SIMPLE TUTORIAL **
+  
+  -  Students can go through __OpenROAD SK3 Flow Structure__ to __OpenROAD SK9 flow tutorial__ from  [Vijayan's Video Tutorials](https://drive.google.com/drive/folders/1gAh5-9hbRfipVhKopFb635S3WDPAS3_k?usp=sharing) for understanding ORFS flow and how to use GUI.
+  - It is similar to this [flow tutorial document](https://openroad-flow-scripts.readthedocs.io/en/latest/tutorials/FlowTutorial.html#configuring-the-design)
+  - For a simple example take `gcd` design (Flow complete in 3 mins) instead of `ibex` (Flow complete in 20 mins).
+  - You can follow a step-by-step flow eg.:
+    - `make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk synth`
+    - `make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk floorplan`
+    - `make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk finish`
+  
