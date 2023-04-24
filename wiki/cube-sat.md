@@ -7,6 +7,8 @@ sort: 3
 ## Resources
 - [NASA's Cube Sat site](https://www.nasa.gov/mission_pages/cubesats/index.html)
 - [cubesat.org](https://cubesat.org): All Cubesat/Testing/Regulatory info can be found here including third-party resources.
+- [Skyroot](https://skyroot.in/): Bangalore-based aerospace startup as launch vehicle provider including CubeSats.
+- [ToSpace](https://tospace.in): Bangalore-based aerospace firm focusing on the R&D of __LoRa-based PocketQube__ satellite service, dedicated to the promotion of STEM subjects in India.
 
 ## Literature
 - **Articles/Whitepapers/etc**
