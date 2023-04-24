@@ -5,6 +5,15 @@ sort: 2
 # CAD 
 This wiki contains all the details (except the private and propreitary info) for the CAD tools used at Advanced VLSI Lab at SIT, BBSR.
 
+## CORNER SIMULATION SCRIPTS
+
+**/CAD/apps7/bin/createCorners**
+
+This is a simulation independent script which generates a _corner list file_ from a simple input file. We will go through a simple example to demostrate the script. Before that, let's create a working directory say `~/work/sim` and `cd` to it. Let's copy few files to it:
+- `cp /CAD/apps7/msim/TB-xt018-IO_CELLS_FC5V-BBSUD4FC.cir TB-IO.cir`
+- `cp /CAD/apps7/bin/createCorners.par TB-IO.par`
+- 
+
 ## OPEN-SOURCE CUSTOM DESIGN FLOW 
 This section contains the instruction to setup open-source CAD tools (ngspice, Sue2, xschem, magic & netgen) in a Virtual Machine (Virtual Box) running a Ubuntu-based Linux distribution LXLE. Although the binaries of the CAD tools are compiled and tested on a 64-bit LXLE Linux distribution, it should run on other 64-bit Ubuntu or Debian based distribution like Xubuntu.
 
