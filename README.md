@@ -14,7 +14,7 @@ The Advanced VLSI Laboratory is a Center of Excellence (CoE) for training and R&
 The primary goal is to collaborate with the industry and through various R&D and training activities, make our students industry-ready. We collaborate with various industry partners for R&D, training and fabrication activities. Our partners include:
 - [STMicroelectronics](https://www.st.com), Noida, India
 - [Micron Technology](https://www.micron.com), Hyderabad, India
-- [Boston Microtechnology, Greater Boston, USA](http://www.bostonmicrotek.com)
+- [Boston Microtechnology](http://www.bostonmicrotek.com), Greater Boston, USA
 - [Sevya Multimedia, Noida, India](https://www.sevyamultimedia.com)
 - [XFAB, Erfurt, Germany](https://www.xfab.com)
 - [Innatera Nanosystems B.V., Delft, The Netherlands](https://www.innatera.com)
