@@ -7,12 +7,96 @@ This wiki contains all the details (except the private and propreitary info) for
 
 ## CORNER SIMULATION SCRIPTS
 
+**Quick-Start**
+- Follow the instruction below to copy some of the example files to your work location.
+- To create the corner-list file use the following command:
+  - `createCorners TB-IO.par > TB-IO.clist`
+- To create all the corner netlists in the directory say `cnrSims` with their appropriate corner variables:
+  - `createEldoRuns TB-IO.clist TB-IO.cir -simdir=cnrSims`
+- `cd cnrSims` to run the simulations.
+- To test or debgug one corner say first corner: `./runsim 0`
+- To run all corners: `./runsim all`
+  - **IMPORTANT** Don't kill the simulations by pressing `Ctrl-C`, instead use the `kill` command OR `pkill eldo` and repeat till corners are killed.
+- Below shows the detail description of the corner scripts.
+
 **/CAD/apps7/bin/createCorners**
 
 This is a simulation independent script which generates a _corner list file_ from a simple input file. We will go through a simple example to demostrate the script. Before that, let's create a working directory say `~/work/sim` and `cd` to it. Let's copy few files to it:
 - `cp /CAD/apps7/msim/TB-xt018-IO_CELLS_FC5V-BBSUD4FC.cir TB-IO.cir`
 - `cp /CAD/apps7/bin/createCorners.par TB-IO.par`
-- 
+- You can check the content of the parameter file `TB-IO.apr`:
+
+```
+// Example Parameter file
+temp    20,125
+VDDA    [4:1:5]
+library default;3s;tm,default;3s;wp
+{CLOAD,CZI}     1p;0.1p,10p;0.25p
+//
+simCMDoptions -alter 1 -aex
+``` 
+
+- Brief description of the parameter file:
+  - `//` Comments start with two forward slashes.
+  - `temp 20,125`: `temp` is a __reserved__ keyword for varying __temperature__. Values are seprated by __commas (,)__. For example in `Eldo/HSpice` this will result in two temperature: `.TEMP 20` and `.TEMP 125` 
+  - `VDDA [4:1:5]`: `VDDA` is netlist parameter. Here the values are given as vector range `[<start>:<increment>:<stop>]`. This example will result in two values `VDDA=4` and `VDDA=5`.
+  - `library default;3s;tm,default;3s;wp`: `library` is a __reserved__ keyword for varying library calls primarily __process__ variation. Since in a netlist there can be multiple library calls, the values are seprated by __semi-colon(;)__ and the corners are separated __commas (,)__. In this example when used with `TB-IO.cir` will result in following two corners:
+  - Corner-1:
+    - `.LIB <PATH>/config.lib default`
+    - `.LIB <PATH>/param.lib 3s`
+    - `.LIB <PATH>/xt018.lib tm`
+  - Corner-2:
+    - `.LIB <PATH>/config.lib default`
+    - `.LIB <PATH>/param.lib 3s`
+    - `.LIB <PATH>/xt018.lib wp` 
+  - `{CLOAD,CZI}     1p;0.1p,10p;0.25p`: If you want to vary more than one variable for each corner, you define a composite variable like this with the values for each corner seprated by __semi-colons (;)__ and corners serprated by __commas (,)__. In this example for `Eldo/HSpice` will result in two corners:
+    - Corner-1: `.PARAM CLOAD=1p CZI=0.1p`
+    - Corner-2: `.PARAM CLOAD=10p CZI=0.25p`
+  - The __ORDER__ of the variables are important. The varaiation starts from top to botomm for eg. in the above case, temperature will varied first, then `VDDA`, then `library` and so on.
+  - `simCMDoptions -alter 1 -aex`: `simCMDoptions` is a _optional_ __reserved__ keyword which is passed to the simulator command-line option.
+
+- Now you can create the _corner-list file_ by running the command:
+  -`createCorners TB-IO.par > TB-IO.clist`
+- If you view the corner-list file `TB-IO.clist`, the content will be something like this:
+
+```
+## Input Parameter file: "TB-IO.par",  Date/time: 12:20:6, 4-25-2023
+## Corner summary:
+##  temp: (2) 20 125
+##  VDDA: (2) 4 5
+##  library: (2) default;3s;tm default;3s;wp
+##  {CLOAD,CZI}: (2) 1p;0.1p 10p;0.25p
+## Total number of simulations: 16
+##
+## Simulator command-line options:
+simCMDoptions: { -alter 1 -aex}
+## Corner variables:
+cnrVars: {CLOAD,CZI,library,VDDA,temp}
+## Simulation cases:
+cnrSim[0]: {1p,0.1p,default;3s;tm,4,20}
+cnrSim[1]: {1p,0.1p,default;3s;tm,4,125}
+cnrSim[2]: {1p,0.1p,default;3s;tm,5,20}
+         :
+         :
+         :
+cnrSim[14]: {10p,0.25p,default;3s;wp,5,20}
+cnrSim[15]: {10p,0.25p,default;3s;wp,5,125}
+```
+- Brief description the corner list file:
+  - First few commented (`#`) lines show the summary: no of variables, how many variations and total number of simulations. 
+  - line starting with `simCMDoptions` contain anu simulator command-line options.
+  - `cnrVars` show all the corner variables.
+  - lines starting with `cnrSim[#]` shows the corner numer (`#`) followed by all the variables of the corners.
+- The corner-list file will be used by a _simulation-specific_ script to generate all the corner netlist along with a shell-script to run those corners.
+
+
+**/CAD/apps7/bin/createEldoRuns**:
+
+- For `Eldo`, use `createEldoRuns` as follows:
+  - `createEldoRuns TB-IO.clist TB-IO.cir -simdir=cnrSims`
+  - This will create all the corner netlists in the directory `cnrSims` with their appropriate corner variables.
+  - It will also create a shell-script `runsim` that you can run to simulate a single corner `./runsim 0` or all corners `./runsim all`
+
 
 ## OPEN-SOURCE CUSTOM DESIGN FLOW 
 This section contains the instruction to setup open-source CAD tools (ngspice, Sue2, xschem, magic & netgen) in a Virtual Machine (Virtual Box) running a Ubuntu-based Linux distribution LXLE. Although the binaries of the CAD tools are compiled and tested on a 64-bit LXLE Linux distribution, it should run on other 64-bit Ubuntu or Debian based distribution like Xubuntu.
