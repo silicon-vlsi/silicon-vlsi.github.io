@@ -187,7 +187,7 @@ sudo ufw allow 3389
   - [How to Create Multiple User Accounts in Linux](https://www.tecmint.com/create-multiple-user-accounts-in-linux/)
   - [Headless X Session with x11vnc](https://jasonmurray.org/posts/2021/x11vnc/)
   
-## Xilinx Design Suite
+## XILINX DESIGN SUITE
   This section will provide the steps to crea a new project in Xilinx Design Suite
 
 **Step 1:**
