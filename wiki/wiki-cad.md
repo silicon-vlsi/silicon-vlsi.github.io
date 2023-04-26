@@ -187,7 +187,65 @@ sudo ufw allow 3389
   - [How to Create Multiple User Accounts in Linux](https://www.tecmint.com/create-multiple-user-accounts-in-linux/)
   - [Headless X Session with x11vnc](https://jasonmurray.org/posts/2021/x11vnc/)
   
+## Xilinx Design Suite
+  This section will provide the steps to crea a new project in Xilinx Design Suite
 
+### Step 1:
+- Open Xilinx and create a ```New Project``` from the file menu.
+- Specify the name and path of the project you want to create and set the "Top level source type: HDL(Read Only)".
+- Under the **New Project Wizard** window, change the project specifications according to the board.
+- Some of the general specifications are:
+  - Property Name: Value
+  - Evaluation Development Board: None Specified
+  - Product Category: All
+  - Family: Spartan6
+  - Device: XC6SLX9
+  - Package: TQG144
+  - Speed: -3
+  - Top-Level Source Type: HDL
+  - Synthesis Tool: XST(VHDL/Verilog)  
+  - Simulator: ISim(VHDL/Verilog)
+  - Preferred Language: Verilog
+  - Property Specification in Project File: Store all values
+  - VHDL Source Analysis Standards: VHDL-93
+  - Manual Compile Order: **Leave the box(Y/N) unchanged**
+  - Enable Message Filtering: **Leave the box(Y/N) unchanged**
+ 
+### Step 2:
+- A new project navigation window will appear with desired file name.
+- In project navigation window, right click on the hierarchy code ```your file name``` and click on ```New Source``` and specify the name of the program.
+- After clicking next a **New source wizard** window will appear. 
+- In **New source wizard** window, click on ```Verilog Module```. Provide the file name and location and then click on ```Next```.
+- In the next window provide the input, output or bus ports(MSB/LSB) required in the code(optional).
+- In "New Source" window, write the respective verilog code and click on ```Save```.
+- Right click on the source file and click on ```Set as Top Module```. This enables us to test and synthesize the code completely, otherwise only syntax check is possible. If its already set then skip the step.  
+- Click on ```yes and continue```.
+- Click on ```Check Syntax``` in **Process Window** under ```Synthesis XST``` and run other simulation options.
+
+### Step 3: 
+- After syntax check, right click on the Verilog file name in the hierarchy and click on ```New Source```.
+- Click on ```Implementation Constraints File```. This enables us to create a new User Constraint File(.ucf).
+- Provide a name for the ucf file and click on ```Next```.  
+- Under **Process Window**, click on ```Edit Constraints``` to edit the UCF.
+- Edit the ucf providing all the required inputs and outputs providing the respective ports and ```Save``` the file.
+
+### Step 4:
+- Under **Process Window**, right click on ```Generate Programming File``` and click on ```Rerun all```. This will lead to the synthesis of the code. 
+- Now click on ```Configure Target Device```.
+- A dialogue box will appear click on ```Ok```.
+- An **ISE Impact** window will appear.
+- On the top-left corner click on the ```IMPACT Flows```.
+- Now double click on ```Boundary Scan```.
+- Right click on the center of the window and click on ```Initialize Chain```. This will establish a relation between the PC and the FPGA board.
+
+### Step 5:
+- Open the AHMY software from the task bar. 
+  - Click on ```Connect```.
+  - Click on ```Browse``` and open the .bit file created in the specified location.
+  - Click on ```Show```.
+  - Then click on ```Download```.
+  - Switch on the respective switches on FPGA Board used for implementation of the design.
+  
 ## OpenROAD INSTALLATION
 
 **RESOURCES**
