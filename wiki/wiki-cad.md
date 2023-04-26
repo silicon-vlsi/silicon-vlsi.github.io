@@ -188,7 +188,7 @@ sudo ufw allow 3389
   - [Headless X Session with x11vnc](https://jasonmurray.org/posts/2021/x11vnc/)
   
 ## XILINX DESIGN SUITE
-  This section will provide the steps to crea a new project in Xilinx Design Suite
+  This section will provide the steps to create a new project in Xilinx Design Suite
 
 **Step 1:**
 - Open Xilinx and create a ```New Project``` from the file menu.
