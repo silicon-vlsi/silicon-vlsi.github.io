@@ -190,7 +190,7 @@ sudo ufw allow 3389
 ## Xilinx Design Suite
   This section will provide the steps to crea a new project in Xilinx Design Suite
 
-### Step 1:
+** Step 1:
 - Open Xilinx and create a ```New Project``` from the file menu.
 - Specify the name and path of the project you want to create and set the "Top level source type: HDL(Read Only)".
 - Under the **New Project Wizard** window, change the project specifications according to the board.
