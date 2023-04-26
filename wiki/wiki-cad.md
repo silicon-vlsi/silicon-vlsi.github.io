@@ -246,7 +246,7 @@ sudo ufw allow 3389
   - Then click on ```Download```.
   - Switch on the respective switches on FPGA Board used for implementation of the design.
   
-# PCB DESIGN USING EAGLE
+## PCB DESIGN USING EAGLE
 Eagle is a popular electronic design automation (EDA) software that is widely used in the industry for designing printed circuit boards (PCBs). Follow the steps instructions to get started with Eagle software.
 **Step 1: Download and Install Eagle Software**
 - [Go to the Eagle website](https://www.autodesk.com/products/eagle/free-download) and click on the **Download Now** button.
