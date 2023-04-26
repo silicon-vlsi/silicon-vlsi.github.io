@@ -211,7 +211,7 @@ sudo ufw allow 3389
   - Manual Compile Order: **Leave the box(Y/N) unchanged**
   - Enable Message Filtering: **Leave the box(Y/N) unchanged**
  
-### Step 2:
+**Step 2:**
 - A new project navigation window will appear with desired file name.
 - In project navigation window, right click on the hierarchy code ```your file name``` and click on ```New Source``` and specify the name of the program.
 - After clicking next a **New source wizard** window will appear. 
@@ -222,14 +222,14 @@ sudo ufw allow 3389
 - Click on ```yes and continue```.
 - Click on ```Check Syntax``` in **Process Window** under ```Synthesis XST``` and run other simulation options.
 
-### Step 3: 
+**Step 3:** 
 - After syntax check, right click on the Verilog file name in the hierarchy and click on ```New Source```.
 - Click on ```Implementation Constraints File```. This enables us to create a new User Constraint File(.ucf).
 - Provide a name for the ucf file and click on ```Next```.  
 - Under **Process Window**, click on ```Edit Constraints``` to edit the UCF.
 - Edit the ucf providing all the required inputs and outputs providing the respective ports and ```Save``` the file.
 
-### Step 4:
+**Step 4:**
 - Under **Process Window**, right click on ```Generate Programming File``` and click on ```Rerun all```. This will lead to the synthesis of the code. 
 - Now click on ```Configure Target Device```.
 - A dialogue box will appear click on ```Ok```.
@@ -238,7 +238,7 @@ sudo ufw allow 3389
 - Now double click on ```Boundary Scan```.
 - Right click on the center of the window and click on ```Initialize Chain```. This will establish a relation between the PC and the FPGA board.
 
-### Step 5:
+**Step 5:**
 - Open the AHMY software from the task bar. 
   - Click on ```Connect```.
   - Click on ```Browse``` and open the .bit file created in the specified location.
