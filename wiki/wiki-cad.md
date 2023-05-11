@@ -17,6 +17,7 @@ This wiki contains all the details (except the private and propreitary info) for
 - To test or debgug one corner say first corner: `./runsim 0`
 - To run all corners: `./runsim all`
   - **IMPORTANT** Don't kill the simulations by pressing `Ctrl-C`, instead use the `kill` command OR `pkill eldo` and repeat till corners are killed.
+- After running all the corners, use the script `xtractEldoRuns` to extract all the measured parameters from the corners runs and report in `.csv` format along with the min/max for each measures.
 - Below shows the detail description of the corner scripts.
 
 **/CAD/apps7/bin/createCorners**
@@ -97,6 +98,19 @@ cnrSim[15]: {10p,0.25p,default;3s;wp,5,125}
   - This will create all the corner netlists in the directory `cnrSims` with their appropriate corner variables.
   - It will also create a shell-script `runsim` that you can run to simulate a single corner `./runsim 0` or all corners `./runsim all`
 
+
+**/CAD/apps7/bin/xtractEldoRuns**:
+
+This script is used to extract results from a Eldo corner run and display them in a `.csv` format. This script requires two files: the _Eldo netlist_ that contains all the `EXTRACT` statements and the _corner-list_ file that was created by the script `createCorners`.  You also should have run all corners using the `createEldoCorners`.
+
+- _Usage_: `xtractEldoRuns <corner-list file> <netlist> [-simdir=<SIM DIR> typCnrNum=<CnrSimNum> -outCol -ext=aex ]`
+  - `<corner-list>`: Name of the file containg all the corner details created using `createCorners`
+  - `<netlist>`:  The Eldo/Spice netlist from which the `EXTRACT` stmnts are read from.
+  - `-simdir=<>`:  [Optional] argument for specifying the directory with all the corner runs.  Default: Current directory.
+  - `-typCnrNum=<>`: [Optional] arg to specify the corner number which will be considered as typical corner. Default: 0
+  - `-outCol`:    Optional arg, if set, each corner will be displayed as a coloumn instead of a row (default)
+  - `-ext=<str>`: Optional arg to change the extension of the file from which the `EXTRACT` labels are read. Deafult: aex
+- _Example_: `xtractEldoRuns TB-IO.clist TB-IO.cir -simdir=cnrSims -typCnrNum=6 -outCol -ext=log > TB-IO-tranient.csv`
 
 ## OPEN-SOURCE CUSTOM DESIGN FLOW 
 This section contains the instruction to setup open-source CAD tools (ngspice, Sue2, xschem, magic & netgen) in a Virtual Machine (Virtual Box) running a Ubuntu-based Linux distribution LXLE. Although the binaries of the CAD tools are compiled and tested on a 64-bit LXLE Linux distribution, it should run on other 64-bit Ubuntu or Debian based distribution like Xubuntu.
