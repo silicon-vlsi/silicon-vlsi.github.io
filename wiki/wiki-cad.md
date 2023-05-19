@@ -261,6 +261,7 @@ sudo ufw allow 3389
   - Switch on the respective switches on FPGA Board used for implementation of the design.
   
 ## PCB DESIGN USING EAGLE
+
 Eagle is a popular electronic design automation (EDA) software that is widely used in the industry for designing printed circuit boards (PCBs). Follow the steps instructions to get started with Eagle software.
   
 **Step 1: Download and Install Eagle Software**
@@ -313,12 +314,21 @@ Once you have created a schematic, the next step is to design the PCB board or l
 - Add vias and through-holes as needed.
 - Some more features are Polygon, ratsnest, renaming and changing the value all you can do using the tools available on the left hand side of the screen.
 - Save your PCB design by clicking on **File** and then **Save**
-- Before finalizing the design, check the design rules. Design rules ensure that the board meets the manufacturer's specifications. Click on **DRC** and run the check.
+- Before finalizing the design, check the design rules. Design rules ensure that the board meets the manufacturer''s specifications. Click on **DRC** and run the check.
+
   
 **Step 5: Exporting the Design**
 After completing the design, export it in the required format. Gerber files are the standard file format used by manufacturers. Click on **File > Cam processor** and save the files.
   
-  
+** RESOURCES **
+- Great tutorials at [Sparkfun](https://sparkfun.com)
+  - [Eagle Schematic](https://learn.sparkfun.com/tutorials/using-eagle-schematic/all)
+  - [Eagle PCB Layout](https://learn.sparkfun.com/tutorials/using-eagle-board-layout)
+  - [Install and Setup Eagle](https://learn.sparkfun.com/tutorials/how-to-install-and-setup-eagle)
+  - [Creating SMD PCB](https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd)
+  - [Creating SMD footprints](https://learn.sparkfun.com/tutorials/designing-pcbs-smd-footprints)
+  - [Creating Custom Footprints](https://learn.sparkfun.com/tutorials/making-custom-footprints-in-eagle)
+
 ## OpenROAD INSTALLATION
 
 **RESOURCES**
