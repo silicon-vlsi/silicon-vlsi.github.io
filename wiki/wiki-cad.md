@@ -261,6 +261,7 @@ sudo ufw allow 3389
   - Switch on the respective switches on FPGA Board used for implementation of the design.
   
 ## PCB DESIGN USING EAGLE
+
 Eagle is a popular electronic design automation (EDA) software that is widely used in the industry for designing printed circuit boards (PCBs). Follow the steps instructions to get started with Eagle software.
   
 **Step 1: Download and Install Eagle Software**
@@ -313,12 +314,21 @@ Once you have created a schematic, the next step is to design the PCB board or l
 - Add vias and through-holes as needed.
 - Some more features are Polygon, ratsnest, renaming and changing the value all you can do using the tools available on the left hand side of the screen.
 - Save your PCB design by clicking on **File** and then **Save**
-- Before finalizing the design, check the design rules. Design rules ensure that the board meets the manufacturer's specifications. Click on **DRC** and run the check.
+- Before finalizing the design, check the design rules. Design rules ensure that the board meets the manufacturer''s specifications. Click on **DRC** and run the check.
+
   
 **Step 5: Exporting the Design**
 After completing the design, export it in the required format. Gerber files are the standard file format used by manufacturers. Click on **File > Cam processor** and save the files.
   
-  
+** RESOURCES **
+- Great tutorials at [Sparkfun](https://sparkfun.com)
+  - [Eagle Schematic](https://learn.sparkfun.com/tutorials/using-eagle-schematic/all)
+  - [Eagle PCB Layout](https://learn.sparkfun.com/tutorials/using-eagle-board-layout)
+  - [Install and Setup Eagle](https://learn.sparkfun.com/tutorials/how-to-install-and-setup-eagle)
+  - [Creating SMD PCB](https://learn.sparkfun.com/tutorials/designing-pcbs-advanced-smd)
+  - [Creating SMD footprints](https://learn.sparkfun.com/tutorials/designing-pcbs-smd-footprints)
+  - [Creating Custom Footprints](https://learn.sparkfun.com/tutorials/making-custom-footprints-in-eagle)
+
 ## OpenROAD INSTALLATION
 
 **RESOURCES**
@@ -342,6 +352,32 @@ After completing the design, export it in the required format. Gerber files are 
   - `cd flow`
   - `make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk` 
   
+**SYSTEM-WIDE INSTALLATION**
+
+- After compiling the tools, `tar` the `OpenROAD-flow-scripts` directory and copy to the `srv03.vlsi.silicon.ac.in`
+- Digital tools are installed in `/CAD2` which is mounted from `srv03` from `/cad/CAD2`
+- Untar the ORFS tarball in `/cad/CAD2/opensrc`
+- `cd <ORFS-PATH>/OpenROAD-flow-scripts; sudo ./etc/DependencyInstaller.sh` : Installs all required dependencies.
+- create a `modulefile` with the following env variables:
+
+```csh
+set  orfsroot  /CAD2/opensrc/OpenROAD-flow-scripts/tools
+setenv  OPENROAD $orfsroot/OpenROAD
+append-path PATH $orfsroot/install/OpenROAD/bin:$orfsroot/install/yosys/bin:$orfsroot/install/LSOracle/bin
+
+```
+
+**QUICK TEST**
+
+- The digital flow test in the ORFS directory is about 1G so don't run the test flow in your home directory so you don't run out disk space.
+- `mkdir -p /home/local/simulation/<USER>/ORFS` and `cd` to that directory.
+- `tar -xzf <PATH-TO-TARBALL>`
+- `cd flow`
+- `module load tools/opensrc/openROAD`
+- `make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk ` (complete in about 3 min)
+- `make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk ` (complete in about 20 min)
+
+
 **SIMPLE TUTORIAL**
   
   -  Students can go through __OpenROAD SK3 Flow Structure__ to __OpenROAD SK9 flow tutorial__ from  [Vijayan's Video Tutorials](https://drive.google.com/drive/folders/1gAh5-9hbRfipVhKopFb635S3WDPAS3_k?usp=sharing) for understanding ORFS flow and how to use GUI.
