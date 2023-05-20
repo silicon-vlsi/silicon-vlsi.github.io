@@ -352,6 +352,32 @@ After completing the design, export it in the required format. Gerber files are 
   - `cd flow`
   - `make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk` 
   
+**SYSTEM-WIDE INSTALLATION**
+
+- After compiling the tools, `tar` the `OpenROAD-flow-scripts` directory and copy to the `srv03.vlsi.silicon.ac.in`
+- Digital tools are installed in `/CAD2` which is mounted from `srv03` from `/cad/CAD2`
+- Untar the ORFS tarball in `/cad/CAD2/opensrc`
+- `cd <ORFS-PATH>/OpenROAD-flow-scripts; sudo ./etc/DependencyInstaller.sh` : Installs all required dependencies.
+- create a `modulefile` with the following env variables:
+
+```csh
+set  orfsroot  /CAD2/opensrc/OpenROAD-flow-scripts/tools
+setenv  OPENROAD $orfsroot/OpenROAD
+append-path PATH $orfsroot/install/OpenROAD/bin:$orfsroot/install/yosys/bin:$orfsroot/install/LSOracle/bin
+
+```
+
+**QUICK TEST**
+
+- The digital flow test in the ORFS directory is about 1G so don't run the test flow in your home directory so you don't run out disk space.
+- `mkdir -p /home/local/simulation/<USER>/ORFS` and `cd` to that directory.
+- `tar -xzf <PATH-TO-TARBALL>`
+- `cd flow`
+- `module load tools/opensrc/openROAD`
+- `make DESIGN_CONFIG=./designs/sky130hd/gcd/config.mk ` (complete in about 3 min)
+- `make DESIGN_CONFIG=./designs/sky130hd/ibex/config.mk ` (complete in about 20 min)
+
+
 **SIMPLE TUTORIAL**
   
   -  Students can go through __OpenROAD SK3 Flow Structure__ to __OpenROAD SK9 flow tutorial__ from  [Vijayan's Video Tutorials](https://drive.google.com/drive/folders/1gAh5-9hbRfipVhKopFb635S3WDPAS3_k?usp=sharing) for understanding ORFS flow and how to use GUI.
