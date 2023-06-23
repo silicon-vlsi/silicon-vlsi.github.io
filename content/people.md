@@ -94,6 +94,8 @@ sort: 3
 
 - **Swayam Swroop Ojha**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2024 Batch* • Doing traing with Advanced VLSI Lab in Digital and Analog VLSI Circuit Design domain • Project: Design and implementation of a simple 8-bit MIPS Microprocessor. • :link: [LinkedIn](https://www.linkedin.com/in/swayam-swroop-ojha-1a573121b/)
 
+## Past Trainees
+
 - **Debarchan Swain**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of I/O circuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/debarchan-swain-0511a2191) 
 
 - **Rudra Narayan Sahu**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design • Project: Design and Implementation of I/O circuits in 180nm CMOS technology. • :link: [LinkedIn](https://www.linkedin.com/in/rnsahu/)
@@ -121,8 +123,6 @@ sort: 3
 - **Divyajit Swain**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Analog and Mixed Signal IC Design domain • :link: [LinkedIn](https://www.linkedin.com/in/dibyajit-swain-9278b5228/)
 
 - **Puja Kumari**, *BTech (ECE), [Silicon Institute of Technology, Bhabaneswar](https://silicon.ac.in/bbsr-home/) 2023 Batch* • Doing training at Advanced VLSI Lab in Digital Design and Verification • Project: Design and Implementation of Low-power bandgap reference in 180nm CMOS Technology.  • :link: [LinkedIn](https://www.linkedin.com/in/puja-kumari-252119239/) 
-
-## Past Trainees
 
 - **Subham Rath**, *BTech: [SIT Bhubaneswar](https://silicon.ac.in/bbsr-home/), 2022 Batch,* working as a CAD Engineer at [Micron Technology](https://in.micron.com/) • Trained in Analog VLSI Circuit and Layout design. [gitHub-page](https://github.com/SubhamRath) • :link: [LinkedIn](https://www.linkedin.com/in/srath01)
 
