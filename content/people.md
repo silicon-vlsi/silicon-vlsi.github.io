@@ -10,7 +10,7 @@ sort: 3
 
 - [**Dr. Prakash Rout**](https://silicon.ac.in/wp-content/uploads/2021/06/FAS02037.pdf), *Professor* • Ph.D., [NIT Rourkela](https://www.nitrkl.ac.in/) • M.Tech., [KIIT University](https://kiit.ac.in/) • 16+ years of teaching experience • 12 years of research experience • 20 publication • *Research interest*: Mixed Signal VLSI Design, simulation of semiconductor devices.
 
-- [**Dr. Biswajit Baral**](https://silicon.ac.in/wp-content/uploads/2022/03/Biswajit-Baral.pdf), *Associate Professor* • Ph.D., [MAKAUT](https://makautwb.ac.in/) • M.Tech., [BPUT Odisha](https://www.bput.ac.in/) • 16+ years of teaching experience • 12 years of research experience • 230 publication • *Research interest*: VLSI Design, semiconductor devices modeling and simulation study.
+- [**Dr. Biswajit Baral**](https://silicon.ac.in/wp-content/uploads/2022/03/Biswajit-Baral.pdf), *Associate Professor* • Ph.D., [MAKAUT](https://makautwb.ac.in/) • M.Tech., [BPUT Odisha](https://www.bput.ac.in/) • 16+ years of teaching experience • 12 years of research experience • 30 publication • *Research interest*: VLSI Design, semiconductor devices modeling and simulation study.
 
 - [**Dr. Debasish Nayak**](https://silicon.ac.in/wp-content/uploads/2022/04/Debasish-NayakFES09523.pdf), *Sr. Assistant Professor* • Ph.D, [NIT Rourkela](https://www.nitrkl.ac.in/) • M.Tech, [BPUT Odisha](https://www.bput.ac.in/) • 10+ years of teaching experience • 8 years of research experience • 14 publication • *Research interest*: Mixed-signal VLSI design. Design, simulation and study of semiconductor dev. 
 
