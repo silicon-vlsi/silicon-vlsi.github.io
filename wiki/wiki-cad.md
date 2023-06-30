@@ -5,6 +5,118 @@ sort: 2
 # CAD 
 This wiki contains all the details (except the private and propreitary info) for the CAD tools used at Advanced VLSI Lab at SIT, BBSR.
 
+## CADENCE
+
+### Ocean
+
+**Quick Command Reference**
+
+- `openResults("/simDir/input.raw")`: open the simulation results from the simulation directory.
+  - `results()`: Shows available results in the current opened result.
+- `selectResult('tran/'ac/etc)`: select one of the available results.
+  - `outputs()`: shows the available output nodes in the current selected simulation type (ie. ac/tran/etc).
+- `plot(v("out1") v("out2") ?expr list("legend1" "legend2")`
+- `plot(vout ?strip list(2))`: Puts the plot in the current window but second strip. Helpful when you have a bunch of plots and you want to add another one in a separate strip.
+
+**Procedure**:
+
+```
+procedure( procName(arg1 arg2)
+    prog( (localVar1 localVar2)
+        <ocean statements>
+        return(var)
+    )
+)
+```
+
+**Ocean Functions**
+- **gainMargin**: `getData("gainMargin" ?result "stb_margin")`
+  - **NOTE** For PSTB, you need evaluate the above function at the 0th harmonic ie. `value(getData("gainMargin" ?result "pstb_margin") 0)`.
+- **phaseMargin**: `getData("phaseMargin" ?result "stb_margin")`
+  - See note for gainMargin.
+- **stb/pstb loopGain**: `getData("loopGain" ?result "stb/pstb")`
+- **Onoise**: `getData("out" ?result "pnoise/noise")`
+- **DC Operating Points**: `pv("I0.I1.Mdev1/V1" "id/vth/vds/i/etc" ?result "dcOpInfo" ?resultsDir "sims/input_0.raw")`
+- **Integrated Nosie**: `sqrt(integ(v("/out")**2))`
+- **Noise Summary**: `noiseSummary('spot/integrated ?resultsDir "sims/input.raw" ?result 'noise ?output "noiseSum.txt" ?frequency 1 ?noiseUnit "V" ?truncateType 'top ?truncateData 16 ?deviceType 'all)`
+  - **NOTE1** you can extract the summary of one of the sweep values by passing `?paramValues 1.0(say)`. See `noiseSummarySweep()` to see the usage.
+  - **NOTE2** When the __noise Unit__ is set to `V`, the percentage reported is as percent of total power ie. v_n = \sqrt{x} v_t. where v_n is the noise reported noise of each device in V, x is the reported percentage and v_t is the total power in `V`. Therefore, when plotting the contribution in `V`, the differences are compressed due to the square-root relation.
+    * **NOTE-3 (Weight File Format)**: The weight file can be magnitude(mag)(**IMPORTANT: weight of the noise power**) or decibels(dB) format:
+
+```
+mag
+10, 0.1
+20, 0.12
+.
+```
+
+```
+db
+10, -20
+20, -30
+.
+```
+
+**EXAMPLES**:
+- `noiseSummary( 'spot ?resultsDir "/usr/simulation/lowpass/spectre/schematic" ?result 'noise ?frequency 100M )`
+  - Prints a report for a spot noise analysis at a frequency of 100M.
+- `noiseSummary( 'integrated ?resultsDir "/usr/simulation/lowpass/spectre/schematic" ?result 'noise )`
+  - Prints a report for an integrated noise analysis for the results from a different run (stored in the schematic directory).
+- `noiseSummary('integrated ?truncateType 'none ?digits 10 ?weightFile "./weights.dat")`
+  - Prints the weighted noise for an integrated noise analysis using information in the weight file weights.dat.
+- `noiseSummary('integrated ?output "./NoiseSum1" ?noiseUnit "V" ?truncateData 20 ?truncateType 'top ?from 10 ?to 10M ?deviceType list("bjt" "mos" "resistor"))`
+  - Prints a report for an integrated noise analysis in the frequency range 10-10M for 20 components with deviceType bjt, mos or resistor.
+- `noiseSummary( 'integrated ?from 1 ?to 100M  ?truncateType 'top ?truncateData 20 ?deviceType 'all ?noiseUnit "V^2" ?output "./filename.ns" ?paramValues list(2.47e-9))`
+  - Prints a report for an integrated noise analysis at a specific swept value.
+- **Unity GainBandwidth**: `cross(db20(getData("loopGain" ?result "stb")) 0 1 "either")`
+- **3-db bandwidth**: `bandwidth(v("output") 3 "low")`
+- **delay**: `delay(?wf1 wave1 ?value1 thresh1 ?edge1 'rising ?nth1 nth_rise_edge ?wf2 wave2 ?value2 thresh2 ?edge2 'rising ?nth2 nth_rise_edge )`
+- **ocnPrint**: `ocnPrint(?output "out.dat"|pport wave1 wave2 .. ?numberNotation 'engineering)`
+  - Do not confuse this with the local corner script 'OcnPrint'
+- **display**: `display(object)` eg. display(gainMargin)
+- **printf**: C-like.
+
+[FIXME: change the rest of the Ocean formating from dokuwiki to markdown]
+
+===== Functions for OcnPrint =====
+To use the functions, first load in your icw window or put in your .cdsinit:
+<code>
+load("/home/srout/work/ocean/functions/freqUsedFns.il")
+</code>
+The following functions will be loaded:
+==== stbSummary ====
+<code>
+stbSummary(?stbSim 'stb ?DCgainFreq 100 )
+</code>
+**Description**: This function when passed to ''OcnPrint'', it returns a string for each corner containing the Phase Margin, Gain Margin, Unity Gain Bandwidth and the DC gain.\\
+**Arguments**:
+  * ''?stbSim'' : The simulation analysis type ie. ''stb''(default) or ''pstb''.
+  * ''?DCgainFreq'' : The frequency (in Hz) at which the gain is calculated. default: 100
+**Output**: string eg. '' "PhaseMargin(deg)\t GainMargin(dB)\t DCgain(dB)\t 3-db Bandwidth(Hz)\t  Unity-Gain Bandwidth(Hz)" ''\\
+**Example**:
+<code>
+stbSummary()
+</code>
+Will return stability results for the default settings ie. analysis type ''stb'' and and DC gain at 100Hz
+<code>
+stbSummary(?stbSim 'pstb ?DCgainFreq 1)
+</code>
+Will return results for a ''pstb'' simulation and DC gain at 1 Hz.
+
+==== fnNonLin() ====
+  * **FUNCTION**: ''fnNonLin(<output signal name> <input signal name> <frequency(Hz)> <start time> <end time> ?parametric nil)''\\
+  * **EXAMPLE**:
+    * Ocean:<code> fnNonLin(v("vout") v("vin") 1e7 1e-3 5e-3 ?parametric nil) </code>
+    * ADE-1: <code>fnNonLin(VT("/vout") VT("/vin") 1e7 1e-3 5e-3 ?parametric nil) </code>
+    * ADE-2: <code>fnNonLin(VT("/vout") vin_amp 1e7 1e-3 5e-3 ?parametric t) </code>
+      * FIXME : Need to verify the ADE-2 code. When in doubt use the ADE-1 method.
+  * **INPUT**: Either the a parametric simulation from ADE or a transient sweep using Spectre netlist.
+  * **OUTPUT**: Plot with x-axis as the input amplitude and y-axis is non-linearity in percentage.
+  * **DESCRIPTION**: This method calculates non-linearity of a circuit after running a sweep of different amplitude input signal and looking at the fundamental component of the output. The function linearizes about the two extreme points of the output and finds the error in percentage of the max output.
+  * **NOTES** 
+    * This is the same function as used in the parametric sweep, except the option ''parametric'' is set to **nil** to indicate it is NOT a parametric sweep and therefore the second variable is interpreted as the input voltage instead of the sweep variable name.
+
+
 ## CORNER SIMULATION SCRIPTS
 
 **Quick-Start**
