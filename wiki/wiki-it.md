@@ -55,6 +55,26 @@ sort: 1
 - **GIT**
   - `git reset <file>` : undo changes
 
+### Housekeeping
+
+**CLEANING NFS DIRECTORIES**
+
+- `/CAD/apps7/bin/clean-nfs.sh` is running daily on a `crontab` (`centos@srv01:~> sudo crontab -l` to see the list) for cleaning the NFS directories (.cache, .mozilla///storage, DRC/LVS, core, etc).
+
+**LIMITING CACHE WRITES IN FIREFOX**
+
+#firefox
+
+- Default setting in **firefox** endup with huge cache size filling up user quotas.
+- To change the following preferences, open firefox and navigate to `about:config` (Ignore warning and continue):
+  - To narrow down the preference names, type `browser.cache` in the preference window and change the following preferences:
+    - `browser.cache.disk.capacity` : **24000**
+    - `browser.cache.disk.enable`: **false**
+    - `browser.cache.disk_cache_ssl`: **false**
+    - `browser.cache.offline.capacity`: **24000**
+    - `browser.cache.offline.enable`: **false**
+- **IMPORTANT**: If you delete the `~/.mozilla` folder, all the changes will be lost.
+
 ### User Administration
 
 - All user database is maintained in GoogleSheet (vlsi account) `UserList7-AdvVLSI`
