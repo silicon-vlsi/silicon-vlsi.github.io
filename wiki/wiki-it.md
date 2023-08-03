@@ -46,7 +46,8 @@ sort: 1
 - `sudo -u <user> <command>` : Runs the `<command>` as user `<user>`
 - `sudo -u <user> -g <group> <command>` : Runs the `<command>` as user `<user>` and the group `<group>` instead of the primary group of the user.
 - `sudo sh/csh -c "echo NISDOMAIN=vlsi.silicon.ac.in >> /etc/sysconfig/networks"` : Commands which have breaks in them are passed to a shell else after the first part, the rest will executed as the normal user and not sudoer.
-- `sudo xfs_quota -x -c 'report -h' /home/nfs1`
+- `sudo xfs_quota -x -c 'report -h' /home/nfs1` : quota report for mount /home/nfs1
+- `sudo quota -su <user>`
 - `echo "whatevever text" | sudo tee -a file.txt` : Will echo text as root
 - If you have tar ball with no permission for "other" and the user and group does not exist:
   - `tar -o -xzvf file.tar.gz`
@@ -517,7 +518,7 @@ read only = false
   - Before configuring limits for project-controlled directories, add them first to `/etc/projects`. Project names can be added to `/etc/projectid` to map project IDs to project names. Once a project is added to `/etc/projects`, initialize its project directory using the following command:
     - `# xfs_quota -x -c 'project -s projectname' project_path`
   - Quotas for projects with initialized directories can then be configured, with:
-    - `xfs_quota -x -c 'limit -p bsoft=1000m bhard=1200m projectname'
+    - `xfs_quota -x -c 'limit -p bsoft=1000m bhard=1200m projectname'`
     - Example from the man page:
 
 ```bash
@@ -538,8 +539,10 @@ read only = false
 ```
 
 - **Reporting Quota Limits**:
-  - `$ quota username`
+  - `$ quota -su username`
   - `# xfs_quota -x -c 'report -h' /home/nfs1`
+  - `# xfs_quota -x -c 'disable -uv' /home/nfs1` : temporarily disable quota
+  - `# xfs_quota -x -c 'off -ugpv' /home/nfs1` : permanently disable quota [Ref from here](https://www.golinuxcloud.com/configure-enable-disable-xfs-quota-grace-time/#Disable_xfs_quota_temporarily)
 
 
 ### VIRTUAL MACHINES
