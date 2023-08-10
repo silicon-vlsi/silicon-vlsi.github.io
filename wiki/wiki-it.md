@@ -46,7 +46,7 @@ sort: 1
 - `sudo -u <user> <command>` : Runs the `<command>` as user `<user>`
 - `sudo -u <user> -g <group> <command>` : Runs the `<command>` as user `<user>` and the group `<group>` instead of the primary group of the user.
 - `sudo sh/csh -c "echo NISDOMAIN=vlsi.silicon.ac.in >> /etc/sysconfig/networks"` : Commands which have breaks in them are passed to a shell else after the first part, the rest will executed as the normal user and not sudoer.
-- `sudo xfs_quota -x -c 'report -h' /home/nfs1` : quota report for mount /home/nfs1
+- `sudo xfs_quota -x -c 'report -uh' /home/nfs1 | sort -k 2 -n` : quota report for _users_ mount /home/nfs1 and sorted numerically based on second field.
 - `sudo quota -su <user>`
 - `echo "whatevever text" | sudo tee -a file.txt` : Will echo text as root
 - If you have tar ball with no permission for "other" and the user and group does not exist:
@@ -75,6 +75,13 @@ sort: 1
     - `browser.cache.offline.capacity`: **24000**
     - `browser.cache.offline.enable`: **false**
 - **IMPORTANT**: If you delete the `~/.mozilla` folder, all the changes will be lost.
+
+**CLEANING UP USER SPACE**
+
+**NOTE**: Following commands to be executed as **users**
+
+- Use the script `check-du-users.sh` to check the disk usage in your home directory (~/.cache reported as a seprate line item) and all the project and training directories.
+- Use the script `clean-user.sh` clean up some selected type of files including /.cache, DRC/LVS run files, etc.
 
 ### User Administration
 
@@ -540,7 +547,9 @@ read only = false
 
 - **Reporting Quota Limits**:
   - `$ quota -su username`
-  - `# xfs_quota -x -c 'report -h' /home/nfs1`
+  - `# xfs_quota -x -c 'report -uh' /home/nfs1 | sort -k 2 -n`
+    - Reports _users_ on _/home/nfs1_ and sorts them numerically (-n) based on the second field (-k 2) which is space used by the user.
+    - Use `-g` and `-p` instead of -u for reporting groups and projects. 
   - `# xfs_quota -x -c 'disable -uv' /home/nfs1` : temporarily disable quota
   - `# xfs_quota -x -c 'off -ugpv' /home/nfs1` : permanently disable quota [Ref from here](https://www.golinuxcloud.com/configure-enable-disable-xfs-quota-grace-time/#Disable_xfs_quota_temporarily)
 
