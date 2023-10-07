@@ -554,6 +554,73 @@ read only = false
   - `# xfs_quota -x -c 'off -ugpv' /home/nfs1` : permanently disable quota [Ref from here](https://www.golinuxcloud.com/configure-enable-disable-xfs-quota-grace-time/#Disable_xfs_quota_temporarily)
 
 
+## REVISION CONTROL
+
+### Subversion
+
+**Setting up SVN server in the cloud**
+
+- The following instructions are for AWS lightsail CentOS7 instance.
+- `sudo yum install subversion`
+- Create an _user_ for the svn server eg. `svn`
+- Create a repo directory eg. `/home/svn/repos`
+- Create your svn repo in that directory:
+  - `sudo svnadmin create <svnrepo>`
+- For better security, the password will be diabaled for SSH. See [here](https://mixignal.github.io/wiki/compute-it.html#security-hardening-a-linux-server) on how to security harden a VM.
+- Include the client's (PuTTy/ssh/etc) public key to `/home/svn/.ssh/authorized_keys`
+- In order for `svnserve` daemon to run only during SSH connection from the Tortoise-SVN or other SSH clients, the `.ssh/authorized_keys` on the server side needs to be modified for each SVN-user to a following format: 
+  - **FIXME** Need to double check the writeup in bmt-wiki
+
+
+**Setting up a Subversion Server**
+   
+- Install ``subversion``: ``# yum install subversion``
+- Create a user ``svn`` and login as that user.
+- Make a directory for all repos: ``$ mkdir repos``
+- change directory ``cd`` to ``repos``
+- Create a SVN repo: ``$ svnadmin create <repo-name>``
+- cd to ``<repo-name>/conf`` and make ensure the following in ``svnserv.conf``
+
+```bash
+[general]
+anon-access = read
+auth-access = write
+
+password-db = passwd
+```
+
+- Which allows non-auth users read-only access and auth users read-write access.
+- Open the ``passwd`` file and add the user/password in it. **IMPORTANT** Change permission to ``600`` since password is plain text.
+- Create the file ``/etc/sysconfig/svnserve`` and add the following line it:
+ - ``OPTIONS="--root /HOME/svn/repos"`` to define the root repository.
+- To start the server at boot:``# chkconfig svnserve on``
+- To manually start:``# service svnserve start``
+- To list a repo:``$svn list svn://192.168.6.35/sevya2019``
+- To create another repo in future, ``$svnadmin create <repo>`` in ``/HOME/svn/repos`` and restart the svnserver.
+
+**Checking-out and Using a Repository**
+   
+- Checkout a repo:``$svn checkout svn://192.168.6.35/<repo-name>``
+
+**FREQUENTLY USED SVN COMMANDS**
+- Add a file to repo after creating it: ``$svn add <file>``
+- Commit: ``$svn commit -m "Comments"``  **NOTE** If you don't put comments, make sure env var ``SVN_EDITOR`` is set to a valid editor.
+- Cancel a commit: ``$ svn revert <file>``
+
+**Checking out the the feynman_svn/feynman_ext_repo**
+
+For **Linux**: 
+- Before checking out the SVN repo, the private key (SSH) of the client needs to match the public key on the SVN server. Easiest way is to take the private key from PuTTy (eg. ``id_rsa.pem`` or ``.openssh``) and copy it to ``.ssh/id_rsa`` and the public key can be copied to ``.ssh/id_rsa.pub``
+
+```bash
+svn list svn+ssh://svn@54.254.226.43/home/svn/repos/feynman_svn
+```
+
+```bash
+svn checkout svn+ssh://svn@54.254.226.43/home/svn/repos/feynman_svn
+```
+
+
 ### VIRTUAL MACHINES
 
 #### Setting up VM in CentOS 7 using KVM
