@@ -574,10 +574,30 @@ read only = false
   `svn list svn+ssh://svn@<publicIP>/home/svn/repos/<svnrepo>`
 - To _checkout_ the repo:
   `svn checkout svn+ssh://svn@<publicIP>/home/svn/repos/<svnrepo>`
+
+**Frequently Used Commands**
+
 - `svn add <file>` to add a file in the repo.
 - `svn commit -m "comments"` to commit/push changes to the server.
 - `svn revert <file>` to cancel a commit.   
 
+**Deleting Old Revisions**
+
+- `svnadmin <path-to-repo> -r <first-rev:last-rev> > <dumpFile>`
+  - This will create a _dump file_ for the given range of revisions. eg.
+  - `sudo svnadmin /home/svn/repos/tesla_svn -r 72:74 > tesla_svn_dump`
+- `svnadmin <path-to-new-repo>`
+- `svnadmin load <path-to-new-repo> < <dumpFile>`
+
+**Basic Work Cycle**
+
+- `svn update` Update your work area.
+- Make your changes.
+  - When making changes to binary files (eg. EDA files), lock the file using `svn lock` so other's can't edit while you are making changes.
+  - It's not necessary to lock _text-based_ files. Subversion is smart enough to figure out the changes and merge them.
+- If you need to **add, remove, copy** or **move** files and directories, the `svn add`, `svn delete`, `svn copy`, and `svn move` commands handle those sorts of structural changes within the working copy.
+- While updating or commiting if there is a conflict, use `svn resolve` to resolve those issues.
+- Finally, commit the changes as shown above.
 
 ### VIRTUAL MACHINES
 
