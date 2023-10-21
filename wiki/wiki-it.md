@@ -99,6 +99,28 @@ sort: 1
   - Remove users: `sudo buseradd -d -i <file.csv>`
 - Update NIS: `sudo make -C /var/yp`
 
+**COMMAND-LINE REFERENCE**
+
+
+**ADDING USER ACCOUNT USING COMMAND LINE ``useradd``**
+
+```bash
+$sudo useradd -s /bin/csh -d /home/NIS/<username> -N -g users -G users \
+              -c "Firstname Lastname, Dept., email", -k /etc/skel-student -K UMASK=022 -m <username>
+$sudo make -C /var/yp
+```
+ Where the options for ``useradd`` are:
+```bash
+-s : Default Linux shell (eg. csh)
+-d : Home directory of the user
+-N : Do not create a group with the user name but add it to the one with -g option
+-g : add user to this group as the initial group (when -N option is provided)
+-G : list of supplementary groups the user is going to be part of.
+-c : comment. Please provide the comment is the format in the example for
+     better user information retrieval when using the 'finger <user>' command
+-k : location for the skeleton file eg. .cshrc, etc.
+
+
 ### Setting up new CentOS 7 Desktop
 
 **MANUAL INSTALL**
