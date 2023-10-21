@@ -119,6 +119,7 @@ $sudo make -C /var/yp
 -c : comment. Please provide the comment is the format in the example for
      better user information retrieval when using the 'finger <user>' command
 -k : location for the skeleton file eg. .cshrc, etc.
+```
 
 
 ### Setting up new CentOS 7 Desktop
