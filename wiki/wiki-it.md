@@ -694,6 +694,42 @@ DNS2=8.8.8.8
 - Use defaults to create an exact clone but with the a seprate hardisk on the same directory as one used above.
 - Power up the clone first and change the **Hostname** and **IP Address**. Everything else should run as the parent VM. 
 
+### Super Secure Workstation
+
+In some enterprise-y projects, very secure computing workstation are required to protect _propreitery information_. Some key required specs for this workstation:
+
+- No internet access from the workstation.
+- Only allowed users to access sensitive information
+- If files system is mounted, it should be done so exclusively with equal restrictions on the file server as well.
+- Close all ports (ssh/scp/etc) except required ones.
+- Access the workstation only through VNC with any copying disabled.
+
+**DISABLING INTERNET ACCESS**
+
+Use `nmtui` to remove the **Gateway** and **DNS** servers and _reboot_.
+
+**RESTRICTED USERS**
+
+Disable **NIS** (If enabled):
+- `sudo systemctl disable ypbind rpcbind`
+- `sudo systemctl stop ypbind rpcbind`
+
+**MOUNTING NFS SHARE**
+
+The server from which the mount point is mounted, the internet should also be disabled for it and all user access to be disabled as well.
+The share that is to mounted also should have permission `750` to disable any user access.
+When _exported_ from `/etc/exports` it is restricted to the _IP address_ of the secure workstation ie.
+
+```bash
+/home/nfs4 192.168.11.231(rw,async,no_subtree_check)
+```
+
+Add the mount in `/etc/fstab`:
+
+```bash
+srv03:/home/nfs4  /mntsec  nfs  noatime,rsize=32768,wsize=32768
+```
+
 ### X-Server
 Tags: #xserver #vncserver
 
