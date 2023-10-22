@@ -456,7 +456,9 @@ YPSERV_ARGS="-p 945"
   - ``rw``: Allows client R/W access.
   - ``async``: This option allows the clients to write to the files before they are written to the disk. It will improve speed but may have problems with two clients writing simulataneosly. See this [post](https://serverfault.com/questions/499174/etc-exports-mount-option#:~:text=exports(5)%20async%20This%20option,storage%20(e.g.%20disc%20drive).) for details.
   - ``no_subtree_check``: This option prevents the subtree checking. When a shared directory is the subdirectory of a larger file system, nfs performs scans of every directory above it, in order to verify its permissions and details. Disabling the subtree check may increase the reliability of NFS, but reduce security.
-  - ``no_root_squash``: Root access allowed for mounted directories. **Dangerous!!** **Note** When root access is necessary, enable it temporarily.
+  - ``no_root_squash``: **Root access allowed** for mounted directories. 
+    - **Note** For the **NIS** user systems, this feature is **NOT** enabled for scurity purpose. All the access control/permission are done on the host server.
+    - For the secure VM where the restricted users are created on the VM only without any other NIS user access, the project file system is allowed root access to avoid duplicating users in the host system. 
   - If the export is through kerberos then you need option `sec=sys:krb5p` **FIXME** Need to research more.
 
 **NFS Client**
