@@ -6,7 +6,7 @@ sort: 1
 
 ## USER GUIDE
 
-### Getting Started
+### Getting Started with Cadence
 
 - To change your **password** use the NIS command `yppasswd`
 - To load environment variable for different tools and projects, the open source tool `module-environment` is used which makes it very modular to __load__ and __unload__ environment variables. Following are some examples:
@@ -24,7 +24,18 @@ sort: 1
     - `envSetVal("asimenv.startup" "projectDir" 'string strcat("/home/local/simulation/" getShellEnvVar("USER") ))`
   - For Tanner tools, the modulefile sets the env variable `TANNERWINEPREFIX` to `/home/local/simulation/<USER>/.wine-2020-3u3` so the user doesn't have to do anything.
 
-### Creating and Using Project and Training Areas
+### Using the Staff Virtual Machine (VM)
+
+- Using PuTTy (or equivalent) and login to the VM (`192.168.11.231`) using your already setup Linux credentials.
+- Setup VNC password by typing the command `vncpasswd`
+  - This step is NOT necessary if you have previously set the password.
+- Start the vncserver by typing the command : `vncserver start`
+- This should start the server with a _pre-determined DISPLAY number_ (for eg. 4) that will be echoed on the terminal after the server starts.
+- Using a VNCviewer (eg. TightVNC) from your desktop login to the server using the address in the format `<IPADDR>:<DISPLAY#>` For eg. `192.168.11.231:4`
+- This is a shared VM with limited resources so please kill the server if not using it for an extended period by typing the command: `vncserver stop`
+- You can set your desired resolution using the `geometry` option in the  `~/.vnc/config` file. NOTE: since this is a limited VM, use a reasonable size not to take up a lot of memory. _Suggested size_ is `1280x720`
+- There is a `crontab` script that will delete all the VNC servers every Sunday at 4am. Please save your work and stop the server (`vncserver stop`) before leaving for the weekend.
+
 
 ## ADMIN GUIDE
 
