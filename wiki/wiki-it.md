@@ -36,6 +36,20 @@ sort: 1
 - You can set your desired resolution using the `geometry` option in the  `~/.vnc/config` file. NOTE: since this is a limited VM, use a reasonable size not to take up a lot of memory. _Suggested size_ is `1280x720`
 - There is a `crontab` script that will delete all the VNC servers every Sunday at 4am. Please save your work and stop the server (`vncserver stop`) before leaving for the weekend.
 
+### Transferring Files to the Server using FileZilla
+
+The following instruction will help you setup and transfer files between your _Windows workstation_ and the the _Linux server_ using [FileZilla](https://filezilla-project.org), the most popular, free, and powerful file transfer program. 
+
+- If you don't have it installed yet, _download_ and _install_ it from the [FileZilla Download](https://filezilla-project.org/download.php?type=client) site.
+- After starting FileZilla, you can enter the server IP address along with your user info on the top bar of the panel:
+  - Host: `192.168.11.231`
+  - Username: `<username>`
+  - Password: `<password>`
+  - Port: `22`
+- After entering the above information either hit `Enter` OR _click_ `Quickconnect` 
+- If successful, the program should connect to the server and your home directory should appear on the right side of the panel named **Remote site**. You can browse to the **remote directory** you want to copy your files to/from.
+- On the left side of the panel named **Local site**. You can browse to the **local directory** you want to copy the files from/to.
+- Now you can simply transfer the files by dragging and dropping between the local and remote directories. Alternatively, you can _copy_ (`ctrl-c`) and _paste_ (`ctrl-v`) as well.
 
 ## ADMIN GUIDE
 
