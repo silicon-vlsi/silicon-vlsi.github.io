@@ -26,12 +26,12 @@ sort: 1
 
 ### Using the Staff Virtual Machine (VM)
 
-- Using PuTTy (or equivalent) and login to the VM (`192.168.11.231`) using your already setup Linux credentials.
+- Using PuTTy (or equivalent) and login to the VM (`192.168.11.232`) using your already setup Linux credentials.
 - Setup VNC password by typing the command `vncpasswd`
   - This step is NOT necessary if you have previously set the password.
 - Start the vncserver by typing the command : `vncserver start`
 - This should start the server with a _pre-determined DISPLAY number_ (for eg. 4) that will be echoed on the terminal after the server starts.
-- Using a VNCviewer (eg. TightVNC) from your desktop login to the server using the address in the format `<IPADDR>:<DISPLAY#>` For eg. `192.168.11.231:4`
+- Using a VNCviewer (eg. TightVNC) from your desktop login to the server using the address in the format `<IPADDR>:<DISPLAY#>` For eg. `192.168.11.232:4`
 - This is a shared VM with limited resources so please kill the server if not using it for an extended period by typing the command: `vncserver stop`
 - You can set your desired resolution using the `geometry` option in the  `~/.vnc/config` file. NOTE: since this is a limited VM, use a reasonable size not to take up a lot of memory. _Suggested size_ is `1280x720`
 - There is a `crontab` script that will delete all the VNC servers every Sunday at 4am. Please save your work and stop the server (`vncserver stop`) before leaving for the weekend.
@@ -42,7 +42,7 @@ The following instruction will help you setup and transfer files between your _W
 
 - If you don't have it installed yet, _download_ and _install_ it from the [FileZilla Download](https://filezilla-project.org/download.php?type=client) site.
 - After starting FileZilla, you can enter the server IP address along with your user info on the top bar of the panel:
-  - Host: `192.168.11.231`
+  - Host: `192.168.11.232`
   - Username: `<username>`
   - Password: `<password>`
   - Port: `22`
@@ -771,7 +771,7 @@ The share that is to mounted also should have permission `750` to disable any us
 When _exported_ from `/etc/exports` it is restricted to the _IP address_ of the secure workstation ie.
 
 ```bash
-/home/nfs4 192.168.11.231(rw,async,no_subtree_check)
+/home/nfs4 192.168.11.232(rw,async,no_subtree_check)
 ```
 
 Add the mount in `/etc/fstab`:
@@ -1130,8 +1130,8 @@ menuentry 'Kickstart Installation of CentOS 7' \
   - Servers: `192.168.11.221-249` : 
     - SRV01: em1: `11.221` (File Server), em2: `11.222` (License Server)
     - SRV02: em1: `11.229`, em2<-br0: `11.230`, em3: `--`, em4: `--`
-      - vm01: eth0<-br0 : `11.231`
-      - vm02: eth0<-br0 : `11.232`
+      - vm01: eth0<-br0 : `11.231` Secured Server (5C/10T/32G/220G)
+      - vm02: eth0<-br0 : `11.232` Staff Server   (5C/10T/32G/220G)
     - SRV03: en02: `--`, en03: `11.237`, en04: `--`, en05: `--`
   - Aruba WiFi Access Point: 11.250
   - 11.251-253 is unused.
