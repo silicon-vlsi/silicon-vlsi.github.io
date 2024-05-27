@@ -1040,6 +1040,68 @@ ConnectTo = docosvm02
   - `vvp tb_mydut.vvp` : Convert the compiled output to a VCD format for GTKWave.
   - `gtkwave dump.vcd` : Note: the filename `dump.vcd` is assumed to be in `tb_mydut.v`
 
+### Setting up a Local YUM repository
+
+- **Resources**
+  - [Local YUM CentOS](https://computingforgeeks.com/how-to-create-and-use-local-centos-7-yum-repository/)
+  - [Local YUM CentOS](https://www.tecmint.com/setup-local-http-yum-repository-on-centos-7/)
+  - [Local repo](https://medium.com/@hadi2408466/how-to-setup-a-yum-local-repository-on-linux-centos-7-f941fef5e00c)
+- Download the ISO: `curl -O <centOS-mirror>/CentOS-7-x86_64-Everything-2009.iso`
+- Mount it:
+  - `sudo mount -t iso9660 -o loop CentOS-7-x86_64-Everything-2009.iso /mnt/centos7`
+- Install `httpd` and `createrepo` 
+  - `sudo yum install httpd createrepo -y`
+- Create a directory to store your RPM packages
+  - `sudo mkdir -p /var/www/html/repos/centos7_2009_x86_64`
+- Copy all the RPM packages from the monted directory to the above dirsctory.
+- Generate metadata for the repo:
+  - `sudo createrepo /var/www/html/repos/centos7_2009_x86_64`
+- Configure Apache
+  - `sudo vi /etc/httpd/conf/httpd.conf` and add the following block to configure your repository directory:
+
+```apache
+<Directory "/var/www/html/repos">
+    Options Indexes FollowSymLinks
+    AllowOverride None
+    Require all granted
+</Directory>
+```
+
+- Restart the Apache service to apply the changes:
+
+```sh
+sudo systemctl restart httpd
+sudo systemctl enable httpd
+```
+
+- Configure Firewall
+
+```sh
+sudo firewall-cmd --permanent --add-service=http
+sudo firewall-cmd --reload
+```
+
+- Create a Repository Configuration File On the client machines (or on the server if you want to test locally), create a repository configuration file to point to your local repository.
+  -`sudo vi /etc/yum.repos.d/local.repo`
+  - Add the following content:
+
+```ini
+[local-repo]
+name=Local Repository
+baseurl=http://<your_server_ip>/repos/centos7_2009_x86_64/
+enabled=1
+gpgcheck=0
+```
+
+### Step 8: Test the Repository
+You can now test the repository by clearing the yum cache and attempting to install a package from your local repository.
+
+```sh
+sudo yum clean all
+sudo yum repolist
+sudo yum install <package_name>
+```
+
 ### Creating a Kickstart USB Boot Media
 
 - [Automatic Install Doc from Redhat](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-simple-install-kickstart)
