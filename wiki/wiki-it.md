@@ -1115,7 +1115,8 @@ sudo yum install <package_name>
 
 - `sudo mkdir -p /home/local/centOS7-repo`
 - `sudo reposync -r epel -p /home/local/centOS7-repo --download-metadata`
-- `sudo createrepo  /home/local/centOS7-repo`
+- `sudo createrepo  /home/local/centOS7-repo/epel`
+  - **NOTE** When running `yum` on a client machine you get a HTTP 404 error, create metadata again by running the above command again.
 - `sudo ln -s  /home/local/centOS7-repo /var/www/html/repos/epel`
 - `sudo systemctl restart https`
 - `sudo chcon -R -t httpd_sys_content_t /var/www/html/repos/epel`
@@ -1136,6 +1137,39 @@ sudo yum clean all
 sudo yum repolist
 ```
 
+### Changing Clients to Local YUM REPO
+
+- Create file `/etc/yum.repos.d/everything-local.repo` and add the following:
+
+```ini
+[everything-local]
+name=Local Everything (Base Update Extra) Repo
+baseurl=http://192.168.11.237/repos/centOS7_2009_x86_64_everything
+enabled=1
+gpgcheck=0
+```
+
+- Create file `/etc/yum.repos.d/epel-local.repo` and add the following:
+
+```ini
+[epel-local]
+name=Local EPEL Repo
+baseurl=http://192.168.11.237/repos/epel
+enabled=1
+gpgcheck=0
+```
+
+- Clean cache, create repolist and check the repo:
+
+```sh
+sudo yum clean all
+sudo yum repolist
+sudo yum update
+```
+
+### Disabling Internet Access
+
+- `sudo nmtui` and remove the **Gateway** and **DNS Server(s)**
 
 ### Creating a Kickstart USB Boot Media
 
