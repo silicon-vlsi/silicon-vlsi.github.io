@@ -1046,16 +1046,22 @@ ConnectTo = docosvm02
   - [Local YUM CentOS](https://computingforgeeks.com/how-to-create-and-use-local-centos-7-yum-repository/)
   - [Local YUM CentOS](https://www.tecmint.com/setup-local-http-yum-repository-on-centos-7/)
   - [Local repo](https://medium.com/@hadi2408466/how-to-setup-a-yum-local-repository-on-linux-centos-7-f941fef5e00c)
+
+**INSTALLING EVERYTHING ISO**
+
+- This ISO contains the `Base`, `Extra` and `Update` packages.
 - Download the ISO: `curl -O <centOS-mirror>/CentOS-7-x86_64-Everything-2009.iso`
 - Mount it:
   - `sudo mount -t iso9660 -o loop CentOS-7-x86_64-Everything-2009.iso /mnt/centos7`
 - Install `httpd` and `createrepo` 
-  - `sudo yum install httpd createrepo -y`
+  - `sudo yum install httpd createrepo yum-utils -y`
 - Create a directory to store your RPM packages
-  - `sudo mkdir -p /var/www/html/repos/centos7_2009_x86_64`
+  - `sudo mkdir -p /home/local/centOS7-repos/centos7_2009_x86_64`
 - Copy all the RPM packages from the monted directory to the above dirsctory.
 - Generate metadata for the repo:
-  - `sudo createrepo /var/www/html/repos/centos7_2009_x86_64`
+  - `sudo createrepo /home/local/centOS7-repos/centos7_2009_x86_64`
+- Create a symbolic link to the /var/www/html:
+  - `sudo ln -s /home/local/centOS7-repos/centos7_2009_x86_64 /var/www/html/repos/centos7_2009_x86_64`
 - Configure Apache
   - `sudo vi /etc/httpd/conf/httpd.conf` and add the following block to configure your repository directory:
 
@@ -1081,7 +1087,10 @@ sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --reload
 ```
 
-- Create a Repository Configuration File On the client machines (or on the server if you want to test locally), create a repository configuration file to point to your local repository.
+- Ensure SELinux Context (if enabled):
+  - `sudo chcon -R -t httpd_sys_content_t /var/www/html/repos`
+
+- Create a Repository Configuration File On the **client** machines (or on the server if you want to test locally), create a repository configuration file to point to your local repository.
   -`sudo vi /etc/yum.repos.d/local.repo`
   - Add the following content:
 
@@ -1093,7 +1102,7 @@ enabled=1
 gpgcheck=0
 ```
 
-### Step 8: Test the Repository
+- Test the Repository
 You can now test the repository by clearing the yum cache and attempting to install a package from your local repository.
 
 ```sh
@@ -1101,6 +1110,32 @@ sudo yum clean all
 sudo yum repolist
 sudo yum install <package_name>
 ```
+
+**INSTALLING THE EPEL REPO**
+
+- `sudo mkdir -p /home/local/centOS7-repo`
+- `sudo reposync -r epel -p /home/local/centOS7-repo --download-metadata`
+- `sudo createrepo  /home/local/centOS7-repo`
+- `sudo ln -s  /home/local/centOS7-repo /var/www/html/repos/epel`
+- `sudo systemctl restart https`
+- `sudo chcon -R -t httpd_sys_content_t /var/www/html/repos/epel`
+- `/etc/yum.repos.d/local-epel.repo`:
+
+```ini
+[local-epel]
+name=Local EPEL Repo
+baseurl=http://<srvIP>/epel
+enabled=1
+gpgcheck=0
+```
+
+- Clean cache:
+
+```sh
+sudo yum clean all
+sudo yum repolist
+```
+
 
 ### Creating a Kickstart USB Boot Media
 
