@@ -1139,6 +1139,7 @@ sudo yum repolist
 
 ### Changing Clients to Local YUM REPO
 
+- Move existing files from `/etc/yum.repos.d` to a backup location.
 - Create file `/etc/yum.repos.d/everything-local.repo` and add the following:
 
 ```ini
