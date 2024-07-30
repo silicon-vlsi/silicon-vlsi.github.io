@@ -126,6 +126,15 @@ The following instruction will help you setup and transfer files between your _W
 
 **COMMAND-LINE REFERENCE**
 
+**RESETTING AN USER**
+
+If you want to manually change the user information and the password for an user, follow these steps:
+
+```bash
+ $sudo chfn -f "Swapnil Mehta" -o "Sevya-2407" -p "9090843345" -h "swapnil@gmail.com" vlab7
+ $echo "vlab7:newpwd" | sudo /usr/sbin/chpasswd
+ $sudo sudo make -C /var/yp
+```
 
 **ADDING USER ACCOUNT USING COMMAND LINE ``useradd``**
 
