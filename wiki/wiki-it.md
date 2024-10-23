@@ -1288,7 +1288,20 @@ menuentry 'Kickstart Installation of CentOS 7' \
 
 **srv01.vlsi.silicon.ac.in**
 
-This is the primary NFS file server. `/CAD` and `/PDK` are mounted in the NeumannLab (training). VoltaLab uses srv03 to mount `/CAD` and `/PDK`
+- Primary NFS file server. 
+- `/CAD` and `/PDK` are mounted in the NeumannLab (training), srv02 and vm2-srv02. 
+- VoltaLab (Adv VLSI Lab) uses srv03 to mount `/CAD` and `/PDK`
+- **FIXME**: Remove NIS from this server.
+
+**NFS Partitions**
+
+| **Mount** | **Size** | **Mount Points** | **Lab/Server** | **Purpose** |
+| ``/home/nfs1`` | 250G | `/home/nfs1` | All | Staff homeDir, projects  |
+| ``/home/nfs2`` | 100G | `/home/nfs2` | All | training (users, workarea) |
+| ``/CAD`` | 650G | `/CAD` | trainingLab, srv02, vm2-srv02  | CAD Tools |
+| ``/PDK`` | 270G | `/PDK` | trainingLab, srv02, vm2-srv02  | PDKs |
+
+**Local**
 
 | **Mount** | **Size** | **Purpose** |
 | ``swap`` | 8G | 0.5xRAM-size [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
@@ -1297,16 +1310,13 @@ This is the primary NFS file server. `/CAD` and `/PDK` are mounted in the Neuman
 | ``/(root)`` | 125G | CentOS 7 installation files |
 | ``/home`` | 25G | Local home dir |
 | ``/var`` | 25G | log,etc |
-| ``/home/local`` | 400G | local mount (sims, etc) |
-| ``/home/nfs1`` | 250G | NFS mount for homes/projects  |
-| ``/home/nfs2`` | 100G | NFS mount for trainings |
-| ``/CAD`` | 650G | NFS mount for NeumannLab |
-| ``/PDK`` | 270G | PDK mount for NeumannLab |
+| ``/home/local`` | 400G | local mount (sims, archive, etc) |
 
 
 **srv02.vlsi.silicon.ac.in**
 
-This is a computer server with **20 Xeon Cores** and **128GB RAM**. This also serves the Cadence and Mentor License Servers.
+- Server with **20 Xeon Cores (40T)** and **128GB RAM**. 
+- **Cadence** and **Siemens (Mentor)** License Servers.
  
 | **Mount** | **Size** | **Purpose** |
 | ``swap`` | 16G | >4G [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
@@ -1316,15 +1326,18 @@ This is a computer server with **20 Xeon Cores** and **128GB RAM**. This also se
 | ``/home`` | 100G | Local home dir |
 | ``/var`` | 50G | log,etc |
 | ``/home/local`` | 500G | local mount (sims, etc) |
-| ``/home/virt1`` | 250G | Used for VirtualMachine VM1-srv02|
-| ``/home/virt2`` | 250G | For Virtual Machines |
-| ``/home/virt3`` | 250G | For Virtual Machines |
-| ``/home/virt4`` | 250G | For Virtual Machines |
+| ``/home/virt1`` | 250G | HDD for vm1-srv02 |
+| ``/home/virt2`` | 250G | HDD for vm2-srv02 |
+| ``/home/virt3`` | 250G | Reserved for VMs |
+| ``/home/virt4`` | 250G | Reserved for VMs |
 
 
 **srv03.vlsi.silicon.ac.in**
 
-This is the first file server of VLSI Lab. It's used as a shadow server which mirrors srv01. Currently only /CAD and /PDK are mirrored (rsynced)
+- Second file server (This is the oldest file server with a new motherboard and HDDs)
+- `/cad/CAD1` is rsynced from `srv01:/CAD`
+- `/cad/PDK1` is rsynced from `srv01:/PDK`
+- It's used as a shadow server which mirrors srv01. Currently only /CAD and /PDK are mirrored (rsynced). These are only mounted on VoltaLab (Adv VLSI) workstations.
 
 | **Mount** | **Size** | **Purpose** |
 | ``swap`` | 8G | 0.5xRAM-size [Recommendation](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/storage_administration_guide/ch-swapspace#tb-recommended-system-swap-space)|
@@ -1334,9 +1347,9 @@ This is the first file server of VLSI Lab. It's used as a shadow server which mi
 | ``/home`` | 25G | Local home dir |
 | ``/var`` | 25G | log,etc |
 | ``/home/local`` | 200G | local mount (sims, etc) |
-| ``/pdk`` | 100G | Mirrors /PDK from srv01  |
-| ``/cad`` | 400G | Mirrors /CAD from srv01 |
-| ``/home/nfs3`` | 100G | /CAD2 in clients for digital tools|
+| ``/pdk`` | 100G | rsync: `srv01:/PDK -> srv03:/pdk/PDK1` |
+| ``/cad`` | 400G | rsync: `srv01:/CAD -> srv03:/cad/CAD1` |
+| ``/home/nfs3`` | 100G | Mounted as `srv02:/CAD2` |
 | ``/home/nfs4`` | 100G | reserved for future use |
 
 
