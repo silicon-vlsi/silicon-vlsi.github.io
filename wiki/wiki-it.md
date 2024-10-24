@@ -1294,8 +1294,8 @@ graph TD;
          )]
   srv03[(**srv03**: NAS/NFS
           /home/nfs3
-          /cad/CAD1
-          /pdk/PDK1
+          srv01:/CAD --rsync--> /cad/CAD1
+          srv01:/PDK --rsync--> /cad/PDK1
          )]
 
   srv02[ **srv02**: Compute Srv
@@ -1311,8 +1311,14 @@ graph TD;
           srv03:/cad/CAD1 -> /CAD
           srv03:/cad/PDK1 -> /PDK
         ]
+  neumannLab[**NeumannLab**: 12 Desktops
+          srv01:/home/nfs1
+          srv01:/home/nfs2
+          srv01:/CAD
+          srv01:/PDK
+        ]
   srv01 --> srv02;
-  srv01 --> srv03;
+  srv01 --> neumannLab;
   srv01 --> voltaLab;
   srv03 --> voltaLab;
   
