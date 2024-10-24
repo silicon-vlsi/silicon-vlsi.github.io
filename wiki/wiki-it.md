@@ -1286,12 +1286,12 @@ menuentry 'Kickstart Installation of CentOS 7' \
 
 ```mermaid
 graph TD;
-    A-->B;
-    A-->C;
-    B-->D;
-    C-->D;
-
+  srv01[([**srv01**]
+          `/CAD`
+          `/PDK`
+         )]
 ```
+
 **PARTIONING**
 
 **srv01.vlsi.silicon.ac.in**
