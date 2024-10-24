@@ -1304,7 +1304,7 @@ graph TD;
           srv01:/CAD
           srv01:/PDK
           srv03:/home/nfs3 -> /CAD2
-        `"]
+        ]
   voltaLab[**VoltaLab**: 30 Desktops
           srv01:/home/nfs1
           srv01:/home/nfs2
