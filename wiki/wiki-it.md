@@ -1285,49 +1285,28 @@ menuentry 'Kickstart Installation of CentOS 7' \
 ### STORAGE
 
 ```mermaid
+
 graph TD;
 
   srv01[(srv01: NAS/NFS <br/> /home/nfs1 /home/nfs2 /CAD /PDK )];
+  srv02[(srv01: NAS/NFS <br/> /home/nfs1 /home/nfs2 /CAD /PDK )];
+  srv01 --yes--> srv02;
+
 ```
 
 ```mermaid
 
 graph TD;
 
-  srv01[(**srv01: NAS/NFS**
-          /home/nfs1
-          /home/nfs2
-          /CAD
-          /PDK
-         )];
+  srv01[(srv01: NAS/NFS/NIS <br/> /home/nfs1 <br/> /home/nfs2 <br/> /CAD <br/> /PDK)];
 
-  srv03[(**srv03: NAS/NFS**
-          /home/nfs3
-          srv01:/CAD --rsync--> /cad/CAD1
-          srv01:/PDK --rsync--> /cad/PDK1
-         )];
+  srv03[(srv03: NAS/NFS <br/> /home/nfs3 <br/> srv01:/CAD --rsync--> /cad/CAD1 <br/> srv01:/PDK --rsync--> /cad/PDK1)];
 
-  srv02[ **srv02: Compute Srv**
-          srv01:/home/nfs1
-          srv01:/home/nfs2
-          srv01:/CAD
-          srv01:/PDK
-          srv03:/home/nfs3 -> /CAD2
-        ];
+  srv02[ srv02: Compute/LicenseSrv <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 ];
 
-  voltaLab[**VoltaLab: 30 Desktops**
-          srv01:/home/nfs1
-          srv01:/home/nfs2
-          srv03:/cad/CAD1 -> /CAD
-          srv03:/cad/PDK1 -> /PDK
-        ];
+  voltaLab[VoltaLab: 30 Desktops <br/> srv01:/home/nfs1 <br/>  srv01:/home/nfs2 <br/> srv03:/cad/CAD1 -> /CAD <br/> srv03:/cad/PDK1 -> /PDK ];
 
-  neumannLab[**NeumannLab: 12 Desktops**
-          srv01:/home/nfs1
-          srv01:/home/nfs2
-          srv01:/CAD
-          srv01:/PDK
-        ];
+  neumannLab[NeumannLab: 12 Desktops <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK ];
 
   srv01 --> srv02;
   srv01 --> neumannLab;
