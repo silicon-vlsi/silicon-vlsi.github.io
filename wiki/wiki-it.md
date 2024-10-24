@@ -1287,12 +1287,12 @@ menuentry 'Kickstart Installation of CentOS 7' \
 ```mermaid
 graph TD;
 
-  srv01[(**srv01: NAS/NFS**
+  srv01[**srv01: NAS/NFS**
           /home/nfs1
           /home/nfs2
           /CAD
           /PDK
-         )];
+         ];
 ```
 
 ```mermaid
