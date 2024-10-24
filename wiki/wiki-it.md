@@ -1287,8 +1287,8 @@ menuentry 'Kickstart Installation of CentOS 7' \
 ```mermaid
 graph TD;
   srv01[(**srv01**:
-          `/CAD`
-          `/PDK`
+          /CAD
+          /PDK
          )]
 ```
 
