@@ -1287,9 +1287,29 @@ menuentry 'Kickstart Installation of CentOS 7' \
 ```mermaid
 graph TD;
   srv01[(**srv01**:
-          ``/CAD``
-          ``/PDK``
+          /CAD
+          /PDK
          )]
+  srv03[(**srv03**:
+          /cad/CAD1
+          /pdk/PDK1
+         )]
+
+  srv02[" **srv02**:
+          `srv01:/home/nfs1`
+          `srv01:/home/nfs2`
+        "]
+  voltaLab[" **VoltaLab**:
+          `srv01:/home/nfs1`
+          `srv01:/home/nfs2`
+        "]
+  srv01 --> srv02;
+  srv01 --> voltaLab;
+  srv03 --> voltaLab;
+  
+```
+
+**PARTIONING**
 ```
 
 **PARTIONING**
