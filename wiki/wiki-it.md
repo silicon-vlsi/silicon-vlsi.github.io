@@ -1295,14 +1295,14 @@ graph TD;
           /pdk/PDK1
          )]
 
-  srv02[" **srv02**:
+  srv02["` **srv02**:
           `srv01:/home/nfs1`
           `srv01:/home/nfs2`
-        "]
-  voltaLab[" **VoltaLab**:
+        `"]
+  voltaLab["` **VoltaLab**:
           `srv01:/home/nfs1`
           `srv01:/home/nfs2`
-        "]
+        `"]
   srv01 --> srv02;
   srv01 --> voltaLab;
   srv03 --> voltaLab;
