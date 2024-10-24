@@ -1286,6 +1286,7 @@ menuentry 'Kickstart Installation of CentOS 7' \
 
 
 ```mermaid
+info;
 
 graph TD;
 
