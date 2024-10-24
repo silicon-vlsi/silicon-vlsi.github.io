@@ -1288,19 +1288,9 @@ menuentry 'Kickstart Installation of CentOS 7' \
 
 graph TD;
 
-  srv01[(srv01: NAS/NFS <br/> /home/nfs1 /home/nfs2 /CAD /PDK )];
-  srv02[(srv01: NAS/NFS <br/> /home/nfs1 /home/nfs2 /CAD /PDK )];
-  srv01 --yes--> srv02;
-
-```
-
-```mermaid
-
-graph TD;
-
   srv01[(srv01: NAS/NFS/NIS <br/> /home/nfs1 <br/> /home/nfs2 <br/> /CAD <br/> /PDK)];
 
-  srv03[(srv03: NAS/NFS <br/> /home/nfs3 <br/> srv01:/CAD  /cad/CAD1 <br/> srv01:/PDK  /cad/PDK1)];
+  srv03[(srv03: NAS/NFS <br/> /home/nfs3 <br/> srv01:/CAD  -> /cad/CAD1 <br/> srv01:/PDK  -> /cad/PDK1)];
 
   srv02[ srv02: Compute/LicenseSrv <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/PDK <br/> srv03:/home/nfs3  /CAD2 ];
 
