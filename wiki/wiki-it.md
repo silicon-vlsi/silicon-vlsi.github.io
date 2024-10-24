@@ -1312,6 +1312,7 @@ graph TD;
           srv03:/cad/PDK1 -> /PDK
         ]
   srv01 --> srv02;
+  srv01 --> srv03;
   srv01 --> voltaLab;
   srv03 --> voltaLab;
   
