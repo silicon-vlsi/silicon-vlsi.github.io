@@ -1284,6 +1284,14 @@ menuentry 'Kickstart Installation of CentOS 7' \
 
 ### STORAGE
 
+```mermaid
+graph TD;
+    A-->B;
+    A-->C;
+    B-->D;
+    C-->D;
+
+```
 **PARTIONING**
 
 **srv01.vlsi.silicon.ac.in**
