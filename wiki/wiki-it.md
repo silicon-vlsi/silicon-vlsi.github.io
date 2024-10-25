@@ -1292,7 +1292,7 @@ graph TD;
 
   srv03[(srv03: NAS/NFS <br/> /home/nfs3 <br/> srv01:/CAD  -> /cad/CAD1 <br/> srv01:/PDK  -> /cad/PDK1)];
 
-  srv02[ srv02: Compute/LicenseSrv <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 ];
+  srv02[ srv02: Compute/LicenseSrv <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 ];
 
   voltaLab[VoltaLab: 30 Desktops <br/> srv01:/home/nfs1 <br/>  srv01:/home/nfs2 <br/> srv03:/cad/CAD1 -> /CAD <br/> srv03:/cad/PDK1 -> /PDK ];
 
