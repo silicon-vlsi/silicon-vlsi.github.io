@@ -1298,8 +1298,8 @@ graph TD;
 
   neumannLab[NeumannLab: 12 Desktops <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK ];
 
-  srv01 --NFS--> srv02;
   srv01 --NFS--> neumannLab;
+  srv01 --NFS--> srv02;
   srv01 --NFS--> voltaLab;
   srv03 --NFS--> voltaLab;
   srv03 --NFS--> srv02;
