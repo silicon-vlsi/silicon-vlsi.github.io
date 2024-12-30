@@ -5,6 +5,48 @@ sort: 2
 # CAD 
 This wiki contains all the details (except the private and propreitary info) for the CAD tools used at Advanced VLSI Lab at SIT, BBSR.
 
+## Chip-to-Startup (C2S)
+
+### C2S Registration
+
+ - Letter of undertaking
+ - Details of EDA tool required
+ - Synopsys agreement
+ - Cadence agreement
+ - Cadence Online Support agreement
+ - Unique host ID creation and sharing with ChipIN center
+ - Login to C2S support:
+   - Request EDA tool access under C2S with the IP address(s)
+   - Follow the steps given for the installation of individual tools available in chipIn portal (Please look at the attached PDF)
+
+
+### EDA License Access 
+
+ - Need internet connectivity to access license server at `14.139.1.126`
+ - Submit ticket with ChipIN to whitelist your WAN IP to access license server.
+   - Login to `https://chipin.cdacb.in`
+   - Open ticket under help topic "**Request EDA tool access**"
+   - Provide **Institute Name** and **WAN IP**
+     - Get WAN IP either from sysadmin or web site eg. showmyip.com etc
+     - You can provide multiple WAN IPs too
+ - Check if WAN IP is whitelisted by navigating to `https://c2s.cdacb.in` or `https://14.139.1.126`
+   - The status is printed on the browser
+ - Check license server access for eg. **Cadence**
+   - `nc -vz 14.139.1.126 5280` (5281,5282)
+   - **Siemens** ports: 1717, 36162
+   - **Ansys** ports: 1056, 1055
+   - **Keysight ADS RFMW/HSD/SystemVue**: 27009, 57551
+   - **Cliosoft, Synopsys CC**: 27008, 57552
+   - Note, the above ports need to opened up by sysadmin.
+
+
+
+
+
+
+
+
+
 ## CADENCE
 
 ### Ocean
