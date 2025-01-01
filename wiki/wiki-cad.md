@@ -66,6 +66,8 @@ This wiki contains all the details (except the private and propreitary info) for
 - When prompted, specify source directory containing the _Synopsys Product files_ (`*.spf`). for e.g. `/home/local/archive/CAD/synopsys/vcs_all_vU-2023.03`
 - When prompted, specify target location eg. `/home/nfs3/synopsys`
   - _NOTE_: Digital tools are intended to be installed in `srv03:/home/nfs3` and `../nfs4` each `100GB`
+- The _source_ and _target_ can also be given as command line prompt:
+  - `installer -source <source dir> -target <target_dir>`
 
 **POST-INSTALLATION SETUP**
 
