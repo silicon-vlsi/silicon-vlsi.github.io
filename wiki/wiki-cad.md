@@ -39,11 +39,39 @@ This wiki contains all the details (except the private and propreitary info) for
    - **Cliosoft, Synopsys CC**: 27008, 57552
    - Note, the above ports need to opened up by sysadmin.
 
+### Synopsys Tool Installation
 
+ - Synopsys Portal: `https://solvnetplus.synopsys.com`
+   - Note: The _Download_ part of the portal is disabled for C2S instead the tools are provided on the ChipIn portal.
+ - ChipIn Portal: `https://chipin-cloud.cdacb.in/`
+   - Synopsys Bins: `https://chipin-cloud.cdacb.in/index.php/f/627`
+ - The credentials for both should be provided by C2S-CDAC.
 
+**INSTALLER**
 
+ - Before installing any of the EDA tools, we need to download and install the _installer_:
+   - Download the installer from `https://chipin-cloud.cdacb.in/index.php/f/627` for eg. `installer_v5.6`
+   - After extracting the installer `cd` to the directory eg. `installer_v5.6`
+   - `chmod 755 SynopsysInstaller_v5.6.run`
+   - `sudo ./SynopsysInstaller_v5.6.run` : execute the installer
+     - specify install directory eg. `/usr/synopsys/installer`
+   - Add the installer directory to the `path`: `set path=(/usr/synopsys/installer $path)`
 
+**INSTALLING THE TOOLS**
 
+- Invoke the installer as **non-root user** (eg. centos): `$ installer`
+  - `$installer -gui` (or `setup.csh`) for the GUI version.
+  - If you must install from a root account, run `installer` with the `-install_as_root` switch.
+- When prompted, specify source directory containing the _Synopsys Product files_ (`*.spf`). for e.g. `/home/local/archive/CAD/synopsys/vcs_all_vU-2023.03`
+- When prompted, specify target location eg. `/home/nfs3/synopsys`
+  - _NOTE_: Digital tools are intended to be installed in `srv03:/home/nfs3` and `../nfs4` each `100GB`
+
+**POST-INSTALLATION SETUP**
+
+- Add the required environment variables in `modulefile`
+  - Add tool executables in the path e.g. `/CAD/synopsys/vcs/U-2023.03/bin`
+  - Check tool-specific env variable setup e.g. `$VCS_HOME`.
+  - Set `SNPSLMD_LICENSE_FILE` env var to the correct `port@host`
 
 
 
