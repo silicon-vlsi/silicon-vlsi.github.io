@@ -60,6 +60,7 @@ This wiki contains all the details (except the private and propreitary info) for
 **INSTALLING THE TOOLS**
 
 - Invoke the installer as **non-root user** (eg. centos): `$ installer`
+  - _Note_, if you are running installer as non-root (eg. centos), then the target directory needs to have permission for that user (eg. centos)
   - `$installer -gui` (or `setup.csh`) for the GUI version.
   - If you must install from a root account, run `installer` with the `-install_as_root` switch.
 - When prompted, specify source directory containing the _Synopsys Product files_ (`*.spf`). for e.g. `/home/local/archive/CAD/synopsys/vcs_all_vU-2023.03`
