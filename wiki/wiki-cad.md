@@ -36,7 +36,8 @@ This wiki contains all the details (except the private and propreitary info) for
    - **Siemens** ports: 1717, 36162
    - **Ansys** ports: 1056, 1055
    - **Keysight ADS RFMW/HSD/SystemVue**: 27009, 57551
-   - **Cliosoft, Synopsys CC**: 27008, 57552
+   - **Cliosoft, Synopsys CC(?)**: 27008, 57552
+   - **Synopsys Tools**: 27020, 27021
    - Note, the above ports need to opened up by sysadmin.
 
 ### Synopsys Tool Installation
