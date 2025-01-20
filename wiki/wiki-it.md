@@ -1290,19 +1290,20 @@ graph TD;
 
   srv01[(srv01: NAS/NFS/NIS <br/> /home/nfs1 <br/> /home/nfs2 <br/> /CAD <br/> /PDK)];
 
-  srv03[(srv03: NAS/NFS <br/> /home/nfs3 <br/> srv01:/CAD  -> /cad/CAD1 <br/> srv01:/PDK  -> /cad/PDK1)];
+  srv03[(srv03: NAS/NFS <br/> /home/nfs3 <br/> /home/nfs4 <br/> srv01:/CAD  -> /cad/CAD1 <br/> srv01:/PDK  -> /cad/PDK1)];
 
-  srv02[ srv02: Compute/LicenseSrv <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 ];
+  srv02[ srv02: Compute/LicenseSrv <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 <br/> srv03:/home/nfs4 -> /CAD3 ];
 
-  voltaLab[VoltaLab: 30 Desktops <br/> srv01:/home/nfs1 <br/>  srv01:/home/nfs2 <br/> srv03:/cad/CAD1 -> /CAD <br/> srv03:/cad/PDK1 -> /PDK ];
+  voltaLab[VoltaLab: 30 Desktops <br/> srv01:/home/nfs1 <br/>  srv01:/home/nfs2 <br/> srv03:/cad/CAD1 -> /CAD <br/> srv03:/cad/PDK1 -> /PDK <br/> srv03:/home/nfs3 -> /CAD2 <br/> srv03:/home/nfs4 -> /CAD3];
 
-  neumannLab[NeumannLab: 12 Desktops <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK ];
+  neumannLab[NeumannLab: 12 Desktops <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 <br/> srv03:/home/nfs4 -> /CAD3];
 
   srv01 --NFS--> neumannLab;
   srv01 --NFS--> srv02;
   srv01 --NFS--> voltaLab;
   srv03 --NFS--> voltaLab;
   srv03 --NFS--> srv02;
+  srv03 --NFS--> neumannLab;
   
 ```
 
@@ -1371,8 +1372,8 @@ graph TD;
 | ``/home/local`` | 200G | local mount (sims, etc) |
 | ``/pdk`` | 100G | rsync: `srv01:/PDK -> srv03:/pdk/PDK1` |
 | ``/cad`` | 400G | rsync: `srv01:/CAD -> srv03:/cad/CAD1` |
-| ``/home/nfs3`` | 100G | Mounted as `srv02:/CAD2` |
-| ``/home/nfs4`` | 100G | reserved for future use |
+| ``/home/nfs3`` | 100G | Synopsys Tools mounted as `<client>:/CAD2` |
+| ``/home/nfs4`` | 100G | Synopsys Tools mounted as `<client>:/CAD3` |
 
 
 ## LINUX KNOWLEDGEBASE

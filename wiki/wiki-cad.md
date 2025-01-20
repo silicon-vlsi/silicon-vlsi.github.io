@@ -43,9 +43,10 @@ This wiki contains all the details (except the private and propreitary info) for
 ### Synopsys Tool Installation
 
  - Synopsys Portal: `https://solvnetplus.synopsys.com`
-   - Note: The _Download_ part of the portal is disabled for C2S instead the tools are provided on the ChipIn portal.
+  - Download portal has the tool binaries for installation.
  - ChipIn Portal: `https://chipin-cloud.cdacb.in/`
    - Synopsys Bins: `https://chipin-cloud.cdacb.in/index.php/f/627`
+   - All tools, a bit older, are available on this portal and we have installed from to be more compatible with CentOS 7.
  - The credentials for both should be provided by C2S-CDAC.
 
 **INSTALLER**
