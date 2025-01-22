@@ -1288,7 +1288,7 @@ menuentry 'Kickstart Installation of CentOS 7' \
 
 graph TD;
 
-  srv01[(srv01: NAS/NFS/NIS <br/> /home/nfs1 <br/> /home/nfs2 <br/> /CAD <br/> /PDK)];
+  srv01[(srv01: NAS/NFS/NIS/License <br/> /home/nfs1 <br/> /home/nfs2 <br/> /CAD <br/> /PDK)];
 
   srv03[(srv03: NAS/NFS <br/> /home/nfs3 <br/> /home/nfs4 <br/> srv01:/CAD  -> /cad/CAD1 <br/> srv01:/PDK  -> /cad/PDK1)];
 
