@@ -1292,15 +1292,12 @@ graph TD;
 
   srv03[(srv03: NAS/NFS <br/> /home/nfs3 <br/> /home/nfs4 <br/> srv01:/CAD  -> /cad/CAD1 <br/> srv01:/PDK  -> /cad/PDK1)];
 
-  srv02[ srv02: Compute/LicenseSrv <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 <br/> srv03:/home/nfs4 -> /CAD3 ];
+  srv02[ srv02: Compute/LicenseSrv <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 <br/> srv03:/home/nfs4 -> /CAD3 <br/> **** VIRTUAL MACHINES ***** <br/> vm1-srv02: 5C/10T/32G Secure Server <br/> vm2-srv02: 5C/10T/32G Faculty Server ];
 
   voltaLab[VoltaLab: 30 Desktops <br/> srv01:/home/nfs1 <br/>  srv01:/home/nfs2 <br/> srv03:/cad/CAD1 -> /CAD <br/> srv03:/cad/PDK1 -> /PDK <br/> srv03:/home/nfs3 -> /CAD2 <br/> srv03:/home/nfs4 -> /CAD3];
 
   neumannLab[NeumannLab: 12 Desktops <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 <br/> srv03:/home/nfs4 -> /CAD3];
 
-  vm1-srv02[Virtual Machine: vm1-srv02 <br/> 5C/10T/32G Secure Server];
-
-  vm2-srv02[Virtual Machine: vm2-srv02 <br/> 5C/10T/32G Faculty Server <br/> Same mounts as NeumannLab];
 
   srv01 --NFS--> neumannLab;
   srv01 --NFS--> srv02;
@@ -1308,8 +1305,6 @@ graph TD;
   srv03 --NFS--> voltaLab;
   srv03 --NFS--> srv02;
   srv03 --NFS--> neumannLab;
-  srv02 --KVM--> vm1-srv02; 
-  srv02 --KVM--> vm2-srv02; 
 ```
 
 **PARTIONING**
