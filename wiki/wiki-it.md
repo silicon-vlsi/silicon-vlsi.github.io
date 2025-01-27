@@ -1298,13 +1298,18 @@ graph TD;
 
   neumannLab[NeumannLab: 12 Desktops <br/> srv01:/home/nfs1 <br/> srv01:/home/nfs2 <br/> srv01:/CAD <br/> srv01:/PDK <br/> srv03:/home/nfs3 -> /CAD2 <br/> srv03:/home/nfs4 -> /CAD3];
 
+  vm1-srv02[Virtual Machine: vm1-srv02 <br/> 5C/10T/32G Secure Server];
+
+  vm2-srv02[Virtual Machine: vm2-srv02 <br/> 5C/10T/32G Faculty Server <br/> Same mounts as NeumannLab];
+
   srv01 --NFS--> neumannLab;
   srv01 --NFS--> srv02;
   srv01 --NFS--> voltaLab;
   srv03 --NFS--> voltaLab;
   srv03 --NFS--> srv02;
   srv03 --NFS--> neumannLab;
-  
+  srv02 --KVM--> vm1-srv02; 
+  srv02 --KVM--> vm2-srv02; 
 ```
 
 **PARTIONING**
