@@ -5,6 +5,73 @@ sort: 2
 # CAD 
 This wiki contains all the details (except the private and propreitary info) for the CAD tools used at Advanced VLSI Lab at SIT, BBSR.
 
+## TUTORIALS
+
+### RTL-to-GDSII Using Synopsys Toolchain
+
+This instructions for the tutorial are from the **NES-2024** Workshop on **RTL-to-GDS flow using Synopsys toolchain for VLSI Aspirants** on Feb 1, 2025 by Puneet Mittal from VLSI Expert. 
+
+The instructions are derived from the workshop that you can view [here](https://youtu.be/jy5ro6cem3A)
+
+- Untar the training tarball from `/CAD/trainings/RTL-to-GDS-NES24.tgz` and cd to `RTL2GDSII`
+
+- open `CONSTRAINTS/full_adder.sdc`  and get use to the file Synopsys Design Contraints.
+- check `ref/tech/star_rcxt/saed32nm_1p9m_Cmax.tluplus`  : Tech Parameters
+- check `ref/tech/star_rcxt/saed32nm_tf_itf_tluplus.map`  : Layer Maps
+- check `ref/lib/stdcell_rvt/saed32rvt_ss0p7vn40c.lib`  : STD CELL libs
+- `cd test` and tryout `icc2_shell`, `dc_shell`, etc.
+
+- cd to `RTL2GDSII/rtl` and check out `full_adder_rtl.v`
+
+- Simulation:
+  - `cd ../rtl_simulation`
+  - execute the commands from file `vcs_commands`
+    - `vcs -full64 full_adder_tb.v -debug_access+all -lca -kdb` to compile
+       - if you get `gcc/c++` errors: install them `sudo yum install gcc gcc-c++`
+    - `./simv Verdi`
+    - `verdi -ssf novas.fsdb -nologo &` will launch the IDE/debugger
+      - Select the ports from the RTL, right click and `send to Waveform` to send the signals to the waveform viewer.
+      - FRom the instance window, click `dut` and click the "Schematic" icon from the menu bar. 
+
+- Synthesis:
+  - `cd RTL2GDSII/DC`
+  - Check the automated script `run_dc.tcl`
+  - Check the `./rm_setup/dc/setup.tcl` for lib,etc..
+  - Now run `dc_shell`
+    - `dc_shell> start_gui`
+  - In the non-gui `dc_shell> source run_dc.tcl`
+  - After successful synthesis, you will see the synthesized netlist in the dc gui. You can click on the top module (e.g. `full_adder`) and right click and select "Schematic View" to opn the schematic. If you double click on the top module, you will see the netlist of std cells.
+  - Now let us see you want to exclude a certain std cell (eg.AO):
+    - `dc_shell> set dont_use [get_lib_cells */AO*]`
+    - `dc_shell> compile`  Now you should not see any A0 cells in the netlist.
+  - Read the constraint filei and compile: 
+    - `read_sdc ./../CONSTRAINTS/full_adder.sdc`
+    - `compile` 
+    - Looking at the schematic, it has more devices, effectively to meet timing.
+  - `write -format verilog -hierarchy -output results/full_adder.mapped.v` 
+    - This is what is going to be used by `icc2`
+    - Check the gate-level netlist `cat results/full_adder.mapped.v`
+
+- ICC2 PNR/etc
+  - cd RTL2GDSII/ICC2
+  - check `RTL2GDSII/ICCII/scripts/floorplan.tcl`
+  - There are 3 scenarios in the floorplan. Converted them to 3 seprate scripts: `floorplan1/2/3.tcl`
+  - `source scripts/floorplan1.tcl`  
+  - First 2 scenarios run fine, 3rd has an overutilization error. In the `initialize_floorplan` command, I increased the side lengths from {20 30 20 20} to {25 35 25 25} and that fixed it. Probably a overkill.
+  - **NOTE* Using the sdc file to constrain the design results in more gates that does not fit in the original area. During demo, Puneet did use the constraint file for the floorplan.
+
+  - Power Railing: check `scripts/power_railing.tcl`
+  - `source scripts/power_planning.tcl`
+    - You should see the power rails in the GUI.
+
+  - PLacement: check `scripts/placement.tcl`
+     - `source scripts/placement
+
+  - Route: 
+    - `source scripts/route.tcl`
+       - Looks like an eorror in the line 17. Comment it and rerun.
+
+
 ## Chip-to-Startup (C2S)
 
 ### C2S Registration
