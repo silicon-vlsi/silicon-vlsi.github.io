@@ -149,6 +149,18 @@ The instructions are derived from the workshop that you can view [here](https://
 
 ## CADENCE
 
+### Solutions
+
+**PROBLEM** When starting a tool (say ADE L), it's only checking out that feature instead of going through a assigned list and finding the right one. For eg. ADE-L checkout ADE_Assembler license but it keeps failing because it keeps trying to check out ADE_L.
+
+**SOLUTION**
+
+- From the `Virtuoso` menu select `Options -> Licensing`
+- Select `Ordering` tab from the poped up dialog box.
+- Set _all tool features_ to  `Always` using the drop-down menu.
+- Click `Save to File` and close the license window and re-invoke the tool
+
+
 ### Ocean
 
 **Quick Command Reference**
