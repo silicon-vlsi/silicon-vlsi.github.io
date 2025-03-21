@@ -155,6 +155,12 @@ The instructions are derived from the workshop that you can view [here](https://
 
 **SOLUTION**
 
+- Open `~/.cdsenv` and you may find a license line with option "never" e.g.
+  - `license ADE_UseNextLicense      string  "never"`
+  - Change "never" to `"always"` or `"prompt"` and that should fix the issue.
+
+**ALT. SOLUTION**
+
 - From the `Virtuoso` menu select `Options -> Licensing`
 - Select `Ordering` tab from the poped up dialog box.
 - Set _all tool features_ to  `Always` using the drop-down menu.
