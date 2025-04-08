@@ -91,12 +91,12 @@ There is a quota for disk space for all users. This includes their home and proj
 As an **admin/super-user** use the following commands to trace the user quota usage:
 
 - `sudo quota -su <username>` This will show the quota limits and the current disk usage of the user `<username>`.
-- `sudo xfs_quota -x -c 'report -uh' /home/nfs2' | sort -k 2 -n' This will print all the users quota in the mount `/home/nfs2` and sort them in increasing order. This will allow you to trace the users with most disk space from bottom up.
+- `sudo xfs_quota -x -c 'report -uh' /home/nfs2 | sort -k 2 -n` This will print all the users quota in the mount `/home/nfs2` and sort them in increasing order. This will allow you to trace the users with most disk space from bottom up.
 
 As a **user** use the following commands to trace top files and directories occupying most of the space:
 
 - `check-du-user.sh` This is a script in `/CAD/apps7/bin` that will summarize the top 5 files and directories in users home and project directories.
-- `du5` This is an alias which will show top 5 largest files and directories in the __current__ directory. You can recursively use this to trace down the big files and directories.
+- `du5` This is an alias which will show top 5 largest files and directories in the _current_ directory. You can recursively use this to trace down the big files and directories.
  
 
 **CLEANING NFS DIRECTORIES**
