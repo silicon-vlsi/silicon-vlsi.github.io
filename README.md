@@ -3,6 +3,8 @@
 The Advanced VLSI Laboratory is a Center of Excellence (CoE) for training and R&D work in the area of CMOS integrated circuits (IC) and electronic system design & manufacturing (ESDM). The CoE's primary goal is to provide an ecosystem for fostering real-life, project-based learning for the next generation engineering students and fresh graduates aspiring to start a career in VLSI industry. This will allow our students to be industry ready, bridging a critical gap between the academia and industry.
 
 
+You can chat with this page content using this [NotebookLM](https://notebooklm.google.com/notebook/ebc5dd56-500d-4b0d-9d34-be3c44229d74?authuser=6).
+
 ## Capabilities
 
 - **Training undergraduates and fresh hires** to make them industry-ready in various VLSI domains including **CMOS design and layout, PDK development, DRAM verification, standard-cell development**.
@@ -45,4 +47,5 @@ The primary goal is to collaborate with the industry and through various R&D and
 - Design and layout of various analog IP blocks (bandgap reference, power management, current-steering DAC) in 28nm CMOS technology. This was part of an industry collaboration project that has been fabricated and currently being characterized.
 - Undergraduate training in CMOS VLSI design and layout. 
 - Training new hires for industry project in various VLSI domains including simulation, layout, PDK design and DRAM verification.
+
 
