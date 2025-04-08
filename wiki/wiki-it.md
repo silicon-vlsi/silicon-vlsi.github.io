@@ -83,6 +83,22 @@ The following instruction will help you setup and transfer files between your _W
 
 ### Housekeeping
 
+
+**TRACING DISK USAGE FOR AN USER**
+
+There is a quota for disk space for all users. This includes their home and project space. When the user hits the quota limit and the user's disk is full, there are few steps you can take to trace the files and directories that are mostly responsible for filling up the disk space.
+
+As an **admin/super-user** use the following commands to trace the user quota usage:
+
+- `sudo quota -su <username>` This will show the quota limits and the current disk usage of the user `<username>`.
+- `sudo xfs_quota -x -c 'report -uh' /home/nfs2' | sort -k 2 -n' This will print all the users quota in the mount `/home/nfs2` and sort them in increasing order. This will allow you to trace the users with most disk space from bottom up.
+
+As a **user** use the following commands to trace top files and directories occupying most of the space:
+
+- `check-du-user.sh` This is a script in `/CAD/apps7/bin` that will summarize the top 5 files and directories in users home and project directories.
+- `du5` This is an alias which will show top 5 largest files and directories in the __current__ directory. You can recursively use this to trace down the big files and directories.
+ 
+
 **CLEANING NFS DIRECTORIES**
 
 - `/CAD/apps7/bin/clean-nfs.sh` is running daily on a `crontab` (`centos@srv01:~> sudo crontab -l` to see the list) for cleaning the NFS directories (.cache, .mozilla///storage, DRC/LVS, core, etc).
