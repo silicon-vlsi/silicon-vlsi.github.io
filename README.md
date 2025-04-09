@@ -1,6 +1,6 @@
 # Advanced VLSI Laboratory, Silicon Institute of Technology, Bhubaneswar 
 
-The Advanced VLSI Laboratory is a Center of Excellence (CoE) for training and R&D work in the area of CMOS integrated circuits (IC) and electronic system design & manufacturing (ESDM). The CoE's primary goal is to provide an ecosystem for fostering real-life, project-based learning for the next generation engineering students and fresh graduates aspiring to start a career in VLSI industry. This will allow our students to be industry ready, bridging a critical gap between the academia and industry.
+The Advanced VLSI Laboratory is a Center of Excellence (CoE) for training and R&D work in the area of CMOS integrated circuits (IC) and electronic system design & manufacturing (ESDM). The CoE's primary goal is to provide an ecosystem for fostering real-life, project-based learning for the next generation engineering students and fresh graduates aspiring to start a career in the VLSI industry. This will allow our students to be industry ready, bridging a critical gap between the academia and industry.
 
 
 You can chat with this page content using this [NotebookLM](https://notebooklm.google.com/notebook/ebc5dd56-500d-4b0d-9d34-be3c44229d74?authuser=6).
@@ -28,7 +28,8 @@ The primary goal is to collaborate with the industry and through various R&D and
 
 - Faculties with wide ranging experience in industry and academia to teach, train and execute industry projects. [See Faculty Profiles Here](https://silicon-vlsi.github.io/content/people.html)
 - Collaboration with industry experts to fill expertise gaps in training and project execution.
-- Enterprise-grade Electronic Design Automation (EDA) tools from [Cadence Design Systems](https://www.cadence.com) and [Siemens EDA](https://eda.sw.siemens.com/en-US/) (Previously Mentor Graphics).
+- Enterprise-grade Electronic Design Automation (EDA) tools from [Cadence Design Systems](https://www.cadence.com), [Siemens EDA](https://eda.sw.siemens.com/en-US/) (Previously Mentor Graphics), and [Synopsys](https://synopsys.com).
+- In addition to Silicon owned licenses from Cadence and Siemens, we have unlimited access to enterprise EDA license access as part of the [C2S](https://c2s.gov.in/) programme, an Ministry of Electronics and Information Technology (MeitY) initiative.
 - Collaboration with world-class foundries such as [XFAB](https://www.xfab.com) and [TSMC](https://www.tsmc.com) to fabricate our designed integrated circuits.
 - Enterprise-grade IT infrastructure:
   - 2 Enterprise **NAS server** hosting all project, technology and EDA files.
@@ -36,7 +37,7 @@ The primary goal is to collaborate with the industry and through various R&D and
   - 30-workstation **Advanced VLSI Lab** for research, training and hands-on workshops.
   - 12-seater **Training Lab** equiped with 12 workstation and conferencing system for industry projects and trainings.
   - All workstations and servers connected across the campus through a **fiber network** backbone.
-  - All workstations and servers running **CentOS linux OS** are manged centrally.
+  - All workstations and servers running **CentOS linux OS** are managed centrally.
 - Full equipped test laboratory to conduct training and consulting for integrated circuit characterization.
 - A 8-seater **office space** for executing industry projects.
 
