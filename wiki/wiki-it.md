@@ -92,6 +92,7 @@ As an **admin/super-user** use the following commands to trace the user quota us
 
 - `sudo quota -su <username>` This will show the quota limits and the current disk usage of the user `<username>`.
 - `sudo xfs_quota -x -c 'report -uh' /home/nfs2 | sort -k 2 -n` This will print all the users quota in the mount `/home/nfs2` and sort them in increasing order. This will allow you to trace the users with most disk space from bottom up.
+  - **NOTE**: There is a global alias name `qrep` for the above command. Use it.  - **NOTE**: There is `crontab` (at 4am daily on srv01-centos) logging the output of the above command in `/CAD/apps7/logs/quota-user-nfs2.log` 
 
 As a **user** use the following commands to trace top files and directories occupying most of the space:
 
