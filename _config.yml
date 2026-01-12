@@ -4,7 +4,7 @@ description: Center for Nanodevices, Integrated Circuits and Systems at Silicon 
 theme: null
 
 #url: 
-#baseurl: 
+baseurl: ""
 lang: en
 direction: auto
 
