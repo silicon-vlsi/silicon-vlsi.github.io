@@ -1,4 +1,6 @@
 #!/bin/bash
+# First install or when Jekyll needs upgrade, run the following
+# bundle install && bundle update
 git pull
 bundle exec jekyll build
 git commit -m "update" -a
