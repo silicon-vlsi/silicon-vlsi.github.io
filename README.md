@@ -1,4 +1,4 @@
-# Advanced VLSI Laboratory, Silicon University, Odisha
+# Center For Nanodevices, Integrated Circuits and Systems (CICN) 
 
 The Advanced VLSI Laboratory at [Silicon University, Odisha](https://silicon.ac.in), Bhubaneswar, is a Center of Excellence (CoE) for training and R&D work in the area of CMOS integrated circuits (IC) and electronic system design & manufacturing (ESDM). The CoE's primary goal is to provide an ecosystem for fostering real-life, project-based learning for the next generation engineering students and fresh graduates aspiring to start a career in the VLSI industry. This will allow our students to be industry ready, bridging a critical gap between the academia and industry.
 
