@@ -7,4 +7,4 @@ url: https://sili.github.io
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
-math_enable: true
+enable_math: true
