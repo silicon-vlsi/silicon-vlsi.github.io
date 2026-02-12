@@ -7,4 +7,6 @@ url: https://sili.github.io
 aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
-enable_math: true
+# Enable/disable math supprt
+math: 
+  enable: true
