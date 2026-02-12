@@ -8,9 +8,10 @@ aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
 # Enable/disable math supprt
-math: 
-  enable: true
+#math: 
+#  enable: true
 
 # Choose a math library: 'katex' (default) or 'mathjax'
-# library: 'katex'
-library: 'mathjax' # Or keep it as 'katex'
+latex: katex
+#library: 'mathjax' # Or keep it as 'katex'
+#
