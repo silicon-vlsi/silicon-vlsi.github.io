@@ -10,3 +10,7 @@ aux_links:
 # Enable/disable math supprt
 math: 
   enable: true
+
+# Choose a math library: 'katex' (default) or 'mathjax'
+# library: 'katex'
+library: 'mathjax' # Or keep it as 'katex'
