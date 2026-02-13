@@ -1,3 +1,16 @@
+# Resources
+
+- [just-the-docs.github.io](https://just-the-docs.github.io)
+
+
+# Post-Install Customization
+
+## KaTeX installation
+
+- Followed this [doc](https://just-the-docs.github.io/just-the-docs-tests/components/math/katex/config/)
+
+
+
 # just-the-docs-template
 
 This is a *bare-minimum* template to create a [Jekyll] site that:
