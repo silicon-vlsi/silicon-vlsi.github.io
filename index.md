@@ -3,7 +3,7 @@ title: Home
 layout: home
 ---
 
-This is a *bare-minimum* template to create a Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
+This is a *bare-minimum* template to create a $R$ and $K$ Jekyll site that uses the [Just the Docs] theme. You can easily set the created site to be published on [GitHub Pages] – the [README] file explains how to do that, along with other details.
 
 $I_d = \frac{\mu_n C_{ox}}{2}\frac{W}{L}(V_{gs}-V_t)^2$
 
