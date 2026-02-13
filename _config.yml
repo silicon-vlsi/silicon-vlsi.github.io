@@ -8,5 +8,5 @@ aux_links:
   Template Repository: https://github.com/just-the-docs/just-the-docs-template
 
 # Enable/disable math supprt
-math: latex 
+math: katex 
 
