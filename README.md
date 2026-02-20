@@ -1,9 +1,13 @@
-# Center For Nanodevices, Integrated Circuits and Systems (CICN) 
+# Center For Nanodevices, Integrated Circuits and Systems (CICNS) 
 
 The Advanced VLSI Laboratory at [Silicon University, Odisha](https://silicon.ac.in), Bhubaneswar, is a Center of Excellence (CoE) for training and R&D work in the area of CMOS integrated circuits (IC) and electronic system design & manufacturing (ESDM). The CoE's primary goal is to provide an ecosystem for fostering real-life, project-based learning for the next generation engineering students and fresh graduates aspiring to start a career in the VLSI industry. This will allow our students to be industry ready, bridging a critical gap between the academia and industry.
 
+There are four laboratory of focus under this Centre:
 
-You can chat with this page content using this [NotebookLM](https://notebooklm.google.com/notebook/ebc5dd56-500d-4b0d-9d34-be3c44229d74?authuser=6).
+1. _Jack Kilby_ VLSI Education Lab.
+2. _Alessandro Volta_ VLSI & Devices Research Lab.
+3. _Nikola Tesla_ Test and Characterization Lab.
+4. _Launch Lab_ for VLSI Training, A Sevya Multimedia Initiative
 
 ## Capabilities
 
