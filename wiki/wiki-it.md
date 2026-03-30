@@ -78,6 +78,13 @@ The following instruction will help you setup and transfer files between your _W
   - `tar -o -xzvf file.tar.gz`
   - `chmod -R o+rX <root-dir>` : will recursivley add read perms for files and r+x for directories, for "others" 
 - `yum provides libXss.so.1` : To **find** a package which __provides__ a certain library eg. `libXss.so.1`
+- `rsync -avHAX --numeric-ids --delete --dry-run old-server:/home/ /home/`
+  - `-a`: Archive mode (recursive, preserve perms/timestamps/ownership).
+  - `-H`: Preserve hard links (common in homes)
+  - `-X`: Extended attributes (SELinux if enabled).
+  - `--numeric-ids`: Use UIDs/GIDs directly (critical with NIS for consistency)
+  - `--delete`: Mirror deletions (dry-run first!).
+  - `--dry-run` (-n): Preview changes
 - **GIT**
   - `git reset <file>` : undo changes
 
@@ -172,6 +179,9 @@ $sudo make -C /var/yp
 -k : location for the skeleton file eg. .cshrc, etc.
 ```
 
+### Migrating NIS Server
+
+- 
 
 ### Setting up new CentOS 7 Desktop
 
