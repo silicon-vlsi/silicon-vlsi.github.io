@@ -179,9 +179,48 @@ $sudo make -C /var/yp
 -k : location for the skeleton file eg. .cshrc, etc.
 ```
 
-### Migrating NIS Server
+### Migrating NFS/NIS Server
 
-- 
+**Migrating the NFS Server**
+
+- As **root** rsync the NFS mounts from old to new server:
+  - `rsync -avHAX --numeric-ids --delete --dry-run old-server:/home/ /home/`
+    - `-a`: Archive mode (recursive, preserve perms/timestamps/ownership).
+    - `-H`: Preserve hard links (common in homes).
+    - `-X`: Extended attributes (SELinux if enabled).
+    - `--numeric-ids`: Use UIDs/GIDs directly (critical with NIS for consistency).
+    - `--delete`: Mirror deletions (dry-run first!).
+    - `--dry-run` (-n): Preview changes.
+  - Configure NFS server as before by exporting the mounts, etc.
+
+**Migrating NIS Server**
+
+- Backup old server first
+- Copy `/var/yp` and key configs (`/etc/ypserv.conf`, `/etc/yp.conf`, `/var/yp/Makefile`) from old to new via rsync (probably as root): 
+  - `rsync -avz old-server:/var/yp/ /var/yp/`
+  - `rsync -avz old-server:/etc/yp* /etc/`
+  - `rsync -avz old-server:/etc/ypserv* /etc/.` 
+- Prepare `ypservers` Map, on new server in `/var/yp`:
+  - `sudo /usr/lib64/yp/makedbm -u <nisdomainname>/ypservers | sudo tee -a tmpservers`
+  - Change `YP_MASTER_NAME` to new-server hostname and create new map:
+  - `sudo /usr/lib64/yp/makedbm tmpservers <nisdomainname>/ypservers`
+- **IMPORTANT** The new server does not have NIS users as local users so running `make -C /var/yp` will remove all NIS users. Following steps to fix it.
+  - Create a new dir:
+    - `sudo mkdir -p /var/yp/ypfiles`
+    - `sudo chmod 700 /var/yp/ypfiles`
+  - Copy passwd/group/shadow/gshadow from the OLD master:
+    - `sudo rsync -avz root@OLD_MASTER:/etc/passwd  /var/yp/ypfiles/passwd`
+    - `sudo rsync -avz root@OLD_MASTER:/etc/group   /var/yp/ypfiles/group`
+    - `sudo rsync -avz root@OLD_MASTER:/etc/shadow  /var/yp/ypfiles/shadow`
+    - `sudo rsync -avz root@OLD_MASTER:/etc/gshadow /var/yp/ypfiles/gshadow`
+  - Check and lock down permissions if not locked
+    - `sudo chown root:root /var/yp/ypfiles/{passwd,group,shadow,gshadow}`
+    - `sudo chmod 0644 /var/yp/ypfiles/{passwd,group}`
+    - `sudo chmod 0000 /var/yp/ypfiles/{shadow,gshadow}`
+  - Edit `/var/yp/Makefile` on the NEW master
+    - Change : `YPPWDDIR = /var/yp/ypfiles`
+  - Rebuild maps: `sudo make -C /var/yp`
+
 
 ### Setting up new CentOS 7 Desktop
 
